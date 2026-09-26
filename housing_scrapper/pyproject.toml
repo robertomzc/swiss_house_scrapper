@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "housing_scrapper"
+version = "0.1.0"
+description = "A small repository to scrap housing from the web"
+authors = ["Roberto Martinez <robertomzc@gmail.com>"]
+license = "MIT"
+
+[tool.poetry.dependencies]
+python = "^3.13"
+requests = "^2.32.4"
+beautifulsoup4 = "^4.12.3"
+playwright = "^1.50.0"
+pytest = "^8.3.0"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.3.0"
+
+[build-system]
+requires = ["poetry-core>=1.9.0"]
+build-backend = "poetry.core.masonry.api"
