@@ -1,43 +1,38 @@
-# Housing scraper
+# Housing Monitor
 
-A small Python project for tracking Swiss rental listings by price, rooms, area and city.
+This project reads apartment alerts from email, extracts the listing details, and stores the results so they can be tracked over time.
 
-## Goal
-- search a few real-estate sites
-- filter listings by custom criteria
-- keep only new properties
-- store results in a simple JSONL file
+## What it does
+- connects to the configured Gmail label
+- reads ImmoScout24 alert emails
+- extracts address, price, rooms, and area information
+- normalizes the data into a reusable property model
+- keeps the latest listing state in JSON so changes can be observed later
 
-## Current status
-This is a working prototype, not a production-grade listing API.
-
-Important findings from testing:
-- public APIs for ImmoScout24/Homegate do not appear to be available to normal users
-- direct HTTP requests to the listing pages often return 403
-- the pages are dynamic and can change fast
-- browser automation via Playwright is the realistic fallback
-- the local environment here does not have a working Chromium install, so live extraction is blocked in this machine
-
-## Project structure
-- `src/my_package/models.py`: filtering and property model
-- `src/my_package/immoscout_scraper.py`: ImmoScout24 scraper
-- `src/my_package/homegate_scraper.py`: Homegate scraper
-- `src/my_package/main.py`: orchestrator
-- `src/my_package/utils.py`: export helpers
-- `LLM_NOTES.md`: short project notes for future coding help
+## Project layout
+- `src/housing_monitor/models.py`: shared property and filter models
+- `src/housing_monitor/utils.py`: reusable helpers
+- `src/housing_monitor/email_ingestion/imap_client.py`: Gmail IMAP access
+- `src/housing_monitor/email_ingestion/parsers/immoscout24.py`: email parser
+- `src/housing_monitor/email_ingestion/model.py`: stored listing/history model
+- `src/housing_monitor/email_ingestion/storage.py`: JSON persistence logic
+- `src/housing_monitor/pipeline.py`: main processing flow
+- `run_pipeline.py`: script to run the pipeline manually
+- `config.yaml`: mailbox and storage settings
+- `data/listings.json`: saved listing data
 
 ## Setup
 ```bash
 cd housing_scrapper
-poetry install --no-root
+poetry install
 ```
 
 ## Run
 ```bash
-poetry run python -m src.my_package.main
+cd housing_scrapper
+poetry run housing-monitor
 ```
 
 ## Notes
-- The scraper is intentionally simple and easy to extend.
-- For real-world use, run it on a machine/container with a supported Playwright browser runtime.
-- Expect frequent maintenance when target sites change their HTML or block bot traffic.
+- The project is intentionally simple and focused on email-based listing tracking.
+- It is designed to be easy to extend with more parsers or alert sources later.

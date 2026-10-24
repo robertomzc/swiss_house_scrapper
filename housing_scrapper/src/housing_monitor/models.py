@@ -13,8 +13,8 @@ class SearchCriteria:
     min_area_m2: Optional[float] = None
     cities: list[str] = field(default_factory=list)
     property_types: list[str] = field(default_factory=list)
-    
-    def matches(self, prop: Property) -> bool:
+
+    def matches(self, prop: "Property") -> bool:
         if self.max_price_chf and prop.price_chf and prop.price_chf > self.max_price_chf:
             return False
         if self.min_price_chf and prop.price_chf and prop.price_chf < self.min_price_chf:
@@ -32,6 +32,12 @@ class SearchCriteria:
 
 @dataclass
 class Property:
+    """Normalized listing snapshot used as the shared domain model.
+
+    This is intentionally source-agnostic: it is the same class regardless of
+    whether the data came from an email alert or a scraper later on.
+    """
+
     title: str
     source: str
     city: str
@@ -46,6 +52,25 @@ class Property:
     available_from: Optional[date] = None
     agency: Optional[str] = None
     raw_data: dict[str, Any] = field(default_factory=dict)
+
+    @classmethod
+    def from_email_listing(cls, payload: dict[str, Any]) -> "Property":
+        """Build a normalized Property from a parsed email alert payload."""
+        return cls(
+            title=payload.get("title") or payload.get("address") or "Listing",
+            source=payload.get("source") or "email_alert",
+            city=payload.get("city") or "Unknown",
+            url=payload.get("url") or "",
+            price_chf=payload.get("price"),
+            rooms=payload.get("rooms"),
+            area_m2=payload.get("surface_m2"),
+            property_type=payload.get("property_type") or "apartment",
+            zip_code=payload.get("zip_code"),
+            address=payload.get("address"),
+            description=payload.get("description"),
+            agency=payload.get("agency"),
+            raw_data=payload,
+        )
 
     def to_dict(self) -> dict[str, Any]:
         return {

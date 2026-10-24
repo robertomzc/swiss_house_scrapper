@@ -1,6 +1,6 @@
 from email.message import EmailMessage
 
-from my_package.email_poc.ingestion.parsers.immoscout24 import parse_email
+from housing_monitor.email_ingestion.parsers.immoscout24 import parse_email
 
 
 def make_email(body: str) -> EmailMessage:

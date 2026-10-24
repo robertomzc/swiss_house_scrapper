@@ -1,8 +1,10 @@
 from __future__ import annotations
 
-from dataclasses import dataclass, field, asdict
+from dataclasses import asdict, dataclass, field
 from datetime import datetime, timezone
 from typing import Literal, Optional
+
+from housing_monitor.models import Property
 
 
 @dataclass
@@ -34,6 +36,20 @@ class Listing:
     last_seen: datetime = field(default_factory=lambda: datetime.now(timezone.utc))
     is_active: bool = True
     observations: list[PriceObservation] = field(default_factory=list)
+
+    def to_property(self) -> Property:
+        return Property(
+            title=self.title or self.address or "Listing",
+            source=self.source_site,
+            city=self.commune or self.canton or "Unknown",
+            url=self.url,
+            price_chf=self.current_price,
+            rooms=self.rooms,
+            area_m2=self.surface_m2,
+            property_type=self.listing_type or "apartment",
+            address=self.address,
+            raw_data={"external_id": self.external_id, "observations": [obs.__dict__ for obs in self.observations]},
+        )
 
     @property
     def current_price(self) -> Optional[int]:

@@ -1,18 +1,16 @@
 from pathlib import Path
 
-try:
-    from .models import Property, SearchCriteria
-except ImportError:
-    from my_package.models import Property, SearchCriteria
+from .models import Property, SearchCriteria
 
 
 def load_properties_from_storage(filepath: str) -> list[Property]:
-    """Load properties from JSONL storage file."""
+    """Load properties from a JSONL storage file."""
     import json
-    properties = []
+
+    properties: list[Property] = []
     path = Path(filepath)
     if path.exists():
-        with open(path) as f:
+        with open(path, encoding="utf-8") as f:
             for line in f:
                 try:
                     data = json.loads(line)
@@ -33,30 +31,30 @@ def load_properties_from_storage(filepath: str) -> list[Property]:
 
 
 def export_to_csv(properties: list[Property], filepath: str) -> None:
-    """Export properties to CSV file."""
+    """Export properties to CSV."""
     import csv
+
     path = Path(filepath)
     path.parent.mkdir(parents=True, exist_ok=True)
-    with open(path, "w", newline="") as f:
+    with open(path, "w", newline="", encoding="utf-8") as f:
         writer = csv.DictWriter(
             f,
-            fieldnames=[
-                "title", "source", "city", "url", "price_chf", 
-                "rooms", "area_m2", "zip_code"
-            ]
+            fieldnames=["title", "source", "city", "url", "price_chf", "rooms", "area_m2", "zip_code"],
         )
         writer.writeheader()
         for prop in properties:
-            writer.writerow({
-                "title": prop.title,
-                "source": prop.source,
-                "city": prop.city,
-                "url": prop.url,
-                "price_chf": prop.price_chf,
-                "rooms": prop.rooms,
-                "area_m2": prop.area_m2,
-                "zip_code": prop.zip_code,
-            })
+            writer.writerow(
+                {
+                    "title": prop.title,
+                    "source": prop.source,
+                    "city": prop.city,
+                    "url": prop.url,
+                    "price_chf": prop.price_chf,
+                    "rooms": prop.rooms,
+                    "area_m2": prop.area_m2,
+                    "zip_code": prop.zip_code,
+                }
+            )
 
 
 def price_per_m2(prop: Property) -> float | None:
@@ -64,4 +62,6 @@ def price_per_m2(prop: Property) -> float | None:
     if prop.price_chf and prop.area_m2 and prop.area_m2 > 0:
         return prop.price_chf / prop.area_m2
     return None
-    pass  # Implement the functionality here as needed.
+
+
+__all__ = ["Property", "SearchCriteria", "load_properties_from_storage", "export_to_csv", "price_per_m2"]

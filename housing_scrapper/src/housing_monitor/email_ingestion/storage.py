@@ -2,7 +2,6 @@ from __future__ import annotations
 
 import json
 import os
-from dataclasses import asdict
 from datetime import datetime, timezone
 from tempfile import NamedTemporaryFile
 from typing import Dict
@@ -24,9 +23,16 @@ def load_listings(path: str) -> Dict[str, Listing]:
         data = json.load(f)
     out: Dict[str, Listing] = {}
     for url, item in data.items():
-        obs = []
-        for o in item.get("observations", []):
-            obs.append(PriceObservation(observed_at=_dt_from_iso(o["observed_at"]), price=o.get("price"), status=o.get("status"), source=o.get("source")))
+        observations = []
+        for obs_data in item.get("observations", []):
+            observations.append(
+                PriceObservation(
+                    observed_at=_dt_from_iso(obs_data["observed_at"]),
+                    price=obs_data.get("price"),
+                    status=obs_data.get("status"),
+                    source=obs_data.get("source"),
+                )
+            )
         listing = Listing(
             url=url,
             source_site=item.get("source_site", "unknown"),
@@ -46,7 +52,7 @@ def load_listings(path: str) -> Dict[str, Listing]:
             first_seen=_dt_from_iso(item["first_seen"]) if item.get("first_seen") else datetime.utcnow(),
             last_seen=_dt_from_iso(item["last_seen"]) if item.get("last_seen") else datetime.utcnow(),
             is_active=item.get("is_active", True),
-            observations=obs,
+            observations=observations,
         )
         out[url] = listing
     return out

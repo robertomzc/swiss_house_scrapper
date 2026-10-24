@@ -1,9 +1,10 @@
 [tool.poetry]
 name = "housing_scrapper"
 version = "0.1.0"
-description = "A small repository to scrap housing from the web"
+description = "Email-first housing monitoring project"
 authors = ["Roberto Martinez <robertomzc@gmail.com>"]
 license = "MIT"
+packages = [{ include = "housing_monitor", from = "src" }]
 
 [tool.poetry.dependencies]
 python = "^3.13"
@@ -15,6 +16,9 @@ pyyaml = "^6.0.3"
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^8.3.0"
+
+[tool.poetry.scripts]
+housing-monitor = "housing_monitor.pipeline:main"
 
 [build-system]
 requires = ["poetry-core>=1.9.0"]

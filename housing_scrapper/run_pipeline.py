@@ -12,13 +12,12 @@ from email.utils import parsedate_to_datetime
 
 import yaml
 
-# ensure src is on path
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), 'src'))
 
-from my_package.email_poc.ingestion.imap_client import fetch_unread_messages
-from my_package.email_poc.ingestion.parsers.immoscout24 import parse_email
-from my_package.email_poc.model import Listing, PriceObservation
-from my_package.email_poc.storage import load_listings, save_listings, upsert
+from housing_monitor.email_ingestion.imap_client import fetch_unread_messages
+from housing_monitor.email_ingestion.parsers.immoscout24 import parse_email
+from housing_monitor.email_ingestion.model import Listing, PriceObservation
+from housing_monitor.email_ingestion.storage import load_listings, save_listings, upsert
 
 
 def load_config(path='config.yaml'):

@@ -3,7 +3,7 @@ from __future__ import annotations
 import re
 from email.message import EmailMessage
 from html import unescape
-from typing import Iterable, Optional
+from typing import Optional
 from urllib.parse import urlsplit, urlunsplit
 from urllib.request import Request, urlopen
 
@@ -210,8 +210,7 @@ def _extract_values_for_block(block: str) -> dict:
                         found.append(cleaned)
         address = _prefer_better_address(found)
 
-    result = {"price": price, "rooms": rooms, "surface_m2": surface, "address": address}
-    return result
+    return {"price": price, "rooms": rooms, "surface_m2": surface, "address": address}
 
 
 def _parse_property_blocks(text: str) -> list[dict]:
