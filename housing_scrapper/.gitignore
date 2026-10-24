@@ -2,4 +2,4 @@
 .pytest_cache/
 __pycache__/
 *.env
-data/listings.json
+data/
