@@ -12,14 +12,18 @@ from datetime import datetime, timezone
 from email.utils import parsedate_to_datetime
 
 import yaml
+from dotenv import load_dotenv
 
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
+
+load_dotenv()
 
 from housing_monitor.email_ingestion.archives import mark_message_processed, load_processed_messages
 from housing_monitor.email_ingestion.imap_client import fetch_messages
 from housing_monitor.email_ingestion.parsers import parse_email
 from housing_monitor.email_ingestion.model import Listing, PriceObservation
 from housing_monitor.email_ingestion.storage import load_listings, save_listings, upsert
+from housing_monitor.dashboard import generate_dashboard
 
 
 def load_config(path='config.yaml'):
@@ -116,6 +120,10 @@ def main():
 
     os.makedirs(os.path.dirname(data_path) or '.', exist_ok=True)
     save_listings(listings, data_path)
+
+    dashboard_path = cfg.get('dashboard_path', 'data/dashboard.html')
+    generated_dashboard, _ = generate_dashboard(listings, output_path=dashboard_path, alert_count=total_items)
+    print(f'Generated dashboard: {generated_dashboard}')
 
     print(f'\nSummary ({len(listings)} listings):')
     for listing in listings.values():

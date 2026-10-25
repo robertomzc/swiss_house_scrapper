@@ -3,10 +3,10 @@ from __future__ import annotations
 import os
 import re
 import sys
-from email.message import EmailMessage
 
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', '..'))
 
+from housing_monitor.email_ingestion.archives import save_email_message
 from housing_monitor.email_ingestion.imap_client import fetch_messages
 from housing_monitor.email_ingestion.parsers.common import detect_source_site
 
@@ -16,7 +16,7 @@ def _safe_name(value: str) -> str:
     return cleaned[:80] or 'email'
 
 
-def export_samples(label: str, output_dir: str, host: str, username: str, password: str, unread_only: bool) -> dict[str, int]:
+def export_email_samples(label: str, output_dir: str, host: str, username: str, password: str, unread_only: bool) -> dict[str, int]:
     os.makedirs(output_dir, exist_ok=True)
     msgs = fetch_messages(host, username, password, label, unread_only)
     counts: dict[str, int] = {}
@@ -27,8 +27,7 @@ def export_samples(label: str, output_dir: str, host: str, username: str, passwo
         sender = msg.get('From', 'unknown').replace('@', '_at_')
         subject = msg.get('Subject', 'no_subject')
         filename = f"{index + 1:03d}_{source}_{_safe_name(sender)}_{_safe_name(subject)}.eml"
-        with open(os.path.join(output_dir, filename), 'wb') as fh:
-            fh.write(msg.as_bytes())
+        save_email_message(msg, output_dir, source_site=source, filename=filename)
 
     return counts
 
@@ -49,7 +48,7 @@ if __name__ == '__main__':
     if not user or not password:
         raise SystemExit('Please set EMAIL_USER and EMAIL_PASSWORD before exporting sample emails.')
 
-    counts = export_samples(label, output_dir, host, user, password, unread_only)
+    counts = export_email_samples(label, output_dir, host, user, password, unread_only)
     print(f'Exported sample emails to {output_dir}')
     for source, total in sorted(counts.items()):
         print(f'  {source}: {total}')

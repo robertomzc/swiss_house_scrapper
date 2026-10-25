@@ -27,6 +27,20 @@ def safe_site_name(site_name: str | None) -> str:
     return cleaned or 'unknown'
 
 
+def save_email_message(msg: EmailMessage, target_dir: str, *, source_site: str | None = None, filename: str | None = None) -> str:
+    """Persist a raw email message to disk using a consistent filename strategy."""
+    os.makedirs(target_dir, exist_ok=True)
+    safe_name = safe_site_name(source_site or detect_source_site(msg))
+    chosen_name = filename or f'{message_key(msg)}.eml'
+    if not chosen_name.lower().endswith('.eml'):
+        chosen_name = f'{chosen_name}.eml'
+
+    target_path = os.path.join(target_dir, chosen_name)
+    with open(target_path, 'wb') as handle:
+        handle.write(msg.as_bytes())
+    return target_path
+
+
 def load_processed_messages(path: str = DEFAULT_PROCESSED_PATH) -> dict[str, dict[str, Any]]:
     if not os.path.exists(path):
         return {}
@@ -50,13 +64,7 @@ def save_processed_messages(index: dict[str, dict[str, Any]], path: str = DEFAUL
 def archive_email_message(msg: EmailMessage, archive_dir: str = DEFAULT_ARCHIVE_DIR, source_site: str | None = None) -> str:
     site_name = safe_site_name(source_site or detect_source_site(msg))
     archive_root = os.path.join(archive_dir, site_name)
-    os.makedirs(archive_root, exist_ok=True)
-    key = message_key(msg)
-    archive_path = os.path.join(archive_root, f'{key}.eml')
-    if not os.path.exists(archive_path):
-        with open(archive_path, 'wb') as handle:
-            handle.write(msg.as_bytes())
-    return archive_path
+    return save_email_message(msg, archive_root, source_site=site_name, filename=f'{message_key(msg)}.eml')
 
 
 def mark_message_processed(msg: EmailMessage, archive_dir: str = DEFAULT_ARCHIVE_DIR, processed_path: str = DEFAULT_PROCESSED_PATH) -> tuple[bool, dict[str, Any]]:

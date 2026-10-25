@@ -3,7 +3,6 @@ from __future__ import annotations
 import re
 from dataclasses import asdict, dataclass, field, fields
 from datetime import datetime, timezone
-from hashlib import sha1
 from typing import Literal, Optional
 
 from housing_monitor.models import Property
@@ -33,7 +32,7 @@ def build_property_key(listing: "Listing") -> str:
         str(listing.surface_m2).replace(".", ",") if listing.surface_m2 is not None else "",
         _normalize_text(listing.listing_type),
     ]
-    return sha1("|".join(identity_parts).encode("utf-8")).hexdigest()
+    return "|".join(identity_parts)  # Changed to return a readable key instead of a hash
 
 
 @dataclass
