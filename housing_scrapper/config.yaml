@@ -1,3 +1,4 @@
 gmail_label: "Lausanne Housing"
 data_path: "data/listings.json"
 imap_host: "imap.gmail.com"
+unread_only: true

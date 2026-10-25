@@ -6,8 +6,8 @@ from email import policy
 from typing import List
 
 
-def fetch_unread_messages(host: str, username: str, password: str, label: str) -> List[email.message.EmailMessage]:
-    """Connect to an IMAP host and return all messages in the configured label."""
+def fetch_messages(host: str, username: str, password: str, label: str, unread_only: bool) -> List[email.message.EmailMessage]:
+    """Connect to an IMAP host and return messages from the configured label."""
     mailbox = imaplib.IMAP4_SSL(host)
     mailbox.login(username, password)
 
@@ -20,9 +20,10 @@ def fetch_unread_messages(host: str, username: str, password: str, label: str) -
             mailbox.logout()
             return []
 
-        typ, data = mailbox.search(None, 'UNSEEN')
+        search_criteria = 'UNSEEN' if unread_only else 'ALL'
+        typ, data = mailbox.search(None, search_criteria)
         if typ != 'OK':
-            typ, data = mailbox.search(None, 'ALL')
+            return []
 
         messages: List[email.message.EmailMessage] = []
         for num in data[0].split():

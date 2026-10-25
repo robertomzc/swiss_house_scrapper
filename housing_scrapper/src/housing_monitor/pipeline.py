@@ -16,7 +16,7 @@ import yaml
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
 
 from housing_monitor.email_ingestion.archives import mark_message_processed, load_processed_messages
-from housing_monitor.email_ingestion.imap_client import fetch_unread_messages
+from housing_monitor.email_ingestion.imap_client import fetch_messages
 from housing_monitor.email_ingestion.parsers import parse_email
 from housing_monitor.email_ingestion.model import Listing, PriceObservation
 from housing_monitor.email_ingestion.storage import load_listings, save_listings, upsert
@@ -96,6 +96,7 @@ def main():
     imap_host = cfg.get('imap_host', 'imap.gmail.com')
     archive_dir = cfg.get('email_archive_dir', 'data/email_archive')
     processed_path = cfg.get('processed_messages_path', 'data/processed_messages.json')
+    unread_only = cfg.get('unread_only', True)
 
     user = os.getenv('EMAIL_USER')
     password = os.getenv('EMAIL_PASSWORD')
@@ -105,8 +106,9 @@ def main():
 
     listings = load_listings(data_path)
     seen_index = load_processed_messages(processed_path)
-    msgs = fetch_unread_messages(imap_host, user, password, label)
-    print(f'Found {len(msgs)} unread messages in label "{label}"')
+    msgs = fetch_messages(imap_host, user, password, label, unread_only)
+    mode_label = 'unread' if unread_only else 'all'
+    print(f'Found {len(msgs)} {mode_label} messages in label "{label}"')
 
     total_items = 0
     for msg in msgs:
