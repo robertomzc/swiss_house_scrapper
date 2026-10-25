@@ -1,0 +1,2505 @@
+Delivered-To: roberto.suscriptions@gmail.com
+Received: by 2002:a2e:a605:0:b0:3ab:3511:4041 with SMTP id v5csp3126598ljp;
+        Tue, 20 Oct 2026 16:20:43 -0700 (PDT)
+X-Received: by 2002:a05:6870:810d:b0:4a7:5eb7:ab97 with SMTP id
+ 586e51a60fabf-4a7dc1b27b1mr149885fac.32.1792538443098;        Tue, 20 Oct
+ 2026 16:20:43 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1792538443; cv=none;
+        d=google.com; s=arc-20260327;
+        b=rV1k941z/hbZKzo6ze7RWGd9oBvfQkhySibrKaq3iKQOJG7yRNUK8dG3bHVeFsPeWb
+         y5Lrd/xVEg+FVr4FYujamQ6y3JMsDjs2HHzc9t22I9fZi1BF/qyyD7Czfgye79iOgFuI
+         F9QbIfkg1d5oUKspKjbYDiuJRottu3N/XnOOwAKg2DaRe/3qQzcb9I/HUDiNfqk00YDo
+         Q8EelPsxNSVXOa8ER+WHg0IrnQnGR4ggvsdXr3p6/8geXEFxcNpNSyCBZL6KMps/R8WT
+         X6OfMKV0Swn511xkNbuUhmmvmUo0Sju1PsCU46CtC4ac5jiNBSm+l5uGk5uHcHFM+es1
+         iU5A==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com;
+ s=arc-20260327;       
+ h=mime-version:date:message-id:feedback-id:to:subject:from        
+ :dkim-signature:dkim-signature;       
+ bh=HZXehvOt9ksGOqtAT/h1UI3XJIsf/Oin817fNEpmWxQ=;       
+ fh=GiaqfUe5KkBwjzvwFX01b41WrICtwgYrtiUhuGbKQcI=;       
+ b=Vuyi9qg/ad8dEoQAGowYhWYPgeKP5Ff60oMZsBxVxdzqpNSMNOj0Qc7/zKIj3JHlUn        
+ Wdg1V9ODsfWcF4XKB6l/v5bvgGa/JHF5LlhLmhI2YKXbR8zAbeya8EGbJiO5ccUdtojy        
+ vL7Ac2I3cL4belLEVXTGWWpDCNEhTWi+wQ7B+uHXc7LX9RWTM5GISJY61CO57RsHztM6        
+ eB60cgWIPtqN8ipfiXxjHaP2jAy5DF/hlEUCEYBRwOfCMCJzP4150lZMOTtlR9OrbYSg        
+ R7oI/BSNZSIo6wE23VE7h85zVRkdS8d0hHB8sq4IPDhcGv7AO/pE7ZSCPFlrLhM2yCus        
+ q3Tw==;        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;       dkim=pass
+ header.i=@mandrillapp.com header.s=mte1 header.b=hiAboFqJ;       dkim=pass
+ header.i=@properstar.com header.s=mte1 header.b="sHElzA/W";       spf=pass
+ (google.com: domain of =?utf-8?q?bounce-md=5F30621253=2E6ad7f74a=2Ev1-f809d?=
+ =?utf-8?q?7677e99470ab7f1c77fd9e203d7=40mandrillapp=2Ecom?= designates
+ 198.2.180.12 as permitted sender) =?utf-8?q?smtp=2Emailfrom=3Dbounce-md=5F3?=
+ =?utf-8?q?0621253=2E6ad7f74a=2Ev1-f809d7677e99470ab7f1c77fd9e203d7=40mandri?=
+ =?utf-8?q?llapp=2Ecom=3B?=       dmarc=pass (p=NONE sp=NONE dis=NONE)
+ header.from=properstar.com
+Return-Path: =?utf-8?q?=3Cbounce-md=5F30621253=2E6ad7f74a=2Ev1-f809d7677e994?=
+ =?utf-8?q?70ab7f1c77fd9e203d7=40mandrillapp=2Ecom=3E?=
+Received: from mail180-12.suw31.mandrillapp.com
+ (mail180-12.suw31.mandrillapp.com. [198.2.180.12])        by mx.google.com
+ with ESMTPS id 586e51a60fabf-4a7d62031f2si1243719fac.193.2026.10.20.16.20.42
+        for <roberto.suscriptions@gmail.com>        (version=TLS1_3
+ cipher=TLS_AES_256_GCM_SHA384 bits=256/256);        Tue, 20 Oct 2026 16:20:43
+ -0700 (PDT)
+Received-SPF: pass (google.com: domain of =?utf-8?q?bounce-md=5F30621253=2E6?=
+ =?utf-8?q?ad7f74a=2Ev1-f809d7677e99470ab7f1c77fd9e203d7=40mandrillapp=2Ecom?=
+ designates 198.2.180.12 as permitted sender) client-ip=198.2.180.12;
+Authentication-Results: mx.google.com;       dkim=pass
+ header.i=@mandrillapp.com header.s=mte1 header.b=hiAboFqJ;       dkim=pass
+ header.i=@properstar.com header.s=mte1 header.b="sHElzA/W";       spf=pass
+ (google.com: domain of =?utf-8?q?bounce-md=5F30621253=2E6ad7f74a=2Ev1-f809d?=
+ =?utf-8?q?7677e99470ab7f1c77fd9e203d7=40mandrillapp=2Ecom?= designates
+ 198.2.180.12 as permitted sender) =?utf-8?q?smtp=2Emailfrom=3Dbounce-md=5F3?=
+ =?utf-8?q?0621253=2E6ad7f74a=2Ev1-f809d7677e99470ab7f1c77fd9e203d7=40mandri?=
+ =?utf-8?q?llapp=2Ecom=3B?=       dmarc=pass (p=NONE sp=NONE dis=NONE)
+ header.from=properstar.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=mandrillapp.com;
+	s=mte1; t=1792538442; x=1792808442;
+	bh=HZXehvOt9ksGOqtAT/h1UI3XJIsf/Oin817fNEpmWxQ=;
+	h=From:Subject:To:Feedback-ID:Message-Id:Date:MIME-Version:
+	 Content-Type:CC:Date:Subject:From;
+	b=hiAboFqJ+RQKEhFxJxZaYE2CtwflMckIvuRv3BrJI1nGenTDO9ycQTJXBWBPVQshX
+	 sLi2bmX7TxGLU6JGZtwurUz58hAxqSCbflxXPoEUEI+GhqD/j+s7N3PhzlNentRTJ/
+	 xd8J/DTe8F9vVZ0yhD5JToSOPK2u+WJxLCxz/nQXty/z1xuXn02TylZVuBECtrt84D
+	 TM7DMvl7Q1WtptfSyIU8s/n8SDBhLYACLwo1Bk/tjQp8MjYegrCvTG3jewmkAOUqcM
+	 Cn+PkwjM/ZqMyJwlbEXwUJrUvljddoCsXDY7ziqSbJ01OGrTkK+r7LVxdL4M2+h8ob
+	 BU8qwrnLdcltQ==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=properstar.com;
+	s=mte1; t=1792538442; x=1792798942; i=noreply@properstar.com;
+	bh=HZXehvOt9ksGOqtAT/h1UI3XJIsf/Oin817fNEpmWxQ=;
+	h=From:Subject:To:Feedback-ID:Message-Id:Date:MIME-Version:
+	 Content-Type:CC:Date:Subject:From;
+	b=sHElzA/WVZ2mj35Cu5qiXsGs9LeST8LCSgv90CehtaMMbb9iVd+jPmB3wFeaK45zl
+	 XOBajsJeaWszPwRRD4aVqa3/AgmtO823cu+WS7TDP+wBpxKMPCuyYhN6ET7OnWSRmH
+	 kY9AX5zXxEWEEbpf+gFtsFXootdORTZp7eNBZaHJSXp3v1MdPxLtqImuMcz2HUc0jC
+	 IU9PF1Jn+63GL5/FLEI3rfDnKE9xbc2h8xF+6ajIMDS8tI3KHeRuKLS1g4HvDZPY6f
+	 DCt01eJPoHHLNAeGc3gRDgq/HCn38qS++jEuIHp/pOyB8VW2V/DD8gA+6AK5LDRlBp
+	 M9ugjRxOmvyww==
+Received: from mta008-md-use2.delv.a.intuit.com (localhost [127.0.0.1])	by
+ mail180-12.suw31.mandrillapp.com (Mailchimp) with ESMTP id 4j8T164mT0z6CQ8hv
+	for <roberto.suscriptions@gmail.com>; Tue, 20 Oct 2026 23:20:42 +0000 (UTC)
+From: Properstar <noreply@properstar.com>
+Subject: =?utf-8?Q?5=20alertes=20pour=20ta=20recherche=20"Lausanne"?=
+Received: from [51.137.8.19] by mandrillapp.com id
+ f809d7677e99470ab7f1c77fd9e203d7; Tue, 20 Oct 2026 23:20:42 +0000
+To: roberto.suscriptions@gmail.com
+X-Native-Encoded: 1
+X-Report-Abuse: Please forward a copy of this message, including all headers,
+ to abuse@mandrill.com. You can also report abuse here: =?utf-8?q?https=3A//?=
+ =?utf-8?q?mandrillapp=2Ecom/contact/abuse=3Fid=3D30621253=2Ef809d7677e99470?=
+ =?utf-8?q?ab7f1c77fd9e203d7?=
+X-Mandrill-User: md_30621253
+Feedback-ID: 30621253:30621253.20261020:md
+Message-Id: <30621253.20261020232042.6ad7f74a9a3b81.01214522@mail180-12.suw31.mandrillapp.com>
+Date: Tue, 20 Oct 2026 23:20:42 +0000
+MIME-Version: 1.0
+Content-Type: multipart/alternative; boundary="_av-Z-Mka-8dBDDr-FqB9iJHfg"
+
+--_av-Z-Mka-8dBDDr-FqB9iJHfg
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+                                                        =3D  5 alertes pour
+ta recherche "Lausanne"  =3D
+
+ 
+         
+      
+                      D=C3=A9couvre toutes les mises =C3=A0 jour
+<https://www.properstar.ch/search?searchId=3D1371478435&profileId=3D2478727=
+350&urltoken=3DNzkzMTc0NGQtNTNjYS00YzI0LTkyNzAtZmJmZGZlZjU2MTE2OnJvYmVydG8u=
+c3VzY3JpcHRpb25zQGdtYWlsLmNvbTo1NDQ0MjMyOg=3D=3D&utm_source=3Demailalerts&u=
+tm_medium=3Demail&utm_campaign=3Dsearch-alert>
+<https://www.properstar.ch/listing/120478833?profileId=3D2478727350&searchI=
+d=3D1371478435&urltoken=3DNzkzMTc0NGQtNTNjYS00YzI0LTkyNzAtZmJmZGZlZjU2MTE2O=
+nJvYmVydG8uc3VzY3JpcHRpb25zQGdtYWlsLmNvbTo1NDQ0MjMyOg=3D=3D&utm_source=3Dem=
+ailalerts&utm_medium=3Demail&utm_campaign=3Dsearch-alert>
+   
+  
+       
+      
+                  =3D=3D=3D  La belle vie =C3=A0 Chailly: 3.5 pi=C3=A8ces t=
+out confort
+<https://www.properstar.ch/listing/120478833?profileId=3D2478727350&searchI=
+d=3D1371478435&urltoken=3DNzkzMTc0NGQtNTNjYS00YzI0LTkyNzAtZmJmZGZlZjU2MTE2O=
+nJvYmVydG8uc3VzY3JpcHRpb25zQGdtYWlsLmNvbTo1NDQ0MjMyOg=3D=3D&utm_source=3Dem=
+ailalerts&utm_medium=3Demail&utm_campaign=3Dsearch-alert>
+ =3D=3D=3D
+
+  Lausanne, Avenue du Temple 13 
+ Appartement =C2=B7 3.5 Pi=C3=A8ces =C2=B7 1 Salles de bains
+<https://www.properstar.ch/listing/120478833?profileId=3D2478727350&searchI=
+d=3D1371478435&urltoken=3DNzkzMTc0NGQtNTNjYS00YzI0LTkyNzAtZmJmZGZlZjU2MTE2O=
+nJvYmVydG8uc3VzY3JpcHRpb25zQGdtYWlsLmNvbTo1NDQ0MjMyOg=3D=3D&utm_source=3Dem=
+ailalerts&utm_medium=3Demail&utm_campaign=3Dsearch-alert>
+
+
+     CHF 800=E2=80=AF000 
+   CHF 890=E2=80=AF000    -90=E2=80=AF000
+<https://www.properstar.ch/listing/120478833?profileId=3D2478727350&searchI=
+d=3D1371478435&urltoken=3DNzkzMTc0NGQtNTNjYS00YzI0LTkyNzAtZmJmZGZlZjU2MTE2O=
+nJvYmVydG8uc3VzY3JpcHRpb25zQGdtYWlsLmNvbTo1NDQ0MjMyOg=3D=3D&utm_source=3Dem=
+ailalerts&utm_medium=3Demail&utm_campaign=3Dsearch-alert>
+<https://www.properstar.ch/listing/121263611?profileId=3D2478727350&searchI=
+d=3D1371478435&urltoken=3DNzkzMTc0NGQtNTNjYS00YzI0LTkyNzAtZmJmZGZlZjU2MTE2O=
+nJvYmVydG8uc3VzY3JpcHRpb25zQGdtYWlsLmNvbTo1NDQ0MjMyOg=3D=3D&utm_source=3Dem=
+ailalerts&utm_medium=3Demail&utm_campaign=3Dsearch-alert>
+   
+  
+       
+      
+                  =3D=3D=3D  Appartement de 4.5 pi=C3=A8ces Minergie avec b=
+alcon de
+20 m=C2=B2
+<https://www.properstar.ch/listing/121263611?profileId=3D2478727350&searchI=
+d=3D1371478435&urltoken=3DNzkzMTc0NGQtNTNjYS00YzI0LTkyNzAtZmJmZGZlZjU2MTE2O=
+nJvYmVydG8uc3VzY3JpcHRpb25zQGdtYWlsLmNvbTo1NDQ0MjMyOg=3D=3D&utm_source=3Dem=
+ailalerts&utm_medium=3Demail&utm_campaign=3Dsearch-alert>
+ =3D=3D=3D
+
+  Lausanne 
+ Appartement =C2=B7 4.5 Pi=C3=A8ces
+<https://www.properstar.ch/listing/121263611?profileId=3D2478727350&searchI=
+d=3D1371478435&urltoken=3DNzkzMTc0NGQtNTNjYS00YzI0LTkyNzAtZmJmZGZlZjU2MTE2O=
+nJvYmVydG8uc3VzY3JpcHRpb25zQGdtYWlsLmNvbTo1NDQ0MjMyOg=3D=3D&utm_source=3Dem=
+ailalerts&utm_medium=3Demail&utm_campaign=3Dsearch-alert>
+
+
+     CHF 1=E2=80=AF190=E2=80=AF000 
+   CHF 1=E2=80=AF290=E2=80=AF000    -100=E2=80=AF000
+<https://www.properstar.ch/listing/121263611?profileId=3D2478727350&searchI=
+d=3D1371478435&urltoken=3DNzkzMTc0NGQtNTNjYS00YzI0LTkyNzAtZmJmZGZlZjU2MTE2O=
+nJvYmVydG8uc3VzY3JpcHRpb25zQGdtYWlsLmNvbTo1NDQ0MjMyOg=3D=3D&utm_source=3Dem=
+ailalerts&utm_medium=3Demail&utm_campaign=3Dsearch-alert>
+<https://www.properstar.ch/listing/121425914?profileId=3D2478727350&searchI=
+d=3D1371478435&urltoken=3DNzkzMTc0NGQtNTNjYS00YzI0LTkyNzAtZmJmZGZlZjU2MTE2O=
+nJvYmVydG8uc3VzY3JpcHRpb25zQGdtYWlsLmNvbTo1NDQ0MjMyOg=3D=3D&utm_source=3Dem=
+ailalerts&utm_medium=3Demail&utm_campaign=3Dsearch-alert>
+   
+  
+       
+      
+                  =3D=3D=3D  COUP DE COEUR ATTIQUE NEUF AVEC GRANDE TERRASS=
+E
+<https://www.properstar.ch/listing/121425914?profileId=3D2478727350&searchI=
+d=3D1371478435&urltoken=3DNzkzMTc0NGQtNTNjYS00YzI0LTkyNzAtZmJmZGZlZjU2MTE2O=
+nJvYmVydG8uc3VzY3JpcHRpb25zQGdtYWlsLmNvbTo1NDQ0MjMyOg=3D=3D&utm_source=3Dem=
+ailalerts&utm_medium=3Demail&utm_campaign=3Dsearch-alert>
+ =3D=3D=3D
+
+  Lausanne (district), Nouveau quartier 
+ Appartement =C2=B7 3.5 Pi=C3=A8ces
+<https://www.properstar.ch/listing/121425914?profileId=3D2478727350&searchI=
+d=3D1371478435&urltoken=3DNzkzMTc0NGQtNTNjYS00YzI0LTkyNzAtZmJmZGZlZjU2MTE2O=
+nJvYmVydG8uc3VzY3JpcHRpb25zQGdtYWlsLmNvbTo1NDQ0MjMyOg=3D=3D&utm_source=3Dem=
+ailalerts&utm_medium=3Demail&utm_campaign=3Dsearch-alert>
+
+
+   CHF 1=E2=80=AF060=E2=80=AF000
+<https://www.properstar.ch/listing/121425914?profileId=3D2478727350&searchI=
+d=3D1371478435&urltoken=3DNzkzMTc0NGQtNTNjYS00YzI0LTkyNzAtZmJmZGZlZjU2MTE2O=
+nJvYmVydG8uc3VzY3JpcHRpb25zQGdtYWlsLmNvbTo1NDQ0MjMyOg=3D=3D&utm_source=3Dem=
+ailalerts&utm_medium=3Demail&utm_campaign=3Dsearch-alert>
+<https://www.properstar.ch/listing/121425912?profileId=3D2478727350&searchI=
+d=3D1371478435&urltoken=3DNzkzMTc0NGQtNTNjYS00YzI0LTkyNzAtZmJmZGZlZjU2MTE2O=
+nJvYmVydG8uc3VzY3JpcHRpb25zQGdtYWlsLmNvbTo1NDQ0MjMyOg=3D=3D&utm_source=3Dem=
+ailalerts&utm_medium=3Demail&utm_campaign=3Dsearch-alert>
+   
+  
+       
+      
+                  =3D=3D=3D  REZ-DE-JARDIN DANS UN NOUVEAU QUARTIER PROCHE =
+DE
+TOUT
+<https://www.properstar.ch/listing/121425912?profileId=3D2478727350&searchI=
+d=3D1371478435&urltoken=3DNzkzMTc0NGQtNTNjYS00YzI0LTkyNzAtZmJmZGZlZjU2MTE2O=
+nJvYmVydG8uc3VzY3JpcHRpb25zQGdtYWlsLmNvbTo1NDQ0MjMyOg=3D=3D&utm_source=3Dem=
+ailalerts&utm_medium=3Demail&utm_campaign=3Dsearch-alert>
+ =3D=3D=3D
+
+  Lausanne (district), Nouveau quartier 
+ Appartement =C2=B7 3.5 Pi=C3=A8ces
+<https://www.properstar.ch/listing/121425912?profileId=3D2478727350&searchI=
+d=3D1371478435&urltoken=3DNzkzMTc0NGQtNTNjYS00YzI0LTkyNzAtZmJmZGZlZjU2MTE2O=
+nJvYmVydG8uc3VzY3JpcHRpb25zQGdtYWlsLmNvbTo1NDQ0MjMyOg=3D=3D&utm_source=3Dem=
+ailalerts&utm_medium=3Demail&utm_campaign=3Dsearch-alert>
+
+
+   CHF 1=E2=80=AF040=E2=80=AF000
+<https://www.properstar.ch/listing/121425912?profileId=3D2478727350&searchI=
+d=3D1371478435&urltoken=3DNzkzMTc0NGQtNTNjYS00YzI0LTkyNzAtZmJmZGZlZjU2MTE2O=
+nJvYmVydG8uc3VzY3JpcHRpb25zQGdtYWlsLmNvbTo1NDQ0MjMyOg=3D=3D&utm_source=3Dem=
+ailalerts&utm_medium=3Demail&utm_campaign=3Dsearch-alert>
+<https://www.properstar.ch/listing/121425911?profileId=3D2478727350&searchI=
+d=3D1371478435&urltoken=3DNzkzMTc0NGQtNTNjYS00YzI0LTkyNzAtZmJmZGZlZjU2MTE2O=
+nJvYmVydG8uc3VzY3JpcHRpb25zQGdtYWlsLmNvbTo1NDQ0MjMyOg=3D=3D&utm_source=3Dem=
+ailalerts&utm_medium=3Demail&utm_campaign=3Dsearch-alert>
+   
+  
+       
+      
+                  =3D=3D=3D  COUP DE C=C5=92UR NOUVEAU QUARTIER =C3=89COLOG=
+IQUE DANS UN
+ECRIN DE VERDURE
+<https://www.properstar.ch/listing/121425911?profileId=3D2478727350&searchI=
+d=3D1371478435&urltoken=3DNzkzMTc0NGQtNTNjYS00YzI0LTkyNzAtZmJmZGZlZjU2MTE2O=
+nJvYmVydG8uc3VzY3JpcHRpb25zQGdtYWlsLmNvbTo1NDQ0MjMyOg=3D=3D&utm_source=3Dem=
+ailalerts&utm_medium=3Demail&utm_campaign=3Dsearch-alert>
+ =3D=3D=3D
+
+  Lausanne (district), Nouveau quartier 
+ Appartement =C2=B7 3.5 Pi=C3=A8ces
+<https://www.properstar.ch/listing/121425911?profileId=3D2478727350&searchI=
+d=3D1371478435&urltoken=3DNzkzMTc0NGQtNTNjYS00YzI0LTkyNzAtZmJmZGZlZjU2MTE2O=
+nJvYmVydG8uc3VzY3JpcHRpb25zQGdtYWlsLmNvbTo1NDQ0MjMyOg=3D=3D&utm_source=3Dem=
+ailalerts&utm_medium=3Demail&utm_campaign=3Dsearch-alert>
+
+
+   CHF 995=E2=80=AF000
+<https://www.properstar.ch/listing/121425911?profileId=3D2478727350&searchI=
+d=3D1371478435&urltoken=3DNzkzMTc0NGQtNTNjYS00YzI0LTkyNzAtZmJmZGZlZjU2MTE2O=
+nJvYmVydG8uc3VzY3JpcHRpb25zQGdtYWlsLmNvbTo1NDQ0MjMyOg=3D=3D&utm_source=3Dem=
+ailalerts&utm_medium=3Demail&utm_campaign=3Dsearch-alert>
+<https://www.properstar.ch/search?searchId=3D1371478435&profileId=3D2478727=
+350&urltoken=3DNzkzMTc0NGQtNTNjYS00YzI0LTkyNzAtZmJmZGZlZjU2MTE2OnJvYmVydG8u=
+c3VzY3JpcHRpb25zQGdtYWlsLmNvbTo1NDQ0MjMyOg=3D=3D&utm_source=3Demailalerts&u=
+tm_medium=3Demail&utm_campaign=3Dsearch-alert>
+             Voir toutes les mises =C3=A0 jour
+<https://www.properstar.ch/search?searchId=3D1371478435&profileId=3D2478727=
+350&urltoken=3DNzkzMTc0NGQtNTNjYS00YzI0LTkyNzAtZmJmZGZlZjU2MTE2OnJvYmVydG8u=
+c3VzY3JpcHRpb25zQGdtYWlsLmNvbTo1NDQ0MjMyOg=3D=3D&utm_source=3Demailalerts&u=
+tm_medium=3Demail&utm_campaign=3Dsearch-alert>
+            
+      
+                    
+        Trop d'e-mails ? 
+       Passer aux notifications quotidiennes
+<https://www.properstar.ch/search?searchId=3D1371478435&frq=3DDaily&urlToke=
+n=3DNzkzMTc0NGQtNTNjYS00YzI0LTkyNzAtZmJmZGZlZjU2MTE2OnJvYmVydG8uc3VzY3JpcHR=
+pb25zQGdtYWlsLmNvbTo1NDQ0MjMyOg=3D=3D&utm_source=3Demailalerts&utm_medium=
+=3Demail&utm_campaign=3Dsearch-alert>
+
+             
+       
+                  
+
+      T=C3=A9l=C3=A9charger l'application
+<https://apps.apple.com/app/apple-store/id1253028900?pt=3D118713609&ct=3Dps=
+_email_search_alert&mt=3D8
+>
+<https://play.google.com/store/apps/details?id=3Dcom.listglobally.propersta=
+r&utm_source=3Demailalerts&utm_medium=3Demail&utm_campaign=3Dsearch-alert>
+            
+      
+                                  
+      
+                 Properstar SA, Rue Centrale 8, Vaud 1003 Lausanne,
+Switzerland
+     Properstar.com
+<https://www.properstar.ch/contact?token=3DNzkzMTc0NGQtNTNjYS00YzI0LTkyNzAt=
+ZmJmZGZlZjU2MTE2OnJvYmVydG8uc3VzY3JpcHRpb25zQGdtYWlsLmNvbTo1NDQ0MjMyOg=3D=
+=3D&utm_source=3Demailalerts&utm_medium=3Demail&utm_campaign=3Dsearch-alert=
+>
+Se d=C3=A9sinscrire
+<https://www.properstar.ch/unsubscribe?unsublink=3D1371478435&userId=3D5444=
+232&userEmail=3Droberto.suscriptions@gmail.com&profileId=3D2478727350&urlto=
+ken=3DNzkzMTc0NGQtNTNjYS00YzI0LTkyNzAtZmJmZGZlZjU2MTE2OnJvYmVydG8uc3VzY3Jpc=
+HRpb25zQGdtYWlsLmNvbTo1NDQ0MjMyOg=3D=3D&utm_source=3Demailalerts&utm_medium=
+=3Demail&utm_campaign=3Dsearch-alert>
+
+     =E2=80=8A
+
+--_av-Z-Mka-8dBDDr-FqB9iJHfg
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+<!doctype html>
+<html lang=3D"und" dir=3D"auto" xmlns=3D"http://www.w3.org/1999/xhtml" xmln=
+s:v=3D"urn:schemas-microsoft-com:vml" xmlns:o=3D"urn:schemas-microsoft-com:=
+office:office">
+
+<head>
+  <title></title>
+  <!--[if !mso]><!-->
+  <meta http-equiv=3D"X-UA-Compatible" content=3D"IE=3Dedge">
+  <!--<![endif]-->
+  <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8">
+  <meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scale=3D=
+1">
+  <style type=3D"text/css">
+    #outlook a {
+      padding: 0;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      -webkit-text-size-adjust: 100%;
+      -ms-text-size-adjust: 100%;
+    }
+
+    table,
+    td {
+      border-collapse: collapse;
+      mso-table-lspace: 0pt;
+      mso-table-rspace: 0pt;
+    }
+
+    img {
+      border: 0;
+      height: auto;
+      line-height: 100%;
+      outline: none;
+      text-decoration: none;
+      -ms-interpolation-mode: bicubic;
+    }
+
+    p {
+      display: block;
+      margin: 13px 0;
+    }
+
+  </style>
+  <!--[if mso]>
+    <noscript>
+    <xml>
+    <o:OfficeDocumentSettings>
+      <o:AllowPNG/>
+      <o:PixelsPerInch>96</o:PixelsPerInch>
+    </o:OfficeDocumentSettings>
+    </xml>
+    </noscript>
+    <![endif]-->
+  <!--[if lte mso 11]>
+    <style type=3D"text/css">
+      .mj-outlook-group-fix { width:100% !important; }
+    </style>
+    <![endif]-->
+  <!--[if !mso]><!-->
+  <link href=3D"https://fonts.googleapis.com/css?family=3DRoboto:300,400,50=
+0,700" rel=3D"stylesheet" type=3D"text/css">
+  <style type=3D"text/css">
+    @import url(https://fonts.googleapis.com/css?family=3DRoboto:300,400,50=
+0,700);
+
+  </style>
+  <!--<![endif]-->
+  <style type=3D"text/css">
+    @media only screen and (min-width:480px) {
+      .mj-column-per-100 {
+        width: 100% !important;
+        max-width: 100%;
+      }
+
+      .mj-column-per-50 {
+        width: 50% !important;
+        max-width: 50%;
+      }
+    }
+
+  </style>
+  <style media=3D"screen and (min-width:480px)">
+    .moz-text-html .mj-column-per-100 {
+      width: 100% !important;
+      max-width: 100%;
+    }
+
+    .moz-text-html .mj-column-per-50 {
+      width: 50% !important;
+      max-width: 50%;
+    }
+
+  </style>
+  <style type=3D"text/css">
+    @media only screen and (max-width:479px) {
+      table.mj-full-width-mobile {
+        width: 100% !important;
+      }
+
+      td.mj-full-width-mobile {
+        width: auto !important;
+      }
+    }
+
+  </style>
+  <style type=3D"text/css">
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p {
+      -webkit-text-size-adjust: none;
+    }
+
+    @media (max-width:599px) {
+      .stack-column-center {
+        display: block !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        direction: ltr !important;
+      }
+
+      .listing-premium-background>a {
+        padding: 95px 50% !important;
+      }
+    }
+
+  </style>
+  <!--[if (mso)|(mso 16)]>
+        <style type=3D"text/css">
+          body, table, td, a, span { font-family:-apple-system, BlinkMacSys=
+temFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif, Apple Color Emoji,=
+ Segoe UI Emoji, Segoe UI Symbol; }
+          a {text-decoration: none;}
+        </style>
+      <![endif]-->
+</head>
+
+<body style=3D"word-spacing:normal;margin:0;padding:0;-webkit-text-size-adj=
+ust:100%;-ms-text-size-adjust:100%;">
+  <div aria-roledescription=3D"email" style=3D"" role=3D"article" lang=3D"u=
+nd" dir=3D"auto">
+    <!--yahoo styles-->
+    <style type=3D"text/css">
+      @media (max-width:599px) {
+
+        .stack-column,
+        .stack-column-center {
+          display: block !important;
+          width: 100% !important;
+          max-width: 100% !important;
+          direction: ltr !important;
+        }
+
+        .listing-premium-background>a {
+          padding: 95px 50% !important;
+        }
+
+        td[class=3D"stack-column-center"] {
+          display: block !important;
+          width: 100% !important;
+          max-width: 100% !important;
+          direction: ltr !important;
+        }
+
+        td[class=3D"listing-premium-background"]>a {
+          padding: 95px 50% !important;
+        }
+
+        div[id=3D"message-body"] {
+          transform: scale(1) !important;
+        }
+      }
+
+    </style>
+    <!--[if mso | IE]><table align=3D"center" border=3D"0" cellpadding=3D"0=
+" cellspacing=3D"0" class=3D"introduction-section-outlook" role=3D"presenta=
+tion" style=3D"width:600px;" width=3D"600" ><tr><td style=3D"line-height:0p=
+x;font-size:0px;mso-line-height-rule:exactly;"><![endif]-->
+    <div class=3D"introduction-section" style=3D"margin:0px auto;max-width:=
+600px;">
+      <table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D=
+"0" role=3D"presentation" style=3D"width:100%;border-collapse:collapse;mso-=
+table-lspace:0pt;mso-table-rspace:0pt;">
+        <tbody>
+          <tr>
+            <td style=3D"padding-bottom:20px;direction:ltr;font-size:0px;pa=
+dding:0;text-align:center;border-collapse:collapse;mso-table-lspace:0pt;mso=
+-table-rspace:0pt;" align=3D"center">
+              <!--[if mso | IE]><table role=3D"presentation" border=3D"0" c=
+ellpadding=3D"0" cellspacing=3D"0"><tr><td class=3D"" style=3D"vertical-ali=
+gn:top;width:600px;" ><![endif]-->
+              <div class=3D"mj-column-per-100 mj-outlook-group-fix" style=
+=3D"font-size:0px;text-align:left;direction:ltr;display:inline-block;vertic=
+al-align:top;width:100%;">
+                <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" rol=
+e=3D"presentation" width=3D"100%" style=3D"border-collapse:collapse;mso-tab=
+le-lspace:0pt;mso-table-rspace:0pt;">
+                  <tbody>
+                    <tr>
+                      <td style=3D"padding-bottom:20px;vertical-align:top;p=
+adding:10px 15px;border-collapse:collapse;mso-table-lspace:0pt;mso-table-rs=
+pace:0pt;" valign=3D"top">
+                        <table border=3D"0" cellpadding=3D"0" cellspacing=
+=3D"0" role=3D"presentation" style=3D"border-collapse:collapse;mso-table-ls=
+pace:0pt;mso-table-rspace:0pt;" width=3D"100%">
+                          <tbody>
+                            
+                              <tr>
+                                <td align=3D"left" class=3D"header-logo" st=
+yle=3D"text-align:left;line-height:0px;font-size:0px;padding:10px 0px;paddi=
+ng-bottom:0px;word-break:break-word;border-collapse:collapse;mso-table-lspa=
+ce:0pt;mso-table-rspace:0pt;">
+                                  <table border=3D"0" cellpadding=3D"0" cel=
+lspacing=3D"0" role=3D"presentation" style=3D"line-height:0px;text-align:le=
+ft;border-collapse:collapse;border-spacing:0px;mso-table-lspace:0pt;mso-tab=
+le-rspace:0pt;" align=3D"left">
+                                    <tbody>
+                                      <tr>
+                                        <td style=3D"padding-bottom:20px;te=
+xt-align:left;line-height:0px;width:142px;border-collapse:collapse;mso-tabl=
+e-lspace:0pt;mso-table-rspace:0pt;" width=3D"142" align=3D"left">
+                                          <img alt=3D"PROPERSTAR" src=3D"ht=
+tps://res.listglobally.com/email/common/properstar-logo-transparent" style=
+=3D"line-height:0px;border:0;display:block;outline:none;text-decoration:non=
+e;height:22px;width:100%;font-size:13px;-ms-interpolation-mode:bicubic;" wi=
+dth=3D"142" height=3D"22">
+                                        </td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                                </td>
+                              </tr>
+                            
+                              <tr>
+                                <td align=3D"left" style=3D"font-size:0px;p=
+adding:10px 0px;padding-top:23px;padding-bottom:16px;word-break:break-word;=
+border-collapse:collapse;mso-table-lspace:0pt;mso-table-rspace:0pt;">
+                                  <div style=3D"font-family:-apple-system, =
+BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif, Apple C=
+olor Emoji, Segoe UI Emoji, Segoe UI Symbol;font-size:16px;font-weight:400;=
+line-height:24px;text-align:left;color:#323232;">
+                                    <h1 style=3D"-webkit-text-size-adjust: =
+none; font-weight: 600; color: #333333; margin: 0; line-height: 28px; font-=
+size: 24px;">
+                                      5 alertes pour ta recherche &quot;Lau=
+sanne&quot;
+                                    </h1>
+                                  </div>
+                                </td>
+                              </tr>
+                            
+                          </tbody>
+                        </table>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <!--[if mso | IE]></td></tr></table><![endif]-->
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <!--[if mso | IE]></td></tr></table><table align=3D"center" border=3D"0=
+" cellpadding=3D"0" cellspacing=3D"0" class=3D"" role=3D"presentation" styl=
+e=3D"width:600px;" width=3D"600" ><tr><td style=3D"line-height:0px;font-siz=
+e:0px;mso-line-height-rule:exactly;"><![endif]-->
+    <div style=3D"margin:0px auto;max-width:600px;">
+      <table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D=
+"0" role=3D"presentation" style=3D"width:100%;border-collapse:collapse;mso-=
+table-lspace:0pt;mso-table-rspace:0pt;">
+        <tbody>
+          <tr>
+            <td style=3D"direction:ltr;font-size:0px;padding:0 15px 48px 15=
+px;text-align:center;border-collapse:collapse;mso-table-lspace:0pt;mso-tabl=
+e-rspace:0pt;">
+              <!--[if mso | IE]><table role=3D"presentation" border=3D"0" c=
+ellpadding=3D"0" cellspacing=3D"0"><tr><td class=3D"" style=3D"vertical-ali=
+gn:top;width:570px;" ><![endif]-->
+              <div class=3D"mj-column-per-100 mj-outlook-group-fix" style=
+=3D"font-size:0px;text-align:left;direction:ltr;display:inline-block;vertic=
+al-align:top;width:100%;">
+                <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" rol=
+e=3D"presentation" width=3D"100%" style=3D"border-collapse:collapse;mso-tab=
+le-lspace:0pt;mso-table-rspace:0pt;">
+                  <tbody>
+                    <tr>
+                      <td style=3D"vertical-align:top;padding:0px;border-co=
+llapse:collapse;mso-table-lspace:0pt;mso-table-rspace:0pt;">
+                        <table border=3D"0" cellpadding=3D"0" cellspacing=
+=3D"0" role=3D"presentation" style=3D"border-collapse:collapse;mso-table-ls=
+pace:0pt;mso-table-rspace:0pt;" width=3D"100%">
+                          <tbody>
+                            <tr>
+                              <td valign=3D"top" align=3D"left" style=3D"wi=
+dth:100%;border-collapse:collapse;mso-table-lspace:0pt;mso-table-rspace:0pt=
+;">
+                                <table border=3D"0" cellpadding=3D"0" cells=
+pacing=3D"0" role=3D"presentation" style=3D"border-collapse:separate;line-h=
+eight:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;">
+                                  <tbody>
+                                    <tr>
+                                      <td align=3D"center" bgcolor=3D"#0087=
+8e" role=3D"presentation" style=3D"border:none;border-radius:6px;cursor:aut=
+o;height:40px;mso-padding-alt:9px 18px;background:#00878e;border-collapse:c=
+ollapse;mso-table-lspace:0pt;mso-table-rspace:0pt;" valign=3D"middle">
+                                        <a href=3D"https://www.properstar.c=
+h/search?searchId=3D1371478435&profileId=3D2478727350&urltoken=3DNzkzMTc0NG=
+QtNTNjYS00YzI0LTkyNzAtZmJmZGZlZjU2MTE2OnJvYmVydG8uc3VzY3JpcHRpb25zQGdtYWlsL=
+mNvbTo1NDQ0MjMyOg=3D=3D&utm_source=3Demailalerts&utm_medium=3Demail&utm_cam=
+paign=3Dsearch-alert" style=3D"display:inline-block;background:#00878e;colo=
+r:#ffffff;font-family:-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, =
+Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI S=
+ymbol;font-size:16px;font-weight:400;line-height:22px;margin:0;text-decorat=
+ion:none;text-transform:none;padding:9px 18px;mso-padding-alt:0px;border-ra=
+dius:6px;" target=3D"_blank">
+                                          D=C3=A9couvre toutes les mises =
+=C3=A0 jour
+                                        </a>
+                                      </td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <!--[if mso | IE]></td></tr></table><![endif]-->
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <!--[if mso | IE]></td></tr></table><![endif]-->
+    
+        <!--[if mso | IE]><table align=3D"center" border=3D"0" cellpadding=
+=3D"0" cellspacing=3D"0" class=3D"" role=3D"presentation" style=3D"width:60=
+0px;" width=3D"600" ><tr><td style=3D"line-height:0px;font-size:0px;mso-lin=
+e-height-rule:exactly;"><![endif]-->
+        <div style=3D"margin:0px auto;max-width:600px;">
+          <table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacin=
+g=3D"0" role=3D"presentation" style=3D"width:100%;border-collapse:collapse;=
+mso-table-lspace:0pt;mso-table-rspace:0pt;">
+            <tbody>
+              <tr>
+                <td style=3D"direction:ltr;font-size:0px;padding:0;text-ali=
+gn:center;border-collapse:collapse;mso-table-lspace:0pt;mso-table-rspace:0p=
+t;">
+                  <!--[if mso | IE]><table role=3D"presentation" border=3D"=
+0" cellpadding=3D"0" cellspacing=3D"0"><tr><td class=3D"" style=3D"vertical=
+-align:top;width:600px;" ><![endif]-->
+                  <div class=3D"mj-column-per-100 mj-outlook-group-fix" sty=
+le=3D"font-size:0px;text-align:left;direction:ltr;display:inline-block;vert=
+ical-align:top;width:100%;">
+                    <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0"=
+ role=3D"presentation" width=3D"100%" style=3D"border-collapse:collapse;mso=
+-table-lspace:0pt;mso-table-rspace:0pt;">
+                      <tbody>
+                        <tr>
+                          <td style=3D"vertical-align:top;padding:0px 15px;=
+border-collapse:collapse;mso-table-lspace:0pt;mso-table-rspace:0pt;">
+                            <table border=3D"0" cellpadding=3D"0" cellspaci=
+ng=3D"0" role=3D"presentation" style=3D"border-collapse:collapse;mso-table-=
+lspace:0pt;mso-table-rspace:0pt;" width=3D"100%">
+                              <tbody>
+                                <div style=3D"width: 100%;overflow: hidden;=
+">
+                                  <!--[if mso | IE]><table align=3D"center"=
+ border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" sty=
+le=3D"width:600px;" width=3D"600" ><tr><td align=3D"center" style=3D"paddin=
+g-bottom: 20px; line-height: 0px; font-size: 0px; padding: 10px 15px; word-=
+break: break-word; padding-top: 0;mso-padding-alt: 0px 0px;"><table border=
+=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"b=
+order-collapse:collapse;border-spacing:0px;"><tbody><tr><td style=3D"font-s=
+ize:0;padding-bottom: 20px; line-height: 100%; width: 570px;padding-top: 0;=
+mso-padding-alt: 0px 0px;"width=3D"570"><a href=3D"https://www.properstar.c=
+h/listing/120478833?profileId=3D2478727350&searchId=3D1371478435&urltoken=
+=3DNzkzMTc0NGQtNTNjYS00YzI0LTkyNzAtZmJmZGZlZjU2MTE2OnJvYmVydG8uc3VzY3JpcHRp=
+b25zQGdtYWlsLmNvbTo1NDQ0MjMyOg=3D=3D&utm_source=3Demailalerts&utm_medium=3D=
+email&utm_campaign=3Dsearch-alert" target=3D"_blank" style=3D"font-size:0;"=
+><img height=3D"342" src=3D"https://files-api.properstar.com/api/v2/files/e=
+3ecf5a0-6829-4ab7-9eb1-714a1e78c866/1?mode=3Dcrop&width=3D1280&height=3D853=
+&format=3Djpeg" style=3D"border-width: 0; border: 0; border-radius: 8px; di=
+splay: block; outline: none; text-decoration: none; height: auto; width: 57=
+0px; font-size:0;;line-height:0px" width=3D"570"></a></td></tr></tbody></ta=
+ble><![endif]-->
+                                  <div style=3D"max-width:600px;overflow: h=
+idden; border-radius: 8px;position: relative;mso-hide:all;line-height: 0;ms=
+o-padding-alt: 0px 0px;">
+                                    <table border=3D"0" cellpadding=3D"0" c=
+ellspacing=3D"0" role=3D"presentation" style=3D"width:100%;mso-hide:all;lin=
+e-height:0;mso-padding-alt:0px 0px;border-collapse:collapse;mso-table-lspac=
+e:0pt;mso-table-rspace:0pt;">
+                                      <tr style=3D"vertical-align:top;">
+                                        <td class=3D"listing-background" ba=
+ckground=3D"https://files-api.properstar.com/api/v2/files/e3ecf5a0-6829-4ab=
+7-9eb1-714a1e78c866/1?mode=3Dcrop&width=3D1280&height=3D853&format=3Djpeg" =
+style=3D"background-image:url(https://files-api.properstar.com/api/v2/files=
+/e3ecf5a0-6829-4ab7-9eb1-714a1e78c866/1?mode=3Dcrop&width=3D1280&height=3D8=
+53&format=3Djpeg);background-position:center;background-repeat:no-repeat;ba=
+ckground-size:cover;vertical-align:top;border-radius:8px;z-index:16;mso-pad=
+ding-alt:0px 0px;line-height:0;mso-hide:all;font-size:0;border-collapse:col=
+lapse;mso-table-lspace:0pt;mso-table-rspace:0pt;" height=3D"-290">
+                                          <a style=3D"padding: 190px 0;widt=
+h: 100%;z-index: 17;mso-padding-alt: 0px 0px;line-height: 0;font-size:0;dis=
+play:block;" href=3D"https://www.properstar.ch/listing/120478833?profileId=
+=3D2478727350&searchId=3D1371478435&urltoken=3DNzkzMTc0NGQtNTNjYS00YzI0LTky=
+NzAtZmJmZGZlZjU2MTE2OnJvYmVydG8uc3VzY3JpcHRpb25zQGdtYWlsLmNvbTo1NDQ0MjMyOg=
+=3D=3D&utm_source=3Demailalerts&utm_medium=3Demail&utm_campaign=3Dsearch-al=
+ert">
+                                          </a>
+                                        </td>
+                                      </tr>
+                                    </table>
+                                  </div>
+                                  <!--[if mso | IE]></td></tr></table><![en=
+dif]-->
+                                </div>
+                              </tbody>
+                            </table>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <!--[if mso | IE]></td></tr></table><![endif]-->
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <!--[if mso | IE]></td></tr></table><table align=3D"center" border=
+=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"" role=3D"presentation"=
+ style=3D"width:600px;" width=3D"600" ><tr><td style=3D"line-height:0px;fon=
+t-size:0px;mso-line-height-rule:exactly;"><![endif]-->
+        <div style=3D"margin:0px auto;max-width:600px;">
+          <table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacin=
+g=3D"0" role=3D"presentation" style=3D"width:100%;border-collapse:collapse;=
+mso-table-lspace:0pt;mso-table-rspace:0pt;">
+            <tbody>
+              <tr>
+                <td style=3D"direction:ltr;font-size:0px;padding:0;text-ali=
+gn:center;border-collapse:collapse;mso-table-lspace:0pt;mso-table-rspace:0p=
+t;">
+                  <!--[if mso | IE]><table role=3D"presentation" border=3D"=
+0" cellpadding=3D"0" cellspacing=3D"0"><tr><td class=3D"listing-data-luxury=
+-outlook" style=3D"vertical-align:top;width:600px;" ><![endif]-->
+                  <div class=3D"mj-column-per-100 mj-outlook-group-fix list=
+ing-data-luxury" style=3D"font-size:0px;text-align:left;direction:ltr;displ=
+ay:inline-block;vertical-align:top;width:100%;">
+                    <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0"=
+ role=3D"presentation" width=3D"100%" style=3D"table-layout:fixed;border-co=
+llapse:collapse;mso-table-lspace:0pt;mso-table-rspace:0pt;">
+                      <tbody>
+                        <tr>
+                          <td style=3D"vertical-align:top;padding:10px 15px=
+;border-collapse:collapse;mso-table-lspace:0pt;mso-table-rspace:0pt;">
+                            <table border=3D"0" cellpadding=3D"0" cellspaci=
+ng=3D"0" role=3D"presentation" style=3D"border-collapse:collapse;mso-table-=
+lspace:0pt;mso-table-rspace:0pt;" width=3D"100%">
+                              <tbody>
+                                <tr>
+                                  <td align=3D"left" style=3D"font-size:0px=
+;padding:10px 0px;word-break:break-word;border-collapse:collapse;mso-table-=
+lspace:0pt;mso-table-rspace:0pt;">
+                                    <div style=3D"font-family:-apple-system=
+, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif, Apple=
+ Color Emoji, Segoe UI Emoji, Segoe UI Symbol;font-size:16px;font-weight:40=
+0;line-height:24px;text-align:left;color:#323232;">
+                                      <h4 class=3D"listing-title" style=3D"=
+line-height: 22px; margin: 0; margin-bottom: 8px; color: #323232; font-weig=
+ht: 400; text-decoration: none; width: 100%; max-width: 100%; -ms-text-size=
+-adjust: 100%; white-space: normal; word-break: break-word; font-size: 16px=
+; -webkit-text-size-adjust: 100%;">
+                                        <a style=3D"color:#323232;text-deco=
+ration: none;-ms-text-size-adjust: 100%;-webkit-text-size-adjust:none;" hre=
+f=3D"https://www.properstar.ch/listing/120478833?profileId=3D2478727350&sea=
+rchId=3D1371478435&urltoken=3DNzkzMTc0NGQtNTNjYS00YzI0LTkyNzAtZmJmZGZlZjU2M=
+TE2OnJvYmVydG8uc3VzY3JpcHRpb25zQGdtYWlsLmNvbTo1NDQ0MjMyOg=3D=3D&utm_source=
+=3Demailalerts&utm_medium=3Demail&utm_campaign=3Dsearch-alert">La belle vie=
+ =C3=A0 Chailly: 3.5 pi=C3=A8ces tout confort</a>
+                                      </h4>
+                                      <p style=3D"font-size:13px;font-weigh=
+t:400;margin:0;color:#797979;line-height:18px;width:100%;max-width:100%;-ms=
+-text-size-adjust:100%;-webkit-text-size-adjust:none;padding-bottom:15px;wh=
+ite-space:normal;word-break:break-word;display:block;">
+                                        <a style=3D"text-decoration: none;c=
+olor: #797979;" href=3D"https://www.properstar.ch/listing/120478833?profile=
+Id=3D2478727350&searchId=3D1371478435&urltoken=3DNzkzMTc0NGQtNTNjYS00YzI0LT=
+kyNzAtZmJmZGZlZjU2MTE2OnJvYmVydG8uc3VzY3JpcHRpb25zQGdtYWlsLmNvbTo1NDQ0MjMyO=
+g=3D=3D&utm_source=3Demailalerts&utm_medium=3Demail&utm_campaign=3Dsearch-a=
+lert">Lausanne, Avenue du Temple 13
+                                          <br>
+                                          
+                                            Appartement
+                                          
+                                          
+                                            =C2=B7 3.5 Pi=C3=A8ces
+                                          
+                                          
+                                          
+                                            =C2=B7 1 Salles de bains
+                                          
+                                          
+                                        </a>
+                                      </p>
+                                      <h3 style=3D"margin: 0; line-height: =
+28px; overflow: hidden; -ms-text-size-adjust: 100%; -webkit-text-size-adjus=
+t: none; font-weight: 600; font-size: 20px;">
+                                        <a style=3D"color:#333333;text-deco=
+ration: none;width: 100%;max-width: 100%;-ms-text-size-adjust: 100%;-webkit=
+-text-size-adjust:none;" href=3D"https://www.properstar.ch/listing/12047883=
+3?profileId=3D2478727350&searchId=3D1371478435&urltoken=3DNzkzMTc0NGQtNTNjY=
+S00YzI0LTkyNzAtZmJmZGZlZjU2MTE2OnJvYmVydG8uc3VzY3JpcHRpb25zQGdtYWlsLmNvbTo1=
+NDQ0MjMyOg=3D=3D&utm_source=3Demailalerts&utm_medium=3Demail&utm_campaign=
+=3Dsearch-alert">
+                                          
+                                            
+                                              <div class=3D"price-drop">
+                                                <div class=3D"price-value" =
+style=3D"color: #008E53;">
+                                                  CHF 800=E2=80=AF000
+                                                </div>
+                                                <div class=3D"price-change-=
+line" style=3D"line-height: 1;">
+                                                  <span class=3D"price-prev=
+" style=3D"font-size: 16px; text-decoration: line-through;">
+                                                    CHF 890=E2=80=AF000
+                                                  </span>
+                                                  <span class=3D"price-diff=
+" style=3D"font-size: 16px; border-radius: 3px; color: #008E53;"> &nbsp;-90=
+=E2=80=AF000&nbsp; </span>
+                                                </div>
+                                              </div>
+                                              
+                                          
+                                        </a>
+                                      </h3>
+                                    </div>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <!--[if mso | IE]></td></tr></table><![endif]-->
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <!--[if mso | IE]></td></tr></table><![endif]-->
+      
+      <!--[if mso | IE]><table align=3D"center" border=3D"0" cellpadding=3D=
+"0" cellspacing=3D"0" class=3D"" role=3D"presentation" style=3D"width:600px=
+;" width=3D"600" ><tr><td style=3D"line-height:0px;font-size:0px;mso-line-h=
+eight-rule:exactly;"><![endif]-->
+      <div style=3D"margin:0px auto;max-width:600px;">
+        <table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=
+=3D"0" role=3D"presentation" style=3D"width:100%;border-collapse:collapse;m=
+so-table-lspace:0pt;mso-table-rspace:0pt;">
+          <tbody>
+            <tr>
+              <td style=3D"direction:ltr;font-size:0px;padding:0;text-align=
+:center;border-collapse:collapse;mso-table-lspace:0pt;mso-table-rspace:0pt;=
+">
+                <!--[if mso | IE]><table role=3D"presentation" border=3D"0"=
+ cellpadding=3D"0" cellspacing=3D"0"><tr><td class=3D"" style=3D"vertical-a=
+lign:top;width:600px;" ><![endif]-->
+                <div class=3D"mj-column-per-100 mj-outlook-group-fix" style=
+=3D"font-size:0px;text-align:left;direction:ltr;display:inline-block;vertic=
+al-align:top;width:100%;">
+                  <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" r=
+ole=3D"presentation" width=3D"100%" style=3D"border-collapse:collapse;mso-t=
+able-lspace:0pt;mso-table-rspace:0pt;">
+                    <tbody>
+                      <tr>
+                        <td style=3D"vertical-align:top;padding:10px 15px;b=
+order-collapse:collapse;mso-table-lspace:0pt;mso-table-rspace:0pt;">
+                          <table border=3D"0" cellpadding=3D"0" cellspacing=
+=3D"0" role=3D"presentation" style=3D"border-collapse:collapse;mso-table-ls=
+pace:0pt;mso-table-rspace:0pt;" width=3D"100%">
+                            <tbody>
+                              <tr>
+                                <td align=3D"center" style=3D"font-size:0px=
+;padding:0px;word-break:break-word;border-collapse:collapse;mso-table-lspac=
+e:0pt;mso-table-rspace:0pt;">
+                                  <p style=3D"-ms-text-size-adjust:100%;-we=
+bkit-text-size-adjust:none;border-top:solid 1px #DDDDDD;font-size:1px;margi=
+n:0px auto;width:100%;display:block;">
+                                  </p>
+                                  <!--[if mso | IE]><table align=3D"center"=
+ border=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"border-top:solid=
+ 1px #DDDDDD;font-size:1px;margin:0px auto;width:570px;" role=3D"presentati=
+on" width=3D"570px" ><tr><td style=3D"height:0;line-height:0;"> &nbsp;
+</td></tr></table><![endif]-->
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <!--[if mso | IE]></td></tr></table><![endif]-->
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <!--[if mso | IE]></td></tr></table><![endif]-->
+    
+        <!--[if mso | IE]><table align=3D"center" border=3D"0" cellpadding=
+=3D"0" cellspacing=3D"0" class=3D"" role=3D"presentation" style=3D"width:60=
+0px;" width=3D"600" ><tr><td style=3D"line-height:0px;font-size:0px;mso-lin=
+e-height-rule:exactly;"><![endif]-->
+        <div style=3D"margin:0px auto;max-width:600px;">
+          <table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacin=
+g=3D"0" role=3D"presentation" style=3D"width:100%;border-collapse:collapse;=
+mso-table-lspace:0pt;mso-table-rspace:0pt;">
+            <tbody>
+              <tr>
+                <td style=3D"direction:ltr;font-size:0px;padding:0;text-ali=
+gn:center;border-collapse:collapse;mso-table-lspace:0pt;mso-table-rspace:0p=
+t;">
+                  <!--[if mso | IE]><table role=3D"presentation" border=3D"=
+0" cellpadding=3D"0" cellspacing=3D"0"><tr><td class=3D"" style=3D"vertical=
+-align:top;width:600px;" ><![endif]-->
+                  <div class=3D"mj-column-per-100 mj-outlook-group-fix" sty=
+le=3D"font-size:0px;text-align:left;direction:ltr;display:inline-block;vert=
+ical-align:top;width:100%;">
+                    <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0"=
+ role=3D"presentation" width=3D"100%" style=3D"border-collapse:collapse;mso=
+-table-lspace:0pt;mso-table-rspace:0pt;">
+                      <tbody>
+                        <tr>
+                          <td style=3D"vertical-align:top;padding:0px 15px;=
+border-collapse:collapse;mso-table-lspace:0pt;mso-table-rspace:0pt;">
+                            <table border=3D"0" cellpadding=3D"0" cellspaci=
+ng=3D"0" role=3D"presentation" style=3D"border-collapse:collapse;mso-table-=
+lspace:0pt;mso-table-rspace:0pt;" width=3D"100%">
+                              <tbody>
+                                <div style=3D"width: 100%;overflow: hidden;=
+">
+                                  <!--[if mso | IE]><table align=3D"center"=
+ border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" sty=
+le=3D"width:600px;" width=3D"600" ><tr><td align=3D"center" style=3D"paddin=
+g-bottom: 20px; line-height: 0px; font-size: 0px; padding: 10px 15px; word-=
+break: break-word; padding-top: 0;mso-padding-alt: 0px 0px;"><table border=
+=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"b=
+order-collapse:collapse;border-spacing:0px;"><tbody><tr><td style=3D"font-s=
+ize:0;padding-bottom: 20px; line-height: 100%; width: 570px;padding-top: 0;=
+mso-padding-alt: 0px 0px;"width=3D"570"><a href=3D"https://www.properstar.c=
+h/listing/121263611?profileId=3D2478727350&searchId=3D1371478435&urltoken=
+=3DNzkzMTc0NGQtNTNjYS00YzI0LTkyNzAtZmJmZGZlZjU2MTE2OnJvYmVydG8uc3VzY3JpcHRp=
+b25zQGdtYWlsLmNvbTo1NDQ0MjMyOg=3D=3D&utm_source=3Demailalerts&utm_medium=3D=
+email&utm_campaign=3Dsearch-alert" target=3D"_blank" style=3D"font-size:0;"=
+><img height=3D"342" src=3D"https://files-api.properstar.com/api/v2/files/f=
+417143e-38ca-40d6-b650-042d5debd631/1?mode=3Dcrop&width=3D1280&height=3D853=
+&format=3Djpeg" style=3D"border-width: 0; border: 0; border-radius: 8px; di=
+splay: block; outline: none; text-decoration: none; height: auto; width: 57=
+0px; font-size:0;;line-height:0px" width=3D"570"></a></td></tr></tbody></ta=
+ble><![endif]-->
+                                  <div style=3D"max-width:600px;overflow: h=
+idden; border-radius: 8px;position: relative;mso-hide:all;line-height: 0;ms=
+o-padding-alt: 0px 0px;">
+                                    <table border=3D"0" cellpadding=3D"0" c=
+ellspacing=3D"0" role=3D"presentation" style=3D"width:100%;mso-hide:all;lin=
+e-height:0;mso-padding-alt:0px 0px;border-collapse:collapse;mso-table-lspac=
+e:0pt;mso-table-rspace:0pt;">
+                                      <tr style=3D"vertical-align:top;">
+                                        <td class=3D"listing-background" ba=
+ckground=3D"https://files-api.properstar.com/api/v2/files/f417143e-38ca-40d=
+6-b650-042d5debd631/1?mode=3Dcrop&width=3D1280&height=3D853&format=3Djpeg" =
+style=3D"background-image:url(https://files-api.properstar.com/api/v2/files=
+/f417143e-38ca-40d6-b650-042d5debd631/1?mode=3Dcrop&width=3D1280&height=3D8=
+53&format=3Djpeg);background-position:center;background-repeat:no-repeat;ba=
+ckground-size:cover;vertical-align:top;border-radius:8px;z-index:16;mso-pad=
+ding-alt:0px 0px;line-height:0;mso-hide:all;font-size:0;border-collapse:col=
+lapse;mso-table-lspace:0pt;mso-table-rspace:0pt;" height=3D"-290">
+                                          <a style=3D"padding: 190px 0;widt=
+h: 100%;z-index: 17;mso-padding-alt: 0px 0px;line-height: 0;font-size:0;dis=
+play:block;" href=3D"https://www.properstar.ch/listing/121263611?profileId=
+=3D2478727350&searchId=3D1371478435&urltoken=3DNzkzMTc0NGQtNTNjYS00YzI0LTky=
+NzAtZmJmZGZlZjU2MTE2OnJvYmVydG8uc3VzY3JpcHRpb25zQGdtYWlsLmNvbTo1NDQ0MjMyOg=
+=3D=3D&utm_source=3Demailalerts&utm_medium=3Demail&utm_campaign=3Dsearch-al=
+ert">
+                                          </a>
+                                        </td>
+                                      </tr>
+                                    </table>
+                                  </div>
+                                  <!--[if mso | IE]></td></tr></table><![en=
+dif]-->
+                                </div>
+                              </tbody>
+                            </table>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <!--[if mso | IE]></td></tr></table><![endif]-->
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <!--[if mso | IE]></td></tr></table><table align=3D"center" border=
+=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"" role=3D"presentation"=
+ style=3D"width:600px;" width=3D"600" ><tr><td style=3D"line-height:0px;fon=
+t-size:0px;mso-line-height-rule:exactly;"><![endif]-->
+        <div style=3D"margin:0px auto;max-width:600px;">
+          <table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacin=
+g=3D"0" role=3D"presentation" style=3D"width:100%;border-collapse:collapse;=
+mso-table-lspace:0pt;mso-table-rspace:0pt;">
+            <tbody>
+              <tr>
+                <td style=3D"direction:ltr;font-size:0px;padding:0;text-ali=
+gn:center;border-collapse:collapse;mso-table-lspace:0pt;mso-table-rspace:0p=
+t;">
+                  <!--[if mso | IE]><table role=3D"presentation" border=3D"=
+0" cellpadding=3D"0" cellspacing=3D"0"><tr><td class=3D"listing-data-luxury=
+-outlook" style=3D"vertical-align:top;width:600px;" ><![endif]-->
+                  <div class=3D"mj-column-per-100 mj-outlook-group-fix list=
+ing-data-luxury" style=3D"font-size:0px;text-align:left;direction:ltr;displ=
+ay:inline-block;vertical-align:top;width:100%;">
+                    <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0"=
+ role=3D"presentation" width=3D"100%" style=3D"table-layout:fixed;border-co=
+llapse:collapse;mso-table-lspace:0pt;mso-table-rspace:0pt;">
+                      <tbody>
+                        <tr>
+                          <td style=3D"vertical-align:top;padding:10px 15px=
+;border-collapse:collapse;mso-table-lspace:0pt;mso-table-rspace:0pt;">
+                            <table border=3D"0" cellpadding=3D"0" cellspaci=
+ng=3D"0" role=3D"presentation" style=3D"border-collapse:collapse;mso-table-=
+lspace:0pt;mso-table-rspace:0pt;" width=3D"100%">
+                              <tbody>
+                                <tr>
+                                  <td align=3D"left" style=3D"font-size:0px=
+;padding:10px 0px;word-break:break-word;border-collapse:collapse;mso-table-=
+lspace:0pt;mso-table-rspace:0pt;">
+                                    <div style=3D"font-family:-apple-system=
+, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif, Apple=
+ Color Emoji, Segoe UI Emoji, Segoe UI Symbol;font-size:16px;font-weight:40=
+0;line-height:24px;text-align:left;color:#323232;">
+                                      <h4 class=3D"listing-title" style=3D"=
+line-height: 22px; margin: 0; margin-bottom: 8px; color: #323232; font-weig=
+ht: 400; text-decoration: none; width: 100%; max-width: 100%; -ms-text-size=
+-adjust: 100%; white-space: normal; word-break: break-word; font-size: 16px=
+; -webkit-text-size-adjust: 100%;">
+                                        <a style=3D"color:#323232;text-deco=
+ration: none;-ms-text-size-adjust: 100%;-webkit-text-size-adjust:none;" hre=
+f=3D"https://www.properstar.ch/listing/121263611?profileId=3D2478727350&sea=
+rchId=3D1371478435&urltoken=3DNzkzMTc0NGQtNTNjYS00YzI0LTkyNzAtZmJmZGZlZjU2M=
+TE2OnJvYmVydG8uc3VzY3JpcHRpb25zQGdtYWlsLmNvbTo1NDQ0MjMyOg=3D=3D&utm_source=
+=3Demailalerts&utm_medium=3Demail&utm_campaign=3Dsearch-alert">Appartement =
+de 4.5 pi=C3=A8ces Minergie avec balcon de 20 m=C2=B2</a>
+                                      </h4>
+                                      <p style=3D"font-size:13px;font-weigh=
+t:400;margin:0;color:#797979;line-height:18px;width:100%;max-width:100%;-ms=
+-text-size-adjust:100%;-webkit-text-size-adjust:none;padding-bottom:15px;wh=
+ite-space:normal;word-break:break-word;display:block;">
+                                        <a style=3D"text-decoration: none;c=
+olor: #797979;" href=3D"https://www.properstar.ch/listing/121263611?profile=
+Id=3D2478727350&searchId=3D1371478435&urltoken=3DNzkzMTc0NGQtNTNjYS00YzI0LT=
+kyNzAtZmJmZGZlZjU2MTE2OnJvYmVydG8uc3VzY3JpcHRpb25zQGdtYWlsLmNvbTo1NDQ0MjMyO=
+g=3D=3D&utm_source=3Demailalerts&utm_medium=3Demail&utm_campaign=3Dsearch-a=
+lert">Lausanne
+                                          <br>
+                                          
+                                            Appartement
+                                          
+                                          
+                                            =C2=B7 4.5 Pi=C3=A8ces
+                                          
+                                          
+                                          
+                                          
+                                        </a>
+                                      </p>
+                                      <h3 style=3D"margin: 0; line-height: =
+28px; overflow: hidden; -ms-text-size-adjust: 100%; -webkit-text-size-adjus=
+t: none; font-weight: 600; font-size: 20px;">
+                                        <a style=3D"color:#333333;text-deco=
+ration: none;width: 100%;max-width: 100%;-ms-text-size-adjust: 100%;-webkit=
+-text-size-adjust:none;" href=3D"https://www.properstar.ch/listing/12126361=
+1?profileId=3D2478727350&searchId=3D1371478435&urltoken=3DNzkzMTc0NGQtNTNjY=
+S00YzI0LTkyNzAtZmJmZGZlZjU2MTE2OnJvYmVydG8uc3VzY3JpcHRpb25zQGdtYWlsLmNvbTo1=
+NDQ0MjMyOg=3D=3D&utm_source=3Demailalerts&utm_medium=3Demail&utm_campaign=
+=3Dsearch-alert">
+                                          
+                                            
+                                              <div class=3D"price-drop">
+                                                <div class=3D"price-value" =
+style=3D"color: #008E53;">
+                                                  CHF 1=E2=80=AF190=E2=80=
+=AF000
+                                                </div>
+                                                <div class=3D"price-change-=
+line" style=3D"line-height: 1;">
+                                                  <span class=3D"price-prev=
+" style=3D"font-size: 16px; text-decoration: line-through;">
+                                                    CHF 1=E2=80=AF290=E2=80=
+=AF000
+                                                  </span>
+                                                  <span class=3D"price-diff=
+" style=3D"font-size: 16px; border-radius: 3px; color: #008E53;"> &nbsp;-10=
+0=E2=80=AF000&nbsp; </span>
+                                                </div>
+                                              </div>
+                                              
+                                          
+                                        </a>
+                                      </h3>
+                                    </div>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <!--[if mso | IE]></td></tr></table><![endif]-->
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <!--[if mso | IE]></td></tr></table><![endif]-->
+      
+      <!--[if mso | IE]><table align=3D"center" border=3D"0" cellpadding=3D=
+"0" cellspacing=3D"0" class=3D"" role=3D"presentation" style=3D"width:600px=
+;" width=3D"600" ><tr><td style=3D"line-height:0px;font-size:0px;mso-line-h=
+eight-rule:exactly;"><![endif]-->
+      <div style=3D"margin:0px auto;max-width:600px;">
+        <table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=
+=3D"0" role=3D"presentation" style=3D"width:100%;border-collapse:collapse;m=
+so-table-lspace:0pt;mso-table-rspace:0pt;">
+          <tbody>
+            <tr>
+              <td style=3D"direction:ltr;font-size:0px;padding:0;text-align=
+:center;border-collapse:collapse;mso-table-lspace:0pt;mso-table-rspace:0pt;=
+">
+                <!--[if mso | IE]><table role=3D"presentation" border=3D"0"=
+ cellpadding=3D"0" cellspacing=3D"0"><tr><td class=3D"" style=3D"vertical-a=
+lign:top;width:600px;" ><![endif]-->
+                <div class=3D"mj-column-per-100 mj-outlook-group-fix" style=
+=3D"font-size:0px;text-align:left;direction:ltr;display:inline-block;vertic=
+al-align:top;width:100%;">
+                  <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" r=
+ole=3D"presentation" width=3D"100%" style=3D"border-collapse:collapse;mso-t=
+able-lspace:0pt;mso-table-rspace:0pt;">
+                    <tbody>
+                      <tr>
+                        <td style=3D"vertical-align:top;padding:10px 15px;b=
+order-collapse:collapse;mso-table-lspace:0pt;mso-table-rspace:0pt;">
+                          <table border=3D"0" cellpadding=3D"0" cellspacing=
+=3D"0" role=3D"presentation" style=3D"border-collapse:collapse;mso-table-ls=
+pace:0pt;mso-table-rspace:0pt;" width=3D"100%">
+                            <tbody>
+                              <tr>
+                                <td align=3D"center" style=3D"font-size:0px=
+;padding:0px;word-break:break-word;border-collapse:collapse;mso-table-lspac=
+e:0pt;mso-table-rspace:0pt;">
+                                  <p style=3D"-ms-text-size-adjust:100%;-we=
+bkit-text-size-adjust:none;border-top:solid 1px #DDDDDD;font-size:1px;margi=
+n:0px auto;width:100%;display:block;">
+                                  </p>
+                                  <!--[if mso | IE]><table align=3D"center"=
+ border=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"border-top:solid=
+ 1px #DDDDDD;font-size:1px;margin:0px auto;width:570px;" role=3D"presentati=
+on" width=3D"570px" ><tr><td style=3D"height:0;line-height:0;"> &nbsp;
+</td></tr></table><![endif]-->
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <!--[if mso | IE]></td></tr></table><![endif]-->
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <!--[if mso | IE]></td></tr></table><![endif]-->
+    
+        <!--[if mso | IE]><table align=3D"center" border=3D"0" cellpadding=
+=3D"0" cellspacing=3D"0" class=3D"" role=3D"presentation" style=3D"width:60=
+0px;" width=3D"600" ><tr><td style=3D"line-height:0px;font-size:0px;mso-lin=
+e-height-rule:exactly;"><![endif]-->
+        <div style=3D"margin:0px auto;max-width:600px;">
+          <table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacin=
+g=3D"0" role=3D"presentation" style=3D"width:100%;border-collapse:collapse;=
+mso-table-lspace:0pt;mso-table-rspace:0pt;">
+            <tbody>
+              <tr>
+                <td style=3D"direction:ltr;font-size:0px;padding:0;text-ali=
+gn:center;border-collapse:collapse;mso-table-lspace:0pt;mso-table-rspace:0p=
+t;">
+                  <!--[if mso | IE]><table role=3D"presentation" border=3D"=
+0" cellpadding=3D"0" cellspacing=3D"0"><tr><td class=3D"" style=3D"vertical=
+-align:top;width:600px;" ><![endif]-->
+                  <div class=3D"mj-column-per-100 mj-outlook-group-fix" sty=
+le=3D"font-size:0px;text-align:left;direction:ltr;display:inline-block;vert=
+ical-align:top;width:100%;">
+                    <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0"=
+ role=3D"presentation" width=3D"100%" style=3D"border-collapse:collapse;mso=
+-table-lspace:0pt;mso-table-rspace:0pt;">
+                      <tbody>
+                        <tr>
+                          <td style=3D"vertical-align:top;padding:0px 15px;=
+border-collapse:collapse;mso-table-lspace:0pt;mso-table-rspace:0pt;">
+                            <table border=3D"0" cellpadding=3D"0" cellspaci=
+ng=3D"0" role=3D"presentation" style=3D"border-collapse:collapse;mso-table-=
+lspace:0pt;mso-table-rspace:0pt;" width=3D"100%">
+                              <tbody>
+                                <div style=3D"width: 100%;overflow: hidden;=
+">
+                                  <!--[if mso | IE]><table align=3D"center"=
+ border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" sty=
+le=3D"width:600px;" width=3D"600" ><tr><td align=3D"center" style=3D"paddin=
+g-bottom: 20px; line-height: 0px; font-size: 0px; padding: 10px 15px; word-=
+break: break-word; padding-top: 0;mso-padding-alt: 0px 0px;"><table border=
+=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"b=
+order-collapse:collapse;border-spacing:0px;"><tbody><tr><td style=3D"font-s=
+ize:0;padding-bottom: 20px; line-height: 100%; width: 570px;padding-top: 0;=
+mso-padding-alt: 0px 0px;"width=3D"570"><a href=3D"https://www.properstar.c=
+h/listing/121425914?profileId=3D2478727350&searchId=3D1371478435&urltoken=
+=3DNzkzMTc0NGQtNTNjYS00YzI0LTkyNzAtZmJmZGZlZjU2MTE2OnJvYmVydG8uc3VzY3JpcHRp=
+b25zQGdtYWlsLmNvbTo1NDQ0MjMyOg=3D=3D&utm_source=3Demailalerts&utm_medium=3D=
+email&utm_campaign=3Dsearch-alert" target=3D"_blank" style=3D"font-size:0;"=
+><img height=3D"342" src=3D"https://files-api.properstar.com/api/v2/files/5=
+6c5c713-86df-4ac9-9c2b-219c8ebdbcbc/1?mode=3Dcrop&width=3D1280&height=3D853=
+&format=3Djpeg" style=3D"border-width: 0; border: 0; border-radius: 8px; di=
+splay: block; outline: none; text-decoration: none; height: auto; width: 57=
+0px; font-size:0;;line-height:0px" width=3D"570"></a></td></tr></tbody></ta=
+ble><![endif]-->
+                                  <div style=3D"max-width:600px;overflow: h=
+idden; border-radius: 8px;position: relative;mso-hide:all;line-height: 0;ms=
+o-padding-alt: 0px 0px;">
+                                    <table border=3D"0" cellpadding=3D"0" c=
+ellspacing=3D"0" role=3D"presentation" style=3D"width:100%;mso-hide:all;lin=
+e-height:0;mso-padding-alt:0px 0px;border-collapse:collapse;mso-table-lspac=
+e:0pt;mso-table-rspace:0pt;">
+                                      <tr style=3D"vertical-align:top;">
+                                        <td class=3D"listing-background" ba=
+ckground=3D"https://files-api.properstar.com/api/v2/files/56c5c713-86df-4ac=
+9-9c2b-219c8ebdbcbc/1?mode=3Dcrop&width=3D1280&height=3D853&format=3Djpeg" =
+style=3D"background-image:url(https://files-api.properstar.com/api/v2/files=
+/56c5c713-86df-4ac9-9c2b-219c8ebdbcbc/1?mode=3Dcrop&width=3D1280&height=3D8=
+53&format=3Djpeg);background-position:center;background-repeat:no-repeat;ba=
+ckground-size:cover;vertical-align:top;border-radius:8px;z-index:16;mso-pad=
+ding-alt:0px 0px;line-height:0;mso-hide:all;font-size:0;border-collapse:col=
+lapse;mso-table-lspace:0pt;mso-table-rspace:0pt;" height=3D"-290">
+                                          <a style=3D"padding: 190px 0;widt=
+h: 100%;z-index: 17;mso-padding-alt: 0px 0px;line-height: 0;font-size:0;dis=
+play:block;" href=3D"https://www.properstar.ch/listing/121425914?profileId=
+=3D2478727350&searchId=3D1371478435&urltoken=3DNzkzMTc0NGQtNTNjYS00YzI0LTky=
+NzAtZmJmZGZlZjU2MTE2OnJvYmVydG8uc3VzY3JpcHRpb25zQGdtYWlsLmNvbTo1NDQ0MjMyOg=
+=3D=3D&utm_source=3Demailalerts&utm_medium=3Demail&utm_campaign=3Dsearch-al=
+ert">
+                                          </a>
+                                        </td>
+                                      </tr>
+                                    </table>
+                                  </div>
+                                  <!--[if mso | IE]></td></tr></table><![en=
+dif]-->
+                                </div>
+                              </tbody>
+                            </table>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <!--[if mso | IE]></td></tr></table><![endif]-->
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <!--[if mso | IE]></td></tr></table><table align=3D"center" border=
+=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"" role=3D"presentation"=
+ style=3D"width:600px;" width=3D"600" ><tr><td style=3D"line-height:0px;fon=
+t-size:0px;mso-line-height-rule:exactly;"><![endif]-->
+        <div style=3D"margin:0px auto;max-width:600px;">
+          <table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacin=
+g=3D"0" role=3D"presentation" style=3D"width:100%;border-collapse:collapse;=
+mso-table-lspace:0pt;mso-table-rspace:0pt;">
+            <tbody>
+              <tr>
+                <td style=3D"direction:ltr;font-size:0px;padding:0;text-ali=
+gn:center;border-collapse:collapse;mso-table-lspace:0pt;mso-table-rspace:0p=
+t;">
+                  <!--[if mso | IE]><table role=3D"presentation" border=3D"=
+0" cellpadding=3D"0" cellspacing=3D"0"><tr><td class=3D"listing-data-luxury=
+-outlook" style=3D"vertical-align:top;width:600px;" ><![endif]-->
+                  <div class=3D"mj-column-per-100 mj-outlook-group-fix list=
+ing-data-luxury" style=3D"font-size:0px;text-align:left;direction:ltr;displ=
+ay:inline-block;vertical-align:top;width:100%;">
+                    <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0"=
+ role=3D"presentation" width=3D"100%" style=3D"table-layout:fixed;border-co=
+llapse:collapse;mso-table-lspace:0pt;mso-table-rspace:0pt;">
+                      <tbody>
+                        <tr>
+                          <td style=3D"vertical-align:top;padding:10px 15px=
+;border-collapse:collapse;mso-table-lspace:0pt;mso-table-rspace:0pt;">
+                            <table border=3D"0" cellpadding=3D"0" cellspaci=
+ng=3D"0" role=3D"presentation" style=3D"border-collapse:collapse;mso-table-=
+lspace:0pt;mso-table-rspace:0pt;" width=3D"100%">
+                              <tbody>
+                                <tr>
+                                  <td align=3D"left" style=3D"font-size:0px=
+;padding:10px 0px;word-break:break-word;border-collapse:collapse;mso-table-=
+lspace:0pt;mso-table-rspace:0pt;">
+                                    <div style=3D"font-family:-apple-system=
+, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif, Apple=
+ Color Emoji, Segoe UI Emoji, Segoe UI Symbol;font-size:16px;font-weight:40=
+0;line-height:24px;text-align:left;color:#323232;">
+                                      <h4 class=3D"listing-title" style=3D"=
+line-height: 22px; margin: 0; margin-bottom: 8px; color: #323232; font-weig=
+ht: 400; text-decoration: none; width: 100%; max-width: 100%; -ms-text-size=
+-adjust: 100%; white-space: normal; word-break: break-word; font-size: 16px=
+; -webkit-text-size-adjust: 100%;">
+                                        <a style=3D"color:#323232;text-deco=
+ration: none;-ms-text-size-adjust: 100%;-webkit-text-size-adjust:none;" hre=
+f=3D"https://www.properstar.ch/listing/121425914?profileId=3D2478727350&sea=
+rchId=3D1371478435&urltoken=3DNzkzMTc0NGQtNTNjYS00YzI0LTkyNzAtZmJmZGZlZjU2M=
+TE2OnJvYmVydG8uc3VzY3JpcHRpb25zQGdtYWlsLmNvbTo1NDQ0MjMyOg=3D=3D&utm_source=
+=3Demailalerts&utm_medium=3Demail&utm_campaign=3Dsearch-alert">COUP DE COEU=
+R  ATTIQUE NEUF AVEC GRANDE TERRASSE </a>
+                                      </h4>
+                                      <p style=3D"font-size:13px;font-weigh=
+t:400;margin:0;color:#797979;line-height:18px;width:100%;max-width:100%;-ms=
+-text-size-adjust:100%;-webkit-text-size-adjust:none;padding-bottom:15px;wh=
+ite-space:normal;word-break:break-word;display:block;">
+                                        <a style=3D"text-decoration: none;c=
+olor: #797979;" href=3D"https://www.properstar.ch/listing/121425914?profile=
+Id=3D2478727350&searchId=3D1371478435&urltoken=3DNzkzMTc0NGQtNTNjYS00YzI0LT=
+kyNzAtZmJmZGZlZjU2MTE2OnJvYmVydG8uc3VzY3JpcHRpb25zQGdtYWlsLmNvbTo1NDQ0MjMyO=
+g=3D=3D&utm_source=3Demailalerts&utm_medium=3Demail&utm_campaign=3Dsearch-a=
+lert">Lausanne (district), Nouveau quartier
+                                          <br>
+                                          
+                                            Appartement
+                                          
+                                          
+                                            =C2=B7 3.5 Pi=C3=A8ces
+                                          
+                                          
+                                          
+                                          
+                                        </a>
+                                      </p>
+                                      <h3 style=3D"margin: 0; line-height: =
+28px; overflow: hidden; -ms-text-size-adjust: 100%; -webkit-text-size-adjus=
+t: none; font-weight: 600; font-size: 20px;">
+                                        <a style=3D"color:#333333;text-deco=
+ration: none;width: 100%;max-width: 100%;-ms-text-size-adjust: 100%;-webkit=
+-text-size-adjust:none;" href=3D"https://www.properstar.ch/listing/12142591=
+4?profileId=3D2478727350&searchId=3D1371478435&urltoken=3DNzkzMTc0NGQtNTNjY=
+S00YzI0LTkyNzAtZmJmZGZlZjU2MTE2OnJvYmVydG8uc3VzY3JpcHRpb25zQGdtYWlsLmNvbTo1=
+NDQ0MjMyOg=3D=3D&utm_source=3Demailalerts&utm_medium=3Demail&utm_campaign=
+=3Dsearch-alert">
+                                          
+                                            
+                                              CHF 1=E2=80=AF060=E2=80=AF000
+                                            
+                                          
+                                        </a>
+                                      </h3>
+                                    </div>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <!--[if mso | IE]></td></tr></table><![endif]-->
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <!--[if mso | IE]></td></tr></table><![endif]-->
+      
+      <!--[if mso | IE]><table align=3D"center" border=3D"0" cellpadding=3D=
+"0" cellspacing=3D"0" class=3D"" role=3D"presentation" style=3D"width:600px=
+;" width=3D"600" ><tr><td style=3D"line-height:0px;font-size:0px;mso-line-h=
+eight-rule:exactly;"><![endif]-->
+      <div style=3D"margin:0px auto;max-width:600px;">
+        <table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=
+=3D"0" role=3D"presentation" style=3D"width:100%;border-collapse:collapse;m=
+so-table-lspace:0pt;mso-table-rspace:0pt;">
+          <tbody>
+            <tr>
+              <td style=3D"direction:ltr;font-size:0px;padding:0;text-align=
+:center;border-collapse:collapse;mso-table-lspace:0pt;mso-table-rspace:0pt;=
+">
+                <!--[if mso | IE]><table role=3D"presentation" border=3D"0"=
+ cellpadding=3D"0" cellspacing=3D"0"><tr><td class=3D"" style=3D"vertical-a=
+lign:top;width:600px;" ><![endif]-->
+                <div class=3D"mj-column-per-100 mj-outlook-group-fix" style=
+=3D"font-size:0px;text-align:left;direction:ltr;display:inline-block;vertic=
+al-align:top;width:100%;">
+                  <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" r=
+ole=3D"presentation" width=3D"100%" style=3D"border-collapse:collapse;mso-t=
+able-lspace:0pt;mso-table-rspace:0pt;">
+                    <tbody>
+                      <tr>
+                        <td style=3D"vertical-align:top;padding:10px 15px;b=
+order-collapse:collapse;mso-table-lspace:0pt;mso-table-rspace:0pt;">
+                          <table border=3D"0" cellpadding=3D"0" cellspacing=
+=3D"0" role=3D"presentation" style=3D"border-collapse:collapse;mso-table-ls=
+pace:0pt;mso-table-rspace:0pt;" width=3D"100%">
+                            <tbody>
+                              <tr>
+                                <td align=3D"center" style=3D"font-size:0px=
+;padding:0px;word-break:break-word;border-collapse:collapse;mso-table-lspac=
+e:0pt;mso-table-rspace:0pt;">
+                                  <p style=3D"-ms-text-size-adjust:100%;-we=
+bkit-text-size-adjust:none;border-top:solid 1px #DDDDDD;font-size:1px;margi=
+n:0px auto;width:100%;display:block;">
+                                  </p>
+                                  <!--[if mso | IE]><table align=3D"center"=
+ border=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"border-top:solid=
+ 1px #DDDDDD;font-size:1px;margin:0px auto;width:570px;" role=3D"presentati=
+on" width=3D"570px" ><tr><td style=3D"height:0;line-height:0;"> &nbsp;
+</td></tr></table><![endif]-->
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <!--[if mso | IE]></td></tr></table><![endif]-->
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <!--[if mso | IE]></td></tr></table><![endif]-->
+    
+        <!--[if mso | IE]><table align=3D"center" border=3D"0" cellpadding=
+=3D"0" cellspacing=3D"0" class=3D"" role=3D"presentation" style=3D"width:60=
+0px;" width=3D"600" ><tr><td style=3D"line-height:0px;font-size:0px;mso-lin=
+e-height-rule:exactly;"><![endif]-->
+        <div style=3D"margin:0px auto;max-width:600px;">
+          <table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacin=
+g=3D"0" role=3D"presentation" style=3D"width:100%;border-collapse:collapse;=
+mso-table-lspace:0pt;mso-table-rspace:0pt;">
+            <tbody>
+              <tr>
+                <td style=3D"direction:ltr;font-size:0px;padding:0;text-ali=
+gn:center;border-collapse:collapse;mso-table-lspace:0pt;mso-table-rspace:0p=
+t;">
+                  <!--[if mso | IE]><table role=3D"presentation" border=3D"=
+0" cellpadding=3D"0" cellspacing=3D"0"><tr><td class=3D"" style=3D"vertical=
+-align:top;width:600px;" ><![endif]-->
+                  <div class=3D"mj-column-per-100 mj-outlook-group-fix" sty=
+le=3D"font-size:0px;text-align:left;direction:ltr;display:inline-block;vert=
+ical-align:top;width:100%;">
+                    <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0"=
+ role=3D"presentation" width=3D"100%" style=3D"border-collapse:collapse;mso=
+-table-lspace:0pt;mso-table-rspace:0pt;">
+                      <tbody>
+                        <tr>
+                          <td style=3D"vertical-align:top;padding:0px 15px;=
+border-collapse:collapse;mso-table-lspace:0pt;mso-table-rspace:0pt;">
+                            <table border=3D"0" cellpadding=3D"0" cellspaci=
+ng=3D"0" role=3D"presentation" style=3D"border-collapse:collapse;mso-table-=
+lspace:0pt;mso-table-rspace:0pt;" width=3D"100%">
+                              <tbody>
+                                <div style=3D"width: 100%;overflow: hidden;=
+">
+                                  <!--[if mso | IE]><table align=3D"center"=
+ border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" sty=
+le=3D"width:600px;" width=3D"600" ><tr><td align=3D"center" style=3D"paddin=
+g-bottom: 20px; line-height: 0px; font-size: 0px; padding: 10px 15px; word-=
+break: break-word; padding-top: 0;mso-padding-alt: 0px 0px;"><table border=
+=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"b=
+order-collapse:collapse;border-spacing:0px;"><tbody><tr><td style=3D"font-s=
+ize:0;padding-bottom: 20px; line-height: 100%; width: 570px;padding-top: 0;=
+mso-padding-alt: 0px 0px;"width=3D"570"><a href=3D"https://www.properstar.c=
+h/listing/121425912?profileId=3D2478727350&searchId=3D1371478435&urltoken=
+=3DNzkzMTc0NGQtNTNjYS00YzI0LTkyNzAtZmJmZGZlZjU2MTE2OnJvYmVydG8uc3VzY3JpcHRp=
+b25zQGdtYWlsLmNvbTo1NDQ0MjMyOg=3D=3D&utm_source=3Demailalerts&utm_medium=3D=
+email&utm_campaign=3Dsearch-alert" target=3D"_blank" style=3D"font-size:0;"=
+><img height=3D"342" src=3D"https://files-api.properstar.com/api/v2/files/1=
+c0eac7c-d3f4-457a-ac13-ff5d7c24ca75/1?mode=3Dcrop&width=3D1280&height=3D853=
+&format=3Djpeg" style=3D"border-width: 0; border: 0; border-radius: 8px; di=
+splay: block; outline: none; text-decoration: none; height: auto; width: 57=
+0px; font-size:0;;line-height:0px" width=3D"570"></a></td></tr></tbody></ta=
+ble><![endif]-->
+                                  <div style=3D"max-width:600px;overflow: h=
+idden; border-radius: 8px;position: relative;mso-hide:all;line-height: 0;ms=
+o-padding-alt: 0px 0px;">
+                                    <table border=3D"0" cellpadding=3D"0" c=
+ellspacing=3D"0" role=3D"presentation" style=3D"width:100%;mso-hide:all;lin=
+e-height:0;mso-padding-alt:0px 0px;border-collapse:collapse;mso-table-lspac=
+e:0pt;mso-table-rspace:0pt;">
+                                      <tr style=3D"vertical-align:top;">
+                                        <td class=3D"listing-background" ba=
+ckground=3D"https://files-api.properstar.com/api/v2/files/1c0eac7c-d3f4-457=
+a-ac13-ff5d7c24ca75/1?mode=3Dcrop&width=3D1280&height=3D853&format=3Djpeg" =
+style=3D"background-image:url(https://files-api.properstar.com/api/v2/files=
+/1c0eac7c-d3f4-457a-ac13-ff5d7c24ca75/1?mode=3Dcrop&width=3D1280&height=3D8=
+53&format=3Djpeg);background-position:center;background-repeat:no-repeat;ba=
+ckground-size:cover;vertical-align:top;border-radius:8px;z-index:16;mso-pad=
+ding-alt:0px 0px;line-height:0;mso-hide:all;font-size:0;border-collapse:col=
+lapse;mso-table-lspace:0pt;mso-table-rspace:0pt;" height=3D"-290">
+                                          <a style=3D"padding: 190px 0;widt=
+h: 100%;z-index: 17;mso-padding-alt: 0px 0px;line-height: 0;font-size:0;dis=
+play:block;" href=3D"https://www.properstar.ch/listing/121425912?profileId=
+=3D2478727350&searchId=3D1371478435&urltoken=3DNzkzMTc0NGQtNTNjYS00YzI0LTky=
+NzAtZmJmZGZlZjU2MTE2OnJvYmVydG8uc3VzY3JpcHRpb25zQGdtYWlsLmNvbTo1NDQ0MjMyOg=
+=3D=3D&utm_source=3Demailalerts&utm_medium=3Demail&utm_campaign=3Dsearch-al=
+ert">
+                                          </a>
+                                        </td>
+                                      </tr>
+                                    </table>
+                                  </div>
+                                  <!--[if mso | IE]></td></tr></table><![en=
+dif]-->
+                                </div>
+                              </tbody>
+                            </table>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <!--[if mso | IE]></td></tr></table><![endif]-->
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <!--[if mso | IE]></td></tr></table><table align=3D"center" border=
+=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"" role=3D"presentation"=
+ style=3D"width:600px;" width=3D"600" ><tr><td style=3D"line-height:0px;fon=
+t-size:0px;mso-line-height-rule:exactly;"><![endif]-->
+        <div style=3D"margin:0px auto;max-width:600px;">
+          <table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacin=
+g=3D"0" role=3D"presentation" style=3D"width:100%;border-collapse:collapse;=
+mso-table-lspace:0pt;mso-table-rspace:0pt;">
+            <tbody>
+              <tr>
+                <td style=3D"direction:ltr;font-size:0px;padding:0;text-ali=
+gn:center;border-collapse:collapse;mso-table-lspace:0pt;mso-table-rspace:0p=
+t;">
+                  <!--[if mso | IE]><table role=3D"presentation" border=3D"=
+0" cellpadding=3D"0" cellspacing=3D"0"><tr><td class=3D"listing-data-luxury=
+-outlook" style=3D"vertical-align:top;width:600px;" ><![endif]-->
+                  <div class=3D"mj-column-per-100 mj-outlook-group-fix list=
+ing-data-luxury" style=3D"font-size:0px;text-align:left;direction:ltr;displ=
+ay:inline-block;vertical-align:top;width:100%;">
+                    <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0"=
+ role=3D"presentation" width=3D"100%" style=3D"table-layout:fixed;border-co=
+llapse:collapse;mso-table-lspace:0pt;mso-table-rspace:0pt;">
+                      <tbody>
+                        <tr>
+                          <td style=3D"vertical-align:top;padding:10px 15px=
+;border-collapse:collapse;mso-table-lspace:0pt;mso-table-rspace:0pt;">
+                            <table border=3D"0" cellpadding=3D"0" cellspaci=
+ng=3D"0" role=3D"presentation" style=3D"border-collapse:collapse;mso-table-=
+lspace:0pt;mso-table-rspace:0pt;" width=3D"100%">
+                              <tbody>
+                                <tr>
+                                  <td align=3D"left" style=3D"font-size:0px=
+;padding:10px 0px;word-break:break-word;border-collapse:collapse;mso-table-=
+lspace:0pt;mso-table-rspace:0pt;">
+                                    <div style=3D"font-family:-apple-system=
+, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif, Apple=
+ Color Emoji, Segoe UI Emoji, Segoe UI Symbol;font-size:16px;font-weight:40=
+0;line-height:24px;text-align:left;color:#323232;">
+                                      <h4 class=3D"listing-title" style=3D"=
+line-height: 22px; margin: 0; margin-bottom: 8px; color: #323232; font-weig=
+ht: 400; text-decoration: none; width: 100%; max-width: 100%; -ms-text-size=
+-adjust: 100%; white-space: normal; word-break: break-word; font-size: 16px=
+; -webkit-text-size-adjust: 100%;">
+                                        <a style=3D"color:#323232;text-deco=
+ration: none;-ms-text-size-adjust: 100%;-webkit-text-size-adjust:none;" hre=
+f=3D"https://www.properstar.ch/listing/121425912?profileId=3D2478727350&sea=
+rchId=3D1371478435&urltoken=3DNzkzMTc0NGQtNTNjYS00YzI0LTkyNzAtZmJmZGZlZjU2M=
+TE2OnJvYmVydG8uc3VzY3JpcHRpb25zQGdtYWlsLmNvbTo1NDQ0MjMyOg=3D=3D&utm_source=
+=3Demailalerts&utm_medium=3Demail&utm_campaign=3Dsearch-alert">REZ-DE-JARDI=
+N DANS UN NOUVEAU QUARTIER PROCHE DE TOUT </a>
+                                      </h4>
+                                      <p style=3D"font-size:13px;font-weigh=
+t:400;margin:0;color:#797979;line-height:18px;width:100%;max-width:100%;-ms=
+-text-size-adjust:100%;-webkit-text-size-adjust:none;padding-bottom:15px;wh=
+ite-space:normal;word-break:break-word;display:block;">
+                                        <a style=3D"text-decoration: none;c=
+olor: #797979;" href=3D"https://www.properstar.ch/listing/121425912?profile=
+Id=3D2478727350&searchId=3D1371478435&urltoken=3DNzkzMTc0NGQtNTNjYS00YzI0LT=
+kyNzAtZmJmZGZlZjU2MTE2OnJvYmVydG8uc3VzY3JpcHRpb25zQGdtYWlsLmNvbTo1NDQ0MjMyO=
+g=3D=3D&utm_source=3Demailalerts&utm_medium=3Demail&utm_campaign=3Dsearch-a=
+lert">Lausanne (district), Nouveau quartier
+                                          <br>
+                                          
+                                            Appartement
+                                          
+                                          
+                                            =C2=B7 3.5 Pi=C3=A8ces
+                                          
+                                          
+                                          
+                                          
+                                        </a>
+                                      </p>
+                                      <h3 style=3D"margin: 0; line-height: =
+28px; overflow: hidden; -ms-text-size-adjust: 100%; -webkit-text-size-adjus=
+t: none; font-weight: 600; font-size: 20px;">
+                                        <a style=3D"color:#333333;text-deco=
+ration: none;width: 100%;max-width: 100%;-ms-text-size-adjust: 100%;-webkit=
+-text-size-adjust:none;" href=3D"https://www.properstar.ch/listing/12142591=
+2?profileId=3D2478727350&searchId=3D1371478435&urltoken=3DNzkzMTc0NGQtNTNjY=
+S00YzI0LTkyNzAtZmJmZGZlZjU2MTE2OnJvYmVydG8uc3VzY3JpcHRpb25zQGdtYWlsLmNvbTo1=
+NDQ0MjMyOg=3D=3D&utm_source=3Demailalerts&utm_medium=3Demail&utm_campaign=
+=3Dsearch-alert">
+                                          
+                                            
+                                              CHF 1=E2=80=AF040=E2=80=AF000
+                                            
+                                          
+                                        </a>
+                                      </h3>
+                                    </div>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <!--[if mso | IE]></td></tr></table><![endif]-->
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <!--[if mso | IE]></td></tr></table><![endif]-->
+      
+      <!--[if mso | IE]><table align=3D"center" border=3D"0" cellpadding=3D=
+"0" cellspacing=3D"0" class=3D"" role=3D"presentation" style=3D"width:600px=
+;" width=3D"600" ><tr><td style=3D"line-height:0px;font-size:0px;mso-line-h=
+eight-rule:exactly;"><![endif]-->
+      <div style=3D"margin:0px auto;max-width:600px;">
+        <table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=
+=3D"0" role=3D"presentation" style=3D"width:100%;border-collapse:collapse;m=
+so-table-lspace:0pt;mso-table-rspace:0pt;">
+          <tbody>
+            <tr>
+              <td style=3D"direction:ltr;font-size:0px;padding:0;text-align=
+:center;border-collapse:collapse;mso-table-lspace:0pt;mso-table-rspace:0pt;=
+">
+                <!--[if mso | IE]><table role=3D"presentation" border=3D"0"=
+ cellpadding=3D"0" cellspacing=3D"0"><tr><td class=3D"" style=3D"vertical-a=
+lign:top;width:600px;" ><![endif]-->
+                <div class=3D"mj-column-per-100 mj-outlook-group-fix" style=
+=3D"font-size:0px;text-align:left;direction:ltr;display:inline-block;vertic=
+al-align:top;width:100%;">
+                  <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" r=
+ole=3D"presentation" width=3D"100%" style=3D"border-collapse:collapse;mso-t=
+able-lspace:0pt;mso-table-rspace:0pt;">
+                    <tbody>
+                      <tr>
+                        <td style=3D"vertical-align:top;padding:10px 15px;b=
+order-collapse:collapse;mso-table-lspace:0pt;mso-table-rspace:0pt;">
+                          <table border=3D"0" cellpadding=3D"0" cellspacing=
+=3D"0" role=3D"presentation" style=3D"border-collapse:collapse;mso-table-ls=
+pace:0pt;mso-table-rspace:0pt;" width=3D"100%">
+                            <tbody>
+                              <tr>
+                                <td align=3D"center" style=3D"font-size:0px=
+;padding:0px;word-break:break-word;border-collapse:collapse;mso-table-lspac=
+e:0pt;mso-table-rspace:0pt;">
+                                  <p style=3D"-ms-text-size-adjust:100%;-we=
+bkit-text-size-adjust:none;border-top:solid 1px #DDDDDD;font-size:1px;margi=
+n:0px auto;width:100%;display:block;">
+                                  </p>
+                                  <!--[if mso | IE]><table align=3D"center"=
+ border=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"border-top:solid=
+ 1px #DDDDDD;font-size:1px;margin:0px auto;width:570px;" role=3D"presentati=
+on" width=3D"570px" ><tr><td style=3D"height:0;line-height:0;"> &nbsp;
+</td></tr></table><![endif]-->
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <!--[if mso | IE]></td></tr></table><![endif]-->
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <!--[if mso | IE]></td></tr></table><![endif]-->
+    
+        <!--[if mso | IE]><table align=3D"center" border=3D"0" cellpadding=
+=3D"0" cellspacing=3D"0" class=3D"" role=3D"presentation" style=3D"width:60=
+0px;" width=3D"600" ><tr><td style=3D"line-height:0px;font-size:0px;mso-lin=
+e-height-rule:exactly;"><![endif]-->
+        <div style=3D"margin:0px auto;max-width:600px;">
+          <table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacin=
+g=3D"0" role=3D"presentation" style=3D"width:100%;border-collapse:collapse;=
+mso-table-lspace:0pt;mso-table-rspace:0pt;">
+            <tbody>
+              <tr>
+                <td style=3D"direction:ltr;font-size:0px;padding:0;text-ali=
+gn:center;border-collapse:collapse;mso-table-lspace:0pt;mso-table-rspace:0p=
+t;">
+                  <!--[if mso | IE]><table role=3D"presentation" border=3D"=
+0" cellpadding=3D"0" cellspacing=3D"0"><tr><td class=3D"" style=3D"vertical=
+-align:top;width:600px;" ><![endif]-->
+                  <div class=3D"mj-column-per-100 mj-outlook-group-fix" sty=
+le=3D"font-size:0px;text-align:left;direction:ltr;display:inline-block;vert=
+ical-align:top;width:100%;">
+                    <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0"=
+ role=3D"presentation" width=3D"100%" style=3D"border-collapse:collapse;mso=
+-table-lspace:0pt;mso-table-rspace:0pt;">
+                      <tbody>
+                        <tr>
+                          <td style=3D"vertical-align:top;padding:0px 15px;=
+border-collapse:collapse;mso-table-lspace:0pt;mso-table-rspace:0pt;">
+                            <table border=3D"0" cellpadding=3D"0" cellspaci=
+ng=3D"0" role=3D"presentation" style=3D"border-collapse:collapse;mso-table-=
+lspace:0pt;mso-table-rspace:0pt;" width=3D"100%">
+                              <tbody>
+                                <div style=3D"width: 100%;overflow: hidden;=
+">
+                                  <!--[if mso | IE]><table align=3D"center"=
+ border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" sty=
+le=3D"width:600px;" width=3D"600" ><tr><td align=3D"center" style=3D"paddin=
+g-bottom: 20px; line-height: 0px; font-size: 0px; padding: 10px 15px; word-=
+break: break-word; padding-top: 0;mso-padding-alt: 0px 0px;"><table border=
+=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"b=
+order-collapse:collapse;border-spacing:0px;"><tbody><tr><td style=3D"font-s=
+ize:0;padding-bottom: 20px; line-height: 100%; width: 570px;padding-top: 0;=
+mso-padding-alt: 0px 0px;"width=3D"570"><a href=3D"https://www.properstar.c=
+h/listing/121425911?profileId=3D2478727350&searchId=3D1371478435&urltoken=
+=3DNzkzMTc0NGQtNTNjYS00YzI0LTkyNzAtZmJmZGZlZjU2MTE2OnJvYmVydG8uc3VzY3JpcHRp=
+b25zQGdtYWlsLmNvbTo1NDQ0MjMyOg=3D=3D&utm_source=3Demailalerts&utm_medium=3D=
+email&utm_campaign=3Dsearch-alert" target=3D"_blank" style=3D"font-size:0;"=
+><img height=3D"342" src=3D"https://files-api.properstar.com/api/v2/files/9=
+1d32c66-f2f2-49c7-a019-33e75879a46e/1?mode=3Dcrop&width=3D1280&height=3D853=
+&format=3Djpeg" style=3D"border-width: 0; border: 0; border-radius: 8px; di=
+splay: block; outline: none; text-decoration: none; height: auto; width: 57=
+0px; font-size:0;;line-height:0px" width=3D"570"></a></td></tr></tbody></ta=
+ble><![endif]-->
+                                  <div style=3D"max-width:600px;overflow: h=
+idden; border-radius: 8px;position: relative;mso-hide:all;line-height: 0;ms=
+o-padding-alt: 0px 0px;">
+                                    <table border=3D"0" cellpadding=3D"0" c=
+ellspacing=3D"0" role=3D"presentation" style=3D"width:100%;mso-hide:all;lin=
+e-height:0;mso-padding-alt:0px 0px;border-collapse:collapse;mso-table-lspac=
+e:0pt;mso-table-rspace:0pt;">
+                                      <tr style=3D"vertical-align:top;">
+                                        <td class=3D"listing-background" ba=
+ckground=3D"https://files-api.properstar.com/api/v2/files/91d32c66-f2f2-49c=
+7-a019-33e75879a46e/1?mode=3Dcrop&width=3D1280&height=3D853&format=3Djpeg" =
+style=3D"background-image:url(https://files-api.properstar.com/api/v2/files=
+/91d32c66-f2f2-49c7-a019-33e75879a46e/1?mode=3Dcrop&width=3D1280&height=3D8=
+53&format=3Djpeg);background-position:center;background-repeat:no-repeat;ba=
+ckground-size:cover;vertical-align:top;border-radius:8px;z-index:16;mso-pad=
+ding-alt:0px 0px;line-height:0;mso-hide:all;font-size:0;border-collapse:col=
+lapse;mso-table-lspace:0pt;mso-table-rspace:0pt;" height=3D"-290">
+                                          <a style=3D"padding: 190px 0;widt=
+h: 100%;z-index: 17;mso-padding-alt: 0px 0px;line-height: 0;font-size:0;dis=
+play:block;" href=3D"https://www.properstar.ch/listing/121425911?profileId=
+=3D2478727350&searchId=3D1371478435&urltoken=3DNzkzMTc0NGQtNTNjYS00YzI0LTky=
+NzAtZmJmZGZlZjU2MTE2OnJvYmVydG8uc3VzY3JpcHRpb25zQGdtYWlsLmNvbTo1NDQ0MjMyOg=
+=3D=3D&utm_source=3Demailalerts&utm_medium=3Demail&utm_campaign=3Dsearch-al=
+ert">
+                                          </a>
+                                        </td>
+                                      </tr>
+                                    </table>
+                                  </div>
+                                  <!--[if mso | IE]></td></tr></table><![en=
+dif]-->
+                                </div>
+                              </tbody>
+                            </table>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <!--[if mso | IE]></td></tr></table><![endif]-->
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <!--[if mso | IE]></td></tr></table><table align=3D"center" border=
+=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"" role=3D"presentation"=
+ style=3D"width:600px;" width=3D"600" ><tr><td style=3D"line-height:0px;fon=
+t-size:0px;mso-line-height-rule:exactly;"><![endif]-->
+        <div style=3D"margin:0px auto;max-width:600px;">
+          <table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacin=
+g=3D"0" role=3D"presentation" style=3D"width:100%;border-collapse:collapse;=
+mso-table-lspace:0pt;mso-table-rspace:0pt;">
+            <tbody>
+              <tr>
+                <td style=3D"direction:ltr;font-size:0px;padding:0;text-ali=
+gn:center;border-collapse:collapse;mso-table-lspace:0pt;mso-table-rspace:0p=
+t;">
+                  <!--[if mso | IE]><table role=3D"presentation" border=3D"=
+0" cellpadding=3D"0" cellspacing=3D"0"><tr><td class=3D"listing-data-luxury=
+-outlook" style=3D"vertical-align:top;width:600px;" ><![endif]-->
+                  <div class=3D"mj-column-per-100 mj-outlook-group-fix list=
+ing-data-luxury" style=3D"font-size:0px;text-align:left;direction:ltr;displ=
+ay:inline-block;vertical-align:top;width:100%;">
+                    <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0"=
+ role=3D"presentation" width=3D"100%" style=3D"table-layout:fixed;border-co=
+llapse:collapse;mso-table-lspace:0pt;mso-table-rspace:0pt;">
+                      <tbody>
+                        <tr>
+                          <td style=3D"vertical-align:top;padding:10px 15px=
+;border-collapse:collapse;mso-table-lspace:0pt;mso-table-rspace:0pt;">
+                            <table border=3D"0" cellpadding=3D"0" cellspaci=
+ng=3D"0" role=3D"presentation" style=3D"border-collapse:collapse;mso-table-=
+lspace:0pt;mso-table-rspace:0pt;" width=3D"100%">
+                              <tbody>
+                                <tr>
+                                  <td align=3D"left" style=3D"font-size:0px=
+;padding:10px 0px;word-break:break-word;border-collapse:collapse;mso-table-=
+lspace:0pt;mso-table-rspace:0pt;">
+                                    <div style=3D"font-family:-apple-system=
+, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif, Apple=
+ Color Emoji, Segoe UI Emoji, Segoe UI Symbol;font-size:16px;font-weight:40=
+0;line-height:24px;text-align:left;color:#323232;">
+                                      <h4 class=3D"listing-title" style=3D"=
+line-height: 22px; margin: 0; margin-bottom: 8px; color: #323232; font-weig=
+ht: 400; text-decoration: none; width: 100%; max-width: 100%; -ms-text-size=
+-adjust: 100%; white-space: normal; word-break: break-word; font-size: 16px=
+; -webkit-text-size-adjust: 100%;">
+                                        <a style=3D"color:#323232;text-deco=
+ration: none;-ms-text-size-adjust: 100%;-webkit-text-size-adjust:none;" hre=
+f=3D"https://www.properstar.ch/listing/121425911?profileId=3D2478727350&sea=
+rchId=3D1371478435&urltoken=3DNzkzMTc0NGQtNTNjYS00YzI0LTkyNzAtZmJmZGZlZjU2M=
+TE2OnJvYmVydG8uc3VzY3JpcHRpb25zQGdtYWlsLmNvbTo1NDQ0MjMyOg=3D=3D&utm_source=
+=3Demailalerts&utm_medium=3Demail&utm_campaign=3Dsearch-alert">COUP DE C=C5=
+=92UR  NOUVEAU QUARTIER =C3=89COLOGIQUE DANS UN ECRIN DE VERDURE</a>
+                                      </h4>
+                                      <p style=3D"font-size:13px;font-weigh=
+t:400;margin:0;color:#797979;line-height:18px;width:100%;max-width:100%;-ms=
+-text-size-adjust:100%;-webkit-text-size-adjust:none;padding-bottom:15px;wh=
+ite-space:normal;word-break:break-word;display:block;">
+                                        <a style=3D"text-decoration: none;c=
+olor: #797979;" href=3D"https://www.properstar.ch/listing/121425911?profile=
+Id=3D2478727350&searchId=3D1371478435&urltoken=3DNzkzMTc0NGQtNTNjYS00YzI0LT=
+kyNzAtZmJmZGZlZjU2MTE2OnJvYmVydG8uc3VzY3JpcHRpb25zQGdtYWlsLmNvbTo1NDQ0MjMyO=
+g=3D=3D&utm_source=3Demailalerts&utm_medium=3Demail&utm_campaign=3Dsearch-a=
+lert">Lausanne (district), Nouveau quartier
+                                          <br>
+                                          
+                                            Appartement
+                                          
+                                          
+                                            =C2=B7 3.5 Pi=C3=A8ces
+                                          
+                                          
+                                          
+                                          
+                                        </a>
+                                      </p>
+                                      <h3 style=3D"margin: 0; line-height: =
+28px; overflow: hidden; -ms-text-size-adjust: 100%; -webkit-text-size-adjus=
+t: none; font-weight: 600; font-size: 20px;">
+                                        <a style=3D"color:#333333;text-deco=
+ration: none;width: 100%;max-width: 100%;-ms-text-size-adjust: 100%;-webkit=
+-text-size-adjust:none;" href=3D"https://www.properstar.ch/listing/12142591=
+1?profileId=3D2478727350&searchId=3D1371478435&urltoken=3DNzkzMTc0NGQtNTNjY=
+S00YzI0LTkyNzAtZmJmZGZlZjU2MTE2OnJvYmVydG8uc3VzY3JpcHRpb25zQGdtYWlsLmNvbTo1=
+NDQ0MjMyOg=3D=3D&utm_source=3Demailalerts&utm_medium=3Demail&utm_campaign=
+=3Dsearch-alert">
+                                          
+                                            
+                                              CHF 995=E2=80=AF000
+                                            
+                                          
+                                        </a>
+                                      </h3>
+                                    </div>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <!--[if mso | IE]></td></tr></table><![endif]-->
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <!--[if mso | IE]></td></tr></table><![endif]-->
+      
+      <!--[if mso | IE]><table align=3D"center" border=3D"0" cellpadding=3D=
+"0" cellspacing=3D"0" class=3D"" role=3D"presentation" style=3D"width:600px=
+;" width=3D"600" ><tr><td style=3D"line-height:0px;font-size:0px;mso-line-h=
+eight-rule:exactly;"><![endif]-->
+      <div style=3D"margin:0px auto;max-width:600px;">
+        <table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=
+=3D"0" role=3D"presentation" style=3D"width:100%;border-collapse:collapse;m=
+so-table-lspace:0pt;mso-table-rspace:0pt;">
+          <tbody>
+            <tr>
+              <td style=3D"direction:ltr;font-size:0px;padding:0;text-align=
+:center;border-collapse:collapse;mso-table-lspace:0pt;mso-table-rspace:0pt;=
+">
+                <!--[if mso | IE]><table role=3D"presentation" border=3D"0"=
+ cellpadding=3D"0" cellspacing=3D"0"><tr><td class=3D"" style=3D"vertical-a=
+lign:top;width:600px;" ><![endif]-->
+                <div class=3D"mj-column-per-100 mj-outlook-group-fix" style=
+=3D"font-size:0px;text-align:left;direction:ltr;display:inline-block;vertic=
+al-align:top;width:100%;">
+                  <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" r=
+ole=3D"presentation" width=3D"100%" style=3D"border-collapse:collapse;mso-t=
+able-lspace:0pt;mso-table-rspace:0pt;">
+                    <tbody>
+                      <tr>
+                        <td style=3D"vertical-align:top;padding:10px 15px;b=
+order-collapse:collapse;mso-table-lspace:0pt;mso-table-rspace:0pt;">
+                          <table border=3D"0" cellpadding=3D"0" cellspacing=
+=3D"0" role=3D"presentation" style=3D"border-collapse:collapse;mso-table-ls=
+pace:0pt;mso-table-rspace:0pt;" width=3D"100%">
+                            <tbody>
+                              <tr>
+                                <td align=3D"center" style=3D"font-size:0px=
+;padding:0px;word-break:break-word;border-collapse:collapse;mso-table-lspac=
+e:0pt;mso-table-rspace:0pt;">
+                                  <p style=3D"-ms-text-size-adjust:100%;-we=
+bkit-text-size-adjust:none;border-top:solid 1px #DDDDDD;font-size:1px;margi=
+n:0px auto;width:100%;display:block;">
+                                  </p>
+                                  <!--[if mso | IE]><table align=3D"center"=
+ border=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"border-top:solid=
+ 1px #DDDDDD;font-size:1px;margin:0px auto;width:570px;" role=3D"presentati=
+on" width=3D"570px" ><tr><td style=3D"height:0;line-height:0;"> &nbsp;
+</td></tr></table><![endif]-->
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <!--[if mso | IE]></td></tr></table><![endif]-->
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <!--[if mso | IE]></td></tr></table><![endif]-->
+    
+    <!--[if mso | IE]><table align=3D"center" border=3D"0" cellpadding=3D"0=
+" cellspacing=3D"0" class=3D"" role=3D"presentation" style=3D"width:600px;"=
+ width=3D"600" ><tr><td style=3D"line-height:0px;font-size:0px;mso-line-hei=
+ght-rule:exactly;"><![endif]-->
+    <div style=3D"margin:0px auto;max-width:600px;">
+      <table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D=
+"0" role=3D"presentation" style=3D"width:100%;border-collapse:collapse;mso-=
+table-lspace:0pt;mso-table-rspace:0pt;">
+        <tbody>
+          <tr>
+            <td style=3D"direction:ltr;font-size:0px;padding:16px 15px 30px=
+ 15px;text-align:center;border-collapse:collapse;mso-table-lspace:0pt;mso-t=
+able-rspace:0pt;">
+              <!--[if mso | IE]><table role=3D"presentation" border=3D"0" c=
+ellpadding=3D"0" cellspacing=3D"0"><tr><td class=3D"" style=3D"vertical-ali=
+gn:top;width:570px;" ><![endif]-->
+              <div class=3D"mj-column-per-100 mj-outlook-group-fix" style=
+=3D"font-size:0px;text-align:left;direction:ltr;display:inline-block;vertic=
+al-align:top;width:100%;">
+                <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" rol=
+e=3D"presentation" width=3D"100%" style=3D"border-collapse:collapse;mso-tab=
+le-lspace:0pt;mso-table-rspace:0pt;">
+                  <tbody>
+                    <tr>
+                      <td style=3D"vertical-align:top;padding:0;border-coll=
+apse:collapse;mso-table-lspace:0pt;mso-table-rspace:0pt;">
+                        <table border=3D"0" cellpadding=3D"0" cellspacing=
+=3D"0" role=3D"presentation" style=3D"border-collapse:collapse;mso-table-ls=
+pace:0pt;mso-table-rspace:0pt;" width=3D"100%">
+                          <tbody>
+                            <tr>
+                              <td valign=3D"top" align=3D"center" style=3D"=
+width:100%;border-collapse:collapse;mso-table-lspace:0pt;mso-table-rspace:0=
+pt;">
+                                <table border=3D"0" cellpadding=3D"0" cells=
+pacing=3D"0" role=3D"presentation" style=3D"border-collapse:separate;line-h=
+eight:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;">
+                                  <tbody>
+                                    <tr>
+                                      <td align=3D"center" role=3D"presenta=
+tion" style=3D"border:none;cursor:auto;height:40px;mso-padding-alt:0 18px;b=
+order-collapse:collapse;mso-table-lspace:0pt;mso-table-rspace:0pt;" valign=
+=3D"bottom">
+                                        <a href=3D"https://www.properstar.c=
+h/search?searchId=3D1371478435&profileId=3D2478727350&urltoken=3DNzkzMTc0NG=
+QtNTNjYS00YzI0LTkyNzAtZmJmZGZlZjU2MTE2OnJvYmVydG8uc3VzY3JpcHRpb25zQGdtYWlsL=
+mNvbTo1NDQ0MjMyOg=3D=3D&utm_source=3Demailalerts&utm_medium=3Demail&utm_cam=
+paign=3Dsearch-alert" style=3D"display:inline-block;margin:0;text-decoratio=
+n:none;text-transform:none;mso-padding-alt:0px;" target=3D"_blank">
+                                          <img width=3D"240" height=3D"auto=
+" src=3D"https://res.listglobally.com/email/common/house4" style=3D"border-=
+width:0;border:0;border-radius:8px 8px 0 0;display:block;outline:none;text-=
+decoration:none;height:auto;width:100%;font-size:13px;line-height:0px;verti=
+cal-align:top;-ms-interpolation-mode:bicubic;">
+                                        </a>
+                                      </td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td valign=3D"top" align=3D"center" style=3D"=
+width:100%;border-collapse:collapse;mso-table-lspace:0pt;mso-table-rspace:0=
+pt;">
+                                <table border=3D"0" cellpadding=3D"0" cells=
+pacing=3D"0" role=3D"presentation" style=3D"border-collapse:separate;line-h=
+eight:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;">
+                                  <tbody>
+                                    <tr>
+                                      <td align=3D"center" bgcolor=3D"#0087=
+8e" role=3D"presentation" style=3D"border:none;border-radius:6px;cursor:aut=
+o;height:40px;mso-padding-alt:9px 18px;background:#00878e;border-collapse:c=
+ollapse;mso-table-lspace:0pt;mso-table-rspace:0pt;" valign=3D"middle">
+                                        <a href=3D"https://www.properstar.c=
+h/search?searchId=3D1371478435&profileId=3D2478727350&urltoken=3DNzkzMTc0NG=
+QtNTNjYS00YzI0LTkyNzAtZmJmZGZlZjU2MTE2OnJvYmVydG8uc3VzY3JpcHRpb25zQGdtYWlsL=
+mNvbTo1NDQ0MjMyOg=3D=3D&utm_source=3Demailalerts&utm_medium=3Demail&utm_cam=
+paign=3Dsearch-alert" style=3D"display:inline-block;background:#00878e;colo=
+r:#ffffff;font-family:-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, =
+Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI S=
+ymbol;font-size:16px;font-weight:400;line-height:22px;margin:0;text-decorat=
+ion:none;text-transform:none;padding:9px 18px;mso-padding-alt:0px;border-ra=
+dius:6px;" target=3D"_blank">
+                                          Voir toutes les mises =C3=A0 jour
+                                        </a>
+                                      </td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <!--[if mso | IE]></td></tr></table><![endif]-->
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <!--[if mso | IE]></td></tr></table><table align=3D"center" border=3D"0=
+" cellpadding=3D"0" cellspacing=3D"0" class=3D"" role=3D"presentation" styl=
+e=3D"width:600px;" width=3D"600" ><tr><td style=3D"line-height:0px;font-siz=
+e:0px;mso-line-height-rule:exactly;"><![endif]-->
+    <div style=3D"margin:0px auto;max-width:600px;">
+      <table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D=
+"0" role=3D"presentation" style=3D"width:100%;border-collapse:collapse;mso-=
+table-lspace:0pt;mso-table-rspace:0pt;">
+        <tbody>
+          <tr>
+            <td style=3D"direction:ltr;font-size:0px;padding:32px 0px 32px =
+0px;text-align:left;border-collapse:collapse;mso-table-lspace:0pt;mso-table=
+-rspace:0pt;">
+              <!--[if mso | IE]><table role=3D"presentation" border=3D"0" c=
+ellpadding=3D"0" cellspacing=3D"0"><tr><![endif]-->
+              
+                <!--[if mso | IE]><td class=3D"" style=3D"vertical-align:to=
+p;width:300px;" ><![endif]-->
+                <div class=3D"mj-column-per-50 mj-outlook-group-fix" style=
+=3D"font-size:0px;text-align:left;direction:ltr;display:inline-block;vertic=
+al-align:top;width:100%;">
+                  <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" r=
+ole=3D"presentation" width=3D"100%" style=3D"border-collapse:collapse;mso-t=
+able-lspace:0pt;mso-table-rspace:0pt;">
+                    <tbody>
+                      <tr>
+                        <td style=3D"vertical-align:top;padding:10px 15px;b=
+order-collapse:collapse;mso-table-lspace:0pt;mso-table-rspace:0pt;">
+                          <table border=3D"0" cellpadding=3D"0" cellspacing=
+=3D"0" role=3D"presentation" style=3D"border-collapse:collapse;mso-table-ls=
+pace:0pt;mso-table-rspace:0pt;" width=3D"100%">
+                            <tbody>
+                              <tr>
+                                <td style=3D"border-collapse:separate;width=
+:40px;vertical-align:middle;mso-table-lspace:0pt;mso-table-rspace:0pt;">
+                                  <div style=3D"padding: 0px; width: 40px; =
+height: 40px">
+                                    <img alt=3D"=F0=9F=94=94" height=3D"40"=
+ width=3D"40" src=3D"https://res.listglobally.com/email/common/bell" style=
+=3D"font-size:13px;width:40px;height:40px;border:0;line-height:100%;outline=
+:none;text-decoration:none;-ms-interpolation-mode:bicubic;">
+                                  </div>
+                                </td>
+                                <td style=3D"padding:0px 0px 0px 8px;border=
+-collapse:collapse;mso-table-lspace:0pt;mso-table-rspace:0pt;">
+                                  <table border=3D"0" cellpadding=3D"0" cel=
+lspacing=3D"0" role=3D"presentation" style=3D"border-collapse:separate;mso-=
+table-lspace:0pt;mso-table-rspace:0pt;">
+                                    <tbody>
+                                      <tr>
+                                        <td style=3D"border-collapse:separa=
+te;padding:0;mso-table-lspace:0pt;mso-table-rspace:0pt;">
+                                          <div style=3D"
+                      font-size: 20px;
+                      line-height: 20px;
+                      font-weight: bold;
+                      color: #333333;
+                      padding: 0px 0px 8px 0px;
+                      font-family: -apple-system, BlinkMacSystemFont, Segoe=
+ UI, Roboto, Helvetica, Arial, sans-serif,
+                        Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
+                    ">
+                                            Trop d&#039;e-mails ?
+                                          </div>
+                                        </td>
+                                      </tr>
+                                      <tr>
+                                        <td style=3D"border-collapse:separa=
+te;padding:0;mso-table-lspace:0pt;mso-table-rspace:0pt;">
+                                          <div style=3D"
+                      font-size: 13px;
+                      line-height: 18px;
+                      color: #797979;
+                      padding: 0px;
+                      text-decoration: underline;
+                      font-weight: 400;
+                      font-family: -apple-system, BlinkMacSystemFont, Segoe=
+ UI, Roboto, Helvetica, Arial, sans-serif,
+                        Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
+                    ">
+                                            <a href=3D"https://www.properst=
+ar.ch/search?searchId=3D1371478435&frq=3DDaily&urlToken=3DNzkzMTc0NGQtNTNjY=
+S00YzI0LTkyNzAtZmJmZGZlZjU2MTE2OnJvYmVydG8uc3VzY3JpcHRpb25zQGdtYWlsLmNvbTo1=
+NDQ0MjMyOg=3D=3D&utm_source=3Demailalerts&utm_medium=3Demail&utm_campaign=
+=3Dsearch-alert" style=3D"color: #797979; text-decoration: underline;">
+                                              Passer aux notifications quot=
+idiennes</a>
+                                          </div>
+                                        </td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <!--[if mso | IE]></td><![endif]-->
+              
+              <!--[if mso | IE]></tr></table><![endif]-->
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <!--[if mso | IE]></td></tr></table><table align=3D"center" border=3D"0=
+" cellpadding=3D"0" cellspacing=3D"0" class=3D"" role=3D"presentation" styl=
+e=3D"width:600px;" width=3D"600" ><tr><td style=3D"line-height:0px;font-siz=
+e:0px;mso-line-height-rule:exactly;"><![endif]-->
+    <div style=3D"margin:0px auto;max-width:600px;">
+      <table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D=
+"0" role=3D"presentation" style=3D"width:100%;border-collapse:collapse;mso-=
+table-lspace:0pt;mso-table-rspace:0pt;">
+        <tbody>
+          <tr>
+            <td style=3D"direction:ltr;font-size:0px;padding:0;text-align:c=
+enter;border-collapse:collapse;mso-table-lspace:0pt;mso-table-rspace:0pt;">
+              <!--[if mso | IE]><table role=3D"presentation" border=3D"0" c=
+ellpadding=3D"0" cellspacing=3D"0"><tr><td class=3D"" style=3D"vertical-ali=
+gn:top;width:600px;" ><![endif]-->
+              <div class=3D"mj-column-per-100 mj-outlook-group-fix" style=
+=3D"font-size:0px;text-align:left;direction:ltr;display:inline-block;vertic=
+al-align:top;width:100%;">
+                <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" rol=
+e=3D"presentation" width=3D"100%" style=3D"border-collapse:collapse;mso-tab=
+le-lspace:0pt;mso-table-rspace:0pt;">
+                  <tbody>
+                    <tr>
+                      <td style=3D"vertical-align:top;padding:10px 15px;pad=
+ding-top:18px;padding-bottom:16px;border-collapse:collapse;mso-table-lspace=
+:0pt;mso-table-rspace:0pt;">
+                        <table border=3D"0" cellpadding=3D"0" cellspacing=
+=3D"0" role=3D"presentation" style=3D"border-collapse:collapse;mso-table-ls=
+pace:0pt;mso-table-rspace:0pt;" width=3D"100%">
+                          <tbody>
+                            <tr>
+                              <td align=3D"center" style=3D"font-size:0px;p=
+adding:0px;padding-top:0px;padding-right:0px;padding-bottom:24px;padding-le=
+ft:0px;word-break:break-word;border-collapse:collapse;mso-table-lspace:0pt;=
+mso-table-rspace:0pt;">
+                                <p style=3D"-ms-text-size-adjust:100%;-webk=
+it-text-size-adjust:none;border-top:solid 1px #D8D8D8;font-size:1px;margin:=
+0px auto;width:100%;display:block;">
+                                </p>
+                                <!--[if mso | IE]><table align=3D"center" b=
+order=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"border-top:solid 1=
+px #D8D8D8;font-size:1px;margin:0px auto;width:570px;" role=3D"presentation=
+" width=3D"570px" ><tr><td style=3D"height:0;line-height:0;"> &nbsp;
+</td></tr></table><![endif]-->
+                              </td>
+                            </tr>
+                            <tr>
+                              <td width=3D"290" style=3D"padding:8px 0px;fo=
+nt-size:13px;font-weight:700;line-height:18px;color:#333333;font-family:-ap=
+ple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-se=
+rif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;border-collapse:col=
+lapse;mso-table-lspace:0pt;mso-table-rspace:0pt;">
+                                T=C3=A9l=C3=A9charger l&#039;application
+                              </td>
+                            </tr>
+                            <tr>
+                              <td width=3D"290" style=3D"border-collapse:co=
+llapse;mso-table-lspace:0pt;mso-table-rspace:0pt;">
+                                <table height=3D"40" width=3D"138" align=3D=
+"left" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentatio=
+n" style=3D"float:left;width:138px;height:40px;border-collapse:separate;mso=
+-table-lspace:0pt;mso-table-rspace:0pt;">
+                                  <tbody>
+                                    <tr>
+                                      <td style=3D"padding-right:10px;borde=
+r-collapse:collapse;mso-table-lspace:0pt;mso-table-rspace:0pt;">
+                                        <a style=3D"text-decoration: none;t=
+ext-transform:none;width:128px;height:38px;" href=3D"https://apps.apple.com=
+/app/apple-store/id1253028900?pt=3D118713609&ct=3Dps_email_search_alert&mt=
+=3D8 " target=3D"_blank">
+                                          <img alt=3D"App Store" height=3D"=
+38" width=3D"128" src=3D"https://res.listglobally.com/email/common/appstore=
+" style=3D"font-size:13px;width:128px;height:38px;border:0;line-height:100%=
+;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic;">
+                                        </a>
+                                      </td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                                <table height=3D"40" width=3D"138" align=3D=
+"left" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentatio=
+n" style=3D"width:138px;height:40px;border-collapse:separate;mso-table-lspa=
+ce:0pt;mso-table-rspace:0pt;">
+                                  <tbody>
+                                    <tr>
+                                      <td style=3D"border-collapse:collapse=
+;mso-table-lspace:0pt;mso-table-rspace:0pt;">
+                                        <a style=3D"text-decoration: none;t=
+ext-transform:none;width:128px;height:38px;" href=3D"https://play.google.co=
+m/store/apps/details?id=3Dcom.listglobally.properstar&utm_source=3Demailale=
+rts&utm_medium=3Demail&utm_campaign=3Dsearch-alert" target=3D"_blank">
+                                          <img alt=3D"Google Play" height=
+=3D"38" width=3D"128" src=3D"https://res.listglobally.com/email/common/goog=
+leplay" style=3D"font-size:13px;width:128px;height:38px;border:0;line-heigh=
+t:100%;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic;">
+                                        </a>
+                                      </td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <!--[if mso | IE]></td></tr></table><![endif]-->
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <!--[if mso | IE]></td></tr></table><table align=3D"center" border=3D"0=
+" cellpadding=3D"0" cellspacing=3D"0" class=3D"" role=3D"presentation" styl=
+e=3D"width:600px;" width=3D"600" ><tr><td style=3D"line-height:0px;font-siz=
+e:0px;mso-line-height-rule:exactly;"><![endif]-->
+    <div style=3D"margin:0px auto;max-width:600px;">
+      <table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D=
+"0" role=3D"presentation" style=3D"width:100%;border-collapse:collapse;mso-=
+table-lspace:0pt;mso-table-rspace:0pt;">
+        <tbody>
+          <tr>
+            <td style=3D"direction:ltr;font-size:0px;padding:0;text-align:c=
+enter;border-collapse:collapse;mso-table-lspace:0pt;mso-table-rspace:0pt;">
+              <!--[if mso | IE]><table role=3D"presentation" border=3D"0" c=
+ellpadding=3D"0" cellspacing=3D"0"><tr><td class=3D"" style=3D"vertical-ali=
+gn:top;width:600px;" ><![endif]-->
+              <div class=3D"mj-column-per-100 mj-outlook-group-fix" style=
+=3D"font-size:0px;text-align:left;direction:ltr;display:inline-block;vertic=
+al-align:top;width:100%;">
+                <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" rol=
+e=3D"presentation" width=3D"100%" style=3D"border-collapse:collapse;mso-tab=
+le-lspace:0pt;mso-table-rspace:0pt;">
+                  <tbody>
+                    <tr>
+                      <td style=3D"vertical-align:top;padding:10px 15px;pad=
+ding-top:16px;padding-bottom:16px;border-collapse:collapse;mso-table-lspace=
+:0pt;mso-table-rspace:0pt;">
+                        <table border=3D"0" cellpadding=3D"0" cellspacing=
+=3D"0" role=3D"presentation" style=3D"border-collapse:collapse;mso-table-ls=
+pace:0pt;mso-table-rspace:0pt;" width=3D"100%">
+                          <tbody>
+                            <tr>
+                              <td align=3D"left" style=3D"font-size:0px;pad=
+ding:17px 0px 17px 0px;word-break:break-word;border-collapse:collapse;mso-t=
+able-lspace:0pt;mso-table-rspace:0pt;">
+                                <table border=3D"0" cellpadding=3D"0" cells=
+pacing=3D"0" role=3D"presentation" style=3D"border-collapse:collapse;border=
+-spacing:0px;mso-table-lspace:0pt;mso-table-rspace:0pt;">
+                                  <tbody>
+                                    <tr>
+                                      <td style=3D"width:140px;border-colla=
+pse:collapse;mso-table-lspace:0pt;mso-table-rspace:0pt;">
+                                        <img alt=3D"Properstar" src=3D"http=
+s://res.listglobally.com/email/common/properstar-logo" style=3D"border:0;di=
+splay:block;outline:none;text-decoration:none;height:auto;width:100%;font-s=
+ize:13px;line-height:100%;-ms-interpolation-mode:bicubic;" width=3D"140" he=
+ight=3D"auto">
+                                      </td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <!--[if mso | IE]></td></tr></table><![endif]-->
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <!--[if mso | IE]></td></tr></table><table align=3D"center" border=3D"0=
+" cellpadding=3D"0" cellspacing=3D"0" class=3D"" role=3D"presentation" styl=
+e=3D"width:600px;" width=3D"600" ><tr><td style=3D"line-height:0px;font-siz=
+e:0px;mso-line-height-rule:exactly;"><![endif]-->
+    <div style=3D"margin:0px auto;max-width:600px;">
+      <table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D=
+"0" role=3D"presentation" style=3D"width:100%;border-collapse:collapse;mso-=
+table-lspace:0pt;mso-table-rspace:0pt;">
+        <tbody>
+          <tr>
+            <td style=3D"direction:ltr;font-size:0px;padding:0;text-align:c=
+enter;border-collapse:collapse;mso-table-lspace:0pt;mso-table-rspace:0pt;">
+              <!--[if mso | IE]><table role=3D"presentation" border=3D"0" c=
+ellpadding=3D"0" cellspacing=3D"0"><tr><td class=3D"" style=3D"vertical-ali=
+gn:top;width:600px;" ><![endif]-->
+              <div class=3D"mj-column-per-100 mj-outlook-group-fix" style=
+=3D"font-size:0px;text-align:left;direction:ltr;display:inline-block;vertic=
+al-align:top;width:100%;">
+                <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" rol=
+e=3D"presentation" width=3D"100%" style=3D"border-collapse:collapse;mso-tab=
+le-lspace:0pt;mso-table-rspace:0pt;">
+                  <tbody>
+                    <tr>
+                      <td style=3D"vertical-align:top;padding:10px 15px;bor=
+der-collapse:collapse;mso-table-lspace:0pt;mso-table-rspace:0pt;">
+                        <table border=3D"0" cellpadding=3D"0" cellspacing=
+=3D"0" role=3D"presentation" style=3D"border-collapse:collapse;mso-table-ls=
+pace:0pt;mso-table-rspace:0pt;" width=3D"100%">
+                          <tbody>
+                            <tr>
+                              <td align=3D"left" style=3D"font-size:0px;pad=
+ding:10px 0px;padding-top:0px;padding-bottom:0px;word-break:break-word;bord=
+er-collapse:collapse;mso-table-lspace:0pt;mso-table-rspace:0pt;">
+                                <div style=3D"font-family:-apple-system, Bl=
+inkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif, Apple Col=
+or Emoji, Segoe UI Emoji, Segoe UI Symbol;font-size:13px;font-weight:400;li=
+ne-height:18px;text-align:left;color:#797979;">Properstar SA, Rue Centrale =
+8, Vaud 1003 Lausanne, Switzerland</div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td align=3D"left" style=3D"font-size:0px;pad=
+ding:10px 0px;padding-top:0px;word-break:break-word;border-collapse:collaps=
+e;mso-table-lspace:0pt;mso-table-rspace:0pt;">
+                                <div style=3D"font-family:-apple-system, Bl=
+inkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif, Apple Col=
+or Emoji, Segoe UI Emoji, Segoe UI Symbol;font-size:16px;font-weight:400;li=
+ne-height:24px;text-align:left;color:#323232;"><a style=3D"line-height: 18p=
+x; font-size: 13px;font-weight: 400; color: #797979; text-decoration: under=
+line;" href=3D"https://www.properstar.ch/contact?token=3DNzkzMTc0NGQtNTNjYS=
+00YzI0LTkyNzAtZmJmZGZlZjU2MTE2OnJvYmVydG8uc3VzY3JpcHRpb25zQGdtYWlsLmNvbTo1N=
+DQ0MjMyOg=3D=3D&utm_source=3Demailalerts&utm_medium=3Demail&utm_campaign=3D=
+search-alert">Properstar.com</a>
+                                  <a style=3D"line-height: 18px; font-size:=
+ 13px;font-weight: 400; color: #797979; text-decoration: underline; margin-=
+left: 23px;" href=3D"https://www.properstar.ch/unsubscribe?unsublink=3D1371=
+478435&userId=3D5444232&userEmail=3Droberto.suscriptions@gmail.com&profileI=
+d=3D2478727350&urltoken=3DNzkzMTc0NGQtNTNjYS00YzI0LTkyNzAtZmJmZGZlZjU2MTE2O=
+nJvYmVydG8uc3VzY3JpcHRpb25zQGdtYWlsLmNvbTo1NDQ0MjMyOg=3D=3D&utm_source=3Dem=
+ailalerts&utm_medium=3Demail&utm_campaign=3Dsearch-alert">Se d=C3=A9sinscri=
+re</a>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td style=3D"font-size:0px;padding:10px 15px;=
+word-break:break-word;border-collapse:collapse;mso-table-lspace:0pt;mso-tab=
+le-rspace:0pt;">
+                                <div style=3D"height:32px;line-height:32px;=
+">&#8202;</div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <!--[if mso | IE]></td></tr></table><![endif]-->
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <!--[if mso | IE]></td></tr></table><![endif]-->
+  </div>
+<img src=3D"https://mandrillapp.com/track/open.php?u=3D30621253&id=3Df809d7=
+677e99470ab7f1c77fd9e203d7" height=3D"1" width=3D"1" alt=3D""></body>
+
+</html>
+
+--_av-Z-Mka-8dBDDr-FqB9iJHfg--
+

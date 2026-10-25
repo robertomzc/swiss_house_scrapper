@@ -1,0 +1,21 @@
+[
+    {
+        "url": "https://r.brevo.immobilier.ch/tr/cl/MGL4m_Sc5IEjAscuV5XT0498MGRh32AitvS_FhgwzrcSLmfvkPVt_7WsmIFLMP2QiSvS1YoWMmZMI7j72sWblgpuL-RrjaPfaro1cTV2gs6bZXOBhT_kzdg0QOWnRZopEuVYQwWCOcGvZEskV3J9Xp-WhI14N5T6UymZaCN1SRm8TMNlfGyR4MWSLkPvgsX_g7cKTLL--pz7TAc5d4akaLwviBKOD67aBXfUaJ7keDZprjoyDYzzKzRjSSY_6ESkFOvKjz3xDv8J3eq13HpNqi91WxK3Wu9Z8Bdg_wbumVa0Po_V370ZjEHBJodsaWiXffpEZCTIWXIISSvqMi0ipIaPP6KqJo5qCOfNzNA70r6txVge0LQjOiivLM7awqdG7E82sUckOXY5iPowLeuXyG4GJ-2uL4m7nIBnLlddw9m-agNS8r36CN0nE-CHl4JJ-fRqwyk_LnnhZehJyDsRTWcHr9RaRZPPoEMPjjoDkTouVrDHShkscAVJQQuvOESJyzIy8igYm945QO5d5lMqA0zitPYziFrPeb2ihS_5T884_jgVMeaYn_udF-VyHAwSgxZQee4TuzFvR855hLBOFr8SG4cji1CJbx5kie7kd2NwkexgAXRy0w7rwOFk3BWd58zufCKr1bXKaSRfTZwCw8EdzgSYuQeUN7EwHfd5ga10LmSA89HoXZnpqonlS8mx0pkwTKugky3KxPKLGevG7NaNeZACnvAW4JPmlu30BvUNjxVxZj4aoCzVS4UJRNpLFP_RRw4",
+        "source_site": "immobilier",
+        "title": "Appartement 4.5 pièces - Debges",
+        "address": "Denges",
+        "npa": null,
+        "commune": "Denges",
+        "rooms": 4.5,
+        "surface_m2": 117,
+        "first_seen": "2026-10-20",
+        "observations": [
+        {
+            "observed_at": "2026-10-0 - 10:53:00",
+            "price": 1190000,
+            "kind": "new",
+            "source": "immobilier"
+        }
+        ]
+    }
+] 

@@ -1,0 +1,40 @@
+[
+  {
+    "url": "https://tracking.notification.immoscout24.ch/CL0/https:%2F%2Fwww.immoscout24.ch%2Fbuy%2F4003567023%3Futm_source=crm%26utm_medium=email%26utm_term=listing%26utm_content=557cdc01-12ad-4489-bdfb-f91b828eaa53%26subscriptionId=557cdc01-12ad-4489-bdfb-f91b828eaa53%26utm_campaign=(BR_is24)(CG_se-al)(N_al-notif)(C_ema-tra)(L_ch-en)(G_tra)(U_cs)(D_web)(E_5m)(X_1)/1/010701a1585ebb92-4b1bf2a9-04de-4560-a4d0-619c907d4da4-000000/dyaAip4kqS1FFgWG-N4BrQhIfl0vcNCUCxjRJyVg3Ew=258",
+    "source_site": "immoscout24",
+    "title": "4.5 rooms - Vufflens-la-Ville",
+    "address": "Grand-Rue, 1302 Vufflens-la-Ville",
+    "npa": 1302,
+    "commune": "Vufflens-la-Ville",
+    "rooms": 4.5,
+    "surface_m2": 112,
+    "first_seen": "2026-10-20",
+    "observations": [
+      {
+        "observed_at": "2026-10-20 - 10:12:00",
+        "price": 850000,
+        "kind": "new",
+        "source": "immoscout24"
+      }
+    ]
+  },
+  {
+    "url": "https://tracking.notification.immoscout24.ch/CL0/https:%2F%2Fwww.immoscout24.ch%2Fbuy%2F4003567001%3Futm_source=crm%26utm_medium=email%26utm_term=listing%26utm_content=557cdc01-12ad-4489-bdfb-f91b828eaa53%26subscriptionId=557cdc01-12ad-4489-bdfb-f91b828eaa53%26utm_campaign=(BR_is24)(CG_se-al)(N_al-notif)(C_ema-tra)(L_ch-en)(G_tra)(U_cs)(D_web)(E_5m)(X_2)/1/010701a1585ebb92-4b1bf2a9-04de-4560-a4d0-619c907d4da4-000000/zJh_zVlVVWiauXUHVzugSHUwLoZXwKjtiJtFuLZg1Bg=258",
+    "source_site": "immoscout24",
+    "title": "4.5 rooms - Poliez-Pittet",
+    "address": "1041 Poliez-Pittet",
+    "npa": 1041,
+    "commune": "Poliez-Pittet",
+    "rooms": 4.5,
+    "surface_m2": 121,
+    "first_seen": "2026-10-20",
+    "observations": [
+      {
+        "observed_at": "2026-10-20 - 10:12:00",
+        "price": 970000,
+        "kind": "new",
+        "source": "immoscout24"
+      }
+    ]
+  }
+]

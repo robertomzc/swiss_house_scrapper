@@ -1,0 +1,97 @@
+[
+  {
+    "url": "https://www.properstar.ch/listing/120478833?profileId=2478727350&searchId=1371478435&urltoken=NzkzMTc0NGQtNTNjYS00YzI0LTkyNzAtZmJmZGZlZjU2MTE2OnJvYmVydG8uc3VzY3JpcHRpb25zQGdtYWlsLmNvbTo1NDQ0MjMyOg==&utm_source=emailalerts&utm_medium=email&utm_campaign=search-alert",
+    "source_site": "properstar",
+    "title": "La belle vie à Chailly: 3.5 pièces tout confort",
+    "address": "Avenue du Temple 13, Lausanne",
+    "npa": null,
+    "commune": "Lausanne",
+    "rooms": 3.5,
+    "surface_m2": null,
+    "first_seen": "2026-10-21",
+    "observations": [
+      {
+        "observed_at": "2026-10-21 - 01:20:00",
+        "price": 800000,
+        "kind": "price_drop",
+        "source": "properstar"
+      }
+    ]
+  },
+  {
+    "url": "https://www.properstar.ch/listing/121263611?profileId=2478727350&searchId=1371478435&urltoken=NzkzMTc0NGQtNTNjYS00YzI0LTkyNzAtZmJmZGZlZjU2MTE2OnJvYmVydG8uc3VzY3JpcHRpb25zQGdtYWlsLmNvbTo1NDQ0MjMyOg==&utm_source=emailalerts&utm_medium=email&utm_campaign=search-alert",
+    "source_site": "properstar",
+    "title": "Appartement de 4.5 pièces Minergie avec balcon de 20 m²",
+    "address": "Lausanne",
+    "npa": null,
+    "commune": "Lausanne",
+    "rooms": 4.5,
+    "surface_m2": null,
+    "first_seen": "2026-10-21",
+    "observations": [
+      {
+        "observed_at": "2026-10-21 - 01:20:00",
+        "price": 1190000,
+        "kind": "price_drop",
+        "source": "properstar"
+      }
+    ]
+  },
+  {
+    "url": "https://www.properstar.ch/listing/121425914?profileId=2478727350&searchId=1371478435&urltoken=NzkzMTc0NGQtNTNjYS00YzI0LTkyNzAtZmJmZGZlZjU2MTE2OnJvYmVydG8uc3VzY3JpcHRpb25zQGdtYWlsLmNvbTo1NDQ0MjMyOg==&utm_source=emailalerts&utm_medium=email&utm_campaign=search-alert",
+    "source_site": "properstar",
+    "title": "COUP DE COEUR ATTIQUE NEUF AVEC GRANDE TERRASSE",
+    "address": "Lausanne (district)",
+    "npa": null,
+    "commune": "Lausanne",
+    "rooms": 3.5,
+    "surface_m2": null,
+    "first_seen": "2026-10-21",
+    "observations": [
+      {
+        "observed_at": "2026-10-21 - 01:20:00",
+        "price": 1060000,
+        "kind": "new",
+        "source": "properstar"
+      }
+    ]
+  },
+  {
+    "url": "https://www.properstar.ch/listing/121425912?profileId=2478727350&searchId=1371478435&urltoken=NzkzMTc0NGQtNTNjYS00YzI0LTkyNzAtZmJmZGZlZjU2MTE2OnJvYmVydG8uc3VzY3JpcHRpb25zQGdtYWlsLmNvbTo1NDQ0MjMyOg==&utm_source=emailalerts&utm_medium=email&utm_campaign=search-alert",
+    "source_site": "properstar",
+    "title": "REZ-DE-JARDIN DANS UN NOUVEAU QUARTIER PROCHE DE TOUT",
+    "address": "Lausanne (district)",
+    "npa": null,
+    "commune": "Lausanne",
+    "rooms": 3.5,
+    "surface_m2": null,
+    "first_seen": "2026-10-21",
+    "observations": [
+      {
+        "observed_at": "2026-10-21 - 01:20:00",
+        "price": 1040000,
+        "kind": "new",
+        "source": "properstar"
+      }
+    ]
+  },
+  {
+    "url": "https://www.properstar.ch/listing/121425911?profileId=2478727350&searchId=1371478435&urltoken=NzkzMTc0NGQtNTNjYS00YzI0LTkyNzAtZmJmZGZlZjU2MTE2OnJvYmVydG8uc3VzY3JpcHRpb25zQGdtYWlsLmNvbTo1NDQ0MjMyOg==&utm_source=emailalerts&utm_medium=email&utm_campaign=search-alert",
+    "source_site": "properstar",
+    "title": "COUP DE CŒUR NOUVEAU QUARTIER ÉCOLOGIQUE DANS UN ECRIN DE VERDURE",
+    "address": "Lausanne (district)",
+    "npa": null,
+    "commune": "Lausanne",
+    "rooms": 3.5,
+    "surface_m2": null,
+    "first_seen": "2026-10-21",
+    "observations": [
+      {
+        "observed_at": "2026-10-21 - 01:20:00",
+        "price": 995000,
+        "kind": "new",
+        "source": "properstar"
+      }
+    ]
+  }
+]

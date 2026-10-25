@@ -1,0 +1,1703 @@
+Delivered-To: roberto.suscriptions@gmail.com
+Received: by 2002:a2e:844a:0:b0:3ab:3511:4041 with SMTP id u10csp410288ljh;
+        Fri, 23 Oct 2026 22:22:04 -0700 (PDT)
+X-Received: by 2002:a05:600c:a114:b0:4a1:8dd1:305a with SMTP id
+ 5b1f17b1804b1-4a35aae56bemr12017525e9.0.1792819324785;        Fri, 23 Oct
+ 2026 22:22:04 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1792819324; cv=none;
+        d=google.com; s=arc-20260327;
+        b=WXde9mNNmL9aZaRNUjJfD8vlR3wEWcwfCfBNv9jwcvx4Gl/3Q7qPUpkzXH1R/wz0AP
+         Bj8FvYOsmDExfZlvuU0L7Zb07WSdNHtfofKOrB5dcQKtpWLJWIGY9YzwRVigRLWUQb/D
+         llUmWJew1Hy2dtEstbZSSLNzjPAcBpHQzg7/IGbufAdxLbgOdLp15hHJ+kmRM/oeRMsv
+         tfV4D27NS+RNrpSMVyACTYCOLnOitdcDW3itce8whmItkSKdc4gDXiG8G+PY46+M4xWX
+         PvB1rQqdDfADVpKjwJC/UjMvG4CKfAvnvv7GC+Wd8A9RismHcntxSiA8S+FOoBTJtoQg
+         YFvQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com;
+ s=arc-20260327;       
+ h=mime-version:content-transfer-encoding:reply-to:message-id:subject        
+ :to:feedback-id:list-unsubscribe-post:date:list-unsubscribe        
+ :origin-messageid:from:dkim-signature;       
+ bh=7vueaxRH0By2qEyt6xxJKwa11BGvQWWIm8xKMVRArvs=;       
+ fh=2XmS9xvnXPicLaGz/Ea/ruWPFMIoGD/l/uZxcTdxA7o=;       
+ b=KcVnqcCXrtVgFlnZtJ7Z6JCjh+0oMaq9Q57wHv5vOrUQaaYjVU4gC3TnNJOzp+yGpn        
+ jBqgdevqBVocYReZ1S6OS/Y3IOj45xu7zE3ukrJ9x2dA41wGTDcUEYam/DH/DqS6ZvBH        
+ /DToiThB6YjB7e55nwZIXWWP7K6Mp/bL6ndZrdnZK8AH1m4DFF6M7mLl9zbKYZoDqylj        
+ g3Eh6xJS20rplpPCAfVZ2DYdc/Ux5ukS01+VIIlgEAST12zJGQC2BTYmqIa38j6uNdAh        
+ 5eNrm3pQWggYolgqUv5vPk+/jfbsAxi57OV8EKOvYq54Xwg35aihHB13FLItcX1NRh9r        
+ /lVA==;        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;       dkim=pass
+ header.i=@immobilier.ch header.s=brevo1 header.b=qu3NrvBc;       spf=pass
+ (google.com: domain of bounces-335533882-2423752720@brevo.immobilier.ch
+ designates 153.92.228.36 as permitted sender)
+ smtp.mailfrom=bounces-335533882-2423752720@brevo.immobilier.ch;      
+ dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=immobilier.ch
+Return-Path: <bounces-335533882-2423752720@brevo.immobilier.ch>
+Received: from brevo.immobilier.ch (brevo.immobilier.ch. [153.92.228.36])
+        by mx.google.com with ESMTPS id
+ ffacd0b85a97d-48e3ed2e423si1943971f8f.484.2026.10.23.22.22.04        for
+ <roberto.suscriptions@gmail.com>        (version=TLS1_3
+ cipher=TLS_AES_256_GCM_SHA384 bits=256/256);        Fri, 23 Oct 2026 22:22:04
+ -0700 (PDT)
+Received-SPF: pass (google.com: domain of
+ bounces-335533882-2423752720@brevo.immobilier.ch designates 153.92.228.36 as
+ permitted sender) client-ip=153.92.228.36;
+Authentication-Results: mx.google.com;       dkim=pass header.i=@immobilier.ch
+ header.s=brevo1 header.b=qu3NrvBc;       spf=pass (google.com: domain of
+ bounces-335533882-2423752720@brevo.immobilier.ch designates 153.92.228.36 as
+ permitted sender)
+ smtp.mailfrom=bounces-335533882-2423752720@brevo.immobilier.ch;      
+ dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=immobilier.ch
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=immobilier.ch;
+ q=dns/txt; s=brevo1; bh=7vueaxRH0By2qEyt6xxJKwa11BGvQWWIm8xKMVRArvs=; 
+ =?utf-8?q?h=3Dfrom=3Areply-to=3Asubject=3Adate=3Ato=3Amime-version=3Aconten?=
+ =?utf-8?q?t-type=3Acontent-transfer-encoding=3Alist-unsubscribe=3Ax-csa-com?=
+ =?utf-8?q?plaints=3Alist-unsubscribe-post=3Amessage-id=3Ax-sib-id=3Afeedbac?=
+ =?utf-8?q?k-id=3B________b=3Dqu3NrvBcNpBbHwx+z2/0lFzM+/zMTf5E9GL8zAzIFafyAO?=
+ =?utf-8?q?iLbF22IHCrkenVozsfB/h9YYbyWJK3?=       
+ sjSQ70j1Au+FV74tO4ypnf5Xv1Qxk13p8wooZkdB8UrN4BWyZWkNhReS+rF2gILUMKN0GXtcxiX7
+       
+ vkscCkmgkirmRSpfkg8jECRMBjot3B6f9F7doniZJ01YF4EWmkSe5tI6mLnG5JOCvtpj7kxQ/t2U
+       
+ Uh02oA0qAxTX6Gh6aVH9QwwG8LpXLiUi2CdYf8l73eVlfE1HbWAnRqZGAx/Ox5k+nW+4iV7YtWQz
+        x5nJWxf7oZmh+t66BSLJXn5wzS3k9BfSkyziOA==
+X-sib-id: =?utf-8?q?2lY=5FvUi=5FQnq=5FtJuQ7hFxl8mZ6QgbF9zSp2EAjTXeY=5FZvLT3m?=
+ =?utf-8?q?WMka7DOMeqh0GWY8Gu-aqlBL01Assna0I4lomGCG2eUHsV7tuGVqQKl=5Fmi225OC?=
+ =?utf-8?q?jD6LGbv8zK5O17VNRHffQdKbaLPF1HCge4LCgvNYXXUI7Kzp7AuEOzofUmeCDrrCG?=
+ =?utf-8?q?hNx0gUYr0R4?=
+From: "immobilier.ch" <mail@immobilier.ch>
+Origin-messageId: <202610240522.54059196860@smtp-relay.mailin.fr>
+List-Unsubscribe: =?utf-8?q?=3Chttps=3A//list-unsubscribe=2Eme/tr/un/li/jxvR?=
+ =?utf-8?q?EX-T244LatsQTPyy5K8bYFbJ9300K7lMt6OSBCzRygfn-lV90OAiuCyD0KtOORyZ1?=
+ =?utf-8?q?--zYHFw6=5F6DEwxec-mZ1lLY2aykvILb8nIYQ5KGGqmtKMz-xzBCjN0tOFVsBzHN?=
+ =?utf-8?q?udMVnNC1ejMJMW4K8M74nmGjGBBGA9TiOkl8R0Xob0mPQVeTQgzM3e83gbSI0qLoU?=
+ =?utf-8?q?CbRui7u6s5OGUlkYuEe8JQaTxzVzfXEOj-6bUisn78=3E?=
+Date: Sat, 24 Oct 2026 05:22:04 GMT
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+Feedback-ID: 153.92.228.36:9445284_-1:9445284:Sendinblue
+X-CSA-Complaints: csa-complaints@eco.de
+X-Mailin-EID: =?utf-8?q?MzM1NTMzODgyfnJvYmVydG8uc3VzY3JpcHRpb25zQGdtYWlsLmNv?=
+ =?utf-8?q?bX48MjAyNjEwMjQwNTIyLjU0MDU5MTk2ODYwQHNtdHAtcmVsYXkubWFpbGluLmZyP?=
+ =?utf-8?q?n5icmV2by5pbW1vYmlsaWVyLmNo?=
+To: "roberto.suscriptions@gmail.com" <roberto.suscriptions@gmail.com>
+Subject: Votre =?utf-8?q?r=C3=A9sum=C3=A9_hebdomadaire_des_annonces_?=
+ =?utf-8?b?4oCT?= Partie 1
+Message-Id: <202610240522.54059196860@smtp-relay.mailin.fr>
+Reply-To: "info@immobilier.ch" <info@immobilier.ch>
+Content-Transfer-Encoding: quoted-printable
+Mime-Version: 1.0
+Content-Type: text/html; charset=utf-8
+X-Mailin-Custom: {"application":"portal","idEmailSent":614804050}
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xht=
+ml11/DTD/xhtml11.dtd"><html lang=3D"fr-CH" xmlns=3D"http://www.w3.org/1999/=
+xhtml" xmlns:v=3D"urn:schemas-microsoft-com:vml" xmlns:o=3D"urn:schemas-mic=
+rosoft-com:office:office"><head><title>immobilier.ch</title><meta http-equi=
+v=3D"Content-Type" content=3D"text/html; charset=3Dutf-8"/><meta http-equiv=
+=3D"X-UA-Compatible" content=3D"IE=3Dedge"/><meta name=3D"viewport" content=
+=3D"width=3Ddevice-width, initial-scale=3D1.0 "/><meta name=3D"format-detec=
+tion" content=3D"telephone=3Dno"/><meta name=3D"x-apple-disable-message-ref=
+ormatting"/><style>body{margin:0 auto!important;padding:0!important;-webkit=
+-text-size-adjust:100%!important;-ms-text-size-adjust:100%!important;-webki=
+t-font-smoothing:antialiased!important;min-width:375px!important}img{border=
+:0!important;outline:0!important}p{margin:0!important;padding:0!important}t=
+d,a,span{border-collapse:collapse;mso-line-height-rule:exactly}.em_grey a{c=
+olor:#222!important;text-decoration:none!important}.em_red a{color:#de202c!=
+important;text-decoration:none!important}.em_violet a{color:#7b42f5!importa=
+nt;text-decoration:none!important}.em_green a{color:#32cd32!important;text-=
+decoration:none!important}.em_white a{color:#fff!important;text-decoration:=
+none!important}.em_orange a{color:#faa73f!important;text-decoration:none!im=
+portant}.em_orange_smartcaution a{color:#ed6a00!important;text-decoration:n=
+one!important}.environment-info{color:#e00a1d;font-weight:500;font-size:12p=
+x}@media only screen and (min-width:481px) and (max-width:599px){.em_main_t=
+able{width:100%!important}.em_wrapper{width:100%!important}.highlight{borde=
+r-bottom:0!important}.em_aside{padding:10px!important}.em_side{width:10px!i=
+mportant}.em_side2{width:8px!important}.em_hide{display:none!important}.em_=
+full_img{width:100%!important;height:auto!important;max-width:none!importan=
+t}.mobile-padding{padding-bottom:10px!important;padding-top:5px!important;p=
+adding-left:5px!important;border-left:solid 1px #efefef!important;border-ri=
+ght:solid 1px #efefef!important;border-bottom:solid 1px #efefef!important}.=
+em_bottom1{padding-bottom:10px!important}.em_top1{padding-top:5px!important=
+}.em_h20{height:20px!important}.environment-info{font-size:11px}}@media scr=
+een and (max-width:480px){.em_main_table{width:100%!important}.em_wrapper{w=
+idth:100%!important}.highlight{border-bottom:0!important}.em_aside{padding:=
+10px!important}.em_side{width:10px!important}.em_side2{width:8px!important}=
+.em_hide{display:none!important}u+.em_body .em_full_wrap{width:100%!importa=
+nt;width:100vw!important}.em_h20{height:20px!important}.em_img{width:120px!=
+important;height:55px!important}.em_full_img{width:100%!important;height:au=
+to!important;max-width:none!important}.mobile-padding{padding-bottom:10px!i=
+mportant;padding-top:5px!important;padding-left:5px!important;border-left:s=
+olid 1px #efefef!important;border-right:solid 1px #efefef!important;border-=
+bottom:solid 1px #efefef!important}.em_bottom1{padding-bottom:10px!importan=
+t}.em_font2{font-size:9px!important;line-height:13px!important}.em_font3{fo=
+nt-size:12px!important;line-height:15px!important}.em_font4{font-size:14px!=
+important}.environment-info{font-size:10px}}@media screen and (max-width:59=
+9px){.banner-mobile{display:block!important}.banner-desktop{display:none!im=
+portant;width:0!important;height:0!important;max-height:0!important;font-si=
+ze:0;line-height:0}.cell-into-row{display:table-row!important}.logo-margin-=
+bottom{margin-bottom:12px}}</style></head><body class=3D"em_body" style=3D"=
+margin:0;padding:0" bgcolor=3D"#ffffff"><table width=3D"100%" border=3D"0" =
+cellspacing=3D"0" cellpadding=3D"0" class=3D"em_full_wrap" bgcolor=3D"#ffff=
+ff"><tbody><tr><td align=3D"center" valign=3D"top"><!--[if mso]> <img width=
+=3D"1" height=3D"1" src=3D"https://r.brevo.immobilier.ch/tr/op/iL-OPAfmXER4=
+AMnRPAwkBqISU12mvvYvtlLI15XedSxnPogS1Qkne65ym9RRo5ljE2VIFLhAl2lISBlOCi9l4Tp=
+GvR58QgB4PK8KzPgHwuiKB6--_oFuSqPwU1wHAVLQuL85tSrHe28W9NNfSBkDUxDK5YCJ10kLR2=
+4bvRysdLf4UKWMeWPKPf-Zg83YAE85ue5SpMK-xXBGgxDIFLltc7qwBmoqGR0z" /> <![endif=
+]--><!--[if !mso]><!--> <img style=3D"display:none" src=3D"https://r.brevo.=
+immobilier.ch/tr/op/iL-OPAfmXER4AMnRPAwkBqISU12mvvYvtlLI15XedSxnPogS1Qkne65=
+ym9RRo5ljE2VIFLhAl2lISBlOCi9l4TpGvR58QgB4PK8KzPgHwuiKB6--_oFuSqPwU1wHAVLQuL=
+85tSrHe28W9NNfSBkDUxDK5YCJ10kLR24bvRysdLf4UKWMeWPKPf-Zg83YAE85ue5SpMK-xXBGg=
+xDIFLltc7qwBmoqGR0z" /> <!--<![endif]--><table align=3D"center" width=3D"60=
+0" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" class=3D"em_main_table"=
+ style=3D"width:600px;table-layout:fixed"><tbody><tr><td valign=3D"top" ali=
+gn=3D"center" style=3D"padding:10px"><table width=3D"250" border=3D"0" cell=
+spacing=3D"0" cellpadding=3D"0" align=3D"center" class=3D"em_wrapper"><tbod=
+y><tr><td valign=3D"top" align=3D"center"><a href=3D"https://r.brevo.immobi=
+lier.ch/tr/cl/-2YIcWwPYmVJ_NxE-bWDHtAX6prcMV8fVr_r3LU6VnJ9-8Dr6fxztdkeC6V5K=
+oWVIsAC5G72gbBZs3roOjxUyLzXETZTUIgopImo8HrBrcCFU-2keY1MF9bSb6ahqJrxUxcOc3MM=
+HpWaaC7ntOYq63toqrkCShN1LAKUtg7gPMmOJVZOYFuCi6vd3d4c7yoe3YXonmem2XiJSnOKQZH=
+JkG0V8FNCIuMkO26SQqcBgITIE-XlIPkrYmFFjwYcRukl5qu2wRsQ0_39uRxqmT2-wC8ibwekfL=
+WMTjBb48eFJJrCS9EoNoaf8YEygdbEq31uoT6UegFZYESESggch6nwMRXc7GCSFrkxaTK8kSBRC=
+4zEeT35iwzdLP91aXuCq5YmuoZJkgclZgXDQd-XG7VvHeZmixNkWOYD-qMdNWw0JDuq0lA" tar=
+get=3D"_blank" style=3D"text-decoration:none"><img src=3D"https://r.brevo.i=
+mmobilier.ch/im/9445284/87ddfde2fc43d2b2374c3c2e689409d5dd97f2d82a2c939ae04=
+d7accd00c77af.png?e=3DP-M9YIU-zoq20cfm2EL8stE3AFOOdaQraRQmaHJH82LprR5KAFc6d=
+hb9GtYCTVhQ2uOYFHQxjggGGf2ffdhkNE6rODRFEqyxQ0iaQx-oVU4AzbmmBHWm1P7KfS4eqOdW=
+Io_En-vElTfKKyAC8cf1i6R5U8DquUDQrBnDUKrUuoVNWXiZR8DuVYNBgokmPwzAe3HmKB2J2JK=
+e785qPoj0bR44QyvZCxkYEV1moN9hyvmvodqLc0mZMfhDCBw4j7e9TQ" alt=3D"immobilier.=
+ch" width=3D"250" height=3D"36" style=3D"display:block;border:0;max-width:2=
+50px;font-family:Roboto,Arial,sans-serif;color:#464545;font-size:20px;line-=
+height:23px"/></a></td></tr></tbody></table></td></tr><tr><td class=3D"em_h=
+ide" style=3D"line-height:1px;min-width:600px;background-color:#fff"><img a=
+lt=3D"" src=3D"https://r.brevo.immobilier.ch/im/9445284/a0c25577b0610cc9d20=
+3c8d1e6c9695ab8ecefcca4b83c8ad84b6b2db42f9f67.gif?e=3DZecigdf0epA_RvNgOSY2B=
+p7OKOplCeJsj7G_p4Nl8rxnajtaGjJNs2nKFMPx5uGdGJjfswMLCDd2vEcoLfmmxWRpued6TEDB=
+lXvDUDsIK0JvzdRdyHtJUa70rGOOumlEXpwbrdGShz5uUcILJlByX8VinUeR8rPY6agStiTw4Re=
+svWMiiQMbevhbFDv7nne3IVtE5Ma8qddZzyJ4p9ZXrN9OphcLKh152X7_2UNcSs3JrII6LccXi_=
+_YAg" height=3D"1" width=3D"600" style=3D"max-height:1px;min-height:1px;dis=
+play:block;width:600px;min-width:600px" border=3D"0"/></td></tr></tbody></t=
+able></td></tr></tbody></table><table width=3D"100%" border=3D"0" cellspaci=
+ng=3D"0" cellpadding=3D"0" class=3D"em_full_wrap" bgcolor=3D"#ffffff"><tbod=
+y><tr><td height=3D"2" bgcolor=3D"#222222" style=3D"font-size:0;line-height=
+:0"><img alt=3D"" src=3D"https://r.brevo.immobilier.ch/im/9445284/a0c25577b=
+0610cc9d203c8d1e6c9695ab8ecefcca4b83c8ad84b6b2db42f9f67.gif?e=3D0AUivjVdY0D=
+gsuRzCb05DyZ2Ibm_852F1GnIpeQ5Cp_v71LTfbu3oX6VE-z1AwliUhep4px1H0iLhaj9kmlz0r=
+5Er_0msi09YpCmRy5-6TwQoimqu52yfnW_wIOVojzLe1VAZLhOghMP-1G6R_btO4-ja70sz23q1=
+t86nxbXfWy6lIEVuyeCFXWF0rXJFYIYu06AqdDyb7ZhUSa2OIBuwESMUCtSuf8e5QUYtUgWf8dc=
+-D5EE3iEAIbPjg" style=3D"display:block;border:0"/></td></tr></tbody></table=
+><table width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" cla=
+ss=3D"em_full_wrap" bgcolor=3D"#ffffff"><tbody><tr><td align=3D"center" val=
+ign=3D"top" class=3D"em_aside"><table align=3D"center" width=3D"600" border=
+=3D"0" cellspacing=3D"0" cellpadding=3D"0" class=3D"em_main_table" style=3D=
+"width:600px;table-layout:fixed"><tbody><tr><td height=3D"30" class=3D"em_h=
+20">=C2=A0</td></tr></tbody></table><table width=3D"100%" border=3D"0" cell=
+spacing=3D"0" cellpadding=3D"0" class=3D"em_full_wrap"><tbody><tr><td align=
+=3D"center" valign=3D"top" class=3D"em_aside"><table align=3D"center" width=
+=3D"600" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" class=3D"em_main_=
+table" style=3D"width:600px;table-layout:fixed"><tbody><tr><td style=3D"pad=
+ding:0 0 35px 0"><table style=3D"width:100%" border=3D"0" cellpadding=3D"0"=
+ cellspacing=3D"0"><tbody><tr><td><table width=3D"100%" border=3D"0" cellsp=
+acing=3D"0" cellpadding=3D"0" align=3D"center"><tbody><tr><td class=3D"cell=
+-into-row" valign=3D"top" align=3D"center"><table border=3D"0" cellspacing=
+=3D"0" cellpadding=3D"0" align=3D"left" class=3D"em_wrapper"><tbody><tr><td=
+ class=3D"highlight" valign=3D"top" align=3D"center" border=3D"2" style=3D"=
+border:2px solid #f4bf42"><a href=3D"https://r.brevo.immobilier.ch/tr/cl/AA=
+Uz6X9GfqQQIIMclqayD8MvkBkC1QZRyqV_Mj859GPXNvVXj93MVizPR7LJRr2Ko21Sx2zBAVQ0v=
+oIJxCUBbR6irH549vFc45UcjtDZMVorKP-PDfzeKQlPyg5hf1TXlGs9w0NO2HXjMCaLywTb6Wu1=
+wQs0jlYmOS7e1fHUxNi45IvVbxyohNmHY8Eynme-VyTXuunOUrW8TNY6Lg_1wLYzSmKEr14zKmW=
+TSFDrqd8waJgsk2rwuDDf0RlcYs-HUmYT-WgnESWdo3roe_sBluvHenRpSuFORuXyUzUjKuFBVQ=
+l4KIDoGiw56Pt3DFP6XG2RgWZ4A0vjbasTzlJMSQoB_o_CqUmsL91Tfe21gG6dyASKSxJI6sTjs=
+_R2dWYJ92SR0xyu3NYbS_3Ptxk4dRaKREKbeDqwymTZrGcsVq66FiAJIAUSwdJVYMJbaKlL9-5C=
+B8A5GiKiQL_Bd-5SJiZF6m-AaHZJH-dM1JihOiF9pfxCjc7ZD7zvlpQWrhE8gVaC2RXHfGuGQOx=
+rf9TcfTnV6KQTYoaF0he9rgCf-5IhdAAKqKiJEmDRmuaHPMSLchHaZUmTyclV0ePNpeuDv1GxVM=
+idqD84QpZNSO1vite2x-Wky5E5Bg5uJnjUI38veqDaLI7MpMNcHLDDnPmy28QRctMUNlrMjPIlI=
+7iCIwtMPu5gBI-y51xqKfwEPF9rYoQiH5F2RMtOIsm9AyzCmtaXvzTlmy1-m0KNu1RnLYBi9I_h=
+3s2YQR7_TmKaZYAB9mqGsGGg1xIsesTl7PinaHFCZszf1JhdvYuNLUSNS_iUGlKI4b905lBPtqR=
+vudMGXlmgE6-oPnNsKQ" target=3D"_blank"><img src=3D"https://r.brevo.immobili=
+er.ch/im/9445284/48fa804ef83b277092b2b0ade09adc3af20dab4950843f3b3ec9c10e5c=
+6151dd.jpg?e=3DLvh9qxXADz1xDDw3wph0Un8TMzeGMgS5GYI5SILUxMXJQwSp12SczN4XwMrf=
+uXUOd4EIe6HpwCR5b3Zakc8-f3VSD_M3JVsg5ZWeAU9UQ2RPDTr4u1caG5Eb6t8ggRFcyds5862=
+E1egwLxHYfAGMuR82jxk4n92Ha_T7fnmcfv4D2HXjMZuS55rV_I4FjpAUxBooGiYMCx-vQatrSk=
+8rk408giB5mNU3G_gvdY-TpAlfQqyzoGHdXR4ErgegMBhwvoHtPPJNp9lEi01WYcawKGMk2Vj20=
+QZZDOy21W6UZWlwDe4yuI22EnurBg" alt=3D"immobilier.ch" width=3D"270" height=
+=3D"188" style=3D"display:block;max-width:270px;border:0" class=3D"em_full_=
+img"/></a></td></tr><tr><td valign=3D"middle" bgcolor=3D"#f4bf42" align=3D"=
+left" border=3D"2" style=3D"border:2px solid #f4bf42;font-weight:500;font-f=
+amily:Roboto,Arial,sans-serif;font-size:10px;color:#fff">Annonce recommand=
+=C3=A9e par l&#39;agence</td></tr></tbody></table></td><td class=3D"cell-in=
+to-row" valign=3D"top"><table width=3D"310" style=3D"width:310px;padding-le=
+ft:10px" align=3D"left" class=3D"em_wrapper mobile-padding" border=3D"0" ce=
+llspacing=3D"0" cellpadding=3D"0"><tbody><tr><td valign=3D"top" align=3D"ce=
+nter"><table width=3D"100%" align=3D"left" class=3D"em_wrapper" border=3D"0=
+" cellspacing=3D"0" cellpadding=3D"0"><tbody><tr><td valign=3D"top" align=
+=3D"left"><table width=3D"310" style=3D"width:310px" class=3D"em_wrapper" b=
+order=3D"0" cellspacing=3D"0" cellpadding=3D"0" align=3D"left"><tbody><tr><=
+td valign=3D"top" align=3D"left"><table border=3D"0" cellspacing=3D"0" cell=
+padding=3D"0" align=3D"left"><tbody><tr><td height=3D"30" valign=3D"middle"=
+ class=3D"em_grey" align=3D"left" style=3D"height:30px;font-family:Roboto,A=
+rial,sans-serif;color:#222;font-size:19px;padding-bottom:8px"><a href=3D"ht=
+tps://r.brevo.immobilier.ch/tr/cl/6aibXNLebjqODKMA-DWLB_3WtKqSxpubw6eQJ5TYd=
+G9cCI1KM4BVw9HdRrypWjAlCJFleVqfomYHezISEFmP1EpkFMt1X5EHmIpDWEGQnw2O9TYOYq4H=
+SirhyLGPCmgBAny9rJjryABajE1HRIzZIi10YKymiQLH1ElYQ0iMZ1fHm-bupQLVHA4-7E-Zj9g=
+vkDNRF0xPc2tcQIS4Y9fhIj-0Mc9egVvXlKLMRI-rOCaHWKUF2ot67QCRrUV9QIh2SW6T75Xy5d=
+ICgCyCXliKsIzR8SceJn3HHPSTfSoiMud41EDp2uJUx6VIcFyQAo90jvdc7IlkFOL4rPb2kdg0u=
+iFYNWhOZ3ncPuvJLgxo1p2-Rv-gn27Vm0ulLVSdCC1IlLOFXdM3qzxxxhKZAo2ZeiMc9mTNyPxp=
+OpJeKdPunwp3WX37dbEZDeGu_lss95pJrQ7UUp7jBCBbPxEB1f2YN7Fknz8s3dq4U4XyL5w-mIn=
+2bozYFrLli6KWhBq4pK2PXDovC1nOUKEUL49S11HzIs_EisF8htCXtqYXlthJpAkTw-AGADUA5c=
+Mme29DkyqxvuBnGHqXVxwlk52eljeIHD2jgalXTrRcuZjofhKoxFgexJ5kvMQVCTyywNioc2RpX=
+NLmtgjjJ3bVdkDvkS7WTaEyi6yCBCnyImvNPO1j51_R5Yy9R8Jil7B5t3NBCIi2c-B1GNnpDhn4=
+RwV-J3Q0WoYOH5HfOc3gjzk6CGxWqPe9ot_cxm_xV18g8iqlxSP1ykpy-ca71HKfv59Z9tsfWSt=
+NK3wZ2RAhIDEl4zFcJkV7PdVPXrYAeF6t0ypjcpubYzlgEekshoTSUw" target=3D"_blank" =
+style=3D"font-family:Roboto,Arial,sans-serif;color:#222;font-size:19px"><st=
+rong>CHF 1&#39;190&#39;000.-</strong></a></td></tr></tbody></table></td></t=
+r></tbody></table></td></tr><tr><td valign=3D"top" align=3D"left"><table bo=
+rder=3D"0" cellspacing=3D"0" cellpadding=3D"0" align=3D"left"><tbody><tr><t=
+d class=3D"em_grey" align=3D"left" style=3D"font-family:Roboto,Arial,sans-s=
+erif;color:#222;font-size:16px;line-height:20px;padding-bottom:8px"><a styl=
+e=3D"font-family:Roboto,Arial,sans-serif;color:#222;font-size:16px;text-dec=
+oration:none" href=3D"https://r.brevo.immobilier.ch/tr/cl/ZZyhVybgv52JBhlyF=
+a7qMLoRpxfYoaQ3_kbhoJYnsws6HWLOjSfLDGCVCG6nFlyeaQ6BfQY5Dp1X5hrvvlvur34rXKiW=
+EdT2pw1kfA2ny_cZ701Z0UNc6PDfyQx8ByVPa88HVwMUmi9sh82irYGbpdffRyhvPH5N0KdyjAQ=
+8bhuxUfVrSL1IX-kt3fSifcEq98mYdeGt8Z89L__K0BEoiogE9Bkp-t_NmCdct7rsnigqTiGhxO=
+rs1trhekWEGw8mxlDJWryy6aAQ5NfWFT9woq0Tko4CevIaqz9t6hHEjW1UnV2mIasYtQmLkGzSy=
+MoORrFyleYkwg7AtNTuZyMqpo03NQICfo0rm58RhRL9DkDiDpMiLCcvUF_pQMe2GoJcALdFZieK=
+GtLrOFgkwirq_N0ImRL5wqee4TM4GPn79X1rBIgUiuogrYD0zeXT-hFJChKPTT6QfA6THDqKx1X=
+9nv4CY44qssaImPVEW-9ccFDtLfVjerKHSEmw5IaUsD0m8lMhTzThTmsyZAHaXe50wmXa3eIEI-=
+jbxrZO8hVWYgJ-TmStuMYU40qUlMVmhImu9yn4vT0-Cj6s7dIeZ2qQCs9q45II4V8xZXKgGH-V2=
+rlzw6HUEqvi58AnsuAY43cKxumlt-JPmYJeM0Wp1Jt268OJy1soKCmqtW6ozgBAAVQ9I6xtOr6J=
+xU0IRWnIqPzKa6oPm7Y-5ABPyQiUDaZk99VTuY0AR0nr0degjKRryIii3fwp8UFYsky2PmFj6Jm=
+ZxyVV1DQOzy1idg_e3NPFLxkpm6FXib0hOFl_NPzN4s7CFDvFr1jlGe1e47926Pp2Vp_X_ITW_U=
+TfYw">Appartement 4.5 pi=C3=A8ces</a></td></tr></tbody></table></td></tr><t=
+r><td valign=3D"top" align=3D"left"><table border=3D"0" cellspacing=3D"0" c=
+ellpadding=3D"0" align=3D"left"><tbody><tr><td class=3D"em_grey" align=3D"l=
+eft" style=3D"font-family:Roboto,Arial,sans-serif;color:#222;font-size:14px=
+;line-height:20px;padding-bottom:8px"><a style=3D"font-family:Roboto,Arial,=
+sans-serif;color:#222;font-size:14px;text-decoration:none" href=3D"https://=
+r.brevo.immobilier.ch/tr/cl/qXvoKMbrwGRcOU5FWWBd0Im-Lb67eFfgRZkKen2nIAHKAxk=
+4Zi5e6JkklyRzO-nTVJxa59P2IKaaoMTe--h1UJH4hCi8QP88qAuv1t3iRBTnPP2Zq0QyOeCO-m=
+L4pi1T57r65OaC0jh6nWXMR5UoYeq6IWDG0yUG9eecls_uDxrrYpEUu27Z5OK8yPm5gqFOjmjm0=
+LcyiGiYorSDNe4-F-SM2R0Tf1bjFpjuyeaagEtlOZsuo5SfzPFZURc9GcWm9J_eyFWDDzfv3pyq=
+jYlMmUh4H2YQhU0gLHZ29uPHBvfM-RSOtugGmHytQK2JFnarPaj-OFp_dM67ojWPizyfowUuzvB=
+u6Z0br5nAYhC_HIBuFm94M-v6Zuh3vv99LvShDLrKlwgKOVY_FgDyjNbK6qOC6CyDVQuL-p8GFD=
+VNzvGoTuGK0QoPg6NYbJLN19miD0KwZvdlvOoyL4Ws0TJSXXeMgRPja9AlUU1ce1lbL2_SiIpzR=
+7gVdhENwSsq90__a1fU7NptyB2XZL3ynIWIW9sHJL_mJR68tgCpV9jcm1u8paDo_GNYu5yrSWLs=
+fw2x9woveNVXA7xaLOA1s97Tu5RJN_iM8iVl5TwLUW42xJs8MFygXuEa3BcHtnMeqCn3HbDQiPp=
+PIb_9LSnV4aTE3lnEf5RXkH3gj0y5lq7cHBGqonzar90X2IH7-luumRChnl0jwpzeysa-6suprU=
+K6jY7tFtjy8jdfOuG2I4pCsD08FLd5U1q19uf1BsI3eArt5GyySZIRqZy2u2kOewrkTb0LvD0x6=
+lZen4BMPVen9MRPrj2u5ymoiPO5MppBX8K0y-3vSTqnkCECAg" target=3D"_blank">1008 P=
+rilly, Contactez l&#39;agence pour l&#39;adresse</a></td></tr></tbody></tab=
+le></td></tr><tr><td valign=3D"top" align=3D"left"><table border=3D"0" cell=
+spacing=3D"0" cellpadding=3D"0" align=3D"left"><tbody><tr><td class=3D"em_g=
+rey" valign=3D"middle" align=3D"left" style=3D"font-family:Roboto,Arial,san=
+s-serif;color:#222;font-size:12px;padding-right:15px"><a href=3D"https://r.=
+brevo.immobilier.ch/tr/cl/mZxi3RZPPNbRxQ-vyn9G4oLctRMAAPoi2m9bMGrOYCClHQFPM=
+va96qQeGUqe6DR0tYRWvMyEPdmmk9ASAGYvqeJECjEljyXi_Uuz6JIp4AIlU1onymNJb9IOT4NU=
+rcajPh5jKlJU7jUHNy59FKh4ubFBmZKJuhCYI4Dr3So3PyYe9QWEzfZnSuUoyT8DkhgzKoi79ZV=
+w-TbUKnMBgykFZqS_Xl8QleIj6A28My4GzOaRYjywdaSkG45kenHObREbohfKx6ZYVUVn4Ulymp=
+7P59qR2GZ8XVYJPj1czgkxRmBj-g9jG0bw28Jl3X2dIsDNcjlHOyR_VxjAb-GSFd1gFRv1szqwY=
+ZzMFU0PwlVzdrhPGyHoXz1ev6AUvaOMthBYDrWv9aoO-gB7yYTTHAzz0gAybFV5FFPMvXU7w2tW=
+voxjC26BbKIOBCn36T4gmQR8OHt3-VhIgJGbmX9b1uGRByIDIj1COhtLuduGzNIrh5ijKUaM7e8=
+opfowp0WI-1YLJE5yBniJr8StgnJEEHftRM2NkX3vX-ZNQhNRiKNxIzVAR4cXPzq1DgPYs7Oal4=
+tU6gL2LnNrq5qIBpD5A41qEvy2aE6q6t6N63U8JJD0cn-q8VgJ8-HySAP1bz8Fhmuvs7cFR4mQX=
+wjmh55QMx9otk1E6xAxKRl10a7FdKKlRWK96PZx-vl6n9rV_Jnv7navyPk-6HRjsLFpL8dW52qx=
+DQog6iS__YZi-ydY5-WkbuxXDVttqe2T2pRnWNPKtfA3az9ym6cZtd2TfG8O_T90_0_QBmE1kXu=
+6o689xs4mm2hTZMy-HuaYPOWPmcMitopPGyNdNx7hkrNSow" target=3D"_blank" style=3D=
+"font-family:Roboto,Arial,sans-serif;color:#222;font-size:12px;text-decorat=
+ion:none">105 m=C2=B2</a></td><td valign=3D"middle" style=3D"font-size:0;li=
+ne-height:0;padding-right:5px"><a href=3D"https://r.brevo.immobilier.ch/tr/=
+cl/M87EwBM3nNxXclz3y1pf7q7SUzJhGS-gakz9vzVCSksSn0XwLrxHAFTYcfdckyAWn-ZcBIIV=
+7YO_ilnhuAznGJ-co2-BwvoRQK4IrcZNcL3kJ75XNrXFv_isvTQnDs4ZRj4ffQ5-GE5vSjL1br5=
+cf62k_4b8S9bGaPzUAGuwouCnNG74Ybnsc6rvdDgJOyWhVp8rgfhAzMXNpNbDgmc7bnZWAQJZaz=
+E7ElMOZyyBCYCPZ46nYsPxFqUVmefe0Ysj5AC018Mh9tKjfZNVK_eEM0OW05A9cJHqqw79oVhvH=
+j0OJyKhOE-IOheRXrErP2teKKF0kYLkD2kts9f75sHeVRRMZhZw6JNv9EmQUaZmavl3fqT8e6LI=
+M-CZkijh_x5ay04VINEXsF23jYr-7dulkKc00LJnAKUDzPTRfqkjGDufXL3oXAxVjuQtBrfW7kK=
+53zMuzi44wcdLTTRo6G-nS2P-auX4s5Pkdn4ZHkoVIkIrq1Ejh7zB_jMruSZyUeSgP4c-IB82jX=
+q0J99KifFrN5Akg1BeI-BP7KMYNdBj7lDiGKU14wbYCwI4zP-BYHfEJ3HuFlirbdGqXercxBLfV=
+85oFFdlp9rEVCeoA3C7dpuV8cBsqbL92GLcSPyous1PQlV_HRFrwgCoJ3SwkUNCm7ojiHuSGmJH=
+aZ3wtGIwXZRn3iq3X3StEU2pbHes3WH1R1W67Oc1WVLRC53C06rCSfHt1raORZu7RTkPyFUoosv=
+SkYeWjjUZObdyMSaBxqQtnUvlxlCnOaRLeoZ0MhX2yHaX9Dpg_iWv6HAMZOxl0GtiaGeV-TPELx=
+krR8OrJftYYB1MpDNRfmskZQ" target=3D"_blank"><img src=3D"https://r.brevo.imm=
+obilier.ch/im/9445284/4dd1aa93cf606fcd62b68f1181bf47265f3b989ef581f9e7424a3=
+24817903da8.png?e=3DQpzt8m_vlsFhFhd6OM4-osPvlWKXQgkLWmSa3EDMA_4LrJROi12KE86=
+68JLCsoGnqUQyb2cregzhW2xA3cTF9J7C-bdYaCy9Fh4u8804u56pZb7p1RFRkbTP7meZe_K9s8=
+SoVEfeojdyqqUQadkhajdg79LVTdndbVlIXHNF8zSqREx0QIZM6tu2LNl3kOfr3-cWSvUFdtpLC=
+28PqDrAyoogn8JQAbMgQPoaHEanajVATKmo9e8bKRJQwxV0bQ" alt=3D"plan" width=3D"15=
+" style=3D"width:15px;display:block;border:0"/></a></td><td class=3D"em_gre=
+y" valign=3D"middle" align=3D"left" style=3D"font-family:Roboto,Arial,sans-=
+serif;color:#222;font-size:12px;padding-right:15px"><a href=3D"https://r.br=
+evo.immobilier.ch/tr/cl/xyaZ-NYX-skRZJc6kwFSukqawQyO3ySD3dgrEfZ_6mGG5ErYhWZ=
+mzsyvTEEjVsC_xbCsF5ceQLsppltNyUHduIvCjnTuAamm3PmFlNJ84tAeuiaCfkFi6mIlYPVAUB=
+0VybePP_RDH8jAoEVVQE6oYKioEh1RiwexlvAKk_lWgDRPuRUr2ZrSobWjtdcTQvAs-0-IJXMdh=
+NocWPTHE9AfQrcjAinPE6cHT2yuUFg5DI61ZmeOpe9DsgSSGDzXVnlFIzChRnJxCHu_f9V8KqHp=
+BChTQRuE4sgjoT7xnWciK6YUAgnJmVEQ1pAaFrh5nasfRLDXLR8feilIRPn2Z1_08TEdIvNs9ya=
+NSl6OUYqENbBp3b-i--Cy9wAp-da7w3l4S-sdFEgmLqDL32TDhjqnOmHi0qlH34O-M69kat-udx=
+kEAShOvo4yuiZO8MY4jyM1KBlV9ZMXcR_NNQMGhf2NJHGPdse4HTSZAgrDT972t80K8a95TqWQg=
+gbuv9UtdxlF3PsQoAHnYuFxcg00tXyF9Fu8gwqf9Mrws3CJfW2q3YzLwlPJPX94VTJEOQm2acea=
+vFgXcDC5FR2msezIea_hHZQJW0Mi1Sd5NeimHAMqWizAmUrLe6TSIdM6c-omrZ7ynBGdxG_7qoH=
+8BjhyBekXvEXnFElywWOIWrPAKyRmMhzgtfNhaXRsrlyS4STij0PChQpLu9F7yR3K_0F-_ObLrX=
+M7RNBH6-_uc-fl9EHLcFEaTxXpbRpaSDYXLN5pQ1PnhM8wdLw1VihqYTcF7z_GA348Y2Bk0bci6=
+U0Kt3zFPDKvP46vrOcuCINesePOxtJLJLHPBOe_aCFVPg" target=3D"_blank" style=3D"f=
+ont-family:Roboto,Arial,sans-serif;color:#222;font-size:12px;text-decoratio=
+n:none">4.5</a></td></tr></tbody></table></td></tr><tr><td height=3D"20" cl=
+ass=3D"em_h20" style=3D"font-size:0;line-height:0;height:20px"><img alt=3D"=
+" src=3D"https://r.brevo.immobilier.ch/im/9445284/a0c25577b0610cc9d203c8d1e=
+6c9695ab8ecefcca4b83c8ad84b6b2db42f9f67.gif?e=3D6GQmEic5tp1GYbH3rC37YpTHfm0=
+7oUrvNmQqJXFjkOv7vEt5Cg49044M5yS2Zmg-l1hKGE_mh_pjm2IWoNWuNyal8UgQNIqbjXD9H0=
+mLVFjhbxTqp4eh_39EJG3Vg34KsSC3867BL8CYw5q9N_1alNjZ3DL0lBRXafk-IkgntfWru1QKO=
+_XuVw2VX1kj5vWD6hf6faYdh27t-blCSrbScA0sJK5IiSx6BiLKNnDq_Bkztke-4CgKpIi5Rw" =
+style=3D"display:block;border:0" width=3D"1" height=3D"1"/></td></tr><tr><t=
+d valign=3D"top" align=3D"center"><table width=3D"80%" border=3D"0" cellspa=
+cing=3D"0" cellpadding=3D"0" align=3D"center" style=3D"width:80%"><tbody><t=
+r><td valign=3D"top" align=3D"center"><table width=3D"80%" border=3D"0" cel=
+lspacing=3D"0" cellpadding=3D"0" align=3D"center" style=3D"width:80%;border=
+-radius:3px;border:1px #222 solid" bgcolor=3D"#222222"><tbody><tr><td class=
+=3D"em_white" height=3D"31" valign=3D"middle" align=3D"center" style=3D"fon=
+t-family:Roboto,Arial,sans-serif;color:#222;font-size:17px;height:31px"><a =
+href=3D"https://r.brevo.immobilier.ch/tr/cl/GeoCVFPHVFkaAUBt3BOUVxTmN7MLPln=
+7A4a6Mf38FF74ccj6o6q-tk0jjO92edF5oStDy01jfVyGy33xKDkaru0_ZAzuWjnU-JL3MYNATy=
+3p4FfYgulmUhgga9Txr8Ki1Ax7p9884KyQjXKuTobOZzOuwHxwsbDSzXE7LMwu1ZveOiGC_nmnn=
+iOtdpZpsSOnpNR-bcEC7cLwBPBLoobxdT8DIj2cRAtqrDAulgEnO7IBzgq0_izQH4Alavlr5WAV=
+QCY-2djGX6baFQHZtTEY9IZCneXFwrEocYu36VeNv6UkH9FqiWVwDw4uacZ_xeiBCP4UzxWzoFu=
+vyozxxMih3V1sWOTmbPKTi8wHC18Ada-Zxp07Yx3LpDtQO_hhUP2ij11IqTHFtZ_wkdU80JCVXr=
+UdQas78AskAW733PcFZ1aX3BIAHOYciM6yETAqEJ5EWRW4lv-xmtoEaoY_Pcnj03c0LtLtw4zv5=
+gqcig1kP2hZay5R6SfcnF-St9Z7Nzq5CrZwAYnSy9XRJhUblGv8oXoI2Mn2x5A30t7OHsHsX4cb=
+Ge8ofUOkIBAOHHZQp3RqeLiEBvQrUM9cLMer4WNtm1DUf8Pt-p7lH4c5u15ovzhKYKZ0xs0NSO9=
+81UQxpMVUW0TeLN5gdoGsl_ZqtrXXBD_x9gvMQarJiGniznM51Hbemaa5hbtui_31nHSWnXvkV0=
+45lGzKfYWayWrvHJQAdDGsLDqdUMonTOx-KiB7fg2Hozef2UqkcuejLda0SZU-ADP07eMWy6r1W=
+64JZEF7R_uoAm4VcC0JVnew_ZPhloms1p81y5hUWNv3bz8mSf4WooT_dDD68Xr-0Q" target=
+=3D"_blank" style=3D"font-family:Roboto,Arial,sans-serif;font-size:17px;dis=
+play:block;line-height:31px;color:#fff;text-decoration:none">Voir 11 photos=
+ et +</a></td></tr></tbody></table></td></tr></tbody></table></td></tr></tb=
+ody></table></td></tr></tbody></table></td></tr></tbody></table></td></tr><=
+/tbody></table></td></tr><tr><td style=3D"padding:0 0 35px 0"><table style=
+=3D"width:100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0"><tbody><tr=
+><td><table width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0"=
+ align=3D"center"><tbody><tr><td class=3D"cell-into-row" valign=3D"top" ali=
+gn=3D"center"><table border=3D"0" cellspacing=3D"0" cellpadding=3D"0" align=
+=3D"left" class=3D"em_wrapper"><tbody><tr><td valign=3D"top" align=3D"cente=
+r" border=3D"0"><a href=3D"https://r.brevo.immobilier.ch/tr/cl/iJFvT_JhganT=
+aHM00LMuyYo_Y700gOgSx_kAzCvk2fDXJt7kgj-hvyEVsmHHOQ2KLgDkjn0goZ6Glt2kSdtgq9R=
+aD05fvCSxMv-moLVh6C0tTg9z_NXpu45--ltjus7LiiI26QhBUdcjhTx-_b8FIz1FEzI9md-y1S=
+MHKduDgbLdSjul-wyetBTs6xHS-EQsKzOZFVABGGSW8YmiRLnCJTt8NW1W-Xfa9IN6Xjjlyd5nP=
+klDmUaH-psZbvU3vWJRhxLDsLeBHvB2w6kcp_vg-yPsY5T3QZDNutlHMRjbxcssv-PR56pjjkqo=
+aeTBye75mmzMC40faAAQEg8hkMJcmCnhjsObTpRAJU4KsZH_c9C_oB0KAqOaJKOSEj4xFm2-ZVC=
+kavQcWyv17GMh6jcGEtrHx8I5m6gbi80stC9Kr1LvL1I_tNAzvo9GO2biBZDj-Hz27eQEG_GUpn=
+Np2mRtyYjNYs7Wr5EDOaioojDKhfGdqQt9deJggzdV2yh0tq1Ic1M5QTYcA67dCLnOCCLkSx58m=
+o92ErduI3XXdYUScZPPXFGEr9beC-aB5IhkT8zdlwHU3BXYk-4nfp171DlKfd_z0Cd0wZ7qLvZz=
+0PBxsc1jGX3qRXWHm8I6avIA4vmk0QhGDeS_L3Fn5zWDtlYPYvzA4qzZXsBgZHqqNIQxmMCMMZY=
+Mu6qsxWmJo-kb3dr9FbDbI4k-EE2bo78SqAiew9g8-tYjTQV0w5TWpwdkdczNs1OTnUstqHv6Eo=
+i1k8BR9NnNrkFM85QmilkPRoVD_QxU-X7_pU_gOVvSEn6CoXeIAEd3azb6r6QIbfaP" target=
+=3D"_blank"><img src=3D"https://r.brevo.immobilier.ch/im/9445284/4cf0ca30f4=
+612b4a8d0f91a74595ae244618a76d6b6c196b36f36050923cc659.jpg?e=3D0A8Xx8MKSnv9=
+uZ8epMxG58jpEh0FlK6m8M3ufFw0xff_w8Frl4YenrPpTTvzf2ZMBlB64_csFXQGcwWbXcCPmsR=
+0nGMGUIcov8yDY7J8WTtHkb-FSMO9iofVGPrC-Ji5iA7cELEMSWW_42DCtt0DjZLwUgt_i7L6iu=
+yUbV8pBgcySHiUiGPSJYXHrp6VmeyoXIbf9Fir0f66cRJZzY1OogBklh10syBSO9InTtOy9I91g=
+H6a4H0Cvhxw74cLj4_5pImmxdcAd8-WB3Jm5tCEZj7ghcAIXziATUnic95cQ7mFJJnDC0g8KQ" =
+alt=3D"immobilier.ch" width=3D"270" height=3D"188" style=3D"display:block;m=
+ax-width:270px;border:0" class=3D"em_full_img"/></a></td></tr></tbody></tab=
+le></td><td class=3D"cell-into-row" valign=3D"top"><table width=3D"310" sty=
+le=3D"width:310px;padding-left:10px" align=3D"left" class=3D"em_wrapper mob=
+ile-padding" border=3D"0" cellspacing=3D"0" cellpadding=3D"0"><tbody><tr><t=
+d valign=3D"top" align=3D"center"><table width=3D"100%" align=3D"left" clas=
+s=3D"em_wrapper" border=3D"0" cellspacing=3D"0" cellpadding=3D"0"><tbody><t=
+r><td valign=3D"top" align=3D"left"><table width=3D"310" style=3D"width:310=
+px" class=3D"em_wrapper" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" a=
+lign=3D"left"><tbody><tr><td valign=3D"top" align=3D"left"><table border=3D=
+"0" cellspacing=3D"0" cellpadding=3D"0" align=3D"left"><tbody><tr><td heigh=
+t=3D"30" valign=3D"middle" class=3D"em_grey" align=3D"left" style=3D"height=
+:30px;font-family:Roboto,Arial,sans-serif;color:#222;font-size:19px;padding=
+-bottom:8px"><a href=3D"https://r.brevo.immobilier.ch/tr/cl/bHZMmVhuZABZV8x=
+CBVOtWvIGKSgOBGG6qAKe-dZpOP_9MrB0yfKAP3ImYrswthr3wJ-aXzs7YgZELzuv5ZWFfCOS2W=
+1HNh-ikJfWxAg8RW848PuLJN7O_9-7COenPB2sno5Z7QxgZpsI5lwIyRKf9H3pvqHv2Ls1-TtN7=
+K-ExHR51R7dmM5jdmbgNzol3ObfoHZVUwsK5IySBWrKHCHgOxyQDhm8fTE_0U-lGC__JvcxIFwq=
+h7DqhxCeXVvrMobFF-nbbMYa1eZhjzKrZqz1lUnlXSXdO-9aXrA0NX2k1AfogJjPPjIvMyamG2n=
+Pb-Oh8JhiKhRXXBEBwW6sliyIDEXsOde1kwAK567BrK4IDfpbOA__FXfXsokbyM8pvfuEc6z578=
+ePR9b7pLbJrbYtWzIcm-EiUTkiTN2OnVnoiJDOlsztkfDcs_pEklurpYKX3EKIuazZZXIQcVP9C=
+o5-3yAWwPbB2b0MyB06TxYY-TxRbP2FfSz1oQdCt7XnFaKLIm_5ua3sWEGM3DBGNmIDXl14_MVs=
+ChTw9l6DdUEG8jNel-gBMuF_jvpFWdEDwwDqRJO3x6BCyYjpXEeO7Pop84ZZdIncjXeBXV-dp44=
+H-3mmKS1A_mXLeU3obJKItfjjdJ4vzJKpjSwGYdgJLdz-KTkmYFLcOaYQrYd5RtR9FtthLbou7O=
+hvHwilnxwbfHZn4iAHDHsjP3nUotAZJbTGaNGj1Oyqiz_smMSX6REA7O8nvOSUAr0sOKNszV3c8=
+FIA7JeEw5KMAkAczXD2eIuHfOnK7bnI_5gF0QSPf4qaDAf1bQbFVdj3Zl4atRkK" target=3D"=
+_blank" style=3D"font-family:Roboto,Arial,sans-serif;color:#222;font-size:1=
+9px"><strong>CHF 1&#39;190&#39;000.-</strong></a></td></tr></tbody></table>=
+</td></tr></tbody></table></td></tr><tr><td valign=3D"top" align=3D"left"><=
+table border=3D"0" cellspacing=3D"0" cellpadding=3D"0" align=3D"left"><tbod=
+y><tr><td class=3D"em_grey" align=3D"left" style=3D"font-family:Roboto,Aria=
+l,sans-serif;color:#222;font-size:16px;line-height:20px;padding-bottom:8px"=
+><a style=3D"font-family:Roboto,Arial,sans-serif;color:#222;font-size:16px;=
+text-decoration:none" href=3D"https://r.brevo.immobilier.ch/tr/cl/z2Nvd5MQp=
+27DUi3W6mqWlNl7KQAqFHKtntlf3l2KKf6QXxzLmtCFJrlxAWHXcA7AAwPABH2EUx7cPOmG1WIM=
+BafbVU3J0HeYNPcUNPut1AZIRNRKd-2KQ0jl2z-6Ue_9Ll2u6R8omybbW-mO_Bz0_qMhmLX94DK=
+4jNSOVE00QU8LDI_JYDU4dmaGthZdqum2eN35UxjuIk-SLrnTQvtai2c0SGI6hiEmu_ev7CfmZ1=
+RkLZtf_O1Sz8jqd83gL2i03TXuy3R6DdkkQiUq1o9AVVtSj9m1ATl6quibw76ooisVvKQtczJv7=
+Yx497Rs9YrcZYqaq9R5GEq2n-vH8gDQ6N1XjSWA05EoCAWDVuWqPI9LMcolm0L1G44o1tfEhJG9=
+kwUzg1P1kin3arrtfRQ8xGvIac3fukpLVIpD767gkv7bDfSSsmaTttLrHnm_KHwoR9s2SArT0Da=
+gm8bPb8Ljut2N1-jcPnRn3xP1T6UaCJcu6KCU6qkDrMJtZ_3gNccC-eNoTDvOkE4NrkU8UJQLxb=
+6RJQ8GQ0O1m_cR2NeZ9oHYeSdnS9U4ILL5qXMAjUl4vB7i1g591upbmC822p1G3YG7B3VzaN_0y=
+iZPwmnazJoDy2vjQZBTd8lcekofFrS5fA2SIWRGXCgqjmW5PpJdZ2mQ-z1m-lbUrGJB6qojgzLO=
+RVYBKve2FmYLcGVRRUPqCSFhue90Z1RKPLlw7tdGq8Bp13v4md-lGJyaP1bpYF3Qq7k9-1hs7d1=
+Sv4xIEt3EGtjCJKszCYwacuhBdvCGZHSvAVF__-2VkFvlW4Rh-g-wrIkcEba2Zjf3mhdI">Appa=
+rtement 4.5 pi=C3=A8ces</a></td></tr></tbody></table></td></tr><tr><td vali=
+gn=3D"top" align=3D"left"><table border=3D"0" cellspacing=3D"0" cellpadding=
+=3D"0" align=3D"left"><tbody><tr><td class=3D"em_grey" align=3D"left" style=
+=3D"font-family:Roboto,Arial,sans-serif;color:#222;font-size:14px;line-heig=
+ht:20px;padding-bottom:8px"><a style=3D"font-family:Roboto,Arial,sans-serif=
+;color:#222;font-size:14px;text-decoration:none" href=3D"https://r.brevo.im=
+mobilier.ch/tr/cl/8v2vwlF5y0Rm6FBRHSVUpperCee6o_ocNSmj8Yny-9MdxmSCz4jRJWlNs=
+udZv56zXBLdtIdpJSxFybf1HHy-FzpDW4w1nrQvpOGv3D4SYI-zlXkXjnNIH9YYRne7sCMRwM0x=
+QolmaN7ou7uUrBdudc11jr93we6ntbdgLiLZzR6zFUojZbXm-TEdmHH6DLNOWAerNFgZzmAzidh=
+1ucTPGFFWZOkVnv8gqmrHjmYNqaHKCFX8-3X3INxTIvOzZkENLez1auBbx-jvKzx3TqpnkaIXd0=
+AnYv_-5P38uXJzzmPOWhVitdp22b5tAFmMI8DPkYPkqToZlgrWHZarn1y1t-7A9qVzhFqVj_GQf=
+Xxb8sQmfDXpfk0WBqa6MdVnc7paMFHk2KDG1GNLwgzdDibvrVoGLdTYZJ9QP0z6K8XRL8ogmlf6=
+p9zsfipMZh3O-Z7gNGFRYdITEGINhStDrsKf7h9OzHq_C6lKY0yaimq1UcecgPdzHTes9BzYqLj=
+AE8CmJdg_fxDucAZxBdQrmDnr76xq3bV_LDi3IROzEM546kCQZXYRnThXUM8W36ttk8P7ja7r8g=
+PMTrfmcqshew0JV1v9SVJrCqoYc4s0pxdRqbQNgH7rGQm7xV0qkNl7WpbR00_AHl8t0mSW0v57m=
+jnDhyDUxDXpXoAnr3wJXJj-z9TPtU8ppO7_ed1Ul6KYi72uubB55QQWqQKZb_92MrZy80XIPkxV=
+p9QdhiCewjQI_y9VqNRN_HqBYu0KRI7gITnutf6kYLtArcmYPPro_tccJh1YYkVrGWE75YACZJz=
+EF7UeUtVaYD-oSoztaPXg" target=3D"_blank">1010 Lausanne, Contactez l&#39;age=
+nce pour l&#39;adresse</a></td></tr></tbody></table></td></tr><tr><td valig=
+n=3D"top" align=3D"left"><table border=3D"0" cellspacing=3D"0" cellpadding=
+=3D"0" align=3D"left"><tbody><tr><td class=3D"em_grey" valign=3D"middle" al=
+ign=3D"left" style=3D"font-family:Roboto,Arial,sans-serif;color:#222;font-s=
+ize:12px;padding-right:15px"><a href=3D"https://r.brevo.immobilier.ch/tr/cl=
+/tBykJ2RO_SPugBTGBIKv7OVamsZ-HwPSClHyP9hccLsJGxMb4THzUCdn9ABAJ7AknLQG9FRsav=
+IkSiCi7gxg8B94N9nY3s69CyEwiMw4mAQRCLsvO_vq7GTT5t3Elqs6JGbwLXSlsK06A53SLbpvl=
+ynTl0-YbXrpmWWfqAPt7qs5MwHm9aNLn3DtffODEe12WHGmRzkePwvDFRwx7NW59cOkXbW1j9y7=
+kU9_9f8w_YquCEVzf8WYCmHwSSyx4xQuGtAqbmRuY1DO10m-Or7mvOB2gGOdPqwhAgYyXQgLkr8=
+ZRGHruHDBIu6wfTpwioMZ0CeC0OYqT_wZh58fC-GkUz8AnTx44f_tgewFZJAq-NYx7FI_6V_U-t=
+JDZXmCFUnZvaU42zoYgHoqV09bE45bTHIAm8-QhugCWO2kAoM9j0ezvv0DkBfFMRQcfvPKstX8F=
+k5nTfG2qUEm1401lTX4k-CDlfEedIJTD-rZah-ivWWYhYlR4WrA8o4P52Zd3m3BOoS4BdxAuh6K=
+D8dLuoh-Xs3jntf14zx8V_0X7EuaYbp4wIpnAaJG5ZstlhqY08et80TmfG4ycMfJKyNFE8P8cPw=
+YwN2lgORE4P-61QWp0W9ustoV3ZE6CDCbFIREGjCM6eiEY3j50avLPtPOaoxqwnw9K3YNHgpVyw=
+7ujQ0q1lfrY5p-W4jyxr_hMFxLjNlGOaPyrIC_lJ5wgbmt2WJopAbS7KVU9rmX4HxHCYPg8gxAb=
+_rxqpe3dbC2GWx58huEQue09JWNfU-NqrGyIt0DIOYX-uYiTe7YI6bTuFdlHWc5dD31b3Vk1hCm=
+a7JQ" target=3D"_blank" style=3D"font-family:Roboto,Arial,sans-serif;color:=
+#222;font-size:12px;text-decoration:none">96 m=C2=B2</a></td><td valign=3D"=
+middle" style=3D"font-size:0;line-height:0;padding-right:5px"><a href=3D"ht=
+tps://r.brevo.immobilier.ch/tr/cl/ZVutOByp0vblCSC2wQQipyJGgSz-CBf6adEEJPdsi=
+tW8FuZSzO3fr61U3YPD6s9AbAynKzdW0jVy8j6tOnee4rY57TCdUViirafA2OywTisLps7Gyntm=
+9y_mgBWlUknm97ZKeZFbx3ezELqc92doYqoKNc70T29ODduYnXadx-95jN9CrgqaytgM0987JIm=
+npsJsPeDqcSKP5ryg_A1JOnH4Hi01NgNKKahEig25yTFE4iA1LyDiAOpC10wMSP6V44sdkInQfN=
+n-Lkw05BfteqmnSHDIrVNhRouJd4-galI4lg8l0h3lqe2_QgJ6_zP4R3NGYh8IhUHq4sSnrfgUY=
+LOwMrUr9S-PwblANKQJaEhQk4T8eZiCwVBKwJDgPZ6TVxRoch0ZNNhJoYUll_86SBTPs0DoGJX-=
+ATxXwjydtWBpoz8qKGUbaFdMEf4ByZVRRu1ACi82yUB8K1v2lxAlCZZV7vbdpBHxWUqylifOr5Z=
+9cp1oNc4h4K0knzEhQ_YYnoDzwqZraEpox5BH7at7yJjdseqOID3fIttZs1VKJXF_Dew07f0GXQ=
+Olx0UbL6fYBrfhvO68UMry_q6iwu5BAYktLZsFV-_vvC1DBTtnRIg0MuW-hKTYEgq2OSY21OR_f=
+eWPZaYnGvygC9istNe9kwXboxip_Cg5WN7AKOwhfbpaeHvKA07oqxrjK6HVlPVlc-Y2ba84MFl3=
+cJX3ny8Zsi6VA14CVf03qKdZJWZ5aXNVzOuMev9r2XERxJcDd_ifcCxXFVaiUg1PjLYSQ7Fp53t=
+WUwAa0gs5po5roc6t_Gbsc0N1zZD6vOstPzMh" target=3D"_blank"><img src=3D"https:=
+//r.brevo.immobilier.ch/im/9445284/8d5b02ee4455fe003875a3b9cb192e3303159bc1=
+04713632aa16584668afb06e.png?e=3DWizcpht0reQkRLlehZxPay8otFR19BxyFi4dMG47RB=
+8VxFKB0J04zN4UCXdALzeYLE5fxKYxUmdjg7ZVs4mc0hYqZWi4FedD8ACjKTNpceI9eEMCUk-9G=
+IvHk9P2ri9MRZfdJ84MRiAb2_ptIn7U8jUISgLDx_eziAlz2ItdzBqMMvxqMpbMI3SmQE_4fof2=
+xE78R_8NnkYjnv1BKyeFh-560FORuUKaJPDtE0h0Db1CJoCykJ9sbKx20ZIydw" alt=3D"slee=
+pingRoom" width=3D"20" style=3D"width:20px;display:block;border:0"/></a></t=
+d><td class=3D"em_grey" valign=3D"middle" align=3D"left" style=3D"font-fami=
+ly:Roboto,Arial,sans-serif;color:#222;font-size:12px;padding-right:18px"><a=
+ href=3D"https://r.brevo.immobilier.ch/tr/cl/SYzx_ucXmAaotzNZEAcFdOTdiQt9IK=
+cGoBwxE2DAMXVLi5resETIMIvbdR5pd5TrzM1Rw7HAlRdwvCHZ_gzUb0gOEedxBFjJSZrEqw_Kz=
+7GUKCW3FFW3eWe5VhEyQxtrQ8oJL3BWM4Sa3UOfM0dI6RZ1sOScUoCr3NrHu0r2NGC4AkVTI51m=
+ohlNTcyVMkTcy6JTWSyoEoyapy0bMCo4DoK74TLtnFlWJrLEuHUJtzWZFAERtePUTOtAPO6imPG=
+YmjEFwkCEqZ9HfshuuciH8qsSb-LX2OLUmRVGsQ4_3clkypdQ3yFhCypg2QBLn7eQgNtm42wL16=
+20WIJxZLFkNUnnqvW-DvkHVY94RjW6by5AOMGrs4zfKp8LoUeNF8jkaR0lb1Od8V3ltVbVeEaDL=
+f1urrJuiwxFX7c3KNGVIqOwloHaPbuWeU68z6gYX34dkDoKgBbhmE0q4nft698zYaWINgyWJzjo=
+tBnkiadSfAOXVzTweNMT_20wqsWB-Bfv9FuoctrduI2N1bQ2LBpbtPvJJW0BUbB8besUZ4Ivg3i=
+MdQjqtcQV9TGwJmNlKUUemmbhl0ccN3cXUzuccThYHobocAPVeGLPJKMhEiGMTpTLbXU8JG03Tn=
+7JsX9MT8YYj9Ig5ztBwWE0I3YrcYWCILj5E-Vpx2JLxxcOcvDxx4AI6bCXRRLmaVD2iKCWvrVEW=
+rEoBZxf-UcYopbf9ddyOlEEUFMCDvFnzH85Ex_bRZ1joYngnG78cLyDS6cYtAth6qktHZj9cWR1=
+LHM4q_WN78EfH_bX10Ohb-PEFKpzoVXCuP60-gZvB4c8SC3V" target=3D"_blank" style=
+=3D"font-family:Roboto,Arial,sans-serif;color:#222;font-size:12px;text-deco=
+ration:none">3</a></td><td valign=3D"middle" style=3D"font-size:0;line-heig=
+ht:0;padding-right:5px"><a href=3D"https://r.brevo.immobilier.ch/tr/cl/LK74=
+TFGV1IEaT2u2SNSMCei2iHZrBjZv4AkpOqo9RAnW5_AuFY3mqraR8eeCpv94aJW1wluvDl3TaVF=
+y5d33DMv2Ne6SVgcI6ivULzT1h9fVyrRzB_iSRXDXsKpJe0Rohl2qML_l7oYA25jIhgulMZ4F4w=
+Iehx6Wggh_z_iCALKEKmD9qtmH2hxxvwSvU1gKd-bkbaLAzFmapoDRugiLZZ23e1HVgNNYh7_9V=
+KM6tBhI7enmfLvJ1Gg8K_VQc_nvNbQz-mf68uqL0AeyFMPlwfKIL_TLpauXMVrKyjyW8DPl3KYq=
+TdxB1I-DRMecaN81DQr7U08rUn-p0yqVHq7I2tZS7osc1fldXiorAEaB5RaImvfE7Ew2BUjUHkq=
+5hNtt5-EcjL4fRyMLM1FUq4Bu-M-nVKkvJiNHPOO2VEhWto1EdV-Rj4fbVLjDULgjEJukwGxRXs=
+thpp7tghze4csjj6mfl9VX31V3CRlS5JtS3LfGDAg3liULti-VkelE_jfwCMOtjflNKMGkDQO9Q=
+w33lbSUagtpNyOzu3odFSJ-2DarekO7S6uQbywvaa51gHhnrUCWiv2MVeb_R-LQEExdJoru1kGb=
+kxZPsSrpRt7FRsvCIvdxfsZKz-T8DtNjOdpMsTX_xLyY5N0S0CN1SoClbX93i_d9ak-zsn73ycv=
+4eerAW2CD3Mb46HY3SLXp5CKk1Ay7WmAFf5ChS3G9ftMo1iRdDdQiemVSMX_2mmCF79rX_KDdC-=
+zW3EMgeOWtrYFjvxUpjT0DBVUz9372n_U5UHVN6swflVpvDP2Y7DYYZAYJyA7JMuQVDoBAIJu0"=
+ target=3D"_blank"><img src=3D"https://r.brevo.immobilier.ch/im/9445284/dee=
+304d64fa206fcaf25bac4231f09dfa2cfcfcb2d045cee47cc8fa86598f21f.png?e=3DQiAbM=
+zVB9gHkTZEZnCqaB-OgG2Aw3LNTXNSIQwxo5knXeNESUJbDwcvZdgrr8ew8sPOK58q-2RcvikZE=
+PJF2di51op8Me8MEXlK9_3RQhu_QSwrnUlVBADQX3fL9snsrOXYoZYHM5UB163cwyyxYIoGL06d=
+43GGV4Ieb9tRxbvUL3zfoZZucCDG1NtLV_lDVyjrjMLHnpkvzm3ByE6Dvc7iLqemYQRpSBEmTYv=
+ozwnecjFMg1M8GHgemVXGSpQ" alt=3D"bathroom" width=3D"16" style=3D"width:16px=
+;display:block;border:0"/></a></td><td class=3D"em_grey" valign=3D"middle" =
+align=3D"left" style=3D"font-family:Roboto,Arial,sans-serif;color:#222;font=
+-size:12px;padding-right:18px"><a href=3D"https://r.brevo.immobilier.ch/tr/=
+cl/atiRFpwklccs4lLrKuAN2l_yHkIJiWR7ljvGKUOq97IJcPpSE_uzIcAjab5-L88so0YxNgxf=
+8aMtszwoJew_1-tQyaXNIxOQ8oReDI0YfqIvf25ebFi-OMJ24qlDnzsODzELoAiiWyxKJrC0UQt=
+4cBvE0qDRdbQRzQNvZOT79GJopIQphtDzgwbmeNTrAC9QZ6MfiNhJZ_01roxOJ5vObQQTzJVVQw=
+UkYE7OKDFbwzgsM0h02PFK0cRNAr7ieN1XKlbOuzbjyXlpVA3XBm-iEpByu71VqwPMAY5e21HWF=
+rXjbShrZNG1R4zzWQ3N_o4l9pQXnIRfEuJCnqBKjzVAso6QWElSPFdm7tUBo_jzLWGnSAeab7DH=
+d71o1VldZ3vOznxRsTk2e_OujzByfvUJsivha23QFo_0CxPt3OMe2jrusDgC6wo0xF5FmH1IOWO=
+k7PVPOAz9sAVZ-djJFGOtcs4Xqpwj1uwn2rK4lbUT99Q6bgQk3TjHUk59AM7VKyVZ8SH_YgJloM=
+7s2XAJSzcROqM5Vbflg98Rrl9zZWdi0Jx6dToVSHAY9SIT2XH0MBArKaK5-sk6VPbEkMv6tU5uk=
+GOcZjvdyTu-8AUEbFKvSSiQTyayKzy7chTAlu5KfQPrngihrgBsfadpmc-AGSKIwwurfYgnixQx=
+AXmPGM8Ht8TCSnegHRmpWsTa5s55umepAKMcGsgxPcqyYVqPrB4lJ8pc-fv6DiboMBwgJl38mW-=
+-y-NZqloHJLrk2fsnZAu1_27VFF1K6r3rAkx7aeZpPxRi0D0SbGgqZygmyCO-RXaUeSxDrifNlJ=
+3PWKEU" target=3D"_blank" style=3D"font-family:Roboto,Arial,sans-serif;colo=
+r:#222;font-size:12px;text-decoration:none">2</a></td><td valign=3D"middle"=
+ style=3D"font-size:0;line-height:0;padding-right:5px"><a href=3D"https://r=
+.brevo.immobilier.ch/tr/cl/qHknceCBxGvdXR0_CY-m6Y4RqtbjHB40BJsw9ysb8Wi7RjYA=
+8ctD9GfAg1tyELfC12IZ4sd-1OpJh2zY36eimK-vHkUVZaF_2-DzbaZkE58mcv1pNhn1fHzrzSV=
+2rgkATAd6pk_kVgbqKsrte1lSpHiGuCRoR35jFZfwmZ9FbIQBJ8AjXEKYgyLlxgbrXw0TObpasm=
+vvOV3QzCavUhp1P9bQ7hd35-8sr5uKG-2SXregr8zR5xYeUEVjy5WGIdKLrr8jENgiaDar-R9iK=
+qb5Wij2cO_mR0lCGApKr2DLGyHpybOUIivy6_kbDSlRbZULIIBxUVssAl_znTZ8d9YwcGG3qOaW=
+9k1T4C5EaDRkq8XhqYNAV4rcqNM2x-BdyCBIIMbkBINRyumPXfekyLlA-IPYLF-I15gk_3TbDIb=
+MwHr68F0jmMbYTQXnzqEA0KQvZpZhzt6WGDiPrSxlIpfGcbpyFCCrJf2RHlpMIBUK4MFLHrxzhH=
+7xNQc6KrVuukwIlumgk5aa_9O15r8SVcF2JgBpT6nWiot5XT5BItvqtljRTnGw95kLIOR6zAajg=
+_EK3B_OkRFtw8nbtmCn1U-UMLCnE1fyBWSYarwaC7qkwuEKNgGTB_dcPBPXI5cbaKQahtbkly3u=
+YvMilEgKs2_7k4McDk9PoEDL7eO-OJaCo_LJ8qUS-wfIp2Uq8daoH1Pq7TqV432wy9UnkGDzhLd=
+OFj-h7yWMy9pg7fp_Mg9nVt5N1hgnEV5KxkjOhL3XirbNTSwGY8ZSh13LEJ2OrcTFv6cXT8UQwS=
+Xco7tpbzWctzaZU5V_7GVQ6iN9AVIr" target=3D"_blank"><img src=3D"https://r.bre=
+vo.immobilier.ch/im/9445284/4dd1aa93cf606fcd62b68f1181bf47265f3b989ef581f9e=
+7424a324817903da8.png?e=3DOBIPihaMP2-vK1Uj5irLd0D4OOgi1CcEbVt2WiGe0UaRfRXW4=
+E-7st0QB-u5K_pLMvjS4LnVRKGSiXpeLBqcFG18YJSBJQqK4CygdEJNx1npOxNUCGBClU_V1XJ8=
+dTEBY-A5nJwtM_be9_J82g2m7EEA2tQF7nbOonCAIirWCkTbb6iIMsGesy9f_tfjql2lGXFKZRq=
+6PfeG6TQmJvo7m_HoF2PiprdQo01Bby59lOguNSgI3PXXHDyX7slYBg" alt=3D"plan" width=
+=3D"15" style=3D"width:15px;display:block;border:0"/></a></td><td class=3D"=
+em_grey" valign=3D"middle" align=3D"left" style=3D"font-family:Roboto,Arial=
+,sans-serif;color:#222;font-size:12px;padding-right:15px"><a href=3D"https:=
+//r.brevo.immobilier.ch/tr/cl/0BHx2L4rk6wTepy5d71j5Y7HYHnapG2_OasrMk6tn57WG=
+CMai28nOK-AucKKmvsoMg9ll9YK6SzEBdgGsRe-Yf_BJcNTU8TKuEL8mzD89JKClaRTSxttYuxx=
+kQUci0dxPToo_A29pFcNpE3nuEY8ykmqUWr_v_fN7PKEuDbev3sFiVkyUIDy-0CTVsauvM2i9AK=
+F59BwCK_Dx_oHo7JCUJXPAsSllmPT_t_iRTg1cusOsbme7JV36piAldrms-OiDyOUlKE3-4KoaB=
+191A1QyCFgwoCPr8vUM4FS6m3skbuA4JbwBpsWEA7gTSHHf-TYPRyuDi3id-oFFECs4XB0tB5FG=
+hq6FbmpAy51UP1xl7ZiM4BIyTeF5k1RWC6XhcnKY3iwGvcpDO3K7IWU6HnYNxSHPUm5NDcKsKkP=
+mo-A4sg036McjUZ7hoYaIeKe45J5aEMasdaSkFsuwert9kteVro2J9mPlr3g-k3LbcqmteP7vsB=
+_W-uPlAgvLPGeP_mZHzxj2eqAX-x4FXZUXvAOYVfkNokqEjJMjn5c0-COBRC_O3aASUDLA5jIO3=
+FbXR8RueXq4wXxxuBEpgfNBqipmZ9ED1GqqdhB7iNai3OHuK7wGxuFxgmSrU3y4ChVgKkAU8itJ=
+Ie1hmQrAAwUzX5cUi6AIzV8FkdciS0it2tLhVoZXRngVj8Xq74JV10N7jRaJc59qtgTcn3i6FY-=
+xBDO1cMRdw9vO7G2Rr2VoRzulY0gFxXZ2ulGTQlOFt0YSO7whmBs1_4EtsietK4vWsUIJhnDY5r=
+6DkM55sYMjfn288jqFBbOS0VCHVKembu6" target=3D"_blank" style=3D"font-family:R=
+oboto,Arial,sans-serif;color:#222;font-size:12px;text-decoration:none">4.5<=
+/a></td></tr></tbody></table></td></tr><tr><td height=3D"20" class=3D"em_h2=
+0" style=3D"font-size:0;line-height:0;height:20px"><img alt=3D"" src=3D"htt=
+ps://r.brevo.immobilier.ch/im/9445284/a0c25577b0610cc9d203c8d1e6c9695ab8ece=
+fcca4b83c8ad84b6b2db42f9f67.gif?e=3DFkO4ysI4Vl3OwqhF7Btd0YxtgVj7-nEjVkRTA4A=
+06ojp8AVeTOCRjB-593k0_m6O9_90kSm1tVRKimYPxEp40kWR6qYfzNiKLp9I57sLsyGdVNoyvB=
+l-8jFBw1D9c6IyGqmiTAmbBRTN6BWZYrhfy5uTOPNxxrGLhVibjeGdmSVhAut12FzmKSFm6Q-us=
+8zZYfg0O06H07trI5ZsSHlo8hy2-wTVFWyWMGEWPo4D0bRf2nCNUSx565_1ow" style=3D"dis=
+play:block;border:0" width=3D"1" height=3D"1"/></td></tr><tr><td valign=3D"=
+top" align=3D"center"><table width=3D"80%" border=3D"0" cellspacing=3D"0" c=
+ellpadding=3D"0" align=3D"center" style=3D"width:80%"><tbody><tr><td valign=
+=3D"top" align=3D"center"><table width=3D"80%" border=3D"0" cellspacing=3D"=
+0" cellpadding=3D"0" align=3D"center" style=3D"width:80%;border-radius:3px;=
+border:1px #222 solid" bgcolor=3D"#222222"><tbody><tr><td class=3D"em_white=
+" height=3D"31" valign=3D"middle" align=3D"center" style=3D"font-family:Rob=
+oto,Arial,sans-serif;color:#222;font-size:17px;height:31px"><a href=3D"http=
+s://r.brevo.immobilier.ch/tr/cl/mYyauPyh5tXC9_L2-F6A5iC2JG2JMe_3HCHogiEwPsl=
+osnKQlKvkEbFP7SGAM95mxsf0KbA-BGeEohr4zpOUTAVBFWJeQpZGu5Tvuvtcs2UcSn0xsWk14L=
+lwCcFNUXAnGTvIQFo4e4wBbjKsxem5ZdpATtTlPhLekeyjOvTR3vbzJIZGh_hwAibpFKiKquQsI=
+1vZ0M2Hy9NiqvvT9MHIZRctd2K0mshju6lfyurs5IWT_a8Y6hpRddkkU8dyGO-r4Bvhw8GXsvq0=
+YbyCCIUtyinO4KfTwd07wbNOD08Q5Kosa3jOjbF4AO4rVtwST-4_-XEEJIdCCPT65wY59epTZ3V=
+ussrDJ3UpaA8L7GlNgiLqJobXFkN0TQa1uefi3XrgSu5cg2Blt3bHXud7JWMvxA-9mPe9SRTXqt=
+SB6H1eDmBFKhHtSEUL-xHia3G3znYmtqvTHM0gCeTEz3I2ZFcK-3Dg7Pq-tSL86X0Xp4PyZenOA=
+vpz9EyuKKwe2PPO5sSbP-XAW1vd-EZCrDupEiedf5PfdfNuhwggEJ7D-gUv9otiV7tIu0esNYld=
+memKLB_F7yF4KdkT12eitOuHvYyLFKaXdgiRo-Kf3TDqeoPj90yxZgyYyqE-edn_Yw5Mu5FVOAR=
+zIu7AsUhWxRb7OrJTE8rnDZinTnxlLaWqf6mWOnKJMfCZlxLOQ_cEIoPBS-ysrCEoZDSdHm0vY7=
+1gcYJAcf65-CPl5ohJdq3lfop7Im14-VzhFmL_G784QQ8s7ru6NVsInGaCc2Pacj2CI1ePMt42s=
+10rM44oMyXvsqRX1jzOxrHDWBW7qncwG0zR" target=3D"_blank" style=3D"font-family=
+:Roboto,Arial,sans-serif;font-size:17px;display:block;line-height:31px;colo=
+r:#fff;text-decoration:none">Voir 12 photos et +</a></td></tr></tbody></tab=
+le></td></tr></tbody></table></td></tr></tbody></table></td></tr></tbody></=
+table></td></tr></tbody></table></td></tr></tbody></table></td></tr><tr><td=
+ style=3D"padding:0 0 35px 0"><table style=3D"width:100%" border=3D"0" cell=
+padding=3D"0" cellspacing=3D"0"><tbody><tr><td><table width=3D"100%" border=
+=3D"0" cellspacing=3D"0" cellpadding=3D"0" align=3D"center"><tbody><tr><td =
+class=3D"cell-into-row" valign=3D"top" align=3D"center"><table border=3D"0"=
+ cellspacing=3D"0" cellpadding=3D"0" align=3D"left" class=3D"em_wrapper"><t=
+body><tr><td valign=3D"top" align=3D"center" border=3D"0"><a href=3D"https:=
+//r.brevo.immobilier.ch/tr/cl/jxzENxo8i9BNrM6nKRHmN3WTIilr4VuEMvusod_9YD3Re=
+6IOyFlF99s3Hvz5sejTpsFioofo03j3oqIauaaw-EXHGi_s6AYfbouE5vl5tqakvMBI_Aaxo4Io=
+O-Nw0tBIZO_4dKBEqtx07x1U2VsR6Ry3XOobQUqftC_07YGVnCzy4tu2MlJU07AnlcUUH1gTUO2=
+V6hDQprqvjqCfrd3_-nSOgOLPbSHNcabIrrY-y23j6TAv2c2OMTJjkEiiT31NP9nNYe_iWBooeZ=
+sX7LXGeigEWDf8TuAycoRle8YOH72yeh6ccgL2eyuYWyoFX-U_SZwY4ZJlMLuE9hp6f3v8c-SVP=
+AV3PY8wEIfziSFtwa17Ujas07dI3CQUhmTYjTXpjI4bgOl888AA7VBvIuRRvb5fiX0B_KGONFgw=
+VNT9wiuHDhHNUKXCFky95oxS-n2_1sKKqlJPBvKuercQ9CMzlxe5Q3dY5dtDu-SAdn4hXbF49Gg=
+wAtoBxsEjSHKipMdU1_JTsjugrHuedfUDK2SAu9UAUv4wJcVBjEKv7nrfTL7yC1ucGyCK-SnV7g=
+fcT3nemVDdxwQd8ShqiT1inPW_lbYsMlVoVJKWpmwz9Rf0YDnS6yJ-fLczuVCr6j97lbZQ2zCvS=
+l4ZaJvigsxHzp_PArwYKqcrlrC3dIuviwEAXFJC6EQ46vqHTWqKYRZMS0C8W3c_tOq6YlrvFZHH=
+siF9zMtMywgNQyMXJz3ZslTXNH-Jv5I8vCnkVgsdKLyF-JZZvD8IOhGB2SUWgoxK6TpLPqfL1OX=
+1SmNsxzWdHsxq_YHYxnEbFZF0iUW6WPjt3sWKefyjKobkwWE9" target=3D"_blank"><img s=
+rc=3D"https://r.brevo.immobilier.ch/im/9445284/b27ea03aa68760fb192604ed7ebd=
+a7d008350ea7163c11e71fc50397ecebb734.jpg?e=3Djkr6Mbavo_NLsdbdDrD9QPqBw-a63G=
+orFCdsDD9qEmV05b6XGW4QmUSteS3MKv7r0fhffpWvygyJ5jhQuiK171FY191smykec5rlLOWU6=
+Pm9ZrI9iRTq3NHic-GoxZ_cgzmLJWvUgV7XAX0KvexSZwHp4IUDTObV_ENCKLykJ-ZdcD_qXBtG=
+bmdj88dJu1_lFQCHKz9nnWqSYyWcO5k4SoqTfVe4cBwKHzgxsrgagVj39Z2eFnTHoMg7z6QEX_J=
+i9Fr2ICjXNT2OikReYtU5Z_Huhb6pRMfZfERtwed-b-B_2T1xkEXe7tMrXsbnZGAvI4o" alt=
+=3D"immobilier.ch" width=3D"270" height=3D"188" style=3D"display:block;max-=
+width:270px;border:0" class=3D"em_full_img"/></a></td></tr></tbody></table>=
+</td><td class=3D"cell-into-row" valign=3D"top"><table width=3D"310" style=
+=3D"width:310px;padding-left:10px" align=3D"left" class=3D"em_wrapper mobil=
+e-padding" border=3D"0" cellspacing=3D"0" cellpadding=3D"0"><tbody><tr><td =
+valign=3D"top" align=3D"center"><table width=3D"100%" align=3D"left" class=
+=3D"em_wrapper" border=3D"0" cellspacing=3D"0" cellpadding=3D"0"><tbody><tr=
+><td valign=3D"top" align=3D"left"><table width=3D"310" style=3D"width:310p=
+x" class=3D"em_wrapper" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" al=
+ign=3D"left"><tbody><tr><td valign=3D"top" align=3D"left"><table border=3D"=
+0" cellspacing=3D"0" cellpadding=3D"0" align=3D"left"><tbody><tr><td height=
+=3D"30" valign=3D"middle" class=3D"em_grey" align=3D"left" style=3D"height:=
+30px;font-family:Roboto,Arial,sans-serif;color:#222;font-size:19px;padding-=
+bottom:8px"><a href=3D"https://r.brevo.immobilier.ch/tr/cl/d7CXF6avG_j6VXfn=
+-O9vw0JcjUqQ0uxxBb9HKGyCTTX4vQBLc30b7xyPgAGRutiGgcrwEZSTAuceVMRPayNjJWC_mz3=
+S-sxotxsxlTq_6QkEezn44skw6DbdRYhpA7tGj469KdSVbmFZ4BQyT0kk06smA6bJzD7RKYpSyj=
+Cv331dHoyCXaK_BIspBvXls7NOvIJNd2oe34kiCXyURxBVyZHTzk8G_d81hjuPqSAreLNlUIsiQ=
+GXrQ3xsgTiTkx3jfxe2gXMHoiybQp2l3EQ18b7el6KsEj25atI6EyHqMKTXuAJmvfV0K_ncLCP2=
+mBg3XcM7GbguHorijsRGQegLmtW8Ve3VPyWadQRgVqvMiDQX_-Ugy8TcS5u3EbY6mHEs9Ux1aIS=
+I4McfsBP2r6vzxKwLcSjRHMohTC1-njF6elb7b9oVfW-Xf3ef5KbQ0EjyaX6lUsfyGS70bzSk7e=
+PlLyKRafl56tQLBQwvO9keo4YTxlqRWQZjBwxGfZ_XeYVrSAcssd5oVkUT-HejNQfmbOPyqbj9j=
+6FVy5D3Oy81sDhwokCTPH8xeuFN-FfwJNpeKsKkz29LrwYSk7_Vf_mVOPX0qTmrsUbYDHNiCt5R=
+Mh8gpn51hoosR28gSVhGMElPSgJZhTwH59vk6giGf01suX3MjURs2FqGEwzQPZ_5SxsV0p6C0ac=
+9twCk2v1kS-eL-BFSmgD-MdfZqIoDs9bz9-rnFjLKtLgcCosL3Qu7kE_ShXbokEbKIJqJomqv68=
+X1mjCdBgkFvhQUBV9wxbB_LdzoJnt3hZO63HQCrA0ZSdFGimFkHriG7tC8sYkpcZ7aEXmv64OyA=
+gFM" target=3D"_blank" style=3D"font-family:Roboto,Arial,sans-serif;color:#=
+222;font-size:19px"><strong>CHF 1&#39;160&#39;000.-</strong></a></td></tr><=
+/tbody></table></td></tr></tbody></table></td></tr><tr><td valign=3D"top" a=
+lign=3D"left"><table border=3D"0" cellspacing=3D"0" cellpadding=3D"0" align=
+=3D"left"><tbody><tr><td class=3D"em_grey" align=3D"left" style=3D"font-fam=
+ily:Roboto,Arial,sans-serif;color:#222;font-size:16px;line-height:20px;padd=
+ing-bottom:8px"><a style=3D"font-family:Roboto,Arial,sans-serif;color:#222;=
+font-size:16px;text-decoration:none" href=3D"https://r.brevo.immobilier.ch/=
+tr/cl/cGEo25QPpVwsl_p9CxAKUCMHnv9Su7mNpQuPugbgM3G0s9ytgeUCEI9LtunYlBIb0scNW=
+EXqJc5TD4ic74qx-SQfUkIgSWUzyh9bPuFCVH9ogvMoGdVTEAe54BmDZrX-RgLtjOazOPrD-K54=
+_15SyDojcESOwP8szEgdCrpXwyMsF1rDdO5twVoQ15xfV9vWEvM3i6AokjRW5Covx-9jqBzsgok=
+TA83zExtcQirdrWJia3PVwU1UxTA5TaZNGGw5c1Umtrw_JXnAPuTjMzmOjTKLq6VFEInYABZSNv=
+ArCfJXk9j7iiL1gqf8yq8nI24lOMCo-F0kSygV8hlFk2aanD50xXYNbsUX4Lc-UPy7iVLluUNyw=
+WdBb-6ziPonc3uLCTvrQquPSA2IxHm-x1XwZ8dLcobpd_vIW6GDYXjIkDpBX6xOFFnQaasWuayh=
+20bx4QRYkwoXp5ynBaoL4auiT-BjbNNqD32Ehfd7HaEy-ububL0GgiJBu6HzK_ET3Jw_y0bU_yX=
+kQtNNXMkRckem_lrOpAj_gUZvqxL3CUzgytI7hh0aTVjbtl-FvTwd0Me4xWVP5PJmrH78yIv5SG=
+t4Je80N0cQliWvRBvm8mpWIpFTHJejncYgwmuX-MyDTK6_Ru5LWbcFX--1WeaUw2Z_Os6Or6I6z=
+yV9pT9d1M2zzMA1RQLOygg6KpcGvup0FLMFGYBIQAZXQUfqvIiYVUnjyGCH3z-ju5OBpX-VhyYV=
+V94I-s2DaTQZyEjFB2iT2-X8Q8fFXcNoqkb7akJobonkNY45lioVksJN7bmvCZWWhkF4IfRL2GA=
+p6HVz6hxCrkPURknSFdVevYQx">Appartement 4.5 pi=C3=A8ces</a></td></tr></tbody=
+></table></td></tr><tr><td valign=3D"top" align=3D"left"><table border=3D"0=
+" cellspacing=3D"0" cellpadding=3D"0" align=3D"left"><tbody><tr><td class=
+=3D"em_grey" align=3D"left" style=3D"font-family:Roboto,Arial,sans-serif;co=
+lor:#222;font-size:14px;line-height:20px;padding-bottom:8px"><a style=3D"fo=
+nt-family:Roboto,Arial,sans-serif;color:#222;font-size:14px;text-decoration=
+:none" href=3D"https://r.brevo.immobilier.ch/tr/cl/qz_a1F_CoJ3va7XR0GcqWJCz=
+qhtOErDBuuA1Gxs4A65WsN7MbbHOtl8sdIcDz5QAEk8t7jFt-7_Z9z3uLMKc4nM3vL42JnWTqnW=
+HRDsEJ2evAr2TVkGRqKOZ-kOApK4Y5gdyXoCEjTvT9kzf2MYvuMiuuFYnIqOo3zgzHFFZ4SLjVR=
+oIphhidLxFK-gBs-O_kSNb4gVmNGn8Iw_17UAvqFn6u24KvYlgYkjpAhfEvgID_CEb2Vq1LdQY8=
+ftIeGTkxvJKifx2apW3bxsk2KMEPxgORn6PtscFw8pltMH9D_rkn-Ze0pxDXsXYYnTWgi6lx7BQ=
+NlDxUdoNWo1PUXkkgVrvhCg4PWyPTOe79KF14CidXX6Nhuc1rmWO7z15hLLl8HRyZI7NX_JSmYW=
+GjgxDupmsg101o5bNy7Cj6M9zHOS7t6TjDfabTiBknheFBwKlHdgu5j7b3EFqx4HNxgyJ2KiFEG=
+xRkJ0HdfLDB4dcvHidm1WjubDvQ3PFnHsrj7dcGgWVzfX26KR6FXgLBsuyIWSzWDKNhC9QdRYDt=
+Ktzv4VU_ODL7pGP1y4nPkUAdoZ_qrUw0WaEuyir9zFK3-qhMYf84KEl-FypDIRioNSQUDpkBFHo=
+T_r5rjWwSFzfrr67Ypddfi0sx4NQtPqB4yMFxAzm_3rFnZ9_rNDjwCwnYRaQY6Z4vqG2vULAGrL=
+K55CnCy6yjLEYlLdR3YQliYwHdXTwU-AhvW5zl51Enf8FS2eiAG36H3-VzwcZj7G7fmbC79Ce1J=
+AdjokHv8VKQqa-ivDiEBcDAtZ2_pDPtv6jXR7eY9MRZ6huxwxB0-aT1M-BhCZl2gqcNW_P" tar=
+get=3D"_blank">1012 Lausanne, Contactez l&#39;agence pour l&#39;adresse</a>=
+</td></tr></tbody></table></td></tr><tr><td valign=3D"top" align=3D"left"><=
+table border=3D"0" cellspacing=3D"0" cellpadding=3D"0" align=3D"left"><tbod=
+y><tr><td class=3D"em_grey" valign=3D"middle" align=3D"left" style=3D"font-=
+family:Roboto,Arial,sans-serif;color:#222;font-size:12px;padding-right:15px=
+"><a href=3D"https://r.brevo.immobilier.ch/tr/cl/91wGXh4wpPoXnPrS6UFSpl0Wms=
+9QiFRRgkpbDSo0WdAlwN2kJSzotHo23pdgKhmv8aDpgM3ywecxJs0gzfrGiIUPFV6qr6IjKnkaq=
+R1rKiFxoxg_RuPLpV5PtUi2TQnTsdLi8nkYSRmoUcvExyuNKe8WD07JD1aKFDw-lf5gY9HK4hBe=
+_CUw9JIdR3Z3r_wCuJcnFsXGKepdQ93jXxFAQ_CGtxS_PY_6mdvzEERtbHBYgDKYtRvypgD7h2e=
+owpPZvu3WnkzooBPQlKDphmRhfPY1YnWp0iG1nk1op4dH-vWenmtk255-BgqLRF6saUPBMrTiRb=
+_aW32WPwKp1wLUTq7i5fMUv4p23pjFsYZJT8BXYlzi7XEXjjd9hXTECLRQB4e3ugOJFt5hvXbks=
+MPLc0loW-GrvE9UU7ewQ2IiQoR8nRM4g7Mco0ghx5s0lySnjrUcOlQsE-oyZ5go71-LfF3rq3ke=
+HzPurHwO4XuVbN4G_ZC3orIyQ9Ce6UfcYn-BihqXZFa0MZAafIxCg0TqIjtLIDG_O7icOZSF4eO=
+-WPP63U_KqeBVaLExXE-pnrP5yoWTUN-DdGwnXZzVUAAaKS_Jslq2Z3xUCe0KQHjotdyOHfPfz-=
+FnQLQ9ZCoLVRGSDJ-PChcSI1stp-12YyMifzWPXI-U2qjLtBQvGFXbKzpj_29YG6t_3Bf1uRvtW=
+KsfxBfKVKXdTUdE3awOe3rIvE5TI6zxN9acjc9euyw2Tu2HnCxlyPQdTK6y2acBW6OvbRjdJvBI=
+TimTZ3T15BaDPxZcLTemY_pzCHULeU3Ix1t7HInXB6gPacEdIgt4EFP3TWgO_q3-m4l7" targe=
+t=3D"_blank" style=3D"font-family:Roboto,Arial,sans-serif;color:#222;font-s=
+ize:12px;text-decoration:none">87 m=C2=B2</a></td><td valign=3D"middle" sty=
+le=3D"font-size:0;line-height:0;padding-right:5px"><a href=3D"https://r.bre=
+vo.immobilier.ch/tr/cl/xRULz3_oRF24hswUOoMQ2XMILdkxVMmMNhixj7F5kYLou4Oov4ct=
+VcDTGIL3dXBNc7rlLA5CW1AHHTQbTLLPhLBComC3Pp76VCtXfrF9LzN2fdv1ajg61bmarjq19DP=
+ztaT0MpE6RcmQPmtdTWXOlQcWCQng7lQY-EDRniMx58p-WrhIMJCK4R6jNifE-xmrO65IIy59_o=
+vjWeaZZh-s88RmiT-rlxBqj0n1DJA0iIJYOqf2TpX9_J85SxOOMBIbviJ_Lbf9elJglOAkNWMTx=
+3eF3LO8AZ-0PSoDjmt1syAs8_O1rZK_CSMhvfefYCWnnD6C18Uoyasii13r__mwax5_aIfmbQQw=
+pswHnmjPkAnR5WEolAQjgtiQ1BszTNTYGWjNdur09FKMyBd3LFe9rcYt9Xu6G7R22O8ZMv9E5q3=
+6VAyLMovQ6AVIzCt_KZ8As7bDVOxQ8BxrJb-MXYSgRKzVM8Wsttz5z7GzAdTUOzQ0xE_cJVvIz5=
+bJ5obNErYQjQSPmVfpVxU7bGA0vNSYjj_MKi0A6Zysq--u_9gWj4jxp11elsu2B4ZAdPJtOFOk1=
+621D4GzVyr1ezXVFkDDQyoVHDvfXBOQHqrwdlTEbZmsUagcviyRxFFW795kfl8egx0mvBEQvaFS=
+CZKH-MROJI1recWS_uZhmY0MK-73retP6uZUQPtbZWtCZEAQ_DC9NNuEj9E37mghXcI1fokD5zS=
+XmdupLa07358RMQA3nsnJVGDz-9c19JcaidahbCsd-2cA6e7Om24WgVumNuOHiCcnMOUCO7U_PG=
+cb5JsCPn78XNfcOgL8Z6ONMbBvFy-1cjbuSBojcqwx" target=3D"_blank"><img src=3D"h=
+ttps://r.brevo.immobilier.ch/im/9445284/4dd1aa93cf606fcd62b68f1181bf47265f3=
+b989ef581f9e7424a324817903da8.png?e=3DC8neKv63aP83DwwfTaTBHS1tzvOsNoBNuRObZ=
+nniycxE07WDdDEml2E3tqtn4CVVDSChAHhQN_-IQcHTcRx6KAP3zM6BQ5gCWcn6gv5mR_W8Cj80=
+B1s6KCPpHprw_rzm2benGrUInQJABP5-UKhnTqqbZk8sFTyqypRdjFlq3hA4RYrSVAMK02PYDiF=
+8WrjJAafrRzEWA4KmVMs4j6PvRc7VEPTAJ001Bzp79XRMP2IP60ohuQ1Y8dh0fwinVw" alt=3D=
+"plan" width=3D"15" style=3D"width:15px;display:block;border:0"/></a></td><=
+td class=3D"em_grey" valign=3D"middle" align=3D"left" style=3D"font-family:=
+Roboto,Arial,sans-serif;color:#222;font-size:12px;padding-right:15px"><a hr=
+ef=3D"https://r.brevo.immobilier.ch/tr/cl/GzxuHbiMSBZ_ZPrXSFkTZ22OQKYkNpvtW=
+luB1XCtkVv5DtoXc-C6A9WhROZKWREF0HCrku16q7l98SCt5SdUCFvNY-DmaKkDc9h26K5fgNEy=
+86M5nOtQ5qw9j0XVVYSy58AqPcn5UlcJ4koi9vQUhwRygLs4vXSSQm6t7tPZp3UnxbfcddCyXfd=
+FR45Wn9nwd4jXzO7Jw1pxDaZtURUA92IsC3zM27EWZGqNSQRi0WEpqzx_mtldEoE3SmOP5pSy9T=
+k6i2hZMpHET0PmC9j9a7y9jWFTRaDbE_ieCF5ZogutyPgVT5FRuatH5JEq2pRcEKJ7Bsxl0dkCY=
+H9byJMha0-UvHguRwM1XdgS50IZVJVrwhtelWgPgsh3TrMcIRj8gmxVY9icTczgFHowOzpuY8K1=
+iPLYKM0twzuTXi_nyfppIugTiaHgnr9d6_jjGx94C1zltTB-erWVWjeGyiQ4b3n7e_feli8sWm3=
+jwjlF5bfjy2r04rRXboGCa_rDKjRZ38sMA7-HAt6MucUnw9l91O5zkOX3yvV7la3eba7DsZgkCx=
+KK8mBeCgSlryfJcXnt99fQLuscRpi7q3IgWb1Bun88ukHSXLJNtsPdXlPmTK7Sy1v3XkXpno8g7=
+ozUxVV4y4nKXrutnYESCIocBqbcEESc3AOg5l7KZDXHgVYSp1Q0n6iT61WuB9VtowDAu1IvYiIe=
+UuykQivBpSdBdkvoLWcG6PR8bF_rLAFwKkx4WwrCeO0Wpj_oTbVhxZZX4EYWv_LazqDj0IZBU_U=
+Z11RDMTvPnmzcZERfYwY1OoNlfyMvtpmEApJ2UXMdRiJld8ffhxKm_Q6IvM0E" target=3D"_b=
+lank" style=3D"font-family:Roboto,Arial,sans-serif;color:#222;font-size:12p=
+x;text-decoration:none">4.5</a></td></tr></tbody></table></td></tr><tr><td =
+height=3D"20" class=3D"em_h20" style=3D"font-size:0;line-height:0;height:20=
+px"><img alt=3D"" src=3D"https://r.brevo.immobilier.ch/im/9445284/a0c25577b=
+0610cc9d203c8d1e6c9695ab8ecefcca4b83c8ad84b6b2db42f9f67.gif?e=3DvJ8DUmKqYrD=
+rHzqLzB1RZILfPS7OAWQxuMnZwkCe6Z-9WtnWIw7jEy67eSx7t93r-evR_HHXI2CUHQEFdzIiqj=
+1u2dnxDpFUzeA3PXB6FBuOUc1i4X6X_Z4Wn33tJrXgTeu6X6y__Yx68-sVVd9wZn-4PPRx4y7sw=
+KTsBXZgIMM1247ua4n2BJjKQnO_PHxFBM_quS_KAtrhOXeCuszr8QoUZtKLAl5MpgHR4S0ZXMAD=
+VLXvpG4ygYyBfA" style=3D"display:block;border:0" width=3D"1" height=3D"1"/>=
+</td></tr><tr><td valign=3D"top" align=3D"center"><table width=3D"80%" bord=
+er=3D"0" cellspacing=3D"0" cellpadding=3D"0" align=3D"center" style=3D"widt=
+h:80%"><tbody><tr><td valign=3D"top" align=3D"center"><table width=3D"80%" =
+border=3D"0" cellspacing=3D"0" cellpadding=3D"0" align=3D"center" style=3D"=
+width:80%;border-radius:3px;border:1px #222 solid" bgcolor=3D"#222222"><tbo=
+dy><tr><td class=3D"em_white" height=3D"31" valign=3D"middle" align=3D"cent=
+er" style=3D"font-family:Roboto,Arial,sans-serif;color:#222;font-size:17px;=
+height:31px"><a href=3D"https://r.brevo.immobilier.ch/tr/cl/UmQPDEHK-dVNpyT=
+BgBJitLawtVqeimBu_dbaHxGoq-hnLLv9AW_pt5a-xZtQ2h7-oe5qkefDdf-nbOrvmmzreYNQTH=
+IQDL5xyAFU32F1e2S_jNcxKMtcYwEYTdM5a5Cp1-J3H6UFtu7ocobRkzy0rc_VxcxNiNE4OJ627=
+dl8szAM_YoAXO71xarWqj2x2dGeP0hz5dsTXhS_C90zln49-a80uapsV0M-3cxbpzujREJ_SBGJ=
+Dv5dkBawXjzV_aA1J1aN9PQ1BDWAxThC67TuJ2bL63mdbLtmaD7rpnnToVsEhv4HXTwwBMQd3MF=
+Hd5NSrH_Rr4AWDvgSOGiUgLGtPJBpyrMGOPrAeipS4M7xH9wh9A5yC3Zs63xb2PC2VTx7rmKpHl=
+_HFD3GjGxafMFnfn7W7KTXVjYC4hH123Awy1Ps3D2snCPWFpt5iemgL7Kh0zmglKkWqUulwIx5M=
+dkbzUEY9HARiDMXnQjqAI4eWiYTG6xrJkjtFDa9vvlLODSg3MQ23LnDJjD0-OlUov95HtkE1NQO=
+AdIqlvrL62EhzTBALkwP5uQnsc381EUJz5Why3B6hvEsgRoFZY_BXH-ZAvCbTOJJRuvLJNCa3dy=
+_e2yum1X1_BapGzFuObn6oMGVANJZMzIaju_n6TQCxWMd9uWtHay7nJ3NNogC4noJrs8cG_zIoG=
+g66ZPm4_WXxTYNGHWjZUTfhvbqEzy08DBmcAkb4yZadJ0_mwIej2OJPB-nngcLn-iOP4fIXRfLX=
+We67jYP-0TpMguimWSlQ7VYQ4ixvx81ES4SJqLHe3TtD-XIF1vQ_e0u_ZhCng03JsnFdSRQwJ4y=
+AIk_" target=3D"_blank" style=3D"font-family:Roboto,Arial,sans-serif;font-s=
+ize:17px;display:block;line-height:31px;color:#fff;text-decoration:none">Vo=
+ir 10 photos et +</a></td></tr></tbody></table></td></tr></tbody></table></=
+td></tr></tbody></table></td></tr></tbody></table></td></tr></tbody></table=
+></td></tr></tbody></table></td></tr><tr><td style=3D"padding:0 0 35px 0"><=
+table style=3D"width:100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0"=
+><tbody><tr><td><table width=3D"100%" border=3D"0" cellspacing=3D"0" cellpa=
+dding=3D"0" align=3D"center"><tbody><tr><td class=3D"cell-into-row" valign=
+=3D"top" align=3D"center"><table border=3D"0" cellspacing=3D"0" cellpadding=
+=3D"0" align=3D"left" class=3D"em_wrapper"><tbody><tr><td valign=3D"top" al=
+ign=3D"center" border=3D"0"><a href=3D"https://r.brevo.immobilier.ch/tr/cl/=
+a-48Bj4e_z-2wGZSbGrqvRCkqt7UquQgfrG0Jl-6XFrVkNacEMrOG0L0zMlruCvKEBbbSsMQJWR=
+e0C4gI4tfnsTJR_LH8IMDm-dOgRqg6IrtY9tw-j8fvTJzJqr_ljt4n-jY9-ykl9AKzC10bzpsM5=
+LiSYdyPzfv2Dsp5DJ3HDM95tCa0QaWG_rfB3GGmaSzMxOJwVFiW_Agsb8UUjAV4ridEfJRghTNx=
+k9hhpn2pRJDKfC6eIlJdC9rLb-qCkg3UjUm4oW5x5_V4uNdAqqJth3x7NGe-HWTLu-ha4ydVkFq=
+JxGDtM_IsHPq1fcwla17gP6QfjdKMeqnsdX45mEwljIxkz1v_ohcwBodU14xEZwsHt_vgU-3xI4=
+UBK99zu5Ih0nEfEhP3-gsFBo_3SuyFeHuN1hTnd4ETZW-DRtaoLIGB5rX-NeMiNGnvsoknHbnS7=
+CktuGG_JFHbliMpNEcpKhMuBprm8FeTD6jcQ64nKjfjAh_e-kxiIBOsTqsaPo3apvXD5nCC4QnV=
+ctSWoylmTPVLY8FqAizLPISOLf-H8agMBRtxNc4Mv7ssX7ueNv8_xPRsjgZLA5cNZb4vMYJQ81n=
+ByntO-uVUV0cxFWf1tq7_e9CWj-pbaFx-7kUXp2py8upQYbR5zWbKJcGMMpUpAXO3edLnvUj4NI=
+cycykDWfulxKwcfsrb2UC2Nw39topYjYnTCRhfJB8bbRU02XmfQPsXc6L2dxqHWKYULPTLUJJzi=
+EYkerAtETcBJg4d4fpmujMU3HyHxB-j7MYJVPcT3s5qdH6HIetYqVsDrW9rH-l4qbzWQ3gnRYhl=
+j16W50thMd0DcqL" target=3D"_blank"><img src=3D"https://r.brevo.immobilier.c=
+h/im/9445284/e32b22b3d105502830722ff6dd8f9eae2e6b7e33a72a7266483e5f3c830782=
+a4.png?e=3D2d78WkUhnM4dEEp2gkJigx2dWUJXaf0LkQ1_Hv_qQloB5Gw_pD0NUuFwJ6ly0OFT=
+06YRWX_UjIvRUilP6a07o0J74LPtSniF5QPqx6mTbmzp8EpKTSdtUOrLjSs21yvSMuRunKuDL80=
+K29jaJY4vDzDNPBHahadtGA32sLyiTOEmXWY7ZHTaLrY_JCj5H7YmB9KIfr08OKlAZH9d0Nf_Wl=
+QFJu6JP0FWV9crde05HRRaZCtOZQ1AClMWBFPrCJJvj0JOc9yd5rHYSK7N-2a5zrYZAZ-0cWx4Q=
+OHfURFKaL5uKQpEcnjyBJGE" alt=3D"immobilier.ch" width=3D"270" height=3D"188"=
+ style=3D"display:block;max-width:270px;border:0" class=3D"em_full_img"/></=
+a></td></tr></tbody></table></td><td class=3D"cell-into-row" valign=3D"top"=
+><table width=3D"310" style=3D"width:310px;padding-left:10px" align=3D"left=
+" class=3D"em_wrapper mobile-padding" border=3D"0" cellspacing=3D"0" cellpa=
+dding=3D"0"><tbody><tr><td valign=3D"top" align=3D"center"><table width=3D"=
+100%" align=3D"left" class=3D"em_wrapper" border=3D"0" cellspacing=3D"0" ce=
+llpadding=3D"0"><tbody><tr><td valign=3D"top" align=3D"left"><table width=
+=3D"310" style=3D"width:310px" class=3D"em_wrapper" border=3D"0" cellspacin=
+g=3D"0" cellpadding=3D"0" align=3D"left"><tbody><tr><td valign=3D"top" alig=
+n=3D"left"><table border=3D"0" cellspacing=3D"0" cellpadding=3D"0" align=3D=
+"left"><tbody><tr><td height=3D"30" valign=3D"middle" class=3D"em_grey" ali=
+gn=3D"left" style=3D"height:30px;font-family:Roboto,Arial,sans-serif;color:=
+#222;font-size:19px;padding-bottom:8px"><a href=3D"https://r.brevo.immobili=
+er.ch/tr/cl/ek5kXuzKBacO68k6d7098OBd6uQS3QGqmA-ALFKAGsd7qHMaKsNLHHMNhSNYDoh=
+hsRKFV3qngNgbp2hIf3JJTi1pTp33vugTni02wH3GFZNoLtjdwPLkZ_GdgqB_02bHrhlSuyUaTL=
+VIgakGa9z8skd09fRuKA5gu1358gDDnCZTuNBnSN1lfV_3FjU8--0-wv8NvKTo6izJ4IDAcB7vC=
+8nRlbG1jGDZpJAMz4yaX1tgmFlCRHBkaHdpDNj-xL6CFfgPXMXoAwp1URmlJcoEQlJok6FGDWGN=
+p_bQrsJNCcgANzYkQv-wZaseTPQt2deoLgoARWRUi9L21KxNeki74A7bNHYZuwxEEsdozM3-wnI=
+n2LHEoZnbqniwLkuybgkhIyTDCDLbkKjEBlFLoOo46Q_DVcpeIOrg4b4o09kcaBdUs4FRBVMfZJ=
+C-hkQEXDhum3-OvXEEzA88KS1xO3Jxm--jkS7CaIUuv-w4JDmfIsrBrBxMWpbUqudN98lZ1GUiq=
+_fqvff-nKELZq2Hhe3KqHKVTBWPhGRBzqG_4RPkarjTn7nMuj0zo_ZQsvBW0ZOhDQ1DEMprSKdM=
+LLWQg0cwOLOVT7tkKKW-q1HuKoDIi4QEoQyZs0ZsfIHVf7q66gsa4kv268HqRkUrXbbaEjWUn1m=
+CtVYOE6qZ4OinUxNArW0iFXXWbU79d-E-OTwZq_G8DeoNed_ldZYhET-2-5Ggy1NpwdZ3-Z_Mt8=
+1y4Lk_8F0E8PtBS_BSe4CcY5xQ3QExQGsn3Zn0WZy5xxpEMPe-Y4PTxrwHUnCR5TEQacSngcB_Z=
+FSB5seoEwkYa0iSzk-EIbRUlhOT" target=3D"_blank" style=3D"font-family:Roboto,=
+Arial,sans-serif;color:#222;font-size:19px"><strong>CHF 1&#39;065&#39;000.-=
+</strong></a></td></tr></tbody></table></td></tr></tbody></table></td></tr>=
+<tr><td valign=3D"top" align=3D"left"><table border=3D"0" cellspacing=3D"0"=
+ cellpadding=3D"0" align=3D"left"><tbody><tr><td class=3D"em_grey" align=3D=
+"left" style=3D"font-family:Roboto,Arial,sans-serif;color:#222;font-size:16=
+px;line-height:20px;padding-bottom:8px"><a style=3D"font-family:Roboto,Aria=
+l,sans-serif;color:#222;font-size:16px;text-decoration:none" href=3D"https:=
+//r.brevo.immobilier.ch/tr/cl/WZPaCx_zPX1c_HbSedqgv6Jxn-AI_6ZIjnNNfcUtwoV6Y=
+9ZAX0LCRC5gig0QvOb_NnMC3R4Hw_AixtsNX2XbOjW9IX3sWgfrXhZiOCOmk7Qu74d5h1xC68kJ=
+Xk22v_HR1p2jCcmsmvDEPuIu_igseQDUkbQK7yhTP24njqhGfMm1VuKq_sEV1UDr9VAKiyEIgLi=
+6T9rmikS03UaUW-fxTceKW36T-MO19E02S6OeEEZGHg5M53ko572mkEPTbq6y0yjSxy59dOmK0N=
+ugcSlhcqY_X2dkay32MnChPRExHzHBvwah-xDp855ECGcau4nrCbMnPPqfjCsM69c0M-qlII4dE=
+OhXFCYzYOQDS2yZ8HMUi_Ke_gAbYViwf8pJwchcR_aI9BpGGgOAQqW0g2zAFQX34S2Ne7y62v51=
+f4_T_erT-jUE0RL2RuIhOP5wg8vz0L8rXd6i9asEUeq6u1rr5r7Eut7ag2cWGZDpxvnWNON5zAp=
+DcL1JK9MATcIUW_Bn9VQYNDB39c51vd0bNWAesVEkeFO_qrkjo8WPnd9NzTECcc4yU9jxGqXeTZ=
+-CFD_Jtebmpq1ncAoSGPHSoxm0Ej_dx9AUW7Vd-_zYSsUPGo1fF4RyKNd8trEG1a995gYAz8H4F=
+-WnaTJDBMzryqwqGaYF6Ak7jzSWoS2GL2cq3XK2DEu6OOQVC0U3sW5oNht1MM82Kd_9Bh6WPv7o=
+df8XpMbMRq07fiykDBxnEdAZ-E1fprCfmN2d3USXwy_ZyscYls72Hlh1Sy8GGcQkqBI0I6dZZCe=
+buiEXUjGa9VrFbvOQVQ5DorVrbCx8l5M_vWl9oXIv8Zli">Appartement 4.5 pi=C3=A8ces<=
+/a></td></tr></tbody></table></td></tr><tr><td valign=3D"top" align=3D"left=
+"><table border=3D"0" cellspacing=3D"0" cellpadding=3D"0" align=3D"left"><t=
+body><tr><td class=3D"em_grey" align=3D"left" style=3D"font-family:Roboto,A=
+rial,sans-serif;color:#222;font-size:14px;line-height:20px;padding-bottom:8=
+px"><a style=3D"font-family:Roboto,Arial,sans-serif;color:#222;font-size:14=
+px;text-decoration:none" href=3D"https://r.brevo.immobilier.ch/tr/cl/dN-nsg=
+s5YZ5atBEHVd-hfuUAjQlyp3-QPe2KGWx0G0cFXeZ5-mwPOmklSmmRNrYnorD9BiNOxsjTXRKa1=
+lZ7gdbl6dp3CCp7EpaMHMOlni-6lbMSLQ_QyaCAHDlfideEvFOdd8zrVB7h4nmAwH84G5lcOG2B=
+TqyQ0pWNsffl7P8j01MdgiRa5k8CJvFqSeEK3WBWsGRI0doWOLN-yA9fX2EXHffvbPXLgMAyCyJ=
+3FuaF9-56xzCHHtf7nGAsCF3al6DNmt5-V9A_p9Q3CiptkuTE-NFpbgnrYpMeEOMPwbiUFcyPV6=
+hs0kEQVtrpN_4VL8fBoK26c41WItQMfDMutgkQ9KKxoEuIt-YsFyxobIp_zH3GOrIn36TxkdYv2=
+yOQSbbQimXtRFsum_YMpG-EcQu-npUKBOnngFDRqSYS1TC8oufHsbUE0nE9gw4mXMY05hhBddyc=
+05jKjslWRReekxjI8y32b_DckNN5vyx1Kcn3gI4YnsEK9jumJi5vIwAEOVcUQwl56Z9veHVE_ZE=
+3whlmOnxi3y7cEhEfIdBEXSk-TTROkMAPT7krDFqxympdNZpdAPzzE5Z7WsdHgE11Fm6kO8W0bh=
+UwTyE5ue_FuK0GGkzgDAkxl6U_8bkAu_wze4g1UVPX-DtR7jDAT2FODvkCXAJUqU9M4MgYCh1dZ=
+4KjNp0Zm_t62IpEphyzHCeph1yi40lLOi36TkYqXTLQVIbZ_JOaBvVY8i2OuNguSrrLbSdlJLdw=
+kStw4XEX7knWSQKcuqkTUa2ZLLXWdIOJVsk3YB-xDL42_sFSkc9Y3dNhrrHIGZB1SeRF9YeY_-l=
+mNOj5Qy1j" target=3D"_blank">1028 Pr=C3=A9verenges, Contactez l&#39;agence =
+pour l&#39;adresse</a></td></tr></tbody></table></td></tr><tr><td valign=3D=
+"top" align=3D"left"><table border=3D"0" cellspacing=3D"0" cellpadding=3D"0=
+" align=3D"left"><tbody><tr><td class=3D"em_grey" valign=3D"middle" align=
+=3D"left" style=3D"font-family:Roboto,Arial,sans-serif;color:#222;font-size=
+:12px;padding-right:15px"><a href=3D"https://r.brevo.immobilier.ch/tr/cl/Mn=
+cdIlCzOV-dThEtVKbsRgb0BkpA5QeacJk0aq27RY43P9dKjz_qlpiUxh_4rG7KLuxaV5YWQyG8L=
+meZlJu8AQZ6ueN0mCXtP60ksg_i23st1fY_hbw-qPN-loavXW2cTTEiSCPy2F8n4-4R962pi0O8=
+uWXhmLzwapays3ASnCcS4hTTMOCvMFLeRbMSg9KB9kf-AjXNyypIDMb1DDNsdKJcjo3gAXTE9vW=
+6OScRkq1yjS-G0fZsDdFmJDqgXZG0lqYt99Nr4Of0Jt6-aPa-__T6LzLJ49yJgmqeL8cqOkTo93=
+VTWs_GWrumtx0Yagh3cWJwMPkO4uqmTvIiYd6JcwvNVGW77xsr1p8iiZEO1PzZSJ19JeZG6z8qp=
+qrCAGC2E8DnfsGR-CXH79r7gm0tWImNenxKarbCiEnXY9ErIxhTRZ9KBmv-HkfHFkILdODIsN9N=
+yM6oLnaXbso6hNQ_2jOGaxAxXdNIY6wa4YptAFV01m5lm8kFZNwicLmckqi2S4MhEzZEeOoy_sx=
+_wiZalTwwKBzpx_un1ysudbNQSmUg4W2s8ppp79HMRslZKCzjUTiBtT9a4BFxTzQojFrXYRDR8r=
+P0d9OLYbX7Hj-tXUnYpOqgQLpHCB8Bvv5afp_f0YRBxt51WdoBvMVHNxWRVhdbavxmI3WQB6xap=
+S-zzqWE1NyUod5iwh5P__s699n_cgHzXK-fOQaHSAOWDFbhSQ3oXgkOLlIhuC7F90Q9qtK_VKy6=
+BTVcjVqGKZbF3tIKlo9mFBXEuDuTAjzx_38aHcTJ30TJgdqJvwkDybdNoyKSudRi_lb9LJDkC_W=
+LFUGttOQoNDGQ" target=3D"_blank" style=3D"font-family:Roboto,Arial,sans-ser=
+if;color:#222;font-size:12px;text-decoration:none">92 m=C2=B2</a></td><td v=
+align=3D"middle" style=3D"font-size:0;line-height:0;padding-right:5px"><a h=
+ref=3D"https://r.brevo.immobilier.ch/tr/cl/y4-saJ4FLOvWLDsCG97zUe4yAc8e1cEq=
+LSWQInD2UnbPAz4uEy6b_k9Bt3GtvDfLxHmJEw2exOfM9dhippRq_gEPjp1M0ZZmRJ1K6vLe7Cc=
+0Iqlw_VmldT3kXWcfm1Pk7f_ayTT9kfOWhLtRaYWL3mO6sJlSTlCxr4mIrr27Zfy7vdX6cArAnr=
+QvmoTQfjJ4_KhJPOkv4VOULw_Ql_mFJFDRKvJCbYFvolL0IKCd0mpg_9AFK32liHdLh0Hgi9PQe=
+7CSbmucyGZoTYcHQy42kQZPJ-ORK-kI6ycqCs9TA6UXCNNii__cja3HnVkjgoVXOCOLU7w8w2kk=
+KfnJGPwd6k1OpqnPmtkFpoamqd9lisuefxcXlkoCT68B-ortrBAnMBlnu5P-3uPhm6xdf2dQ1XA=
+u_fBfQGqSHMm3LcyjxXky2Cy3gIOmyoj305XJBIgG26JpaFN6J_L-RFc7tXyxrPeLE1vQ6Kpd2Q=
+RfB9tITmwLanj15SuxzFGAzyyW1PdVEX8mtRgy80D0aCG6XkxQLIR-t1N9AUlc0vvPYJNjo_UIJ=
+b3kwaWZK3wzvPYQfvaYtYxvTqlpuG8gJqZPwut4B1-iQdwBkwBwM_6qkRqa1So76NEEYhBH1tNX=
+ltj0HyhEHTJQTTezMuh0_DqAWLBJECW7uMZdsIF1sGFis89qjvC1dwVjIq58rcv8Qge20PJd76v=
+eFDj2kyJCwhGSAHDHWgvS35eD907bazLZFh7DBxFo6SuwWCHONg6xMes6biEQ_kV_MT2Z9YDd0w=
+hS2j09pGMi2BjGdo-ag2AS8nEnfVDnmQwRI4YpMqpYkuJLxtOizisZx76o" target=3D"_blan=
+k"><img src=3D"https://r.brevo.immobilier.ch/im/9445284/4dd1aa93cf606fcd62b=
+68f1181bf47265f3b989ef581f9e7424a324817903da8.png?e=3DzlkX7ZH_uo3PlWXCLj9qs=
+fbecKXscneJP9aX8xkpryMfWntRXNOIIRQsffKFvM-PsOF0YU3zKHxk_MTw4fbGwH7ULuKUEFVr=
+dFFFlSFt5K17LAVFjlF8AK2b5hn-RzrPauSLbPhhwJM0tZSdBGh2I2KcF5u2VvgOgj3hIL7Pv7t=
+ItWgdcMw-6A81FzSmMNPleFyKPxPhQ4kVlWAbBAVsDuSp5mb6vTsNa33vztAtY4HOqW2h9gtx9z=
+ykNdM9Dg" alt=3D"plan" width=3D"15" style=3D"width:15px;display:block;borde=
+r:0"/></a></td><td class=3D"em_grey" valign=3D"middle" align=3D"left" style=
+=3D"font-family:Roboto,Arial,sans-serif;color:#222;font-size:12px;padding-r=
+ight:15px"><a href=3D"https://r.brevo.immobilier.ch/tr/cl/fnIn3GDGg9oL0PI4B=
+4PQXRml442T9HfelOlTLQ4GIbci8DVnmHgI_3l6U68P9-Chx-iV7HjwXMV5uLOdg6XUWBP4XTQt=
+VuKDrMteTxIlWT8Heau3xBvIIxATi1qkdEng54apLFb5AL71vk2OZTDUjwkPZivBPvYuuwnShZB=
+tbjPpy8OxDK0VyBx53yYVQOB2XNTC8mb7b3H6Zb9ovNy09XY0ACB_cPWtAV8-F6ct3HRES6gvg7=
+fIgcDrDTq-dO-48CIPozwqGrhAJ-iLtgnMu4th0fYbSjAYCaA8pUFs7a-X00nBDQuPutiArcxxj=
+BHezPCP82d-m_hQwp2KUggRq3QpK2WLn4dGSIMivmoHXSQczACoAKLc6QEa1q2rX__6dUJo0Ny-=
+4TCwX4oHFePerijfMUOBUfOzi8YyhtpurUtk7ENoIjr6YQIrnbO17xHaYMIDMU1hmaHkunmm6Wd=
+WZsQvfA1hRZBqyDYx3SmX3J1FI32vPZrvD58cyx0bacAVJ3AfTI7Abxtdyj6C0PVud3kWywdFtx=
+SEsM797wDmAydhuDgQSs86eETzmNCmsMqup0KYizpXtH332LTLqymnITl-12YXHGEefIebeH7gI=
+3O7R1SCra9Pi03sGB06910U3dfNBDVbEXrNggeV56bCU34X_uV2X9HFX3kCmbmFfLV6epzmSVsP=
+a55Lsn7kEcxhYzv5g4nNCryPkZuNkc6bxvXvCaBIa8RMuz52Q-C4zDfbPZe2qWZH97MDSKP8rFj=
+bQlxqO5OGo1rtDdCq8AaFVmXKt_w8FnOvspb_Uq_GMxCS5w2AcQ9bZJvfb-1ZDk06loUDAmBQ" =
+target=3D"_blank" style=3D"font-family:Roboto,Arial,sans-serif;color:#222;f=
+ont-size:12px;text-decoration:none">4.5</a></td></tr></tbody></table></td><=
+/tr><tr><td height=3D"20" class=3D"em_h20" style=3D"font-size:0;line-height=
+:0;height:20px"><img alt=3D"" src=3D"https://r.brevo.immobilier.ch/im/94452=
+84/a0c25577b0610cc9d203c8d1e6c9695ab8ecefcca4b83c8ad84b6b2db42f9f67.gif?e=
+=3DdIVEAkf07f60AiiU2GTlV260QPJriGklzUgQ8Q8K_OtwdsMPrJoKIsjAzTKCfdPPqVEoHXbv=
+d6hwiMFHmxlvHGA5nj97Or7R9Nefj6SKQUq8wrMS7m5AWXOU4S_iVCfwIC5bGO9ja8nm6FfkXP9=
+Mc102kHiKn5BI80hGfPu5libKAhyCtwjgQmGGIUAi7hOsZZtk1XYdXuKVFTkNloJg0mHTdI91uP=
+TdjfTm35a2UOm5Z8wavKW7LIt7kA" style=3D"display:block;border:0" width=3D"1" =
+height=3D"1"/></td></tr><tr><td valign=3D"top" align=3D"center"><table widt=
+h=3D"80%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" align=3D"center"=
+ style=3D"width:80%"><tbody><tr><td valign=3D"top" align=3D"center"><table =
+width=3D"80%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" align=3D"cen=
+ter" style=3D"width:80%;border-radius:3px;border:1px #222 solid" bgcolor=3D=
+"#222222"><tbody><tr><td class=3D"em_white" height=3D"31" valign=3D"middle"=
+ align=3D"center" style=3D"font-family:Roboto,Arial,sans-serif;color:#222;f=
+ont-size:17px;height:31px"><a href=3D"https://r.brevo.immobilier.ch/tr/cl/c=
+8Kir_efPaowTjY79WPKeH3qdr-Vwfl9CUTa0YXawM5bcl_tq5pvDeS3wFYhqeKykDCCtW6wl3IB=
+m5iB6MLd7M9MJKmGUG5SWo-7O_BmAyOy1_5u1OZW-jnXtcO75dmLPQJVz29d8_umkk7olsHXJPO=
+eqQ9rajQYCcA8ZeQawlvOV6eHQijrgZTbJFkdeYdCtvn3aazz8uSt2XUfdgwhO6eUEGiOywC3c9=
+lyHo4f5nX2hkdgHMld_Ok4cMshhnd7YBYBBHSCnChHT50lBtkFYac1lDfxrh0iF9hSQ4luVKe-O=
+oQiAwEZzRbCAPUsplyxv19-0Ih1jMUYmapO_tB4YEYedXrDvv6B2k4XXRkm_77X4eUvB_HXGykm=
+CrSlAoFUGkwJEuraqTV9MZl6V5Q64PLbO_tx-OkZIFkLOcHQSD-t9aCIbT5ccedzYtipC7xYaUb=
+WqGolP3urDa3qcnspMUoEP1Hb88ghWro61Q2dIMyNAEIKng-c9ZN8CN31LrdLjY13zBGJjUBTdo=
+ffc7MxHGyHuG4eDN8ttWM7kuaa9gsHsPXLOZ7bOuDZHLlHn6iqr11CwckyHHaTBKMiSDFmtXsKp=
+k6pwGfD32anqsOgjgKritWs-4DQTzj23Mi0UZBvVnSCLCtq1kIVzh44vN8YIJNvsgb6icPNpJix=
+zDNqHCQPl8MPBFEw0MJAGkiYkA57TuGh9u7Nx103x9ZFlwp60_lYfxgZLRqAt8uelG4aZ1iZiwG=
+ZKE3_uONrjomoJMQjiqoJZA7BILbWlGZdFtDuOhSGZERQKQaabrM-1URl7SQMDByn7ur5yXNPhe=
+GSxGFLpFVio6ga" target=3D"_blank" style=3D"font-family:Roboto,Arial,sans-se=
+rif;font-size:17px;display:block;line-height:31px;color:#fff;text-decoratio=
+n:none">Voir 4 photos et +</a></td></tr></tbody></table></td></tr></tbody><=
+/table></td></tr></tbody></table></td></tr></tbody></table></td></tr></tbod=
+y></table></td></tr></tbody></table></td></tr><tr><td style=3D"padding:0 0 =
+35px 0"><table style=3D"width:100%" border=3D"0" cellpadding=3D"0" cellspac=
+ing=3D"0"><tbody><tr><td><table width=3D"100%" border=3D"0" cellspacing=3D"=
+0" cellpadding=3D"0" align=3D"center"><tbody><tr><td class=3D"cell-into-row=
+" valign=3D"top" align=3D"center"><table border=3D"0" cellspacing=3D"0" cel=
+lpadding=3D"0" align=3D"left" class=3D"em_wrapper"><tbody><tr><td valign=3D=
+"top" align=3D"center" border=3D"0"><a href=3D"https://r.brevo.immobilier.c=
+h/tr/cl/qW4qELHmBk3qtIv3m4ZE6ZztDL7as5_e0iEvAaRUhdEZUfmXw9BGkZ3Qsi99M-0jVKW=
+vM-bwx2sc73dfh02gdkk4e8UyHMaSdADaJpAHsFR9oLwdl7ZwnJppHq6YtxIdYotrikdgDpFFYV=
+1vYcA1ypDGy3NXwxhmytLSCvKtuLzVpkM9dnDtfofJGFwpJdSAP2I1XEaj8RDl_TEuRZlhgd41k=
+N3Nd49AFHwMmOjalsovRnoRKMQJwXs-tozirpWM5er_7I1exqkDZVSkzxr_8nuyCijAemOTWefP=
+qSHpD3l997TUr2JlMonluTTeLGdDWJtKl57Zxn-w1YgKpqQTwMzVnCpSTcbR7WGgM5nRN8J40aA=
+X4BqVeLez0ST6ffIjWvmWAurNYIOq9bqMWmp0X9uEpK2VFrAWycSXF3g_NEs6rYPtIfLfuHYFme=
+7t_OfQMporgdBG1ri7P3gS4XmNaPe8USyVbFaofH7TVdKeFl5i-8CpJEzIF7Cowa8aIuPBjCG4z=
+YiTIWnmJoIkFam0M5t9ZYCMz182ZF2XZyx3fb0xkcdEbbRN0Gr8htfUaRbJSecaOhKl3Qjfhunr=
+Px92Wds0ZZbUS9UVzVU27gQXUfMSro08ZooDzPaNA0CWrCEr58mATbhtF0PW_Dj4M5KAgV1bD1x=
+CNAuVs3A9Qn9hG3ZVAegJsPdm-MuqG5SP-7FyxCQ7wtoqQ8bu6wqY8NV5xqBhMJIx7l25N9x_ud=
+30Vb4QeXpZj-WO5db8x-7ylJL6jK4BX22OanLSSm9pOeeHMQs" target=3D"_blank"><img s=
+rc=3D"https://r.brevo.immobilier.ch/im/9445284/b87e71659b3b23e79672c4f05ef7=
+3581f2bb601f90fce2f5d061fc2c6d731f74.jpg?e=3Dl-RV6iMglcU5KC4i1KG70guXBvBHhK=
+RoOdM54z_xwpYLbnX-AAiSyq-RTxOAmj1Jak-vRKfnVq1q6snE4mq79Dg9UC7ZV1nOLbZZmCAlZ=
+GkFTQv53Nl1iwxXSDfou9yudawI7JX4RnkXskORbUsgtLWHnHXNnBEJqreQHVLmLTFyVM_G_cg6=
+11IN6pBxrawSr5pQrTgjjvxmAp22lPw9y4Rpxa0wsTJDlPXrKssADj-XgrZFvNcTKIunwVLAyjX=
+pcluAxQHhvOaSwkb8loWm_OY6-FjysvU3EJo-pjIf5iSV79gf-K3jAI4lJA" alt=3D"immobil=
+ier.ch" width=3D"270" height=3D"188" style=3D"display:block;max-width:270px=
+;border:0" class=3D"em_full_img"/></a></td></tr></tbody></table></td><td cl=
+ass=3D"cell-into-row" valign=3D"top"><table width=3D"310" style=3D"width:31=
+0px;padding-left:10px" align=3D"left" class=3D"em_wrapper mobile-padding" b=
+order=3D"0" cellspacing=3D"0" cellpadding=3D"0"><tbody><tr><td valign=3D"to=
+p" align=3D"center"><table width=3D"100%" align=3D"left" class=3D"em_wrappe=
+r" border=3D"0" cellspacing=3D"0" cellpadding=3D"0"><tbody><tr><td valign=
+=3D"top" align=3D"left"><table width=3D"310" style=3D"width:310px" class=3D=
+"em_wrapper" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" align=3D"left=
+"><tbody><tr><td valign=3D"top" align=3D"left"><table border=3D"0" cellspac=
+ing=3D"0" cellpadding=3D"0" align=3D"left"><tbody><tr><td height=3D"30" val=
+ign=3D"middle" class=3D"em_grey" align=3D"left" style=3D"height:30px;font-f=
+amily:Roboto,Arial,sans-serif;color:#222;font-size:19px;padding-bottom:8px"=
+><a href=3D"https://r.brevo.immobilier.ch/tr/cl/Vcr96-mgB738U0tLnfM52nw7s9Z=
+c8jE6bju8hTtTCKiPkv0OpIE9LpYqixZqrkVXZfkB5OeENTEqEDIzKguefCTlk-W8QdWl1phraG=
+6cURpEKXiUEzRSgvCfNVj0Hr2DnxeZF-H9dLIMmakRPJdqXVkIov55ALWGSirhgZqvdRFRaAd2M=
+njlhI8eW4P873SSkAFWqgYjakUsQVSkTf_ND18STMLfG2xXjrbz9oz2Kro6piIRXF5jhKTwilRh=
+KOqDqbNbTOF55CdDz-bNKnaXyUKP3C9XpfTD_kENHLIWbna2lxF2kq1v5XyE5xoiXWmcm02VfXe=
+mgHUBydBb3jy_mSk_B0-pKq0TEQ-3v0we2NIDIs4WWKM6e9oZib9xSzOR5Kvrl0xDlzsAGwnCZp=
+HF4G11uQOH8EB-aMAhehJtBSkxQa1HUDVoVRw1zqBXwDbwldIgNHWMkDBrgjuqR7dkjxCscM3rJ=
+AYLZvxPTDh9pRPUdpUOLbUVLbTS7NE4rHfZ5xkvC1rtzQxd1j61SVcfoYwAkc3QChounHMV8x9Q=
+jDpsR9PyxWpWt6veZIkjiSfqHXkemMLPskIg5RyrDb_60OJkDwBLVVcNnUH9FwUluMTQk7-1MHz=
+SZptMxzJYM0ySTpgCA_aFLj98XAc1rHW4YYTbxubTVlHCV2c3MU7xP6q4xW5a96xvO4VszTk98Y=
+h_kRQZPfqJTVQ-1zj2gTteRN_VkmSracsZEpeZ6pSgH-pYdSpU-5Av0N2LrhX0tHpi9EuAFcwq0=
+B52_L5slp9heaQ" target=3D"_blank" style=3D"font-family:Roboto,Arial,sans-se=
+rif;color:#222;font-size:19px"><strong>CHF 1&#39;190&#39;000.-</strong></a>=
+</td></tr></tbody></table></td></tr></tbody></table></td></tr><tr><td valig=
+n=3D"top" align=3D"left"><table border=3D"0" cellspacing=3D"0" cellpadding=
+=3D"0" align=3D"left"><tbody><tr><td class=3D"em_grey" align=3D"left" style=
+=3D"font-family:Roboto,Arial,sans-serif;color:#222;font-size:16px;line-heig=
+ht:20px;padding-bottom:8px"><a style=3D"font-family:Roboto,Arial,sans-serif=
+;color:#222;font-size:16px;text-decoration:none" href=3D"https://r.brevo.im=
+mobilier.ch/tr/cl/KAkHqMgHaKZRPCt7CbfHUsQSckQzMdveO2FvkiXw3uIB-xsTIZ96EYiT2=
+uAA-Eh9OQPJj0GYnc5ptg1vdDyqPLo_vktsoJCxDQGO87dI5RUs3oEn4imic06f1f7p8u7NcbnJ=
+P66B51mijejyZgvl-JgOvNekulknKHR8Y94WqY7dCqmxWuoSnzp25BiO3F87Hm-mgxsa6XvpMsf=
+WIEU_6ubOt2AB_qPz1PZvUCvHBgrTXyJPMcDZ1_1d-n1s7Y-UMMUZMCeioVT-cpzRP9_iU8CblN=
+vkTJOy7yh6vOnVvpUGtgg84y5tFQhJc4nkHBES72IZAnfVARMCeO5fwruyYX5JTaFtQPFjO0hl_=
+gwILea6xEHIvffR2VYgQlb9k0KO2-bnMmqY3waOk0SX1_ydG-DTzgnSeyjQjHlb4s8ny2HqQamS=
+f_JEFhia-q6fHfx6TI52Hd50-s_zbA9dsQiV8T4_OJbUeFlXvYdRF6s2dmOi3fnuVTS_PFaZhPD=
+LLDtJV2KIQEDLXL2LyV60oCXLwxyGcss55TueOFFwJMdr2j7C4pDduY8qy5qItoW7_wcJGHNNYZ=
+8tl6hHO9SOf_wa17AoBUGzeM8W1hJYouCAVcTgDi9tQCLy-grLd118m2lDPRAgq0pFsCVfh85mj=
+oIzLaEgYlV0GimQO1ELEfdTAiY09XPXOvuow0-wtUYY_T6Xv6lGp46M_3bIGjRojILAFeQ7vIEC=
+mRbJ4nBaz3PMaPU5eNj-fmYEIunGFBR6zuxbVrFQ_RtXrevKERTYDyDFomw">Appartement 4.=
+5 pi=C3=A8ces</a></td></tr></tbody></table></td></tr><tr><td valign=3D"top"=
+ align=3D"left"><table border=3D"0" cellspacing=3D"0" cellpadding=3D"0" ali=
+gn=3D"left"><tbody><tr><td class=3D"em_grey" align=3D"left" style=3D"font-f=
+amily:Roboto,Arial,sans-serif;color:#222;font-size:14px;line-height:20px;pa=
+dding-bottom:8px"><a style=3D"font-family:Roboto,Arial,sans-serif;color:#22=
+2;font-size:14px;text-decoration:none" href=3D"https://r.brevo.immobilier.c=
+h/tr/cl/3UHaNYloO_gWaEawi-jFYjRjWHK77RB6RJyuN2_RHU2Dx6z0cMzGsfqFvuW0yHxzzh5=
+oDtJ16yPMHy2Evji4w447yoYX8iXTC-uafLDb1urWlz_vFzUllFAYrwfQwrpPiUZxgOTYx3OUgD=
+nwFBiHEBp7cbiRBKTiJvQ1xlBxL0okSnB-rAUEYothiShr9R4rEHcvbDVwBzHjJlb6QjvTJt0kq=
+jST8LQpW3YyxXTbgzuhFwWTdMkvFgoJvh0bwVHYJ4qF8CKP9ajxsKOh2SR7lrZBmMERmkK6oFFB=
+vN1mPy1HQ4oriCE71AO0q-HRfhwwejhFXEyBoOJWRVE79tP6-_OiCuem2Lzp1MmfCU3PI-2uYVY=
+KmxxjPBi2XV0FKMqR1tta9HqR-QzLcNF1b4gzFfdm3OXuAS8Zz69_kkDmIXsgGaOkttkohXnqRk=
+A_OAvxyC_pNSKaLUYKiGjgk-QBvU_pT_GLsL87HopHB9gm2hdDFvRJFJepMswtbIfiX_DGx102Y=
+PvdwLNO14VwYPdxyWc4DBkGMqo49AXWTqrLhLoHripb8Lu7zUmTzo2dS0QJXZyDZ4kKyrjOayTs=
+KgwZjhqHmfG4iiL3zGKPheFShXMKgjjHoiP_doybPBRUtQ9peX-kRP6Hw4ELHkqcuIYfLts1Y8M=
+HX93GKgBklnlRTi8_kRh-4SJbCOowsBY0x___ZXPGi9GsOmV3xEdZxJLb8HSCFKKz0vfgRuUb7O=
+O-JHFADIB_Zr25c7AvSXtEYB1DN-0UAlTQXOPRjfZdjmdOFpo" target=3D"_blank">Denges=
+, Route du Lac 11</a></td></tr></tbody></table></td></tr><tr><td valign=3D"=
+top" align=3D"left"><table border=3D"0" cellspacing=3D"0" cellpadding=3D"0"=
+ align=3D"left"><tbody><tr><td class=3D"em_grey" valign=3D"middle" align=3D=
+"left" style=3D"font-family:Roboto,Arial,sans-serif;color:#222;font-size:12=
+px;padding-right:15px"><a href=3D"https://r.brevo.immobilier.ch/tr/cl/h_J2b=
+D1KlFJA5QKhLtOorD7eg5i6GZJctzc2LEXJM3hpuTzQfqitDP-uc348ZwjlEDXS95hGVVBTmsMr=
+XQu1vEElpSx46j2iL5DEWl1dTNt_Gm9uuiPezpFr_7gnHrWoqZsl6HD6h3ZZtj-7m-8nymlRtgZ=
+GzHDl5EJGORrY8Q8d9KWpJEUlGhG7VgRy0uikl5_RwQ88kPp_NEmpi8_jgr1-BXHti6nukOu1wB=
+hBF8aaPqQ-P8TJvbuL2PKSDJLulLS6NUwY58Afmb-ii435vtiWZAi04S7IIHzrnHC5IYxr02Jxb=
+zJOYBbipck9KhZ4mT5ycQj0lUAB4F0tC2oGqGhRQpSC20sTQaQbcm-bOYPpZ81uhEa_4JzY7Z6t=
+AorByWcmPr5BTn2AcxuGsdfroC0zxHbQMZypLSjR8skxEqo-sK-qTCmfJAKB87xxYGlMf-8LaJa=
+QKsDd8aIZ4Fn-9ExKEHRLjbFwUF3ef2uCQGHyM-1xyu5O-IdXDPS4gT3CQ3PdSnaFg2fgVfKAnE=
+nQ_mEg5A77N0aoXdORl3vn6IE0YkciD25V2kZVudxGZ8m6B5wda8WgJw-gi1Vjjt2R2gb06k9Tt=
+QILrioc7OYwThbCBrQ7Qqa-YGtBcgm435CuMhvl7sykQtQL3mOL2I_AsLv-Wq4aWk0HlzWuOuUu=
+HNZ9hiTS2arxsTt_gtdPE-7RqIf9QjJVxjozAWan7EqgfF46cEqtfc3WTy38RSR8t_dLXcV-a7T=
+45CEhKYKl8vxwOZLwXpAvvxE2qjayKn4mQ-A" target=3D"_blank" style=3D"font-famil=
+y:Roboto,Arial,sans-serif;color:#222;font-size:12px;text-decoration:none">1=
+17 m=C2=B2</a></td><td valign=3D"middle" style=3D"font-size:0;line-height:0=
+;padding-right:5px"><a href=3D"https://r.brevo.immobilier.ch/tr/cl/Hm5PTHZp=
+iNNON1GBNPgpUJnkpxsBJMLrSThJzyb8_ytmxMRzTrh9xA2WcLP9nTsu6mmQXdH3CL389ikVhOH=
+hO5ohtYTwZNP_-gUA59EZPRT8oyDiDZlnwOhIWoHHIz2OM0lQ1857KiVwQga_dPEBsouQzOc3xP=
+kGM17CioV3TSBQZ-FUUkO0y5mMGSbMzs6G8j7gcm35k0AuMBnRcHd0rsQ_lXVNYtPRmFZHJg46S=
+dsJzhZu1Ynrb6217OoHgrSSaMctPDhChVI_HO536kUnsG2HBzjlEmYvN6HyvKBmBCxSLBIMc_yA=
+1DpdFy2ksDU7RLmNoF0W2razG_Mpe_PClRlBvI-8_u-2c2vx7K3SSbgh35gvb0dhYCqzaX2lmA1=
+GstFYUDwzcfRy5c7S5Kc0JZTJyanJODj6GQiEIlAV7fatv3GEnsw74o89VcvKbX_Ru6FhsUB5Ko=
+8ttoQJU4ZhK6H3CD9bwXoM5aMjyluYrAarl-3WQLx4XwrNlwUQ5Dabi6TP9hKTZW52XbKJV9-MG=
+OHnm6jwxd2JA0viBDPB2byEC8xQNEDxKZHKkBMvcOWdSFzcysNTPeSOJvGd5wX7mmB__1Oe1Dbg=
+4vYFdQGoth0z9H4YMGkxHOVkiDyHIFsqbGhcif2UvuMqLMRMkrhkQS5nHp0aeo60dTb2_evIVWh=
+toHn0G75VHHvh-OefOirbpr7Fb0S4pvPZK7q6Jg6-YYIluVdpb4Rr_MjxKGqmoMT-7ooVILWg4k=
+E1m2m3wpb-Wz_D_epb_WLuar03vgyBeYA" target=3D"_blank"><img src=3D"https://r.=
+brevo.immobilier.ch/im/9445284/8d5b02ee4455fe003875a3b9cb192e3303159bc10471=
+3632aa16584668afb06e.png?e=3DvNIgg8XHaL0RD6DuFl1m_xSNMC-hVn6MjDEt94GZKvYJPs=
+g6vos6ly41jKI-9yujk_YyZzIymCzlONQWdOy6MTwEp3iw5YDtA_QqlbpxLtK1345PimtkxXWQK=
+vmGs_opFmrSNbR4cEK6DEHHC8WCHOLKx5IsAjlfqXuOqK4VTtLguQboxVchK4La4ZpZ3U_mRSg0=
+3ZN3Wp_93q5ingk4Y3UMKWKTi6CnPAwk0enaj3_CWg9j1bwMKRhBtMckGA" alt=3D"sleeping=
+Room" width=3D"20" style=3D"width:20px;display:block;border:0"/></a></td><t=
+d class=3D"em_grey" valign=3D"middle" align=3D"left" style=3D"font-family:R=
+oboto,Arial,sans-serif;color:#222;font-size:12px;padding-right:18px"><a hre=
+f=3D"https://r.brevo.immobilier.ch/tr/cl/YCmlQyhvLK-adj7Y7Ezsbl-E6nDximQ2sm=
+KsNFM4R4DayqlAqDQFUJEbPx_3K4CqSnHH4DVhScHAwRYiDAw2FYoySxp0pCjn855hsBFO0nLbo=
+i54dUorjlMd8tgdw2WtR0G7wvoMesB_3sWSrQfm7omds3o_yHf4bj-1MoMDPlcTFXDshdNMNdbP=
+SiiUxcUf-VTrqIGva3qZy2UiC3zmo1MWUunGOGDRx-gTovozTLNRJTu0_XOE_LGQOF_eaGIbcEi=
+ow03_w_XRLxtid9L3Sam7b2_h_-qt_tRiMWUfnl6VkrwbcIQVN3zeQ1dj7lh4n3SiJc74NAB_MA=
+RQTfILcSvqRFte-z0kXn7FaU7WL4jzxSS2VcTMTMV9l3eJ82xRY_S6oahSmE9XDMHIqWEc-lwxW=
+OETqEXRvdeO2p0WRulJppH_y2BiWdfJh-mRsitUlW9i2ITLcLY9qBxvadViYHjkxIoYgeGU3VlK=
+z0TVXWtHNiDisfiN673QuroR9HzU2cbu4oA2K-qkiHgzXNRUqqLotAFyrvOWIrRj-eJlIZevA_3=
+f2HJTv6GJbPKfN3wiF8ppPBCQ5bc77wXnRI5eVAh0LyZ7f_YcXAOGb8eXZE2S3iykCc-oqogTB4=
+uytOv-CODCv41J0UfMOqUt3WZEIYNoIfAo7DY-xC4GiqadoyvAbduY06UMNReYFu5Xs7Gcew_AX=
+YSysSY0lfWpbg1mAPT6m7_eHGr1ajeWU_Ji085kw5NfVmwG8iA_SEosUmguX_gyDOdWQkDRDTdn=
+c96ynSM" target=3D"_blank" style=3D"font-family:Roboto,Arial,sans-serif;col=
+or:#222;font-size:12px;text-decoration:none">2</a></td><td valign=3D"middle=
+" style=3D"font-size:0;line-height:0;padding-right:5px"><a href=3D"https://=
+r.brevo.immobilier.ch/tr/cl/GDjAeSo0xGpV6CNmtCYzIXeia7MTmg7E9mxcQOhFo-nb5aF=
+lGjys-fLreM78vsO8EKIMUytcuo2qLFMBmVDEULp-hXwVEl1DbXTQ1naqcyAxqJKkw5w5Vhvq3n=
+QB9dVXzjBY3BzzIQ-gwptOFlTRKgyJnc7sTdw3oSKjLvJsvbVWg_jogvblCLiLG21SD4be3y525=
+0oM4m3ThIux29np2ue_UnRR5G2WRQvlIBsY8dgn8ptGhbd6TR_zM0FPizafh037hKSYEyzFb7c4=
+AoP7P5h_watb9a5PgLElh1hkT5eF_GkEGsV5TAZwLF0DmR3XuvL7GDNMX4Lp_44yGYte4neSAMn=
+i0tDQeqCeglfS8gqgOv1fne08VNxd5Roa6gxRadTCEFkwEKRQIGPuA0wxXje9yY1LQp3xj_RSfA=
+IGeM_3rgEv0tgL240LCMDu5Rq0dy_P1MiXXu2Qnk-GEN8PDRLeB1qGXQQQoAVaIiNotE_dFIu-x=
+BYpivneGyOiS_4TUVT36KuhiPJQsMfxvAWRFuOQhDncGkj-nQ-5pYPCmag5EYgUEMsb0eoUC_yw=
+HNV1_O6KDEXu1hCJEPcuv8T0K8hPseJPopuIu1yr3xcLmzO_asozTlp0dxYUO2Dd6cRnOs9mVR0=
+yi9tB2hVvsGwWFMd7piFED1jKRM9Ytuzkb6I2C4_pGtQGqw0uE2-M5D8DV6BfuxenAENGKjo9Iw=
+nT-0P7ejJQxDRW2LqX_0lXJ4zo1CSluM_kV1Ix5lIEYXaFfKAueRHqVi_sbiJQm1ETLfo" targ=
+et=3D"_blank"><img src=3D"https://r.brevo.immobilier.ch/im/9445284/dee304d6=
+4fa206fcaf25bac4231f09dfa2cfcfcb2d045cee47cc8fa86598f21f.png?e=3DRldShhFahw=
+hn6jodQ5nWxgMJu8pt3NAJWI5IOVqcXnvKbFaDeaY04VuyaF31pD0Sl2_OCa3EKwYuVPfUJ7DkO=
+f2ZJ0XxNnwYF01LA87Ex_UPI7dQl63CuDnV_vL3Lm9ZndHLQ155EYpXewMOoz-ku_rN6BpRAtnK=
+lUyckq34h5xnHx1770XRiwJ8fOLgyT-mq-tYdZkoJ9hMN5xcd-_ZcjjOjGv-xnL6XZeQBl8gBxH=
+8W8-ReUrjStmlRwJh2w" alt=3D"bathroom" width=3D"16" style=3D"width:16px;disp=
+lay:block;border:0"/></a></td><td class=3D"em_grey" valign=3D"middle" align=
+=3D"left" style=3D"font-family:Roboto,Arial,sans-serif;color:#222;font-size=
+:12px;padding-right:18px"><a href=3D"https://r.brevo.immobilier.ch/tr/cl/OJ=
+IcB_-GefzwUOi6F0SzjB9zhymBFrsR_7RS_MaNocFZ_s-a50EC59R_j-T9EUpOGjbU6cedy8N-y=
+wBVioDl64wYIWa6YbO5_C7o10aquZQC3JVaZA07t-cNV5cuXpftzCM8VdtFlY8kw3J5KM_ppVN6=
+EOVoZLI3KEMQa3t2WnjzTyF2zAm2-oveecBhyWTMJtqwrRFWFgeJ0vDOz40sYTuOIpQkPiY0b9Y=
+kvKJARbmv9nlBM8ldI8uSH2JqipzZpN1oiIC2UM5OcPLq7K4IQAYPqbPZfG_hY3Otn438VCjlGw=
+MEopdCoGJOXs7J_C3iJLiZUOKvOHezx3xHKpBmb4w2uj49lL8MHgC4gZKacbNuWXnOfjLeywH5O=
+BEAnXXlRP_woGgwQ5OtRQKM1E5va9MDR5dQ-5yWcI_L9k2C0GFejbAa9dRdDnwfClBSPHNkN3hF=
+CUH-qeBL32DDsDFsYQeeGF1Y2_Kh4TJDn7e6irJnygSYyq8_LCI4BaKTAWcvMWrCNc5SuIqymBm=
+gmJo4AHsnFTl5oBpoMBrcsJtErG8QD2JCEXSnxMAxN5VB3PFHUT9idI0AzzC3-q2OMnUhvFVKA9=
+fvjDeghuAB6pAbjHxm1vOEpY4AVeFAbR1kmEBdgpZqO5eHt0tUqW1YXebgenhSgANofb1DCYgqK=
+wBQh4OhGlphXgcwxyoxxuE12-lVxofgAvIrQRbyOZFLoaGJRa3kAGKMpdo-ueA603d6Bg7Y0i89=
+I5XGGZpEGKZnq-OkfF1dRbpzbo6ne4KfK6FMk3o" target=3D"_blank" style=3D"font-fa=
+mily:Roboto,Arial,sans-serif;color:#222;font-size:12px;text-decoration:none=
+">2</a></td><td valign=3D"middle" style=3D"font-size:0;line-height:0;paddin=
+g-right:5px"><a href=3D"https://r.brevo.immobilier.ch/tr/cl/bStO8ifDEL4nOiW=
+21_LsBn9oFlVn00PPrlaaDbNmOfjqp7sphDAw2NPaxx_qDSB8cMvCW-Ed36Z7M8eX3zVWK_4Zxd=
+_6tiFguAy8EeOnF5X0jZnBelMKmJhdRpkMwZGuSXq8SjB2wya_xz5CgXyuo2CIccSk_VAw9-INA=
+uM-0uUHDOnStHXlEXXWuCTiN6rZKWq9N_NVbVtO3SuEKyIZLdXoIk8gUk0ARSvsmYZYPpOU4kmT=
+CQopWhFgGSlnidyjk1utIdi3xeFR8Vzxl-bvR4DcXRRTUWMTL4BPAeLOp9DUI8-X2eQoiN-CTWq=
+N3S_IXqZhK4oMDtQtNuqRCzwkt6UaGRmiEfrqrYuhaTnVPeAGW_Bcv4mwpQpBLQp0RL78S85YI3=
+v1Bb_j8Y8zKno3mId5ZdHNv1oc6YqVTo_AoOUqxDOD0D3tsJwgGOXk_zfKw_-tMviS8H_C5RI4L=
+tzMOinYlo5udDa_05p7Vg9h-w8Yw69hYMLyV2KIs5Tk974xCAnfP9on7aVLk32N99tfCl81mNsX=
+eUqd-9Y2gXAI8ajG-6JjxO1tTkju5P5NaIFNQ66Y3pSEKeKxB5KP2goatjkadHG7B4Fvt2oHn-7=
+POOj3vl_s5ac2d3VZJ9jnzzkAcoiaZ3RHktsIR2BQIzsxLeBl7d5iEtrilKZN-eeOeDS5Q81gTC=
+XnqcQ_FfHMADYRAMy7k26O27R9YNCuAXQEyd0eyRZcOElM2lEfzEMviZwaih7qc-Uxc_ENXM3_P=
+z8N42QYMJGtDLukGuqPYi8Jsb4" target=3D"_blank"><img src=3D"https://r.brevo.i=
+mmobilier.ch/im/9445284/4dd1aa93cf606fcd62b68f1181bf47265f3b989ef581f9e7424=
+a324817903da8.png?e=3DkFn1sSWxGvq3OtLkvMxKg3cEbw-VWld4jWhMWaOsNSaepwmC4z7eY=
+DPv-b4HQPxOK_MmDUTDyny6PHQFZqmsYe_J1QujXrCN1G-MIQp-pPZx36obtfTQ83-RHr3a1bIy=
+EMh2R7z6rCbHVDkwjL9o7PtYpTtG3VGMmKjw6RqDTng3Ucopjh-olTkXr1hDwNFp4SFoxpzaW-r=
+emxf6aXSVWYWZpz5cqMdtBE6AHn7fvxxzBZ4KJ6tknL4EouhGEw" alt=3D"plan" width=3D"=
+15" style=3D"width:15px;display:block;border:0"/></a></td><td class=3D"em_g=
+rey" valign=3D"middle" align=3D"left" style=3D"font-family:Roboto,Arial,san=
+s-serif;color:#222;font-size:12px;padding-right:15px"><a href=3D"https://r.=
+brevo.immobilier.ch/tr/cl/Aleep56jIUL57Nrr68WEVDxCgS9wjU0ZMEHI-VDftT5yl_lDg=
+dzX1QtJSggC41NKFKRDaNv8KBCvIBtKRR4kzxe2MHX2xgN3v3_ncUHy9ACJXnDzqIGkihPjhnMz=
+vxK5rt0UD7zyFU7Je5oSvnVu5JKJiYDf_nevQ12AQKjQm3cRFviVha55wi-TDk39kqf9iC_3w0s=
+9qLPbQ6L34fmv3IsZow2S6-p4c1dzW1-ozherJQCmCF7ajoVtz8azfhawT5-lytMCKa1BKrMWkM=
+1_qjLohzLK9sSu7eyvZYnstGhaz_FTOPF7YnFIVPflJbsoZEK2A8sqAvKf6H5DVsTfrWMDB6qj8=
+rpduEmim-IWj7u3rAAWAkqWHt-1Y1-4ONyISQTyaahF_LAr31nnMQKlWVY7eGYZcP5gqPhbmcLv=
+ZL5uCqvRwGPbQY5KgZOQ0HkudQ68VxyyJ32amMWPvvrHgJjZiD92DTl0uOLexnz8-mFCWjq2ZDn=
+u-EdCgoWzjgCEsk-5XT0LO61R1vQQoyi0cEwxAajuNa2zyx69JYbjaYinLvc0xvyIRnAHPmXcER=
+ZMVFVIdgps4E4SNEYSS1Kgz5nkAT2D7oRGM-du_o0Sd6U2WB3kTDJ53dVdEJLb00HELjRoN8ZUg=
+VF8DXtLVGAz8jpO696ASAm3Y1p76OOZ5khUIdOFXCAWaxSUAxceeOqQfDkRnsMKnj5GCs8b201-=
+vSHU-HtWdhXYl8WrOAW-mpM-RST0oevi2gBKYEAQO-LwHvNwWF6LCAqNJcYRFPMeRt8" target=
+=3D"_blank" style=3D"font-family:Roboto,Arial,sans-serif;color:#222;font-si=
+ze:12px;text-decoration:none">4.5</a></td></tr></tbody></table></td></tr><t=
+r><td height=3D"20" class=3D"em_h20" style=3D"font-size:0;line-height:0;hei=
+ght:20px"><img alt=3D"" src=3D"https://r.brevo.immobilier.ch/im/9445284/a0c=
+25577b0610cc9d203c8d1e6c9695ab8ecefcca4b83c8ad84b6b2db42f9f67.gif?e=3DYozsW=
+9-v-bp5OTIu3inirRUZ6R2QO5GExPrEJrbta4SihZl-ziVfEwWJDKQ6bQtNH_23PpY81NPiuXRD=
+1_8u1phu0EtvUzusJBvf7R1JGP4bS-3pDZbLkJCPq1TS4WazlhkUpkHvWI-RgIXZlXVLNJRCE69=
+uQr6Q9rEr2zi9Zs26iG1Wnf9SuJE80JVI1YX9KFMfOUOaA7NuS4jTPJkHC9GhbBOm0XGFc1PSf_=
+S38ou8VYGTUKRAsevDSg" style=3D"display:block;border:0" width=3D"1" height=
+=3D"1"/></td></tr><tr><td valign=3D"top" align=3D"center"><table width=3D"8=
+0%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" align=3D"center" style=
+=3D"width:80%"><tbody><tr><td valign=3D"top" align=3D"center"><table width=
+=3D"80%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" align=3D"center" =
+style=3D"width:80%;border-radius:3px;border:1px #222 solid" bgcolor=3D"#222=
+222"><tbody><tr><td class=3D"em_white" height=3D"31" valign=3D"middle" alig=
+n=3D"center" style=3D"font-family:Roboto,Arial,sans-serif;color:#222;font-s=
+ize:17px;height:31px"><a href=3D"https://r.brevo.immobilier.ch/tr/cl/VTsJe-=
+chodv-M412rzigb9BBJd2R5DVbGPGR_WeJK_OOp5-qrp9-fo_YJn6QYfsYelnE01xG637_KpPCN=
+M3RfXep84FF51TERWWDBhtY6dQqfpD2aErjFxr-wqAYUwXtOFhcKg2rU7eKpZwbwM_gusDxd9Hx=
+NwO2ZXSqS5blzYTFGz1lkVv-C7OwD_YyXLzuJlz_9Qoi2PZv-uHoHls4Atw8HpPiU-E5t9BleUs=
+l3PJnCUBACi24TteOzPC-wRdCsufTSGLBEEBOLJUQVTsdS6jTaSYoPKhvJ3QHM0gHKK9EwagZm0=
+pAF8D6wuZOmtAu_TNRyqxqjkRGKxkUp15QUpmR5g755KY-8NjK7B5t3ecC3Os2rGIxDTjAbBYbC=
+sGp9YVLnK2ZCpWRd2W7kG-pvXvXmKCmlOG2KhPjwrThkn-CntAk64M_vNWESFb1HrpcJ0t9qaIO=
+B-XYMSUf5NR90MA7-rwAKeneXJt-NnGHDhVrCkosR4vOOo3D0gQsZPNMd-l7b3PRnjcWnTAKAkJ=
+n3ZgI3N9WG2x3fZ0pNwtoOSSgjsh25ddmmpltkG7nRayvLqFYYOrGFloHFs0G9LMf1Q3klUJA0g=
+aSEH-VXS-WtX7bgezBpGhOmtjjDXjNWfq7_FU0uM8wV6P026EO3ud4KlHA6PM8sI_D8M9kh5-6V=
+7mqat_siOOwVB4jhoBxdFRADq3FvxHAYET77RPiVXMV2Xif2c88j_eQCSNusB5lF4d1c4YHv5Xn=
+BFoYu_zAR2xxl9mRtopRWPaixkTQXBxPUQg" target=3D"_blank" style=3D"font-family=
+:Roboto,Arial,sans-serif;font-size:17px;display:block;line-height:31px;colo=
+r:#fff;text-decoration:none">Voir 13 photos et +</a></td></tr></tbody></tab=
+le></td></tr></tbody></table></td></tr></tbody></table></td></tr></tbody></=
+table></td></tr></tbody></table></td></tr></tbody></table></td></tr><tr><td=
+ style=3D"padding:0 0 35px 0"><table style=3D"width:100%" border=3D"0" cell=
+padding=3D"0" cellspacing=3D"0"><tbody><tr><td><table width=3D"100%" border=
+=3D"0" cellspacing=3D"0" cellpadding=3D"0" align=3D"center"><tbody><tr><td =
+class=3D"cell-into-row" valign=3D"top" align=3D"center"><table border=3D"0"=
+ cellspacing=3D"0" cellpadding=3D"0" align=3D"left" class=3D"em_wrapper"><t=
+body><tr><td valign=3D"top" align=3D"center" border=3D"0"><a href=3D"https:=
+//r.brevo.immobilier.ch/tr/cl/VURzuRnkktfshnMzTSx779iuzbccRoefIhwdu3BKBs5am=
+K4W1wcflmJrRdgP6H35M4m77CyAJ9wLS9HTl0Qtj4Welq_6QKB5_J6fbk3EE0O1m_FfgePHzP59=
+BVWVPqAaRhRI5p8BAxLOWehVkoVCQ9Q8klqH3Ylegm-hDRZKbg5LB-1WBx30pdLwU5PCNM9ohc8=
+odM66m8O84wUy5Gh_zJnJDnukbkqiCXEv9mGhwnYGV5G36SygkjbBh7FwyqT1_nl61N1kKJNGOF=
+ZuB2DNr572QvhbE_Ypfg3xz-a53OgpZlhgNo1xXc9RO-nHtzVmS2aIavPh0fWGstD_ZGIhoNbd5=
+eGCn8EKtrnDsIx80rPxHsZp1gG5J5YP-1q12aLoRwYQsibQ3kOkSxkfy5fKaoqyLuCWYG84s-am=
+OYz786bXJUg0NcUuutaGXDmByMVoD-y2Pi7-S-9Mi7mp5jckUjAcXZEjeXRPOQXi-7dlWNhx3E2=
+VmtbKJ1oiGp-DoDMuEgW1CRAh6KkraC8_UmzVPWnSBeinXQFd2qdus5qegOi4huRwfvwWGq8SjZ=
+LAe03iBQ8Owl07ag5_S4uE-gaz6i7zDXWTldZpOjvgONeVaH3nq0PcyudsrXTWuaIHXYUQkUYr0=
+KWjFWQrwJwfmSnwRnuwuXbApbEYPyHN9csX5846ExPrYSBDlRhBUPHauREhtlrl1gJTpG7zVIs0=
+4qfTAU5emk4v65tYntgCIeG_CnZBwcUGMKRtsf9McM0Hdw2p-wZ6oPUhB-sBj8OMD9elc4KoUtM=
+-FuiSub0gPQ" target=3D"_blank"><img src=3D"https://r.brevo.immobilier.ch/im=
+/9445284/71776074257449061fecd795c0872aac1d516c74a2d373801074ce22212d22c9.p=
+ng?e=3D2CNZO73qX4CyT4byUl3II677syi43SvVdfkjX0aG2CfTZfJ5kR5HVkJy6NPrFQqSF-aj=
+LVTDtazopIeNvKhjm_FkS_7mYIYZPkDissXXErwe16Kbs8dlLv_gvDUoPx23VnJmtbSBviAdFvi=
+lLlPzcMO0IlOt9rvaVB3aizpwaLUHYangsfv_H-J5GyGVbi__GI8hO2FRFbcrG67K8NihRhT6E4=
+R7OlJSpr64_i_Aq9VCnQbmjuF0ONSdJTHIQUDHYR7uP8V76G7Pd_R9D0ZHSJduVa3ZR9m85n1Yl=
+nVsWt-nI3g7t740HwpDvw" alt=3D"immobilier.ch" width=3D"270" height=3D"188" s=
+tyle=3D"display:block;max-width:270px;border:0" class=3D"em_full_img"/></a>=
+</td></tr></tbody></table></td><td class=3D"cell-into-row" valign=3D"top"><=
+table width=3D"310" style=3D"width:310px;padding-left:10px" align=3D"left" =
+class=3D"em_wrapper mobile-padding" border=3D"0" cellspacing=3D"0" cellpadd=
+ing=3D"0"><tbody><tr><td valign=3D"top" align=3D"center"><table width=3D"10=
+0%" align=3D"left" class=3D"em_wrapper" border=3D"0" cellspacing=3D"0" cell=
+padding=3D"0"><tbody><tr><td valign=3D"top" align=3D"left"><table width=3D"=
+310" style=3D"width:310px" class=3D"em_wrapper" border=3D"0" cellspacing=3D=
+"0" cellpadding=3D"0" align=3D"left"><tbody><tr><td valign=3D"top" align=3D=
+"left"><table border=3D"0" cellspacing=3D"0" cellpadding=3D"0" align=3D"lef=
+t"><tbody><tr><td height=3D"30" valign=3D"middle" class=3D"em_grey" align=
+=3D"left" style=3D"height:30px;font-family:Roboto,Arial,sans-serif;color:#2=
+22;font-size:19px;padding-bottom:8px"><a href=3D"https://r.brevo.immobilier=
+.ch/tr/cl/BZhsd6ENvnYoJ6VHIfwfo-fJDfDH80KJdlJsGYi2Kiu2oqMaP-LNar7fINL5Dumu8=
+VCgZjiOS6WKZKxXR-vJdB5FwEEArXdh_TzgQLYUAlUv2tKrnCrHH3WLzUSHAQMAb_StOLKAUUYd=
+Nxj5LC47QyfSqLB7WjER6Z0ZEqlWRCH8Vwy7rNe-c_1eu2G_wb-TJQ44LRqYpWpbV0-wMvLtxVT=
+rqkby-0nepAxubkQfDDzEmNs16YqjdRxTWxx_FjI71ecf8NDaSC-76HdGx3BSS6MO3DaOm_zhqA=
+r2aXsUlH2ehyFrIHIMK9Q_P7piXpUbhJC5OXB7XfObphYStM0zj3FVVmgEiytjbfo1VTkY-_IV4=
+yFunjMb2W6LLpgA8gWgUHrLL8o8kFQT_OoreWNX-FteKfETjmCgOCjJPiVkJnCX5T9yzKy0jrzQ=
+ooDe-HuVIp9idC1MA4FU1UNDePhS-hoGXci4ccEJKBhGX-7A6bZVhEYXbT2pnZrqb3o170RwYDv=
+cRz-1ibUUrvm3ZyFktxFKedlUK6bLANNsmqwdpjWIYBG91at4DS_BzqS8CRWFUjuc0z0V6O5Pxd=
+lRd3dVbdYSq_J-5INNfX7rygNPTqHNW06DSD_rrs_ebFoGrT-xmS2VvTyHAltT7mZcKHYYzIUBN=
+UhHZBY7jrrQft4pz2uizbfuQuAFBqC3dWLpspaC23C_wlXO3scNmAavy_RvlFTA0bC1MdcOY_7T=
+4iXGBRtReHNyWEZx9aep-poNt00w6-yXSpBPMsM85tmTQ1z3LnSnydJ5hTC0LSX73w" target=
+=3D"_blank" style=3D"font-family:Roboto,Arial,sans-serif;color:#222;font-si=
+ze:19px"><strong>CHF 1&#39;080&#39;000.-</strong></a></td></tr></tbody></ta=
+ble></td></tr></tbody></table></td></tr><tr><td valign=3D"top" align=3D"lef=
+t"><table border=3D"0" cellspacing=3D"0" cellpadding=3D"0" align=3D"left"><=
+tbody><tr><td class=3D"em_grey" align=3D"left" style=3D"font-family:Roboto,=
+Arial,sans-serif;color:#222;font-size:16px;line-height:20px;padding-bottom:=
+8px"><a style=3D"font-family:Roboto,Arial,sans-serif;color:#222;font-size:1=
+6px;text-decoration:none" href=3D"https://r.brevo.immobilier.ch/tr/cl/3pDGj=
+Akumb2zuZrolw0vkIGpm5JrSO8zLDs3IZmVYE_Ieo8ZYa-newoqCyotE6C0ziEunGSt_djUCoOs=
+WFPXKHSDnU8S3N_uDWPitGdhIO9nIqcYrOKHHqcrv_AQ8bS_YDo_faBHgV99rbgXV9mWP4y0i_M=
+WN-TQbXNilLjO_5UL1TjP8XLDo-Qun9n5CUsLo2qEaUCk0Mzyhj6NuVDL6A0jxclrvQi9r8fcRE=
+u2Wrp8Xoan89JsQ3oElpvzlk1yy094bsj-LlktNzkby2nTWkW7V9Boek-tl-Ye36JS8avwlk0FS=
+sWgmHIpq-Sra3glBlnRg36GVnZo3YQXXGUh7V34ixAt-bsSd9B5WDWWMuS3E7LIjQD3_BOEZHsM=
+zjc2CUKD-71gdWvbhsjXzx8ycBAO8XEZTEiHyvwKxqF-W8ueE1t3pToFvnrayMdKbCkneurrLET=
+4HxVEF-KRVEZd3H1Idls6UmWAr-yk_Owgw6CTrvN4G_OmQ06ffE_ndBHHCdpYRnFIEvvRPHh3un=
+v7z_m9G8MVL6njaby3rHld7bQkK4l6GteofVX9MXWx4tBo8GAtpoBnrNxtEas6iePM6-UW2UYJA=
+vZjHCXWxqbaeKXkhZroJbJCVyq9nkg5any-dAa3Wwjz5QUXu9Wi6ZHLIEIUCmTdxXXMgWojIlum=
+0MLE2gKB1OQE0ERDSmwhwwSR9txc2yWYUv3Lffgt58LW0fL4WEjIWHm48N1X_xIJNavxfqmjRxc=
+rihsaq8AQLgIUEqjLR-10VuCI_ZEnVTElPhJi1qYawVIT1e7ruw">Appartement 4.5 pi=C3=
+=A8ces</a></td></tr></tbody></table></td></tr><tr><td valign=3D"top" align=
+=3D"left"><table border=3D"0" cellspacing=3D"0" cellpadding=3D"0" align=3D"=
+left"><tbody><tr><td class=3D"em_grey" align=3D"left" style=3D"font-family:=
+Roboto,Arial,sans-serif;color:#222;font-size:14px;line-height:20px;padding-=
+bottom:8px"><a style=3D"font-family:Roboto,Arial,sans-serif;color:#222;font=
+-size:14px;text-decoration:none" href=3D"https://r.brevo.immobilier.ch/tr/c=
+l/atlkn6uW5jv6exDXetpkrockQAJ4dOXJrZxQ1O88XFjfm5guva5HrP5q8S1va6n1Aim-A3fpz=
+iD968dZs11hkmApO6ryQGfxPam_o27Eq9EVEuhK6PGohtX1mMB-pdGRzYSpDlntxaMwkbmxn46p=
+j-eghPPuxoOmuQr7y60gybRTAvMqd-VS20vO7r0tmO19oLpzMKzU6CkzqJ9w2-HW9gAiIxNYSYU=
+wuRkEXPzL-z7FqLgA6FP8gwIeGdJymrbBWJX-_s0BJ53HNOAWFaeYnWhof4pwOCvuJNZVdvLdDo=
+x-vLabdUtcdqMiN0WXsr0GT4sMr8OcaaSFVMFPHRBQCRdITSYJ5HIwws5NH6D37TxID75pyz9ol=
+JjXvuAXKld3j7blRDUby1Owto1E8kMzFcXOyYdGfVuRkE3gxTLMv3qNJOY5-BQLNb1pIlJFLlfY=
+7YvKz6asaGutOvfRDaA0pTdSVrP8GAGRF_X25wiiZiLBa8hxGc7rcgrLRziwT2-KNMqKiiHznl6=
+DJvz1IojIqc8EcGgKzSqaPHXz2ZUiii9_DDwdzmOxnfwK8mA_so2bT1btYyE3GkQ7OscrJLZ_sp=
+wJc0kcGZlPAsp9B4_97w3wZ7Izg0qaRHpOB3bbo2k9DRJ6Z1sppWzg5eNXvv4GiO51aUqvWlI33=
+0DXKaUT-QsTdx_VG8huHQ56wic-FTapskPPzGyyifgo-ByS8CBIA6DOmbaCPFEGifFnPYvoqxyy=
+7Erk16iH1nStJj_aNlA2FMCeDPjh28KQX80p68S-7rFqjqvYM3I_2zYpgQ" target=3D"_blan=
+k">1052 Le Mont-sur-Lausanne, Contactez l&#39;agence pour l&#39;adresse</a>=
+</td></tr></tbody></table></td></tr><tr><td valign=3D"top" align=3D"left"><=
+table border=3D"0" cellspacing=3D"0" cellpadding=3D"0" align=3D"left"><tbod=
+y><tr><td class=3D"em_grey" valign=3D"middle" align=3D"left" style=3D"font-=
+family:Roboto,Arial,sans-serif;color:#222;font-size:12px;padding-right:15px=
+"><a href=3D"https://r.brevo.immobilier.ch/tr/cl/ExCD1qaJSWYzm-YYAwl2vHoHDX=
+EjszqlfcX9yqgoS502gHDXOmufS1irwBxLYwUJYV18k_lEXYqmZkyFJQrmNuPEI7BgXQP5zIabw=
+IQOWTl0lRJ9afkwbi6Ikwn7rYUgbpk9D2B7VCPDkwfRQjlVfuLqe1O-HfiRhJDKBDyEGIP36UdK=
+1pk4Vz4WgVp84dITXUpA5NdIL4-R_FXxsTsEaslXPHDHThdNlX9ylJYpM7-DXw7rOWVcHLPVIs3=
+ELskR2vkHB4vbirf7DIC0Es7jicmaG2oXjXYZMMmXtPM2qjORiraqJIlIHOQbs7Djfswst9Dens=
+AJpfXDQNnyuCg5rg2w5JiQ-MFdlzlWzUzxcAZNbJGLwJyTByozkgCEr2Fc1cBRiN-o9NifPFBYA=
+DKbJu9-2ZEIdLNp0QX5e69g4x88lkzEyBh8dMVan1nieY0LxYSVbbzA--d9TN63zne-9ugulgk3=
+8TC3-fm_kY-ovmEzyIn8yeDvsACOXtia_5E_7te4xrm4wMPt9F0G3tyAdUlOVSzay-cqH85_M7Y=
+RlL5hLtE_JXqQvDldQC3IE8R5-u46JzQDvjYcWxOh06C_SFqb9BDnIlrlTQjsF9lDOuQpDQFKAt=
+JRJg57c7FKCiwn9X79YYLHdJEYU5b2Wa6g3ZnuhfPt0Rg9KQ0oiIhQrGB1Fk9qWTVdnJ81bt3Ar=
+mRDJds5YSBFYxrZsKJuO3g85AkjSJGnAF2bu2-gvBv_mAbjm6BVVpIWw0BYF7c2Nvo6jhBibNpU=
+BtIqv2gBLDkJH-ZZ2bxRGkJheH5DwQ" target=3D"_blank" style=3D"font-family:Robo=
+to,Arial,sans-serif;color:#222;font-size:12px;text-decoration:none">116 m=
+=C2=B2</a></td><td valign=3D"middle" style=3D"font-size:0;line-height:0;pad=
+ding-right:5px"><a href=3D"https://r.brevo.immobilier.ch/tr/cl/yPtXIjVP4BE5=
+kHbPqOPiHhwvVuzzp3QFYMzpQVAxJDCmxDVb0d-u0_ZMsPHHU8AtBsto5JItySDBXnrEEVcHW0-=
+CnF6jduIkgaXw7qq5rYt32YQQUFaiov9_iqjJrwR9MmLb-muZgf6s0_Xa1iiJ7P6uXKGlu-jKro=
+Y7PhBqZouyya1BLq-IO49Okwko53pNjeDh6fgaO4RI9NhFtixVAJrGG3z9kkGa-3N4cdRlLolvp=
+5KBBlVMR9bDVscH1WIQYHSLKLsXigNqa3ABH_U4vFAEepGy8_3wO6jGjZOQBB_U0hGPCs6G6q27=
+w50ayumNyVYQb5IvRRbxtXY9Riwdxts3jeCcyNAT9oBPaiMUXrxVDx-kW5HxPOcTSD3ygSZUi30=
+IEHeQs0AWigE_MMVTS5JIORyalzFNgReUeKrl4uU08xa0bnpBLXsjiN_KpZHzw1GLSJOTevs6_s=
+fuTy4Jcvla4xy-5VspwU56vAVHz9f83WfrLbvWA80GcPoOKIQ1jjE5tI5wBRYId1zUHMIMQ8Lwr=
+DPJFLBdMnIgC0_lxEcN2BhTALOXPNzXNBkwzShWkoQtD1dkrWJm42Hpbb7opY-F9MLiYI0xa1Xz=
+5CCpH9OT6loj9E7WEFJ-qFLPFF36jTrI_fPA9Afq3ym6tyWBPCbqf1hSgLYzKLO-Stn0A0_HELj=
+sFv-p52I_H4r43YvGRyx9wC3hxwW4y857ZvTjKxSxgNKodnpcXUAE3Vv0U5Sdt5dA1Vqi_vp3Gm=
+QdoZl5SauFFB2t3ROMvrHOe8S7GXtps7oCyLmVrCBMSg" target=3D"_blank"><img src=3D=
+"https://r.brevo.immobilier.ch/im/9445284/8d5b02ee4455fe003875a3b9cb192e330=
+3159bc104713632aa16584668afb06e.png?e=3D3HMuAjcCi9h6Y8DNJ-tGj6JWuw3CecJfFGr=
+uFYL6XSOfA6_QK-wYIIyAuPgig5iccdXRInHQEqrHGS0GP_Q1yTLZZD9ERC2jMGv7pMWDQ8rRW5=
+xfxQIkvAJa7MV1GRVo_Qw--eykLWbkLtqAcVISxTHLcuEJcrKIDqZkul9G5tGHbr2u9vPoLR1dA=
+r0bnfMrPllSKm21j6Mp09fpuTvNpVMIscK_iQ6A91LsrEnwmTMnd1uGOVUCd96wJ59jhA" alt=
+=3D"sleepingRoom" width=3D"20" style=3D"width:20px;display:block;border:0"/=
+></a></td><td class=3D"em_grey" valign=3D"middle" align=3D"left" style=3D"f=
+ont-family:Roboto,Arial,sans-serif;color:#222;font-size:12px;padding-right:=
+18px"><a href=3D"https://r.brevo.immobilier.ch/tr/cl/QYQJcj1OKbpn70ZrcZQxny=
+_SziR5yA2otgu6KhSIwv-VZXXj8DImTsWEaJ83TfnmXxxU8Poxlyg_pI5qhPF8d5kK_rmQeowFs=
+0mJlQHBc4SSCgHCxXJk73dnQx31ZulNrGlH1sP82gPT-Ct2dnbHytN1d_LBLgEoKCEYYSM9PEpz=
+X57FK2QjOJZHAk9XPV_phT_pwlt1b64o0awB0lp9kcqIGHBM6mzX4IEPd--3tI9a6yofjX2VCxL=
+jWGeBL4-NT7igRmLcpmurFsT0rTyCrVPagtXOBqts7RzIWYjuD4myP6yHCCb3gpFHUqBnDq39rL=
+QBvxfUNj-7TqcWOQ9W7JCng2GQGcQpjPy9c6n3M6RkDqqaTfHSGugGTsO-oPRy3TVM7uw6k-e2M=
+H4wYmB--niYExZQ4dWI6sFwpBaLIN4mD11LxnEbBW6dbBm3H41CgKSx0XBbREmfqotHqm1giI0H=
+W0NsILeKeK99SQBsPqXGtQhxLtlgrICiEqhcfd7-nQE61BRNnp5mnO_WIPCr3flJtKcbi6Jt0HJ=
+6wCy74q2MuMlTlQNWm5h_Wvnq1ykWc800DRPGgDnn1uD5IoyCQbaJ_SdmMHMVqNCv_kuOtTTQoL=
+KLiYF4p5D-0PBo30TSgTri14bf7jByG3u7vxfTwOKrzgNKA-Zkp8yU3xEFqjBumza4Te-X56_tA=
+9jzsto97bfcHut6105jmIL5V4m7KwBgHzfJ3U3yI5YGQE0vZsZlIACHSY8Mfw01UudGt2YbSb5A=
+LFxaXHAM27adB8rAgXPdmzskmld_QVB3eg" target=3D"_blank" style=3D"font-family:=
+Roboto,Arial,sans-serif;color:#222;font-size:12px;text-decoration:none">3</=
+a></td><td valign=3D"middle" style=3D"font-size:0;line-height:0;padding-rig=
+ht:5px"><a href=3D"https://r.brevo.immobilier.ch/tr/cl/GKxtI_nf99_7Oq0BGI9w=
+gZvvR-0PMnUh6plhtRhhy8esvAcT_aPW7j4uyGGM-boMr0CpnwJko_989jCFE0k8fx7cfKhrJ_Q=
+PGjJYHRjNoYSfWTvBVeJD1Id9mhT81mX3VYI6By-6If36mwT76SUAjkkDeTpWnotoVLgR6zEq8D=
+LKzXVG6mQzdKZPXkFsdZr-Vnfr4Nb0McaB0tEEz-THnVeB4zLxKv7E01e02HKdGCg3uTAhL1Jk7=
+wo9ts_TRbCSDm80zQaW33rMlzvqyG6AhtS9UVEj-jN0ZBkmtJAD_ukzHhI9BZ8spiBLuTEjN2Ov=
+-cCi1DmY13GBpV6szQWqMt6xgUux7c_OBbmrdY2DTujkMBjyfgRloUH1i0QwacMerUEoQp4yVA6=
+w89uIvrfOGl8s_2_bu57F-fAzXX9URthhPOeg0K3GoGGiPqeJMWiCMojNryq56Ai6Sg0h_AJK0J=
+sgdiUVsP803WW_9UcGc7s9Z6OHkABlqHQRlZb86Ey-MRIFhXdfDsBLtOWAjJAEPSr6Sdd6cfaIT=
+C6AzXRrezazmiu_XV_sxHCQV_kHA9ZAZp2V7mfavFJAmI__7nyHvIVTIja7MQiDOj2gSvTqlyYo=
+zdg4X_pdKuQvEPUoEox6sHyD9Q1KgirHHDcZQDfLa_9TGX8hlyqVQqN8OiMsZ_EbRWZgFib4mI6=
+GYIZ7Zn_jhDIPLkfaIZS32df2zG4z_bn1AQxgp6oHfuh8JlTdKa12vi5mgXryH70XsGclcux-aM=
+jRqdOwzygTzuNGp8BTbeKZ7WGQum5j_A4SWw" target=3D"_blank"><img src=3D"https:/=
+/r.brevo.immobilier.ch/im/9445284/dee304d64fa206fcaf25bac4231f09dfa2cfcfcb2=
+d045cee47cc8fa86598f21f.png?e=3DQVeOkj4dIsEiAL62GqyvbSJh4eSpvWlGiu1yTlJZk_u=
+zfOAFUIg-JN8Tx629VCmHomNolSL0fdUzaoaXdqTrTNcfDiLimLjnorLypgqYoDIybNJFo8F6mp=
+zIkZYPtq4Jf4_KKQ6QngiYnpYVZq0IgaW28jqPU_tkK0JASXAd5dTyI3Pr_PCxiROSm5x_Tr-6C=
+ktUt0Fr7Ti22hLm5_mj8APhgAiAYpekadjn_epX6SMzSSu4qFuDmYtQU2wnnA" alt=3D"bathr=
+oom" width=3D"16" style=3D"width:16px;display:block;border:0"/></a></td><td=
+ class=3D"em_grey" valign=3D"middle" align=3D"left" style=3D"font-family:Ro=
+boto,Arial,sans-serif;color:#222;font-size:12px;padding-right:18px"><a href=
+=3D"https://r.brevo.immobilier.ch/tr/cl/u0KJfd0pHm6ENNJEf1pkbwvS7JWDI2RYgNa=
+y4WImpn-h0BvXE31T_yXCux3LrD0aqGj3XtTI96d4sV8b-7cVW5cb1kj4rf2zEQN2ojtv7k5rX7=
+b4E9RQ4cPD_ibOYhzZQntZX38pfid-yKezOk2f6-dfuKiPeeiD8swKCY9Oocq0qv5phPnqsXDRm=
+ju2mv92tOIUGPlxmbHdcdzBwPuHZvDubO45Tt1wliCyU5V9Tisww42-IH5K73LBn5Nrhvdxro1n=
+VfAC-AB8_GrOub0i22y-PK8OBwMZOQpsvD4-QQ1P84zNbCyQtBiDZkTsP8_cDm6Z542OzD5NCz7=
+mstVv3q-hmHTCVCu11gw4FHRJluCep3EbNFhulLEWcBH2ZX78Afkhuaenj2sCIdLKckR_n65LZZ=
+upCyCE72FZMbMsbNZie_GKPdGGN_IdbHlZ1w261kmtCS6-e1j8hHdk3FxyN0cB0czHPFFuXtvpJ=
+0XkZlq_lH3fvnyM6LIsUxP4K8_6k_El1Jwft7y1LpXw0KnOfyHuMSYjjkp6PRKBxnPIiZkkTpVE=
+vAWp5psy1Z0ycZLWRjJI3RVEZNwogrT6R6wuyW4LonVu1CH1KqXfMh1WWe4hkIv2Q_BSy0R2B5j=
+Eu6iPfVS8laUs4NmHjY-mOlv147vKqAW_Vpc5-uWWmbTjU9pfsMOniujJFgzrN_ONCV6BfFKm0Y=
+TDBPwHpzZbaJF1H6jP6np1zc_KyXsu7O1PaALyT_YJzkgyB-EvuF8Ss6b2DSUghaFkhPaOsm9tu=
+h1uJ3GUC_Gv1FhFDjUptQ" target=3D"_blank" style=3D"font-family:Roboto,Arial,=
+sans-serif;color:#222;font-size:12px;text-decoration:none">2</a></td><td va=
+lign=3D"middle" style=3D"font-size:0;line-height:0;padding-right:5px"><a hr=
+ef=3D"https://r.brevo.immobilier.ch/tr/cl/KIz3dERMhx8xCRF0m2f7IR-am4E8tMrfH=
+TvFeDaWtU9jDr1Zu8RBWbNHiOl1oc60SaYy7wXv_IM83P6-R4TuUm0OjmO2PozSLrFioxj2fI8L=
+UN1w2VP3Ac8OMoy51Dg675J8iyP6tmWpv2M7AAhEzSH8kf-z_vtY388gVqw12CoDQ-2UUhYZnnN=
+tNjRS1aXWFYcUL_-a3uMt6Y1cSXcIdi2LJxxNMQmxqqasQ724hXKdch886RQ9oyOOCLBydsVL1Y=
+3Dvekl9_bRKzt3ndFc11XMUhFxH7wNGE79aUEbXR98H8vuvUiTRGqWv4Alq5AEnNCFTYPVoXsYe=
+rsfkmq5U-IRjN0eIw7vZ_fHPqH25UikY4S7ryaJjo0L6TV8LFgDSRR4JwH6hId209SV3Ljsv5Mk=
+VBV1xtftFwU2yw-8p7gHRCyEPyxU3lsINwYpKzr9japEM4-WUCrSrrgN9xmmSZeKMFXQvT7WUoY=
+v0J5dk6gQMq0LMhZOgJy7ER0FT3iNry0yqs9r128tSGFRRSf7IbGtdyQg5ADOdA7ZuUNEnVz63-=
+sfVNgXAJ0BpRDLZekSg-wg5JqzX1FO9mlCW7v1ejQ4xxj3LRiMbA2nPUjOGIHH7v7RpQmf-8O73=
+GWBODVAZeIM5Z7GYzaccbO9Z-d8XGgMX1vtgMQ1bj8220DzGT5tdjctiRH99cBJmOc4C_lnWnid=
+_cOAw9b44dW_W2Nf2rETMz2OuECpFpN2Dpu0bushDWEpNrr_-2Fa0AUW8PotWFPElL8gUkLSnBy=
+khCjzeKMydie4PGv-GoBfzg" target=3D"_blank"><img src=3D"https://r.brevo.immo=
+bilier.ch/im/9445284/4dd1aa93cf606fcd62b68f1181bf47265f3b989ef581f9e7424a32=
+4817903da8.png?e=3DVwz3SOcvmyVESJKnerOwPpZ0ZOSUgq0_FiR3gdlW0aV05Fht2e_ehPr9=
+WrwgBkIAimwBD8l4Hf3gFsSEwx2cZ238Y1fhAoqEt67-yjoGJ6U57HA5l403ENSLdI93OY7Kj4w=
+2-jr7go3yPiOEHKlYzOHsCFwf1BT9mP4TFiC8yRdgJUSG07lebBkTQLWz3QmUtLqZuweIQxACdw=
+IUrL8R64bWatq6KL_X8_Uak8O8nxXxL1aQOcXtGeKHP0OyCg" alt=3D"plan" width=3D"15"=
+ style=3D"width:15px;display:block;border:0"/></a></td><td class=3D"em_grey=
+" valign=3D"middle" align=3D"left" style=3D"font-family:Roboto,Arial,sans-s=
+erif;color:#222;font-size:12px;padding-right:15px"><a href=3D"https://r.bre=
+vo.immobilier.ch/tr/cl/eHwEkJjxe-dVqTagCatcHZ-5ksbeApxrYa5Sd1PAyGVah2p5Jxac=
+lACZbxjKMrFmR53SflT09z0rPFIjexCpYjMG52jyQhBp4eNtWKQlmZBCuEpz9meU3JJPL5Kc0Jq=
+Fx5E01HSQWayfUDG6yIjBCBPYp5GLw1DKoZN19Qngd8ch-xHu4g7QWauPHHqV8fKOM87Ha7LPMt=
+1kQJwBRi2CERdV1l3xL208PEUboW9IDPWeIHBzucqljHW7FCRhnQeGTXTyYM7YW2Z9moS-oE_QP=
+mibQXjjI8k0vXTexNkB5mpx16VoLOw75bs_GAcFxz5fQyCbc0TwrVrVjiS2ZWduJ_8NguCpA18Y=
+aTo5Wpb6OighoeEiCMZQYURvKSLm19D7Dx6-DmiWBXlf-8N_f3P79YsXpdAAUr4KukYrVHUgF67=
+ggWMyyJTeugvAJDCirzYHObjLOCfK6fJBtCgquqAC6Ovuy3ZLBjVKiPVeeXDdKhAP43h25_AWPs=
+_8LtauoQjmM1lC6ES8c0sPVCds874kUyYgNCByUiwt2K5C-vG0pLHy4NiQP41f5YWbwJmXzv7W5=
+UqMI3vvD08cBMxoG90wQ5mgRbnvY6MCNVNo7ntisT5C6Wk05HQWeqL4bn95p2B7D-Rw9V7BJIfl=
+9ZBImGTfsQirbb-Fed_RkYtL2eQhiMRXwwrVNOUhXLUJL_-lRkHg47Rs86xIPDe0BCtCcw3u4Go=
+MH8DLdAegO6vQSUboiEaTkxvl8s7hhKpGNHgmij7KS-0OZG1_FvVMwhKU44XeFAvyj0BA18PXyX=
+uWxA" target=3D"_blank" style=3D"font-family:Roboto,Arial,sans-serif;color:=
+#222;font-size:12px;text-decoration:none">4.5</a></td></tr></tbody></table>=
+</td></tr><tr><td height=3D"20" class=3D"em_h20" style=3D"font-size:0;line-=
+height:0;height:20px"><img alt=3D"" src=3D"https://r.brevo.immobilier.ch/im=
+/9445284/a0c25577b0610cc9d203c8d1e6c9695ab8ecefcca4b83c8ad84b6b2db42f9f67.g=
+if?e=3D6e7wnoIBINdornbA51o6-4bA0NNVew_2DqzSk6ph8IzOo9hD-wiHSs7pRn77gFJumcr3=
+hKdCgWQqq1yk5OGFX7ceQWggREWM6MJF_yg04xqSV03aeYyPDT0zFNUBH80oxFUGZsg-qF_eyJX=
+5EQwl92hzLpTWIlsEiH_BP56iTdJtVTmZGjlZ9k3nWybZ7xFfmnFu1eLhJZJy-Rv-O6IBnjxxaK=
+YnVLmqplIJq1tVKwTsRkydDgyDMhlXcQ" style=3D"display:block;border:0" width=3D=
+"1" height=3D"1"/></td></tr><tr><td valign=3D"top" align=3D"center"><table =
+width=3D"80%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" align=3D"cen=
+ter" style=3D"width:80%"><tbody><tr><td valign=3D"top" align=3D"center"><ta=
+ble width=3D"80%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" align=3D=
+"center" style=3D"width:80%;border-radius:3px;border:1px #222 solid" bgcolo=
+r=3D"#222222"><tbody><tr><td class=3D"em_white" height=3D"31" valign=3D"mid=
+dle" align=3D"center" style=3D"font-family:Roboto,Arial,sans-serif;color:#2=
+22;font-size:17px;height:31px"><a href=3D"https://r.brevo.immobilier.ch/tr/=
+cl/aNl0tgcz6V0dAohZ7LV_pzGFSXwK6is-ov4FodU7SOvBXWBUpZMhA6DlVCaZ8bAvlgSsfIPx=
+j1BiXu4y1RDWu9VQ-QcTca8f9368XRw5TfMqV4hEPh-7nP-vk2lJiDT71hnoT1rl-_iS_V5E_q3=
+2diqv83QMxe17_IzjPdGWCkEiUm16nevaz4xYpqDTzIRVrDg48pO7pi_I2TV4YMyn942wYVK4Mu=
+DfcAyi_BUUrPeBoxX-vzpbq0wIRFKc46zJQ1uUd02qXL2VeG-SGv8W70gl99OFe6cH5oM7uYHM1=
+njopQ_Ae1KrVjTEbh0_OZm79_Zi0czTwT_lu3sc9ftOupcr1ZxdSUe49Sv990te3i7y8X7YQ0vn=
+lAK6Uj6TT0PqUeX2MKsK0AtHe_iQ9ttVqHAYqlhRo3-qpWL8Tf6XCVO4FtURRmLVEd3sJvazoBZ=
+UmUuWxwT7UeOmTLliW2Lqq-VetUaj6I4XRZg_5oYXqvpSiC1vxXYRFDR4GrEaL-gXNM_oEtawaq=
+9M0SBtobyW_zKSxlmX0o1XmSk-g0mtVC0KoyUCYojMQeknVt48fsa0k6VFngQ1Q4i9t0KyleFDU=
+EpeI4pG_rewkEqE-MPqaf7p5SPKZ8UPmzKaX2SfA4UOBsrriECvNAefIfptouSl2paAK2MeKBC2=
+3pNTFgd4YIOgb3YUwX53rF3SfY9Dods1ZcVFmh_JJkCDsyBdPlnverf9DDrvpZPfmEjTP-Qcqh2=
+CILZ24BV7urpRnQRr8ejjyuOLcx_Yx16sTBjjyCAGKGeIBmWXRbqcErpRNQ" target=3D"_bla=
+nk" style=3D"font-family:Roboto,Arial,sans-serif;font-size:17px;display:blo=
+ck;line-height:31px;color:#fff;text-decoration:none">Voir 9 photos et +</a>=
+</td></tr></tbody></table></td></tr></tbody></table></td></tr></tbody></tab=
+le></td></tr></tbody></table></td></tr></tbody></table></td></tr></tbody></=
+table></td></tr></tbody></table></td></tr></tbody></table><table width=3D"1=
+00%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" class=3D"em_full_wrap=
+"><tbody><tr><td align=3D"center" valign=3D"top" class=3D"em_aside"><table =
+align=3D"center" width=3D"600" border=3D"0" cellspacing=3D"0" cellpadding=
+=3D"0" class=3D"em_main_table" style=3D"width:600px;table-layout:fixed"><tb=
+ody><tr><td valign=3D"top" align=3D"center" style=3D"padding-bottom:8px;fon=
+t-family:Roboto,Arial,sans-serif;color:#222;font-size:14px"><a target=3D"_b=
+lank" style=3D"padding-bottom:8px;display:block;color:#222;text-decoration:=
+underline" href=3D"https://r.brevo.immobilier.ch/tr/cl/qD7b_32t2egmbakwiAel=
+RkSIKQIjgDnHuVAvn6Y0tm0bHsuQYrMmKw1XutJfUKPRGxEdIFL06oc_fwkTOELdC-bQjJJNAq7=
+BncM0rT25Y06dbPJIdYRq66_JbPmK3EmSpdjIAZHMjVnfr3Qs4ucBHeJKmj80J6kmSqo2ahv6oF=
+fbTUv2lI4QTzcIaIv9i2Az8MQAWiYcTNtddnBRPwkxGSypW0lQxLaC5O7Dw8Yu618CfgRm-QHie=
+Z-3srFkR-aKsikwfQ6QTcbmq2TPHvCnNVJBSTzraJJO4ehuF50kFb7T6pHYoGKqumwo0LimwLB8=
+GSXriTlBGNVjFBVsO7lrdCcgaHsVf52-Q-qtq975ILtby3WxFDP1wf0EICUEEyiEkMFj9gyRNza=
+5RLMIKfPcJ_eEXvhyDAmgYOEIAgd6gHkfRbrP0b48TOxA4aQJ1VqnT7PTsQDZIKJ8vcFYX1-7Um=
+r8zoxKQiD-_xK-U1gf-IakJKSy9XcFyBdgs7IhqhJnWwTOQNJVyk-XKPyFW38mjG62rlG5485Uy=
+F_ClkqQPIHiX2kWrTW7WmXQv_EifAIubxzMLrlwV73ySCw_PWnI6-ATnjx8hbG9Ku7Rjz8tPrNC=
+LZABqB3DYu3PrEM3PhK3CJ2hrZbdyubkGZFaN1ZRETScMunNIUAuOjFchxlb_PFDrAlkK2-eW6v=
+mdE8jczM32wH86uyGOSmGalx3nN7cl18S_8MgONHalbs2CueK7_JZgZqU68wF28R8wXN76CFDql=
+DuNVJHWlErViNnUGKpIixvPF01jrjD41UP1wYNsVbP8IunKWnVf20WWEarpY5jpAY3ucJEVHnRG=
+RTvv1OaDrC35vbc0IybIusJO4oe648ZhyLdGxV-1zM83_Mos4kdH6py1O_JrHzz3WvAWECl2Jhr=
+53eEoep6V1FGmoK51X7O6EXvX1XlimrIyxqO2TFBjgDvPKRzgeajLudyvfrKhNaUr99clQAmNSE=
+uDZVgBQBPLLtZDY9PyZIT2Jd7vJVOA3S0U3PcWDTNvwrWo5mwyNSYQZLCRCEZbPoUDg">G=C3=
+=A9rer vos alertes</a></td></tr><tr><td valign=3D"top" align=3D"center" sty=
+le=3D"padding-bottom:8px;font-family:Roboto,Arial,sans-serif;color:#222;fon=
+t-size:14px">ou</td></tr><tr><td valign=3D"top" align=3D"center" style=3D"p=
+adding-bottom:8px;font-family:Roboto,Arial,sans-serif;color:#222;font-size:=
+14px"><a target=3D"_blank" style=3D"padding-bottom:8px;display:block;color:=
+#222;text-decoration:underline" href=3D"https://r.brevo.immobilier.ch/tr/cl=
+/f-zhGgmkrEYVUzrtFfhDJ3lYwaSMfFIlynk-Uxi-rc9UN3SUreyCl7tBa9bgM_danWTKk4Bims=
+wGYXqao0ihpFFIKI2fh4RETPzKjJhNGoxBvuLQNHfhvEtXDW4MKGiBRLmQ4Ob-8zqQMXtjyk01K=
+vKkmt_qN1a2Yj3N5mGAtnbEgiYMnUYLhLI1k0cKGvVr_b5N9sSFgrDF_GaboOATsEUdewR-Jmem=
+c7hh_aNv69Wm5UlSMyU5H2GMyTjNv3QX43t-nuloXtJnL7IBPIVK8nccSwxHYn9P519FJU0oOmy=
+ryAg472ro4uY9IpWc4x1Xm9L_SIdtW6iT-VrYgZSTmh0lmiMn4kQAxmhU4PNrGQ9Ni0bfkyusMd=
+SvVABimXrhNqYfIQsfvb2Puz3qi4N0w9JwAfJZfiJv1s_Z2YVEGdDbuMq0DmUGeEUclXaHKJopI=
+39GDVitJHo1hHUySGK0bnCDtYeJLrM1ScXASSjF1KKmmPpeb4T8o78rZOQ1nYPSK-l5GVbZ4dYV=
+By_yOtcRBAnl9C-P8mcXTKzGfLJJDQtVFDBoTONegmuj4yZnF425ANE-gd2Gv1ax5T4d_O9Xv5-=
+i0LC6mDKFPxACfscyRtv1izoZ4hxVc3XPHTSutHKbz3oLkc1GaUcC1AqddaDGsY72lHXN2E1606=
+Xqo9dTQ_0e6ah7lFXeUBGbrQq70pBPGHLh_oJenOXf6-f_uhbPHblFX71am09_P1O4OUNUI_phy=
+LkX3u_AIMCJdoMk9XRXyr_7KuRuLRH8nwedRQz07dczDsUdaypiF1e-Qa7VLG9MuBKEvHGVMlxc=
+6CojcHpe9hEeecvmDAuqtGFc7Ywck4PVfOYKvxWM6r0FM8ZNXoWlDMYTKzlgdAm9Ahq_3HnkasB=
+KnK0XyG8f920Ex_SphgXx7dsSiYBo3Ywq998ZW2IcmCr9Xl0eM1WCZsgDQcwLXPVj1cSPaooOnO=
+h-0YDKCwY2ff6n9LCRAxIBAOsTpLKRWwxmanX0OAw967zRCt7KYbaXcaJ0mWct4r3ItogKSD5rz=
+07WxjGZERtL6o7N5mDBM6mTSCmHO7dZwnC5mktVB31S9CWCk5fj-dsm7yfYmspOBwm1-66e1uIl=
+rU_MoSw">Se d=C3=A9sabonner</a></td></tr><tr><td height=3D"35" style=3D"fon=
+t-size:0;line-height:0;height:35px"><img alt=3D"" src=3D"https://r.brevo.im=
+mobilier.ch/im/9445284/a0c25577b0610cc9d203c8d1e6c9695ab8ecefcca4b83c8ad84b=
+6b2db42f9f67.gif?e=3D9FOhTMZS5oH4TnDfbaS06RXG2bloWxAhNl7t1ya9GkVsRNQzdnK2UG=
+-RQ7MFIxidjvTY39Ux5wDJekiVuENhNTWns2cfAs3mlsMOpYxx16_uBrYpUFbLBw4VqqP2xlQvm=
+NXszXEw40SoYMBaLCNu6_shHdoxwYN2QVaGl_p4cLQGayKHK1c3-M81Vsu5axp8koLAUQroK1JM=
+KKrTAr_fv3ExzNBnwquEycvlmKj8qVwpS5zjRKmmHP9jQw" width=3D"1" height=3D"1" st=
+yle=3D"display:block;border:0"/></td></tr></tbody></table></td></tr></tbody=
+></table></td></tr></tbody></table><table width=3D"100%" border=3D"0" cells=
+pacing=3D"0" cellpadding=3D"0" class=3D"em_full_wrap" bgcolor=3D"#ffffff"><=
+tbody><tr><td align=3D"center" valign=3D"top" class=3D"em_aside"><table ali=
+gn=3D"center" width=3D"600" border=3D"0" cellspacing=3D"0" cellpadding=3D"0=
+" class=3D"em_main_table" style=3D"width:600px;table-layout:fixed;border:2p=
+x solid #e8e8e8"><tbody><tr><td bgcolor=3D"#e8e8e8" class=3D"em_grey" align=
+=3D"center" style=3D"font-family:Roboto,Arial,sans-serif;color:#222;font-si=
+ze:15px;line-height:20px;padding-top:5px;padding-bottom:5px"></td></tr><tr>=
+<td valign=3D"top" align=3D"center"><table width=3D"100%" border=3D"0" cell=
+spacing=3D"0" cellpadding=3D"0" align=3D"center"><tbody><tr><td bgcolor=3D"=
+#ffffff" valign=3D"top" style=3D"padding:20px"><table width=3D"100%" border=
+=3D"0" cellspacing=3D"0" cellpadding=3D"0"><tbody><tr><td class=3D"em_grey =
+em_font4" align=3D"center" style=3D"font-family:Roboto,Arial,sans-serif;fon=
+t-size:15px;line-height:18px;padding-bottom:16px"><a href=3D"https://r.brev=
+o.immobilier.ch/tr/cl/F8_cH_xDQHuf3eQIp3F3Vs9HaHL8NXCVCIrMycAbBpBBms76d75Cb=
+5Axa6K8PEB-2WBbjdEyumJtUlDoj6p0SNtoGneRbrmMQtwrN-c0MvB0OXUdYPyfht9ImLc-jftB=
+C85JGwMEU8LXV06y_IyIUcUKIFc-C_ljyd1enjeolLrtsx1kn45yse5GBPi6hSYm72XtPNGMh3J=
+ar-4VQH_P5Gh3yqWw803qPghZ0ocVBHubpIcSt9KOFi-u-TEAKno4c7ht3W4QAy-1NO9OM3V2Me=
+bJGbsCBDBm2f6e0jmIIRkTLALn2TW6EHbjE8Rl9X8I062L5_ywZ5rnUuqwAHxV0T7Z4AhJ21Q-F=
+TQqJ6NIbcT2VFGwXZMCTZHzZAMmnQgNsZFYdyC6X2S43LJr7KpB4XkpA5-JwSTbB6UM7ATncqNM=
+eN8CHjhG4AwMHP4lg-td6P7B80PqTL-m7526XEVpiD64OAKbwAEqofjK9y736E626S5ypf9G6Gv=
+X9aSDCA0x_wDlNLiKHbN46vUGrPd9YNUL0SqvgddlcFkSXes" target=3D"_blank" style=
+=3D"display:block;color:#222;text-decoration:none">Combien vaut (r=C3=A9ell=
+ement) votre bien ?</a></td></tr><tr><td valign=3D"top" align=3D"center"><t=
+able width=3D"360" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" align=
+=3D"center" style=3D"width:360px" class=3D"em_wrapper"><tbody><tr><td width=
+=3D"160" valign=3D"middle" align=3D"left" style=3D"width:160px;padding-top:=
+6px"><a href=3D"https://r.brevo.immobilier.ch/tr/cl/s54JqMb6GxYihU69hrlmtiH=
+GArGfQBVivtz5BR50oIFRf--sh9GiXY3jNslh91rEzlayCU0mzAMM87E8wiQJOy-ubYcDj8p7TH=
+JfEfsREYZK3HA9pBgbZf48odWH-YVVj_wk3SUnK0HuG5swFn8q_ZISbhmbXHmGo8Xs9qsXIEP73=
+QpqMVMm8P8N45ZRT92wkRb4kLDv-C7x4jfVKzBK2qYpfBxgeoTjunHsFNOlhJIBr3VIgGCqHNsU=
+2tg3sYg9ro-1DmDKO27t7m01Q8r1mnd6ENVyrTKT5k1tMLKNjbQ3nIMfurX2w4QUM-0KWd9tO3h=
+v9WJezT6ZjTDAywn8PdGJo6XWD6rf9nCcmDPoHRNIU66EqSwdD8cySLa00T4x0mt1yjdRLZygZv=
+KSHbPKh3w-hhVIoTLqpScow9tTEADnRPqaGn5jqruatiktZCUdq_oPnA8OVSQcjBWK9VQlE1bOj=
+VTRvkcAMyEuRF7z6grmlU70fQk5IBOuWv5K2d3E8B-TcT5x7aiOzaH0nJy3fR59Z5CRiL8LkdJu=
+V7U" target=3D"_blank" style=3D"display:block;color:#faa73f;text-decoration=
+:none"><img src=3D"https://r.brevo.immobilier.ch/im/9445284/e1b86c89e9d68bc=
+4ef52fe71751983a467f759edb2acf7324bd07dd1d6bba153.png?e=3DacE-JXZvum1YpQ0t_=
+xe43E1KE7UaB5Ts90ORs2CYgAyi4BHaYGEn6E20tH2KM1iZmPJK8jB_nXVXhw6azQ0TdUfkvyUy=
+ykcd1u_QDSgJFRagQ89tSV1cjmXDFwqCsTD_a3qXbJpvfCDNtyoQbzfOqlGLuV2-zHBRvAdGJmD=
+YCWAleuRG25CNKIoY6YmpekrpDpEj1hYawfORcO_2VQhxS4WC4MuSDfX5KBVJkmd9b1JsZkWUTH=
+ke6_5nX3pW2y1LnmW5phHo-Kdi3EGW7yFA2-syRxlRvZXqXevm3fitcWKGW3LRZbcbKSzm5Gzms=
+Fx7LXRxytS5" alt=3D"immobilier.ch" width=3D"125" height=3D"19" style=3D"dis=
+play:block;border:0;max-width:125px;font-family:Roboto,Arial,sans-serif;col=
+or:#222;font-size:15px;line-height:18px"/></a></td><td width=3D"200" valign=
+=3D"middle" align=3D"right" style=3D"width:200px"><table width=3D"150" bord=
+er=3D"0" cellspacing=3D"0" cellpadding=3D"0" align=3D"right" style=3D"width=
+:150px;background-color:#222;border-radius:3px"><tbody><tr><td class=3D"em_=
+white" valign=3D"middle" align=3D"center" style=3D"font-family:Roboto,Arial=
+,sans-serif;color:#fff;font-size:13px;padding:8px"><a href=3D"https://r.bre=
+vo.immobilier.ch/tr/cl/sk-FJWUV6qMhzR0k8fq071Q7RuMQ-t2zu-7a4gp2g7rQk-bBXccb=
+d829T_T8UZGt0oFc8DLRRuJdaIz1AewlNq_0TqjWEEwu0sCv26M4OBtGP5BIpPoHHQwALh6WaPC=
+uf_CjVuDHsTo5PmQu4IO4lG19D5-Gj8KdMb-aOxZsct9p_MkQ6-4xnvFPsRJsLj20apayb4l8L_=
+Mxr30Y-JzjBPc_yGVBHM4MIdDl8ti-jyGUqTwZhycIu5J5vQdDKJR2NtXtJcG2pfh_LmiIZ6Qpq=
+FPPvGmolMCNfogtUn6CZOPT6xhqRfY53VdXJ6Bb7Wi1pQ6QR7LZzcB38M4UstO0_pEkN5D1ImvU=
+mxObh8QlUUSzcXtgj_MwJs9zhEXZkWn-hV0rogUlxOA-pbywl8COniDjq-lmFHtCcSBKEOr_fjT=
+CSEO-y-i6yq7DgON-CnZB3XwX4NBcq4wdEi0BOMUm9NoCiZTUNOCe09bL5d37bp11WSqplQewwT=
+eIX0ZfNkWYj6PNNiV9OT0PILWr4DfIGykN0Lt9n5h8iWu1djE" target=3D"_blank" style=
+=3D"display:block;color:#fff;text-decoration:none">Estimer votre bien</a></=
+td></tr></tbody></table></td></tr></tbody></table></td></tr><tr><td class=
+=3D"em_grey em_font4" align=3D"center" style=3D"font-family:Roboto,Arial,sa=
+ns-serif;color:#222;font-size:15px;line-height:18px;padding-top:16px"><a hr=
+ef=3D"https://r.brevo.immobilier.ch/tr/cl/JZ5g4RFq6qoFoP6SVqx3RbYL87dtO-20Q=
+hU8_fOmUi_doW4VJqSK3rirIuSPIJGH24TTOx0w1qjb6THT9MHTVR_s64-HCqlCsZPPHuBMgxcF=
+wlunh0mWtt-q1fgPtyyKFiNrFXnG2Wpmi8cp1VZVGVuMyUvJykLE-m7HdYyJTHN09P-D8MjKIta=
+ZIcH585-j79HTjjQKAj0BSdJFtVZB7AMjELy2-lDaRXjxycQUVrWi1PEqLDv-MMNl754GvlPuIQ=
+X3hw3Ogs6-tjC256d2t3czO-wr7eSvxOeG8nxhGQb40misMjPkPjGhiWsSa_JGPmfQqTspsBhtb=
+YhvbuvJ0lMD8PLOKnHsfR2cdItCw0gT5Mu7C_BS_QL5ZUmJSMvJ79UsN8nxbDv8G61mR-h3IQP4=
+hm46HhFgnFpCU82FikWfvlmzNX4Kd33kTgIxahG9xURn_T62iHToKoPnBFfY-aATCJrkglHjrzn=
+MtGuINmVJlArRcGoqqzqANJmKtEgqz8cy4aRvk1aURvqDblKTNWyNGHXmTurK3ju9Rps" targe=
+t=3D"_blank" style=3D"display:block;color:#222;text-decoration:none">Votre =
+estimation en ligne, imm=C3=A9diate et gratuite</a></td></tr></tbody></tabl=
+e></td></tr></tbody></table></td></tr></tbody></table></td></tr></tbody></t=
+able><table width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0"=
+ class=3D"em_full_wrap" bgcolor=3D"#ffffff"><tbody><tr><td align=3D"center"=
+ valign=3D"top" class=3D"em_aside"><table align=3D"center" width=3D"600" bo=
+rder=3D"0" cellspacing=3D"0" cellpadding=3D"0" class=3D"em_main_table" styl=
+e=3D"width:600px;table-layout:fixed"><tbody><tr><td height=3D"1" bgcolor=3D=
+"#e8e8e8" style=3D"font-size:0;line-height:0"><img alt=3D"" src=3D"https://=
+r.brevo.immobilier.ch/im/9445284/a0c25577b0610cc9d203c8d1e6c9695ab8ecefcca4=
+b83c8ad84b6b2db42f9f67.gif?e=3DL5PQCYw3YJtXw82DmV7msgqmhyn8wrkphO-2cSTxaG3m=
+FUP1tyhCMCxGVhawbB9wNEBqRRQCgegX3XfU_uKGY7DGvIX5AAktqpCcX_1mAWba13zwHIqr1_k=
+KeB4c_GoRJ0aoiICUQWdRUrT-Jst-civEdYFHpZpZDq1ONm8-W5Tg_IAWJV6KTDcULhGfxGVAS7=
+MlW_StLg1Zl5FjTMdOSZjD1KVqhYdribJfjGSxl8HGWlMKIdTCO5hf2Q" width=3D"1" heigh=
+t=3D"1" style=3D"display:block;border:0"/></td></tr><tr><td height=3D"30" c=
+lass=3D"em_h20">=C2=A0</td></tr><tr><td align=3D"left" style=3D"font-family=
+:Roboto,Arial,sans-serif;color:#222;font-size:14px;line-height:18px">Nous e=
+sp=C3=A9rons que votre projet immobilier aboutira gr=C3=A2ce =C3=A0 immobil=
+ier=C2=AD.ch.<br/><br/> L=E2=80=99=C3=A9quipe d=E2=80=99immobilier=C2=AD.ch=
+ <img src=3D"https://r.brevo.immobilier.ch/im/9445284/af7dab6b6f4bdb78ab0fa=
+c2ec087b10c5749ecf34c176a69cc57659817233a31.jpg?e=3Dj6-Bw1umEx_jKGXVYhnk5_m=
+1H6sS616i0Nr9Enbf65K9JRaNZJLqrcNK_bOhpag0VoMjaHg4WqcD3_7P7X9mxEPNq6-V-ZLNTL=
+1S7yzgAjg203Q8gze8gEGwmHF_5eNGH9g4L-Wxj6oNwpeM8cmrtBPJTX_DvSeaXFu8rpKVpVqNg=
+M7QRhqSJDLRRKKqpvZXGHq941HJDsPfcQ7teanYyORS4BFiEdGTVE-nbl6wDTNmBXNQH-pt-r92=
+fOhOOZH-zOV43ZikXaRVCQH7wXeY_50aWXlAGc3k_Y8" width=3D"0" height=3D"0" style=
+=3D"display:block;border:0"/></td></tr></tbody></table></td></tr></tbody></=
+table><table width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0=
+" class=3D"em_full_wrap" bgcolor=3D"#ffffff"><tbody><tr><td align=3D"center=
+" valign=3D"top" class=3D"em_aside"><table align=3D"center" width=3D"600" b=
+order=3D"0" cellspacing=3D"0" cellpadding=3D"0" class=3D"em_main_table" sty=
+le=3D"width:600px;table-layout:fixed"><tbody><tr><td height=3D"20" style=3D=
+"font-size:0;line-height:0;height:20px"><img alt=3D"" src=3D"https://r.brev=
+o.immobilier.ch/im/9445284/a0c25577b0610cc9d203c8d1e6c9695ab8ecefcca4b83c8a=
+d84b6b2db42f9f67.gif?e=3D4spWoq7CbJiGY5NmGWqTB29zHfy8m9kv72BnfyUkGN9i8bWJsR=
+6ZcIysmU9BUNXzMxJW1eLx9Xq9ySljl5Tf_bDdWQqLlt55j8okl0Hg8_IyJTYRjGAG-j4j8aa_l=
+EfhLdNV5ZqZMnv2Kg_b5r278cvI9wJh6vcdx9WB7RQ-6lG-y0v02lka_L4gr258PsLQAqqkOwJy=
+n0a0s9xBosMukb1usZezEngb621EbIp60xFKak39_uuauhgzdg" width=3D"1" height=3D"1=
+" style=3D"display:block;border:0"/></td></tr><tr><td height=3D"1" bgcolor=
+=3D"#e8e8e8" style=3D"font-size:0;line-height:0"><img alt=3D"" src=3D"https=
+://r.brevo.immobilier.ch/im/9445284/a0c25577b0610cc9d203c8d1e6c9695ab8ecefc=
+ca4b83c8ad84b6b2db42f9f67.gif?e=3D7DUqgEJf9lFm3XlyZJXIACF81u23HO3AbBB86YpAg=
+uz8LD7l-3TOyI25FsaWl8hb6I94-kvLGhdOlfK1gBykm_wyLBO3gHjl3y5kUR5BUAg0w2QVG2Zp=
+rgH0cro2QiKVWN6R3ky2o2thKtiSlXe-8DYsSi9O_noRY5li3JDo3-Qmu4NBCgPdxm38C5vDhpV=
+c0rxNcT_Y2ygeb9yCfuTsIew4EwslyWqEgyq_8ISGPw1SetpOb5DDkLyFxA" width=3D"1" he=
+ight=3D"1" style=3D"display:block;border:0"/></td></tr><tr><td height=3D"20=
+" style=3D"font-size:0;line-height:0;height:20px"><img alt=3D"" src=3D"http=
+s://r.brevo.immobilier.ch/im/9445284/a0c25577b0610cc9d203c8d1e6c9695ab8ecef=
+cca4b83c8ad84b6b2db42f9f67.gif?e=3DLv5aX4lIGIlh0tGaicotEqrBC0nqFq6ifDHCYBGp=
+TmK6A1WrkSYvNJjB2F66zn-mu1kdRKWaV12qQt4LXUXVP3001hgSrLXnrN2Pftx1PidbK4Yb-oI=
+chYJXBWZXD2uszxl2vSuREqdeKqZ52loM--LFcumnTosXeH3AwdzjeHOYVk-yyrIIE6zjMaT5or=
+X3hVSDuuFsyQEPn1EAix4RMmHR1Ur5CfdAZWGgg9iUSzV1W2bq20IDOu1w9A" width=3D"1" h=
+eight=3D"1" style=3D"display:block;border:0"/></td></tr><tr><td valign=3D"t=
+op" align=3D"center"><table border=3D"0" cellspacing=3D"0" cellpadding=3D"0=
+" align=3D"center"><tbody><tr><td valign=3D"top" align=3D"center" style=3D"=
+padding:0 15px 0 0"><a href=3D"https://r.brevo.immobilier.ch/tr/cl/ULGZcnHz=
+6agJj1JbyU4pSS5V_u3CRygMLNoEG2d_zEB23Mv_goc6vS3Pnn1N_nATwe98Lvt3IjbfoQvUg5P=
+VAO32otLQwH7SxJ7dkLGEHlnCCIIdsAAMq0hyd8YeO4db4xOxTsLVfyQbjPbzX_0gy9jK_o2fmm=
+XSFn_HYkbh4RXVL6Y9nU02oiHjLhkWST7jf9IKiqmWpo4nJN8c1ZUVaADrFO1en5bsiTWEVMz4q=
+vX493w26avM-PR3p-rBWps0QkWjg_vuiRhSILYUlxMQ6lPhX26LMLjIn5RqL0kztITh_QonByQ1=
+dPxTcM0Rb_hWLuA3h3vbmJSHJREPCU7SY_3LbHDT1STzyDIRpsDSL7P01TvXEcX05sgp86ZY9YG=
+flVGlNMvW" target=3D"_blank" style=3D"text-decoration:none"><img src=3D"htt=
+ps://r.brevo.immobilier.ch/im/9445284/7a1d6473776c93810341e3bfe8e6a913bd5b3=
+173776504c2247f5a59a9aa407f.png?e=3DxnXx4xmjHfs3Af5DUzUhMRxnk_6RnXEXdgiCJ14=
+DPCrKUohuwpCDy-baDRdIJY-65SyacOtndxaJ8_RdDEt9zyfeNiHjQkyp0I1cznO2b-hj8-EE-l=
+RKVe8uzh837tF44euG07sGMgHmzWKxKoXtkG8eGHU3_pkjxvcPRJLg7031T_5pynSxFBqHRlUn6=
+wVyEEV0_rW_Y2RlgHyr4YmzKXJ4gdyrhMEDG9rCcj15S38HI6pSi7qKXtI3oMci" alt=3D"App=
+ Store" width=3D"145" height=3D"45" style=3D"display:block;border:0;max-wid=
+th:145px;font-family:Roboto,Arial,sans-serif;color:#222;font-size:15px"/></=
+a></td><td valign=3D"top" align=3D"center" style=3D"padding:0 0 0 15px"><a =
+href=3D"https://r.brevo.immobilier.ch/tr/cl/nM47dTkWKYGaLBk1TFuDwz4f2knL5lz=
+lkaCPAR_oZQDbmO3S3RfXPytSVZEW9e8p6EEWiI_4ClkTlv3NwED-4O5NcdJxdiPbLnhU56Q3Fe=
+DLkx1uP_WnMDnS8O4CSKQ6_lZbbYMNLob_-0RQhbjnwW9OIbYhIwlMbX6F8csvWrt8n0Hl_eHur=
+ZM6XAkWyrZax2XFiiichKYahHm6Iwa6atBp8-_RcUVpYtWS0HodP2-A-TpTYE3OkyLIQQsC-0SH=
+EOnFmUzzKwTElhVYtzaufRywvSfnrd9kieDq2STJ08l4PIuzbBRCLe5eKQscLWPRkFV0XdzZji4=
+3nvmbz2EPyWHu1-WtTpH59LrD-8B9fnrF3VBiZMWMWzPUzOiyJ54EQOkn7vCuoXn5cA" target=
+=3D"_blank" style=3D"text-decoration:none"><img src=3D"https://r.brevo.immo=
+bilier.ch/im/9445284/4830258a0aedb3fab6becfcdce257e1998a1d1a2e64ab6e2f1d553=
+d58f905270.png?e=3D_LgD_lvh_ofxodNl681RdfhMHW1FGju6TlkjR8ZKv25wFocGxp1EUYL7=
+C5tkj6OOHwqjEPlGsB1-rsDZAtRkTT6zmwL12TgqKgp7bpDqe4DLzrh8L8HYltVHWGQAIYM9axH=
+Xl-9VrGJi_NqrhGMUz0qL3A-UXVvhZz_dDpUZ4CVjJmgLk1bEYHLaiCI-8PPou8LjFvpk3kcblc=
+VyUXrggMhvdw1mVzp4RFsLSW9r8A3nYIvOKXGwBvBv5g5IzQ" alt=3D"playstore" width=
+=3D"145" height=3D"45" style=3D"display:block;border:0;max-width:145px;font=
+-family:Roboto,Arial,sans-serif;color:#222;font-size:15px"/></a></td></tr><=
+/tbody></table></td></tr><tr><td height=3D"20" style=3D"font-size:0;line-he=
+ight:0;height:20px"><img alt=3D"" src=3D"https://r.brevo.immobilier.ch/im/9=
+445284/a0c25577b0610cc9d203c8d1e6c9695ab8ecefcca4b83c8ad84b6b2db42f9f67.gif=
+?e=3D6QKXnxwQmV9RDq_LQHwffbjI85oFp5w9uxcwWggCUVDysj43sSRCcaSQonM1mr4DAOXCID=
+cLMhyPjS2sbTyPCgfEkxnBMm0w6P9qE3TEIePXcvjYZhTHmV-YxnMD25ghTtxKzGeEhCy1ODeVt=
+nTKGugnOWOVRZ79iKwlTDhlzyWsp9UPUO14ypzKM0FRmEX5dH65mmf0_jOZHlItCkpanJHWnUCI=
+XUysjnqmo73HcwJeXYv3uTxdzpwBNA" width=3D"1" height=3D"1" style=3D"display:b=
+lock;border:0"/></td></tr><tr><td height=3D"1" bgcolor=3D"#e8e8e8" style=3D=
+"font-size:0;line-height:0"><img alt=3D"" src=3D"https://r.brevo.immobilier=
+.ch/im/9445284/a0c25577b0610cc9d203c8d1e6c9695ab8ecefcca4b83c8ad84b6b2db42f=
+9f67.gif?e=3Dbd9ZOP_YZpQNoqSWzuaQwApIySoOKdqxsh_-gQjlYwBU-5LUhqVN34uKAywyeT=
+Sd0yK3v7_XD3S5MN_0p3LSvZdEqp_hETaavM2Fg5OtXEkD8Igtoq3j7toJ6TYRj1mi1LTDKlRhP=
+BzSbH-t7LT-S66hrzm40z67yZNsaSa3BmgY34koFx6d0Jf1ojpwcaXgUYyBgPw7PAzXKoAl6IP7=
+kF4dPFaWq4-ZwdUbotX9_h-XLCZM_nH09AHOkw" width=3D"1" height=3D"1" style=3D"d=
+isplay:block;border:0"/></td></tr><tr><td height=3D"20" style=3D"font-size:=
+0;line-height:0;height:20px"><img alt=3D"" src=3D"https://r.brevo.immobilie=
+r.ch/im/9445284/a0c25577b0610cc9d203c8d1e6c9695ab8ecefcca4b83c8ad84b6b2db42=
+f9f67.gif?e=3D3pKUM1SY1hMmb2FnbmqMvUbWzgR4u6FN8AYbLC0fbguyZmqYl4Z9E_S4F1_5P=
+9LqdFFpuP2ghWsy92dhgKNrVOZR_mu6SqiOm1ysrLjC90L7QDFcpFIR98Ecz66nWxXbt8Oo-5Q2=
+e7uzi3SzftaWpE_FuKwl0HGcCGGdi7LI2gHuiKvi9EGTq1gXvsp3NFiA8B-s47Q8jRJA7JNrmxF=
+MrNGQ4hQecrARd627DM9qceXyCPTYU7N1Tue6Vg" width=3D"1" height=3D"1" style=3D"=
+display:block;border:0"/></td></tr><tr><td valign=3D"top" align=3D"center">=
+<table width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" alig=
+n=3D"center"><tbody><tr><td valign=3D"top" align=3D"center"><table width=3D=
+"600" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" align=3D"center" cla=
+ss=3D"em_wrapper" style=3D"width:600px"><tbody><tr><td class=3D"em_font3" a=
+lign=3D"center" style=3D"font-family:Roboto,Arial,sans-serif;color:#222;fon=
+t-size:14px;line-height:18px"><a href=3D"https://r.brevo.immobilier.ch/tr/c=
+l/l0icDl1SusCAT52GDPpqZ1xRdlakHLh37c2Hi6OjmC_TlquMFOMrXpiNe_pc-5QcfQ7CGxz7n=
+rQKdW3Gi2fnl2WG5-VUYThvvyCf3RvgUfpf4IOWff9m699ukgbGv3nRd7zXI1K5b2fBdvd4Phn-=
+_nPIZPVkrEyUXDdcLGvNfL1Npj9k_uU26Ua2ApyC-HcHSDfgVidOLPOs4qPN13SKA7qplrp22oI=
+V3towZDVZ0X2mUq5d81aTvKJGhLxhUxH2_mVLxwAZk_F_wBdtvacSbZdUTqCOiglljlRIoG7jDv=
+kzFaPXz-KHGjwx7ZUT-9YKJA" target=3D"_blank" style=3D"color:#222;text-decora=
+tion:none">Politique de confidentialit=C3=A9</a></td></tr></tbody></table><=
+/td></tr></tbody></table></td></tr><tr><td height=3D"20" style=3D"font-size=
+:0;line-height:0;height:20px"><img alt=3D"" src=3D"https://r.brevo.immobili=
+er.ch/im/9445284/a0c25577b0610cc9d203c8d1e6c9695ab8ecefcca4b83c8ad84b6b2db4=
+2f9f67.gif?e=3DDFUeAtYAtYalpiit8BlBHyHyCGXvrI5EOHPOT_VNnAROB-n0cyOEFzc40TXw=
+nLMfOtV5-Qir2aSu7QxJL8TMKrrYilCZPWQ_ElqIEcaCzfmbotqyKzZdCPt1ho7JItLJttdqU85=
+gEqRzr7XR-jRe4EkmPhg16-q_Dv_LdlxqlPyRxPW8cNLSTQbrGr8L_aWpSQH_EAbusDPlvKGfqL=
+QX34gok-Eog4a3kyxKKfXJOkCpVIPUf3M43qnc1A" width=3D"1" height=3D"1" style=3D=
+"display:block;border:0"/></td></tr><tr><td height=3D"1" bgcolor=3D"#e8e8e8=
+" style=3D"font-size:0;line-height:0"><img alt=3D"" src=3D"https://r.brevo.=
+immobilier.ch/im/9445284/a0c25577b0610cc9d203c8d1e6c9695ab8ecefcca4b83c8ad8=
+4b6b2db42f9f67.gif?e=3DxHyIeBC13yR5FZKeV5dXb4VhhdLij6lfoaLG03qnrcyEkcJ_grrt=
+8jrcycjqDVKx3W_hY9CfRe2CIWBy-BJ_fKebmP_8OZDd6NCvKXhU152AGpJF0O7nBJ8aXls9egK=
+JLXyZuPr0H21fHmWyXB0eQjg78gVjUl4LGE1-RC1MOVGeK_qzML0-eQom57Fa1LJ5BDY_WoqUI-=
+sAww22JtVJZw_RKdB4WpZnCKX6K69x_IVLhblYLxdpwCbHCw" width=3D"1" height=3D"1" =
+style=3D"display:block;border:0"/></td></tr><tr><td height=3D"30" style=3D"=
+font-size:0;line-height:0;height:30px" class=3D"em_h20"><img alt=3D"" src=
+=3D"https://r.brevo.immobilier.ch/im/9445284/a0c25577b0610cc9d203c8d1e6c969=
+5ab8ecefcca4b83c8ad84b6b2db42f9f67.gif?e=3D2EWIid8dqKVv1leh64__QyIcu3ObAOl9=
+zm7SJCjJQgZ-UyQYz6UBDf6ufYR2-uWOWEC9KlJ0adQMHa_dtmMiI3cJsR1PHCsLkNKuYUPeKep=
+QPoy_-W1nsEp4JnXmgFdk8sdvUxiTmIOuxewup_IYtZ8-tqsGBPMk19_zMqX-RY2PExGqHh8bmb=
+GAfZuC-WjBuC1w0K7brgU5xfv5ZoX28f2-g7tyYp8ulWBTvpfCmMWcpegRRKDBHokUZQ" width=
+=3D"1" height=3D"1" style=3D"display:block;border:0"/></td></tr><tr><td cla=
+ss=3D"em_grey em_font2" align=3D"center" style=3D"font-family:Roboto,Arial,=
+sans-serif;color:#222;font-size:12px;line-height:17px"><a href=3D"https://r=
+.brevo.immobilier.ch/tr/cl/DRps6tpVSq1ZOlRYNDBD7ecqmjQchnlINcvdFgUjauHq4cvY=
+Q375er10m-rXl2_CYE4si8B8FGSRjrYCiSZg2LjwOdleDRniG-l-jjtvkP_GPpfLgFywOZPdGlT=
+EA0gxdXJaeet2GTVF7mrfqlfh3tkuFyfEdpLP1783He9JfeHR-i-1DqySQbC3N2YnCpXxUnnjNV=
+L4SaZ5_bjK0Ko-v3yS_ryZrVjLlQVFx-r2k9I96smgtUE3dp3KC2-wg0yyWSRPb_MCgsqfJ4R7Q=
+XlAKM-C" target=3D"_blank" style=3D"color:#222;text-decoration:none">immobi=
+lier.ch</a> SA - Rue de Lausanne 42-44, 1201 Gen=C3=A8ve<br/> =C2=A92026</t=
+d></tr><tr><td height=3D"30" style=3D"font-size:0;line-height:0;height:30px=
+" class=3D"em_hide"><img alt=3D"" src=3D"https://r.brevo.immobilier.ch/im/9=
+445284/a0c25577b0610cc9d203c8d1e6c9695ab8ecefcca4b83c8ad84b6b2db42f9f67.gif=
+?e=3DeZrBqTSvANX9iOnH1WnR5IL9ZYsOFWBtaoFtEolWHhizn2ccFS-LQof3kTh3RmAGagqTue=
+1xwql2_bHvArwWW-RqFlQCQ7u2f_L0gAfXEh7sjBUepzQx1oiUycpetfP5jhkqG_yVmRBmTDcH2=
+AyXVld2IYjSoSTAmfXmD2EiRCrTvf0ZWqYpEaeJWq3IHpgpKTfMMosayZZEzJFdQWNPfWnntNz9=
+503JTylE7XceXh1O_SbuIz2KcxR3fw" width=3D"1" height=3D"1" style=3D"display:b=
+lock;border:0"/></td></tr><tr><td class=3D"em_hide" style=3D"line-height:1p=
+x;min-width:600px;background-color:#fff"><img alt=3D"" src=3D"https://r.bre=
+vo.immobilier.ch/im/9445284/a0c25577b0610cc9d203c8d1e6c9695ab8ecefcca4b83c8=
+ad84b6b2db42f9f67.gif?e=3DtHhJkme5KtlpyiFlqXAEF5YcD2OTstBmxhWOKlauWiUx1tbPs=
+hE3xHBjr0CXx58rVdv4EnAvAK-YqY1PLWV2mv5Sje9Zygtx6XCSr4-RyI38SlSZG5YqOTje8nbJ=
+DUDlJ_MuVVqjf1qIn6xbo9-NYGRLat8M8IbXTW3tWUxR-ebdlgMnBtQ1sFK2QWU67S91daPrMS1=
+AoX1-Km2uNhwon6MwKKzDIo2PsYi12UPg4F8HBYKI4FuFAZ7QAw" height=3D"1" width=3D"=
+600" style=3D"max-height:1px;min-height:1px;display:block;width:600px;min-w=
+idth:600px" border=3D"0"/></td></tr></tbody></table></td></tr></tbody></tab=
+le><div class=3D"em_hide" style=3D"white-space:nowrap;display:none;font-siz=
+e:0;line-height:0">=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =
+=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0</div>
+</body></html>

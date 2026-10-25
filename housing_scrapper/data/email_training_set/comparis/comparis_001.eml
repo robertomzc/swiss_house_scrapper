@@ -1,0 +1,1461 @@
+Delivered-To: roberto.suscriptions@gmail.com
+Received: by 2002:a2e:844a:0:b0:3ab:3511:4041 with SMTP id u10csp162491ljh;
+        Fri, 23 Oct 2026 14:08:50 -0700 (PDT)
+X-Received: by 2002:a05:7022:7e0a:b0:195:9228:50a0 with SMTP id
+ a92af1059eb24-1993686f4a1mr329712c88.42.1792789729998;        Fri, 23 Oct
+ 2026 14:08:49 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1792789729; cv=none;
+        d=google.com; s=arc-20260327;
+        b=TiE2lm8RCPI1BIN2UaAm10Tg9Rp6kMKPOIJ0YvooAa5d1eI6iGUWna6fnSILkQpE+/
+         QLHzFDKpybN628Fo7khKwq4Da+asQDfnVzcAdMS6Ire2jACcWqWB9Bn4GHwmSdqLMX2O
+         dZDd3kRPYxgYSHMVQZ7HNsSudYxaLVZsIP4XIJ4k1Q6hfrsV19Pw8Xx+dePw9RM4XeTd
+         sY07jcAVVnzgSvL8p07j+s4YMslu4cV8QYtXNjn2uKEA+R+l6hunweSRZE3zsuAYCsKN
+         GwYkDxBJ41iLeOwVWfS+7NEu99dqzp1d+pUgaCEP/bxrTJWc4/w9vQd+pg+n74z0kHfg
+         AWMg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com;
+ s=arc-20260327;       
+ h=feedback-id:subject:from:reply-to:mime-version:date:message-id:to        
+ :dkim-signature;        bh=obiejz12BUIkVRuIfpFG7j9wIImLatSWCOUo1vgPCxU=;
+        fh=GiaqfUe5KkBwjzvwFX01b41WrICtwgYrtiUhuGbKQcI=;       
+ b=ZVo+GXKMYQDI/ABTIhAgvC3+UCzSaqZ6j+gDwCQSzv4MZVVAzHJI9wt8GJrjPZIX9V        
+ gs2c00BQWBM81bOjhHElb5Cp/b7HFTmOAquh6AWwS230r8HOasT6e+9cHHwVZukcLAed        
+ 6v/XR6hXBx0OzcxDFhuSZC5g6K4xIH2kSalIeaCuFzZq+jff2N7286oosgfeKnd42p6P        
+ 7XfgiIP3K7fB8YXwyYAHdiufV8sjfgbh9yoDhgo4VoNhvu9hRKU0Axa+9ypsjMvZM+Ec        
+ w7d0P7P1iz6pqqOL7lxXvD/JVB6oHVPgiFOEPeKTLh+Nhdo7W/U9ATUnTdMfpG+tCn6X        
+ F6aA==;        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;       dkim=pass
+ header.i=@info.comparis.ch header.s=scph0321 header.b=AWaYZk5Y;      
+ spf=pass (google.com: domain of
+ msprvs1=20756amnwvgu2=bounces-280172-212@bounces.comparis.ch designates
+ 156.70.22.74 as permitted sender)
+ smtp.mailfrom="msprvs1=20756AMNwVGu2=bounces-280172-212@bounces.comparis.ch";
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=comparis.ch
+Return-Path: <msprvs1=20756AMNwVGu2=bounces-280172-212@bounces.comparis.ch>
+Received: from mta-70-22-74.comparis.ch.sparkpostmail.com
+ (mta-70-22-74.comparis.ch.sparkpostmail.com. [156.70.22.74])        by
+ mx.google.com with ESMTPS id
+ a92af1059eb24-198cb16253csi1636866c88.98.2026.10.23.14.08.49        for
+ <roberto.suscriptions@gmail.com>        (version=TLS1_2
+ cipher=ECDHE-ECDSA-CHACHA20-POLY1305 bits=256/256);        Fri, 23 Oct 2026
+ 14:08:49 -0700 (PDT)
+Received-SPF: pass (google.com: domain of
+ msprvs1=20756amnwvgu2=bounces-280172-212@bounces.comparis.ch designates
+ 156.70.22.74 as permitted sender) client-ip=156.70.22.74;
+Authentication-Results: mx.google.com;       dkim=pass
+ header.i=@info.comparis.ch header.s=scph0321 header.b=AWaYZk5Y;      
+ spf=pass (google.com: domain of
+ msprvs1=20756amnwvgu2=bounces-280172-212@bounces.comparis.ch designates
+ 156.70.22.74 as permitted sender)
+ smtp.mailfrom="msprvs1=20756AMNwVGu2=bounces-280172-212@bounces.comparis.ch";
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=comparis.ch
+X-MSFBL: zhlBmCEKr28SrU5wwEirodJ+dffrt1U0wwxzTqv8OpE=|eyJyIjoicm9iZXJ0by5
+	zdXNjcmlwdGlvbnNAZ21haWwuY29tIiwic3ViYWNjb3VudF9pZCI6IjIxMiIsIm1
+	lc3NhZ2VfaWQiOiI2YWRiZTFjY2RiNmFkY2NiMzZlMSIsImN1c3RvbWVyX2lkIjo
+	iMjgwMTcyIiwidGVuYW50X2lkIjoic3BjIn0=
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=info.comparis.ch;
+	s=scph0321; t=1792789729; i=@info.comparis.ch;
+	bh=obiejz12BUIkVRuIfpFG7j9wIImLatSWCOUo1vgPCxU=;
+	h=To:Message-ID:Date:Content-Type:From:Subject:Feedback-ID:From:To:
+	 Cc:Subject:Feedback-Id;
+	b=AWaYZk5Y3sTBwdLFf6damx4fS8Qr+A9TChbNFBn4UER6vqKtEjHnj9iO4RCQ/97Ml
+	 1L+en2ZzPX3y+fl2Faa/B7EZgVYke9SGqzw1uyJ1bCoYlWGXUUtoLJZFsveDQzIK3K
+	 zv/0s9+o5upA1lQI2ODxv2DUcY9NXyf+6t2Lnsak=
+Received: from [10.90.36.253] ([10.90.36.253])	by
+ i-00f16eb2ca2e3c23f.mta1vrest.sd.prd.sparkpost (ecelerity 5.3.0.76552
+ r(msys-ecelerity:tags/5.3.0.30)) with REST	id 1E/63-25258-1ECCBDA6; Fri, 23
+ Oct 2026 21:08:49 +0000
+To: roberto.suscriptions@gmail.com
+Message-ID:
+ <1E.63.25258.1ECCBDA6@i-00f16eb2ca2e3c23f.mta1vrest.sd.prd.sparkpost>
+Date: Fri, 23 Oct 2026 21:08:49 +0000
+Content-Type: multipart/alternative;
+ boundary="_----p5M4I19C0gE/dGlGWBBeQQ===_7D/63-25258-1ECCBDA6"
+MIME-Version: 1.0
+Reply-To: newsletter@comparis.ch
+X-Campaign-ID: 18700506
+From: "Comparis" <service@info.comparis.ch>
+Subject: 2 new properties for Lausanne7k - 1.2M - 3.5rooms 
+X-Message-ID: 431b1e8819df448bbf38c6393d2c355b
+X-Feedback-ID: 24323759:18700506:41567:iterable
+Feedback-ID: 24323759:18700506:41567:iterable
+
+--_----p5M4I19C0gE/dGlGWBBeQQ===_7D/63-25258-1ECCBDA6
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset="UTF-8"
+
+Online Version  =0A<https://links.comparis.ch/s/vb/K3B2E75zjmYggm1wTzZN2Vkw=
+nBQRKepx--WJ86TxEn6JDqrDioYh-F4zoPtZGyhiTVtcIwKFhnMbQhfcgttvX9NS6XkOPnekXF5=
+4tssgxRfaF7jBN8pUWmhCVEdKT0EhzVq4adg50XehsmflVy1uORiOyHc/DuOFgpa_xnYfxovr0y=
+xyH8lgr1dK5Kjs/25>=0A=0A <https://en.comparis.ch> =0A=0A=0A=0AYour search a=
+lert Lausanne7k - 1.2M - 3.5rooms=0A=0A=0A=0A2 new properties found on the =
+leading marketplaces for Lausanne7k - 1.2M - =0A3.5rooms. =0A=0A=0A=0A=0A=
+=0A=0A <https://en.comparis.ch/comparis/dispatcher/go=3Fcgid=3D8PBf45rTWkKh=
+NA3uocxIjw>=0A=0AAttique contemporain traversant avec grand balcon et vue d=
+=C3=A9gag=C3=A9e=0A=0ACHF 1,190,000=0A=0A 1000 Lausanne 27 =0A=0A4.5 rooms =
+| 115 m=C2=B2=0A=0A=0AMore information  =0A<https://en.comparis.ch/comparis=
+/dispatcher/go=3Fcgid=3D8PBf45rTWkKhNA3uocxIjw>=0A=0A=0A <https://en.compar=
+is.ch/comparis/dispatcher/go=3Fcgid=3D8PBf45rTWkKhNA3uocxIjw>=0A=0AAttique =
+contemporain traversant avec grand balcon et vue d=C3=A9gag=C3=A9e=0A=0ACHF=
+ 1,190,000=0A=0A 1000 Lausanne 27 =0A=0A4.5 rooms | 115 m=C2=B2=0A=0A=0AMor=
+e information  =0A<https://en.comparis.ch/comparis/dispatcher/go=3Fcgid=3D8=
+PBf45rTWkKhNA3uocxIjw>=0A=0A=0A=0A=E2=80=8A=0A=0A=0A=0A=0A=0A <https://en.c=
+omparis.ch/comparis/dispatcher/go=3Fcgid=3DMdUo_8Pp0UmsGiBcJPefIw>=0A=0AL'O=
+r=C3=A9e du Rogin, 6 appartements Minergie de 4.5 pi=C3=A8ces=0A=0ACHF 960,=
+000=0A=0A 1003 Lausanne =0A=0A4.5 rooms | 110 m=C2=B2=0A=0A=0AMore informat=
+ion  =0A<https://en.comparis.ch/comparis/dispatcher/go=3Fcgid=3DMdUo_8Pp0Um=
+sGiBcJPefIw>=0A=0A=0A <https://en.comparis.ch/comparis/dispatcher/go=3Fcgid=
+=3DMdUo_8Pp0UmsGiBcJPefIw>=0A=0AL'Or=C3=A9e du Rogin, 6 appartements Minerg=
+ie de 4.5 pi=C3=A8ces=0A=0ACHF 960,000=0A=0A 1003 Lausanne =0A=0A4.5 rooms =
+| 110 m=C2=B2=0A=0A=0AMore information  =0A<https://en.comparis.ch/comparis=
+/dispatcher/go=3Fcgid=3DMdUo_8Pp0UmsGiBcJPefIw>=0A=0A=0A=0A=E2=80=8A=0A=0A=
+=0A=0A=0A=0A=0A=0A=0A=0AYour search criteria:=0A=0ACategory: Buy | Town or =
+postcode: lausanne =0A=0A=0A=0A=0A=0A=0A <https://en.comparis.ch/comparis/d=
+ispatcher/go=3Fcgid=3DA7yvHEMY.UaoAyFfurDACQ> =0AManage search alerts =0A<h=
+ttps://en.comparis.ch/comparis/dispatcher/go=3Fcgid=3DA7yvHEMY.UaoAyFfurDAC=
+Q>=0A=0A <https://en.comparis.ch/comparis/dispatcher/go=3Fcgid=3Dyr02ybOCNU=
+Se3cCtO5acGg> =0ADelete search alert =0A<https://en.comparis.ch/comparis/di=
+spatcher/go=3Fcgid=3Dyr02ybOCNUSe3cCtO5acGg> =0A=0A=0A=0A <https://en.compa=
+ris.ch/comparis/dispatcher/go=3Fcgid=3DA7yvHEMY.UaoAyFfurDACQ>=0AManage sea=
+rch alerts =0A<https://en.comparis.ch/comparis/dispatcher/go=3Fcgid=3DA7yvH=
+EMY.UaoAyFfurDACQ>=0A=0A <https://en.comparis.ch/comparis/dispatcher/go=3Fc=
+gid=3Dyr02ybOCNUSe3cCtO5acGg>=0ADelete search alert =0A<https://en.comparis=
+.ch/comparis/dispatcher/go=3Fcgid=3Dyr02ybOCNUSe3cCtO5acGg>=0A=0A=0A=0A=E2=
+=80=8A=0A=0AWe wish you all success with your search. It would be great if =
+you recommend =0Acomparis.ch <https://en.comparis.ch/> to your friends and =
+colleagues. =0A=0A=0A=0AKind regards,=0A=0AYour Comparis Team=0A=0A=0A=0A=
+=0A=0A=0A Rate us now =0A=0A Your feedback helps us to continuously improve=
+ our service. =0A=0A =0A<https://g.page/r/CRy46eJycn7pEBM/review=3Fitr_cid=
+=3D18700506&itr_tid=3D24323759&itr_mid=3D431b1e8819df448bbf38c6393d2c355b&e=
+mhID=3Daafe47083d489f6d7beb7dfd22e156bd048057c28401f228b858d09d13d48533&utm=
+_source=3D&utm_medium=3Demail&utm_campaign=3D18700506&utm_content=3DEnglish=
+-googlereview>=0A =0A<https://ch.trustpilot.com/evaluate/comparis.ch=3Fitr_=
+cid=3D18700506&itr_tid=3D24323759&itr_mid=3D431b1e8819df448bbf38c6393d2c355=
+b&emhID=3Daafe47083d489f6d7beb7dfd22e156bd048057c28401f228b858d09d13d48533&=
+utm_source=3D&utm_medium=3Demail&utm_campaign=3D18700506&utm_content=3DEngl=
+ish-trustpilotreview>=0A=0A=0A Share with friends =0A=0A Do you know someon=
+e looking for an apartment=3F Share the largest real estate =0Aportal in Sw=
+itzerland.=0A=0A <mailto:=3Fsubject=3DComparis real estate portal&body=3DHe=
+llo,%0D%0ADid you know =0Athat Comparis has the largest real estate portal =
+in =0ASwitzerland=3F%0D%0Ahttps://en.comparis.ch/immobilien/default%3Fitr_c=
+id%3D18700506%26itr_tid%3D24323759%26itr_mid%3D431b1e8819df448bbf38c6393d2c=
+355b%26emhID%3Daafe47083d489f6d7beb7dfd22e156bd048057c28401f228b858d09d13d4=
+8533%26utm_source%3D%26utm_medium=3Demail%26utm_campaign%3D1870050626utm_co=
+ntent%3DEnglish-emailshare>=0A =0A<https://api.whatsapp.com/send=3Fitr_cid=
+=3D18700506&itr_tid=3D24323759&itr_mid=3D431b1e8819df448bbf38c6393d2c355b&e=
+mhID=3Daafe47083d489f6d7beb7dfd22e156bd048057c28401f228b858d09d13d48533&utm=
+_source=3D&utm_medium=3Demail&utm_campaign=3D18700506&utm_content=3DEnglish=
+-whatsappshare&text=3DHello, =0ADid you know that Comparis has the largest =
+real estate portal in Switzerland=3F =0Ahttps://www.comparis.ch/immobilien/=
+default> =0A=0A=0AComparis Property App =0A <https://play.google.com/store/=
+apps/details=3Fid=3Dch.comparis.immoapp>  =0A<https://apps.apple.com/ch/app=
+/comparis-immobilien-schweiz/id328172261> =0A=0AFollow us =0A <https://face=
+book.com/comparis.ch/>  =0A<https://www.linkedin.com/company/comparis.ch-ag=
+/>  =0A<https://www.youtube.com/comparis>  <https://www.instagram.com/compa=
+ris_ch/> =0A=0A Contact  <mailto:info@comparis.ch> |  Data protection  =0A<=
+https://en.comparis.ch/comparis/info/privacy> |  Company details =0A<https:=
+//en.comparis.ch/comparis/press/impressum> =0A=0Acomparis.ch AG, Birmensdor=
+ferstrasse 108, CH-8003 Zurich
+--_----p5M4I19C0gE/dGlGWBBeQQ===_7D/63-25258-1ECCBDA6
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset="UTF-8"
+
+<!DOCTYPE html><html xmlns:v=3D"urn:schemas-microsoft-com:vml" xmlns:o=3D"u=
+rn:schemas-microsoft-com:office:office" lang=3D"en" style=3D"box-sizing: bo=
+rder-box;"><head><title></title><meta http-equiv=3D"Content-Type" content=
+=3D"text/html; charset=3Dutf-8"><meta name=3D"viewport" content=3D"width=3D=
+device-width,initial-scale=3D1"><!--[if mso]><xml><w:WordDocument xmlns:w=
+=3D"urn:schemas-microsoft-com:office:word"><w:DontUseAdvancedTypographyRead=
+ingMail/></w:WordDocument> <o:OfficeDocumentSettings><o:PixelsPerInch>96</o=
+:PixelsPerInch><o:AllowPNG/></o:OfficeDocumentSettings></xml><![endif]--><s=
+tyle>*{box-sizing:border-box}body{margin:0;padding:0}a[x-apple-data-detecto=
+rs]{color:inherit!important;text-decoration:inherit!important}#MessageViewB=
+ody a{color:inherit;text-decoration:none}p{line-height:inherit}.desktop_hid=
+e,.desktop_hide table{mso-hide:all;display:none;max-height:0;overflow:hidde=
+n}.image_block img+div{display:none}sub,sup{font-size:75%;line-height:0}@me=
+dia(max-width:720px){.icons-inner{text-align:center}.icons-inner td{margin:=
+0 auto}.image_block div.fullWidth{max-width:100%!important}.row-content{wid=
+th:100%!important}.stack .column{width:100%;display:block}.mobile_hide{min-=
+height:0;max-height:0;max-width:0;display:none;overflow:hidden;font-size:0}=
+.desktop_hide,.desktop_hide table{display:table!important;max-height:none!=
+important}.desktop_hide table.icons-inner{display:inline-block!important}}<=
+/style><!--[if mso ]><style>sup,sub{font-size:100%!important}sup{mso-text-r=
+aise:10%}sub{mso-text-raise:-10%}</style><![endif]--></head><body class=3D"=
+body" style=3D"box-sizing: border-box; margin: 0; padding: 0; -webkit-text-=
+size-adjust: none; text-size-adjust: none; background-color: #fff;">=0D=0A<=
+div style=3D"color:transparent;visibility:hidden;opacity:0;font-size:0px;bo=
+rder:0;max-height:1px;width:1px;margin:0px;padding:0px;border-width:0px!imp=
+ortant;display:none!important;line-height:0px!important;"><img border=3D"0"=
+ width=3D"1" height=3D"1" src=3D"https://sp.comparis.ch/q/GJYR2Uc27lvLCjcYM=
+Cyx5w~~/AARGbBA~/Xmq33K1t_B5Bo6bK1KDvXf5ozye_b7iJYrm2fhM1ZGsrLhkqWQybiIQoIM=
+JbBugPrBQdP4-oeHK9TnluFuqRDQ~~" alt=3D""/></div>=0D=0A<span style=3D"color:=
+transparent;visibility:hidden;display:none;opacity:0;height:0;width:0;font-=
+size:0;"></span><img src=3D"https://links.comparis.ch/s/eo/oToU_M0jsMsYPZe3=
+0X1nmlitdN-hIpMlXjf4ske9VTk_myq5g1NwF67iEsigfISOFr7SA_9Ci6DwXJx5utQS5xfuEW_=
+ICv3BR6BHkrh56AsAd4mkNoo67OB1ggxOSlN_zpEIkl4Sj0e1Wzr0iwkkQMZaXbUrwkva00LyGs=
+ZZpW36uPdZB6R09MwrqQiSzifpW7j8IKAP6XrozJPjxAYivSRvkg/zBx0oBSL_9yQf8jnXtnbEd=
+ACIsPeiirY/25" style=3D"border:0;width:1px;height:1px;border-width:0px!impo=
+rtant;display:none!important;line-height:0!important;" width=3D"1" height=
+=3D"1"/><table class=3D"nl-container" width=3D"100%" border=3D"0" cellpaddi=
+ng=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"box-sizing: borde=
+r-box; mso-table-lspace: 0; mso-table-rspace: 0; background-color: #fff;" b=
+gcolor=3D"#fff"><tbody style=3D"box-sizing: border-box;"><tr style=3D"box-s=
+izing: border-box;"><td style=3D"box-sizing: border-box;"><table class=3D"r=
+ow row-1" align=3D"center" width=3D"100%" border=3D"0" cellpadding=3D"0" ce=
+llspacing=3D"0" role=3D"presentation" style=3D"box-sizing: border-box; mso-=
+table-lspace: 0; mso-table-rspace: 0;"><tbody style=3D"box-sizing: border-b=
+ox;"><tr style=3D"box-sizing: border-box;"><td style=3D"box-sizing: border-=
+box;"><table class=3D"row-content stack" align=3D"center" border=3D"0" cell=
+padding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"box-sizing: =
+border-box; mso-table-lspace: 0; mso-table-rspace: 0; color: #000; width: 7=
+00px; margin: 0 auto;" width=3D"700"><tbody style=3D"box-sizing: border-box=
+;"><tr style=3D"box-sizing: border-box;"><td class=3D"column column-1" widt=
+h=3D"100%" style=3D"box-sizing: border-box; mso-table-lspace: 0; mso-table-=
+rspace: 0; font-weight: 400; text-align: left; padding-bottom: 5px; padding=
+-left: 7px; padding-right: 7px; padding-top: 5px; vertical-align: top;" ali=
+gn=3D"left" valign=3D"top"><table class=3D"html_block block-1" width=3D"100=
+%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" s=
+tyle=3D"box-sizing: border-box; mso-table-lspace: 0; mso-table-rspace: 0;">=
+<tr style=3D"box-sizing: border-box;"><td class=3D"pad" style=3D"box-sizing=
+: border-box;"><div style=3D"box-sizing: border-box; font-family: Arial,'He=
+lvetica Neue',Helvetica,sans-serif; text-align: center;" align=3D"center"> =
+<!--Display new header--> <p style=3D"text-align: right;"><a style=3D"text-=
+decoration-color:#666666; text-decoration:underline; color:#666666; font-si=
+ze:14px; font-family:'Arial',Tahoma; vertical-align: middle;" target=3D"_bl=
+ank" href=3D"https://links.comparis.ch/s/vb/K3B2E75zjmYggm1wTzZN2VkwnBQRKep=
+x--WJ86TxEn6JDqrDioYh-F4zoPtZGyhiTVtcIwKFhnMbQhfcgttvX9NS6XkOPnekXF54tssgxR=
+faF7jBN8pUWmhCVEdKT0EhzVq4adg50XehsmflVy1uORiOyHc/DuOFgpa_xnYfxovr0yxyH8lgr=
+1dK5Kjs/25"> Online Version </a> &nbsp; </p> <meta charset=3D"utf-8"> <styl=
+e>@media only screen and (max-width:600px){.stack-column{display:block!impo=
+rtant;width:100%!important}}</style> <table role=3D"presentation" width=3D"=
+100%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" style=3D"padding:0; =
+table-layout:fixed; width:100%; background-color:#ffffff;"> <tr> <!-- Left =
+logo --> <td width=3D"70%" style=3D"padding:10px 10px 0 0;" align=3D"left">=
+ <a href=3D"https://links.comparis.ch/s/c/S79Fn7ijgRYP7UyQZUPzgzmWpyT64TXwl=
+leobCa-6vdv7dDOCCkwsVg6GloqEy-gdq29LQKR2tlG5bcQmOH6jA0hTr17Vt5n8iNsFTCvsXtd=
+7wjv-rb-c_GF3xVusp6l8cWcP6azpltMl54lSPGSB8asj_NHZJYx3x7-mnz_9jUA7gaaVOZrZff=
+dnA-gikjVm8ncX-qkOEhElYPDzcXs4ulu3f3c4SBdtyW8K9Y4C8gqk3FWQv_K3CPnULc3dVnpN_=
+IYRHuJ4A_dA9479Z8J7NetH2JhjQ3YUeNbh-WVEqWcm0dVukx5FFPmlmuKrKqMKRHmxyCrEH_By=
+K6LFpPmRAy4ODIgOIQG2-ooKWH6ePU3MQdGyw8Y5hlNOVMI3PjGVclJV_XKlYixlU2B35zWbrMk=
+MmF2amE8sdRGc3X2XLejqEX50mKBZIaIYTOoPVDtXd71nfmRORPg8NYa7RK9KeQkuvIZHjlRPG0=
+XyMPNzxwuI1N-iBSlNvBSPXeDolfWiKaNgnQQs4sn6zBAug_pzXzO8HMkxbtYFjc7CJbUxVF_e-=
+Nze4vNGRebhd08swHYd85-a85E6A/tFnHHWemMsM6JYsHjov7rhcvO2ramB0t/25" target=3D=
+"_blank" style=3D"text-decoration:none;"> <img src=3D"https://d15k2d11r6t6r=
+l.cloudfront.net/public/users/Integrators/669d5713-9b6a-46bb-bd7e-c542cff6d=
+d6a/431baf3260f3422287820908bf0e1157/editor_images/Comparis.png" alt=3D"Com=
+paris" width=3D"200" style=3D"max-width:100%; height:auto; display:block;" =
+border=3D"0"> </a> </td> <!-- Right logo --> <td width=3D"30%" style=3D"pad=
+ding:10px 0 0 0;" align=3D"right"> <img src=3D"https://library.iterable.com=
+/2305/10564/65a96e6e3d214374895a71fb530a49fb-30-jahre-visual-comparis-gb-wh=
+itebg.png" alt=3D"30 years Comparis" width=3D"115" style=3D"max-width:100%;=
+ height:auto; display:block;" border=3D"0"> </td> </tr> </table> </div></td=
+></tr></table></td></tr> </tbody></table></td></tr></tbody></table><table c=
+lass=3D"row row-2" align=3D"center" width=3D"100%" border=3D"0" cellpadding=
+=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"box-sizing: border-=
+box; mso-table-lspace: 0; mso-table-rspace: 0;"><tbody style=3D"box-sizing:=
+ border-box;"><tr style=3D"box-sizing: border-box;"><td style=3D"box-sizing=
+: border-box;"><table class=3D"row-content stack" align=3D"center" border=
+=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"b=
+ox-sizing: border-box; mso-table-lspace: 0; mso-table-rspace: 0; color: #00=
+0; width: 700px; margin: 0 auto;" width=3D"700"><tbody style=3D"box-sizing:=
+ border-box;"><tr style=3D"box-sizing: border-box;"><td class=3D"column col=
+umn-1" width=3D"100%" style=3D"box-sizing: border-box; mso-table-lspace: 0;=
+ mso-table-rspace: 0; font-weight: 400; text-align: left; padding-bottom: 5=
+px; padding-left: 7px; padding-right: 7px; padding-top: 5px; vertical-align=
+: top;" align=3D"left" valign=3D"top"><table class=3D"text_block block-1" w=
+idth=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"pres=
+entation" style=3D"box-sizing: border-box; mso-table-lspace: 0; mso-table-r=
+space: 0; word-break: break-word;"><tr style=3D"box-sizing: border-box;"><t=
+d class=3D"pad" style=3D"box-sizing: border-box; padding-top: 20px; padding=
+-bottom: 10px;"><div style=3D"box-sizing: border-box; font-family: sans-ser=
+if;"><div class style=3D"box-sizing: border-box; font-size: 12px; font-fami=
+ly: Arial,'Helvetica Neue',Helvetica,sans-serif; mso-line-height-alt: 18px;=
+ color: #333; line-height: 1.5;"><p style=3D"box-sizing: border-box; line-h=
+eight: inherit; margin: 0; mso-line-height-alt: 30px;"><span style=3D"box-s=
+izing: border-box; word-break: break-word; font-size: 20px;"><strong style=
+=3D"box-sizing: border-box;">Your search alert Lausanne7k - 1.2M - 3.5rooms=
+</strong></span></p><p style=3D"box-sizing: border-box; line-height: inheri=
+t; margin: 0; mso-line-height-alt: 18px;">&nbsp;</p><p style=3D"box-sizing:=
+ border-box; line-height: inherit; margin: 0; mso-line-height-alt: 24px;"> =
+<span style=3D"box-sizing: border-box; word-break: break-word; font-size: 1=
+6px;">2 new properties found on the leading marketplaces for Lausanne7k - 1=
+.2M - 3.5rooms. </span> </p></div></div></td></tr></table></td></tr></tbod=
+y></table></td></tr></tbody></table><table class=3D"row row-3" align=3D"cen=
+ter" width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=
+=3D"presentation" style=3D"box-sizing: border-box; mso-table-lspace: 0; mso=
+-table-rspace: 0;"><tbody style=3D"box-sizing: border-box;"><tr style=3D"bo=
+x-sizing: border-box;"><td style=3D"box-sizing: border-box;"><table class=
+=3D"row-content stack" align=3D"center" border=3D"0" cellpadding=3D"0" cell=
+spacing=3D"0" role=3D"presentation" style=3D"box-sizing: border-box; mso-ta=
+ble-lspace: 0; mso-table-rspace: 0; color: #000; width: 700px; margin: 0 au=
+to;" width=3D"700"><tbody style=3D"box-sizing: border-box;"><tr style=3D"bo=
+x-sizing: border-box;"><td class=3D"column column-1" width=3D"100%" style=
+=3D"box-sizing: border-box; mso-table-lspace: 0; mso-table-rspace: 0; font-=
+weight: 400; text-align: left; vertical-align: top;" align=3D"left" valign=
+=3D"top"><table class=3D"html_block block-1" width=3D"100%" border=3D"0" ce=
+llpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"box-sizing=
+: border-box; mso-table-lspace: 0; mso-table-rspace: 0;"><tr style=3D"box-s=
+izing: border-box;"><td class=3D"pad" style=3D"box-sizing: border-box;"><di=
+v style=3D"box-sizing: border-box; font-family: Arial,'Helvetica Neue',Helv=
+etica,sans-serif; text-align: center;" align=3D"center"></div></td></tr></t=
+able></td></tr></tbody></table></td></tr></tbody> </table><table class=3D"r=
+ow row-4 mobile_hide" align=3D"center" width=3D"100%" border=3D"0" cellpadd=
+ing=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"box-sizing: bord=
+er-box; mso-table-lspace: 0; mso-table-rspace: 0;"><tbody style=3D"box-sizi=
+ng: border-box;"><tr style=3D"box-sizing: border-box;"><td style=3D"box-siz=
+ing: border-box;"><table class=3D"row-content stack" align=3D"center" borde=
+r=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"=
+box-sizing: border-box; mso-table-lspace: 0; mso-table-rspace: 0; color: #0=
+00; width: 700px; margin: 0 auto;" width=3D"700"><tbody style=3D"box-sizing=
+: border-box;"><tr style=3D"box-sizing: border-box;"><td class=3D"column co=
+lumn-1" width=3D"41.666666666666664%" style=3D"box-sizing: border-box; mso-=
+table-lspace: 0; mso-table-rspace: 0; font-weight: 400; text-align: left; p=
+adding-bottom: 5px; padding-left: 7px; padding-right: 7px; padding-top: 5px=
+; vertical-align: top;" align=3D"left" valign=3D"top"><table class=3D"image=
+_block block-1" width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=
+=3D"0" role=3D"presentation" style=3D"box-sizing: border-box; mso-table-lsp=
+ace: 0; mso-table-rspace: 0;"><tr style=3D"box-sizing: border-box;"><td cla=
+ss=3D"pad" style=3D"box-sizing: border-box; width: 100%;" align=3D"center" =
+width=3D"100%"><div style=3D"box-sizing: border-box; max-width: 277.667px;"=
+><a href=3D"https://links.comparis.ch/s/c/XixIkE5KvxPhuJicmZQbTRtIOwE7cEKcl=
+hnvzLoajsDj9ASHcuE5hzNm18wWaMacFv0JQijKlnJuIU26blwzZbnSJrWqAGghmO4NKO9ixFcz=
+RCmM-9UQufg_THpHJD0XqH6F7kI0EbAzmeF6hhXHyOPCkogEBqaOy-3_-kpwz1NyGdA2kMfwV-v=
+rYxUlZrZU54zgNnjBZXWsqtumxz9h3hWGG7oM34clBlDYLmpAF0bxmBjSJjNMIUQtO0I1kgy5h-=
+xDJ4S_keDHaHz8ujc1hpMVBqBR9gbrz7yiHNBm3UhbnVJeb_xKkmrs7pPDhV0-FkmDEXCY0Ozsh=
+Mk3wOCdjsuwUB3CPSZf1p1YxUpd5C3rcx_8OXmGXloHK7HqhmA6_6sfU9sBoauG2Ary9tAEwMo8=
+4NHLelu-d1xsrIEeTuK9vgCnc_vT__WpYXK1isHFeqgY7CymcXKB_MIwWvy_JqqqkqbBiBlegGB=
+2p2rg65P_TQQfXltM6L6fbLvCYq1I7etTesm9zAmsE5h9_3WzO4a3M0b4Ew9GTbknIaK-ah4IA9=
+yr3LANFVEArRW__DxYPcoYjFRQlpy5R9xO9FRBDvOgd6LkRx2i25sA6OWc80OkinP1B0hVsAwqC=
+ScLFDdiY66SYvU3xHwSay6teHvoD14AhqV2Wm3Kb2a41TqyAjm2_8xrkilIQ78Z-wI_eBlTXYqj=
+jNAHrSERjNshYL9IzK4zaTzV5-cuSlld/2sLXl8paqx48YzrmyVtTMBFf2pq-ykVR/25" targe=
+t=3D"_blank" style=3D"box-sizing: border-box;"><img src=3D"https://mapl-ass=
+ets.b-cdn.net/immobilien/images/datacollect/da61b9b9-28dc-f286-b133-ce1a13d=
+414e0.jpg" style=3D"box-sizing: border-box; display: block; height: auto; b=
+order: 0; width: 100%;" width=3D"277.667" alt=3D"Attique contemporain trave=
+rsant avec grand balcon et vue d=C3=A9gag=C3=A9e" title=3D"Attique contempo=
+rain traversant avec grand balcon et vue d=C3=A9gag=C3=A9e" height=3D"auto"=
+></a></div></td></tr></table></td><td class=3D"column column-2" width=3D"58=
+.333333333333336%" style=3D"box-sizing: border-box; mso-table-lspace: 0; m=
+so-table-rspace: 0; font-weight: 400; text-align: left; padding-bottom: 5px=
+; padding-left: 7px; padding-right: 7px; padding-top: 5px; vertical-align: =
+top;" align=3D"left" valign=3D"top"><table class=3D"text_block block-1" wid=
+th=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presen=
+tation" style=3D"box-sizing: border-box; mso-table-lspace: 0; mso-table-rsp=
+ace: 0; word-break: break-word;"><tr style=3D"box-sizing: border-box;"><td =
+class=3D"pad" style=3D"box-sizing: border-box; padding-bottom: 5px; padding=
+-left: 20px; padding-right: 10px;"><div style=3D"box-sizing: border-box; fo=
+nt-family: sans-serif;"><div class style=3D"box-sizing: border-box; font-si=
+ze: 12px; font-family: Arial,'Helvetica Neue',Helvetica,sans-serif; mso-lin=
+e-height-alt: 21.6px; color: #555; line-height: 1.8;"><p style=3D"box-sizin=
+g: border-box; line-height: inherit; margin: 0; mso-line-height-alt: 28.8px=
+;"><span style=3D"box-sizing: border-box; word-break: break-word; font-size=
+: 16px;"><strong style=3D"box-sizing: border-box;">Attique contemporain tra=
+versant avec grand balcon et vue d=C3=A9gag=C3=A9e</strong></span></p><p st=
+yle=3D"box-sizing: border-box; line-height: inherit; margin: 0; mso-line-he=
+ight-alt: 36px;"><span style=3D"box-sizing: border-box; word-break: break-w=
+ord; font-size: 20px;"><strong style=3D"box-sizing: border-box;">CHF 1,190,=
+000</strong></span></p><p style=3D"box-sizing: border-box; line-height: inh=
+erit; margin: 0; mso-line-height-alt: 36px;"> 1000 Lausanne 27 </p><p style=
+=3D"box-sizing: border-box; line-height: inherit; margin: 0; mso-line-heigh=
+t-alt: 36px;">4.5 rooms | 115 m&sup2;</p></div></div></td></tr></table><tab=
+le class=3D"html_block block-2" width=3D"100%" border=3D"0" cellpadding=3D"=
+0" cellspacing=3D"0" role=3D"presentation" style=3D"box-sizing: border-box;=
+ mso-table-lspace: 0; mso-table-rspace: 0;"><tr style=3D"box-sizing: border=
+-box;"><td class=3D"pad" style=3D"box-sizing: border-box;"><div style=3D"bo=
+x-sizing: border-box; font-family: Arial,'Helvetica Neue',Helvetica,sans-se=
+rif; text-align: center;" align=3D"center"></div></td></tr></table><table c=
+lass=3D"button_block block-5" width=3D"100%" border=3D"0" cellpadding=3D"0"=
+ cellspacing=3D"0" role=3D"presentation" style=3D"box-sizing: border-box; m=
+so-table-lspace: 0; mso-table-rspace: 0;"><tr style=3D"box-sizing: border-b=
+ox;"><td class=3D"pad" style=3D"box-sizing: border-box; padding-left: 10px;=
+ padding-right: 10px;" align=3D"center"><a href=3D"https://links.comparis.c=
+h/s/c/f-YbIikjNdeSCswXRfvPEsTieQ_lltcKxjtXnFNqF9c6ejsuPKKWirHHP91IrKeK4LbH3=
+e3N9HajElV20b1nwyBrGJQtZG_3eQeaFJ5qbpw9fQ0OtUHP7bHD6PgP1kcfcByo8YkFPlULtfEA=
+7A0owndY8RBv5JTiUechGAkS2NjImfXSiPq24Xtq_SuUf3K6I5kISA96B-iHAdAJjJFOMjXqbFF=
+Z6lXhwQ1lVsolwyi9AOV5kS3om__b3KwEpYXSAzw93e-0v-W3oB53cOIlg-DRh3bsDQ4K-f08KC=
+bXDllp0GL5cYyZeJ5H88AdAudZpFLJR-WMRVZo2mZPCbZVEdGSofVNJUBkUcPkieeqWnh-LjKvK=
+C9Cu-Q9FHu4G4wu843a6nDRoK3vE0_SMlpVIc9s8cLUgI1WzWGUHNDycHoT_G4ZDQwS3k2UsBLB=
+srKLvr7uyfB9raxVC-RGG10hvma3ojG3b4F02cjoFCEt4QNSg5O-m1x9DZitkIzyN2kFUyTvkH3=
+35Z3bj7mQo9zhyoKdhO8cV1BRjd42DTyRgFevluHnHMiYnvCyDo45D0HcJ0Cg_bmFzGxWy46QLa=
+-kpMWsv8-TtLMwwhcAfM4zyQBF7UvgfQztdzK8G7ffH2PDqvAvW9CmtXuXzVNcFTM6cIs_iaXCp=
+n6YYLhDdFeMHAUJ_2HVT29nPNpVjgz7tJcr1YvR3FxQE3RynIIcO7MLXli9fpyf4SObKzf9/8MZ=
+CcGv_QXQQF5fPE8V85S8_mGjY71sK/25" target=3D"_blank" style=3D"box-sizing: bo=
+rder-box; color: #ffffff; text-decoration: none;"> <!--[if mso]><v:roundrec=
+t xmlns:v=3D"urn:schemas-microsoft-com:vml" xmlns:w=3D"urn:schemas-microsof=
+t-com:office:word" href=3D"https://links.comparis.ch/s/c/E2EBxrKj68JBOWP6jJ=
+LTgiZyKgCPldbSV3JlWunMCWQE_20avx1q7JXHue6krdzQn8trG1AXm2JPQPkQNitm2Buvmui_p=
+193AuoRKzWVGga11wfSfujfg4ggygsWU2DBVQTOqPvIiQqsbcn66DKIY9KmCvT9V1AL72vdlpfR=
+hJj6xhKv15twMkhNM-rJ5MbP1Bcei-qO_rVqwTkuQ0PihQ6ow_t0-QBcElIqek5m1ZRYMgmDE2A=
+xkjh4g5LGhZSsoN7rMrIZVVEahVaIeZn1L3IMsl841ed-QZ8PpPUBFz6gWjyF0vR24HaWCJjmqM=
+q5rrxWwzN-tPOqll7y_tNU6KYMrWbNA_5FSOcdU7d8h_F14Gx3EiCwn4yJL0Zq6cEjL9b2XbHQK=
+S2KvrF4nYtWjNzVSXnEv6iAWI-ZOBPSTtpR1zCSNO44nqacnzyMmstmqfXsyp73bi6oHvP_Strk=
+q25KcPukyuTEkeY7WXTgO0o6HqzXI1W9YYJFqI6r6zM4oOwHaZcPuEtumi9K9CrIK0dcGsbrEAt=
+0rCfqPCOnImPxGC_3FQQskIQjWijsMT4E-ZF_yW-FAopPYWTuN88Q_YcFLMjOVHHKIU1oq1PHJN=
+UpV4wYX1VuO-FIn8fImgI-tYTSjAUDevcNgUziDLhO07lRjezZoZRDruoAAkYE1m46oleHLhskT=
+1vthf3XCfCmacy3HYkWjjGAmZbgGlrUqZUAwHUmwbGMSyFU/Y6mHfxuvckQxgotBxbZNc8CU8Nk=
+XJG86/25" style=3D"height:42px;width:374px;v-text-anchor:middle;" arcsize=
+=3D"5%" fillcolor=3D"#017b4f"> <v:stroke dashstyle=3D"Solid" weight=3D"0px"=
+ color=3D"#017b4f"/> <w:anchorlock/> <v:textbox inset=3D"0px,0px,0px,0px"> =
+<center dir=3D"false" style=3D"color:#ffffff;font-family:sans-serif;font-si=
+ze:16px"><![endif]--> <span class=3D"button" style=3D"box-sizing: border-bo=
+x; background-color: #017b4f; mso-shading: transparent; border-bottom: 0px =
+solid transparent; border-left: 0px solid transparent; border-radius: 2px; =
+border-right: 0px solid transparent; border-top: 0px solid transparent; col=
+or: #ffffff; display: inline-block; font-family: Arial, 'Helvetica Neue', H=
+elvetica, sans-serif; font-size: 16px; font-weight: 400; mso-border-alt: no=
+ne; padding-bottom: 5px; padding-top: 5px; padding-left: 20px; padding-righ=
+t: 20px; text-align: center; width: 100%; word-break: keep-all; letter-spac=
+ing: normal;"><span style=3D"box-sizing: border-box; word-break: break-word=
+; line-height: 32px;"><strong style=3D"box-sizing: border-box;">More inform=
+ation</strong></span></span> <!--[if mso]></center></v:textbox></v:roundrec=
+t><![endif]--></a></td></tr></table></td></tr></tbody></table></td></tr></t=
+body></table><!--[if !mso]><!--><table class=3D"row row-5 desktop_hide" ali=
+gn=3D"center" width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"=
+0" role=3D"presentation" style=3D"box-sizing: border-box; mso-table-lspace:=
+ 0; mso-table-rspace: 0; mso-hide: all; display: none; max-height: 0; overf=
+low: hidden;"><tbody style=3D"box-sizing: border-box;"><tr style=3D"box-siz=
+ing: border-box;"><td style=3D"box-sizing: border-box;"><table class=3D"row=
+-content stack" align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=
+=3D"0" role=3D"presentation" style=3D"box-sizing: border-box; mso-table-lsp=
+ace: 0; mso-table-rspace: 0; mso-hide: all; display: none; max-height: 0; o=
+verflow: hidden; color: #000; width: 700px; margin: 0 auto;" width=3D"700">=
+<tbody style=3D"box-sizing: border-box;"><tr style=3D"box-sizing: border-bo=
+x;"><td class=3D"column column-1" width=3D"41.666666666666664%" style=3D"bo=
+x-sizing: border-box; mso-table-lspace: 0; mso-table-rspace: 0; font-weight=
+: 400; text-align: left; padding-bottom: 5px; padding-left: 7px; padding-ri=
+ght: 7px; padding-top: 5px; vertical-align: top;" align=3D"left" valign=3D"=
+top"><table class=3D"image_block block-1" width=3D"100%" border=3D"0" cellp=
+adding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"box-sizing: b=
+order-box; mso-table-lspace: 0; mso-table-rspace: 0; mso-hide: all; display=
+: none; max-height: 0; overflow: hidden;"><tr style=3D"box-sizing: border-b=
+ox;"><td class=3D"pad" style=3D"box-sizing: border-box; width: 100%;" align=
+=3D"center" width=3D"100%"><div class=3D"fullWidth" style=3D"box-sizing: bo=
+rder-box; max-width: 277px;"><a href=3D"https://links.comparis.ch/s/c/33X2c=
+bspiHomUJMV7pYeoLeH4gTl6TNPivwPy7JhWGfS9v5uxi6T4lat0onluZiIH2_MUYa1m5asftGW=
+vDdS_Zihumh83b1VMnmMFC6TDPk4bjjr8WbOLPrqNNX3wzdChOoMes7Ei33ssznUzTEclz-qORH=
+HrpymM-o4qVdpyBLRYARMaf28sC_NPwUQyFOK2h8MGXWBrHVjx1J3SFl_j0sOOgZeuwrhvDRRsi=
+96c0QMBKEuOOvGgD0S4QQjWe4FTnlL6NSfPuwjw1J6AC6HMC55YYcfEt6v3NnSQnj25dRfPlpNT=
+Smoj3PkdWK4YBimkaJ8ol7qpla2BiSUUH_-j9fWiGIKHJ44XgMMkoJ2bP4fOejsnOMgW7hZLs9h=
+AzwjAnbJLWtdNTCnUtf2bXk3eGiVTn21UNmZd19Z8RYu1s6Yg4rrdP07f4iGMQOMuNBft0F1q9p=
+k_TSVnFxUgjLs38NjsSsglgicmVW3DWBKtJ46ic8WtpB3yjGDiqCoHBSX4IE8T7DnC_mbqkwxle=
+f80NeTrOMmoYXCRzV7AmZQfeOeyjFxHG3AdvrsP7_rElxPnNyFJj1QmI2O8WXT9QZOQ1wqfiD_J=
+KQfSFQqtbX0PGyxvna_eQX4mwEwmpqh2rK0_A6BMQL8D--uPL6nTZODCo9AS-iw5Pv41MdMENXj=
+73U-Bq-985m-ECf6uGZ-XtqkjoonIXzn06cDA8chTkS7u_NoL1TC9XPjAcd9/m2SXUsEaBEfhQf=
+HJqhk66oL8WWXPCNWL/25" target=3D"_blank" style=3D"box-sizing: border-box;">=
+<img src=3D"https://mapl-assets.b-cdn.net/immobilien/images/datacollect/da6=
+1b9b9-28dc-f286-b133-ce1a13d414e0.jpg" style=3D"box-sizing: border-box; dis=
+play: block; height: auto; border: 0; width: 100%;" width=3D"277" alt=3D"At=
+tique contemporain traversant avec grand balcon et vue d=C3=A9gag=C3=A9e" t=
+itle=3D"Attique contemporain traversant avec grand balcon et vue d=C3=A9gag=
+=C3=A9e" height=3D"auto"></a></div></td></tr></table></td><td class=3D"colu=
+mn column-2" width=3D"58.333333333333336%" style=3D"box-sizing: border-box;=
+ mso-table-lspace: 0; mso-table-rspace: 0; font-weight: 400; text-align: le=
+ft; padding-bottom: 5px; padding-left: 7px; padding-right: 7px; padding-top=
+: 5px; vertical-align: top;" align=3D"left" valign=3D"top"><table class=3D"=
+text_block block-1" width=3D"100%" border=3D"0" cellpadding=3D"0" cellspaci=
+ng=3D"0" role=3D"presentation" style=3D"box-sizing: border-box; mso-table-l=
+space: 0; mso-table-rspace: 0; word-break: break-word; mso-hide: all; displ=
+ay: none; max-height: 0; overflow: hidden;"><tr style=3D"box-sizing: border=
+-box;"><td class=3D"pad" style=3D"box-sizing: border-box; padding-bottom: 5=
+px;"><div style=3D"box-sizing: border-box; font-family: sans-serif;"><div c=
+lass style=3D"box-sizing: border-box; font-size: 12px; font-family: Arial,'=
+Helvetica Neue',Helvetica,sans-serif; mso-line-height-alt: 21.6px; color: #=
+333; line-height: 1.8;"><p style=3D"box-sizing: border-box; line-height: in=
+herit; margin: 0; mso-line-height-alt: 28.8px;"> <span style=3D"box-sizing:=
+ border-box; word-break: break-word; font-size: 16px;"><strong style=3D"box=
+-sizing: border-box;">Attique contemporain traversant avec grand balcon et =
+vue d=C3=A9gag=C3=A9e</strong></span></p><p style=3D"box-sizing: border-box=
+; line-height: inherit; margin: 0; mso-line-height-alt: 36px;"><span style=
+=3D"box-sizing: border-box; word-break: break-word; font-size: 20px;"><stro=
+ng style=3D"box-sizing: border-box;">CHF 1,190,000</strong></span></p><p st=
+yle=3D"box-sizing: border-box; line-height: inherit; margin: 0; mso-line-he=
+ight-alt: 36px;"> 1000 Lausanne 27 </p><p style=3D"box-sizing: border-box; =
+line-height: inherit; margin: 0; mso-line-height-alt: 36px;">4.5 rooms | 11=
+5 m&sup2;</p></div></div></td></tr></table><table class=3D"html_block block=
+-2" width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D=
+"presentation" style=3D"box-sizing: border-box; mso-table-lspace: 0; mso-ta=
+ble-rspace: 0; mso-hide: all; display: none; max-height: 0; overflow: hidde=
+n;"><tr style=3D"box-sizing: border-box;"><td class=3D"pad" style=3D"box-si=
+zing: border-box;"> <div style=3D"box-sizing: border-box; font-family: Aria=
+l,'Helvetica Neue',Helvetica,sans-serif; text-align: center;" align=3D"cent=
+er"><!--[if false]><!--><!--<![endif]--></div></td></tr></table><table clas=
+s=3D"button_block block-5" width=3D"100%" border=3D"0" cellpadding=3D"0" ce=
+llspacing=3D"0" role=3D"presentation" style=3D"box-sizing: border-box; mso-=
+table-lspace: 0; mso-table-rspace: 0; mso-hide: all; display: none; max-hei=
+ght: 0; overflow: hidden;"><tr style=3D"box-sizing: border-box;"><td class=
+=3D"pad" style=3D"box-sizing: border-box; padding-top: 5px;" align=3D"left"=
+><a href=3D"https://links.comparis.ch/s/c/t_EXaaw_GXJALqB66BoiaAetCOFa2u3b7=
+-Ur68Q0ja-XXYTsjKx0l_buvrV6gtyfWGptwZInRc8theiEL6yUfvL3J_1ZBxelmnhldsM7hGlC=
+TGEX2FfvIeZEn9eQxcwNRyALdt8Gtlx9fGveLfSY_DY9zJ4F0L6Uxz8IOtRdBJKZhB6MPHpm9hd=
+bd3U07yXjvsJH4PXvOOy9jpvCbLk0uwakZn-VaHFQ5UuSvyKYV6S-l2w0cFh9kAdo7sDT76uvUX=
+fIyU27vPsQ06jfC-DCYzdWiAMP0MVPpVcb5JhS2xpCorx18DI7r6AEKxk3VXDFiUO2iYm3g1wbx=
+f_Ptw2HsYGnOlyLaFPZItatE5c6-JhATYz3KEwUVadQ1UbvdclUs98NziFqYcRAhHxMqBs5no9w=
+NQ1qlx77Pr363i5mI03s0wyC9EivE4HWD99s5wGeM0TjIHXcfvDk5RwXM4zban9IcCoGnEhAr_u=
+JAoLW3ZSjH3tdXt46qedCWFGC4NRBRBllAC8vTA0oLLrhfEzJBq4lBJuWhDWdJmR86Z-pmmFL8k=
+xi1i0oddQvytmU0TZMvSgq46EIa1_ZHzFpLnGUZKze18sEbYNTxs7bSzmjbZXKmIpveN0jFUVm8=
+ex_YynaPqNIcf2xPJKOhY7lgOye047N6yUBE101xqTOnI-WTb3MBb2XfiBwEBPH95MXmG6jIbb6=
+zMxOeKoddF8YhRz90U5D0J6Wtmsh1OTc/3CP-1A3SYkVh1NGZ46PTkDeJAb4mHDUD/25" targe=
+t=3D"_blank" style=3D"box-sizing: border-box; color: #ffffff; text-decorati=
+on: none;"><!--[if mso]><v:roundrect xmlns:v=3D"urn:schemas-microsoft-com:v=
+ml" xmlns:w=3D"urn:schemas-microsoft-com:office:word" href=3D"https://links=
+.comparis.ch/s/c/c5ZZKrMOLv2r6xCmjouxbRvCgavZHDJYADGYz9sG5wH5DunSJ2g1q4V5x=
+dwm69GPLLAwrcYzwIy0Hps_qDz6138Cc0u-9E5I81YW8Y-x8UgE6rtW_XKaCN_zdoHzHexo0kAx=
+S-5YkiP7rbROzwdRCeiBGPWAaIGRZP8rz6VKVpHJYPjr89sjI45UR-whAAR8NdMuNB_nYzcuohC=
+Gj7VkmI6n4FZ9Ty1ZSHSyt3BKWBay7Gv8Jn_kzno9pMdnhJhBI83tX__yefynKUfpIUaVYe22sB=
+LwHyeWEqhXX_PI7unxSbiHnLL7ssf7S__IPNKWn7o-vKnP3XoscHZqJP0smAsPZ55poJApoouGs=
+UptDcVD_B9M1XLTe9Kd03vAIk5AEDMnq6-p_PLYEJaKWs8ghugleBY1cv0PAYLoDDV0_surQfJW=
+DwafYmrOFxmgto5xUj7VFz1nnmfaLnhWnXDvgoJXVgoH7Q1t-5p4ihhpgPxvqn2-e3dHniyEYFV=
+CmRUY1Frh-IGU2R5wMlT9uxd37247O-BS_gibMO-W2EboUPRu69YbEoBEMQHBXwkyNRKg5kCypJ=
+dZdHEJZDuRUc0gJKhtad3svYdWiJ3u_PMl5v_32_q4tjx_Cpx-OQBV2vVNEW7GIbHJLnEAi_vQQ=
+cyZN3pk7GXqb03o0QJU_KQpCHFLUOLqMIfeWNX-gIUqA6bHFjN7zItJtSpC7wH8jPfe8OwPvyaV=
+p4nzALrm/24y-SwPEiONHXPvsx_nSkzKhZCyXHFCG/25" style=3D"height:42px;width:39=
+4px;v-text-anchor:middle;" arcsize=3D"5%" fillcolor=3D"#017b4f"> <v:stroke =
+dashstyle=3D"Solid" weight=3D"0px" color=3D"#017b4f"/> <w:anchorlock/> <v:t=
+extbox inset=3D"0px,0px,0px,0px"> <center dir=3D"false" style=3D"color:#fff=
+fff;font-family:sans-serif;font-size:16px"><![endif]--> <span class=3D"butt=
+on" style=3D"box-sizing: border-box; background-color: #017b4f; mso-shading=
+: transparent; border-bottom: 0px solid transparent; border-left: 0px solid=
+ transparent; border-radius: 2px; border-right: 0px solid transparent; bord=
+er-top: 0px solid transparent; color: #ffffff; display: inline-block; font-=
+family: Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size: 16px; fo=
+nt-weight: 400; mso-border-alt: none; padding-bottom: 5px; padding-top: 5px=
+; padding-left: 0px; padding-right: 0px; text-align: center; width: 100%; w=
+ord-break: keep-all; letter-spacing: normal;"><span style=3D"box-sizing: bo=
+rder-box; word-break: break-word; line-height: 32px;"><strong style=3D"box-=
+sizing: border-box;">More information</strong></span></span> <!--[if mso]><=
+/center></v:textbox></v:roundrect><![endif]--></a></td></tr></table></td></=
+tr></tbody></table></td></tr></tbody></table><!--<![endif]--><table class=
+=3D"row row-6" align=3D"center" width=3D"100%" border=3D"0" cellpadding=3D"=
+0" cellspacing=3D"0" role=3D"presentation" style=3D"box-sizing: border-box;=
+ mso-table-lspace: 0; mso-table-rspace: 0;"><tbody style=3D"box-sizing: bor=
+der-box;"><tr style=3D"box-sizing: border-box;"><td style=3D"box-sizing: bo=
+rder-box;"><table class=3D"row-content stack" align=3D"center" border=3D"0"=
+ cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"box-siz=
+ing: border-box; mso-table-lspace: 0; mso-table-rspace: 0; color: #000; wid=
+th: 700px; margin: 0 auto;" width=3D"700"><tbody style=3D"box-sizing: borde=
+r-box;"><tr style=3D"box-sizing: border-box;"><td class=3D"column column-1"=
+ width=3D"100%" style=3D"box-sizing: border-box; mso-table-lspace: 0; mso-t=
+able-rspace: 0; font-weight: 400; text-align: left; padding-bottom: 5px; pa=
+dding-left: 7px; padding-right: 7px; padding-top: 5px; vertical-align: top;=
+" align=3D"left" valign=3D"top"><table class=3D"divider_block block-1" widt=
+h=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"present=
+ation" style=3D"box-sizing: border-box; mso-table-lspace: 0; mso-table-rspa=
+ce: 0;"><tr style=3D"box-sizing: border-box;"><td class=3D"pad" style=3D"bo=
+x-sizing: border-box; padding-top: 10px; padding-bottom: 10px;" align=3D"ce=
+nter"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"prese=
+ntation" width=3D"100%" style=3D"box-sizing: border-box; mso-table-lspace: =
+0; mso-table-rspace: 0;"><tr style=3D"box-sizing: border-box;"><td class=3D=
+"divider_inner" style=3D"box-sizing: border-box; font-size: 1px; line-heigh=
+t: 1px; border-top: 1px solid #ccc;"><span style=3D"box-sizing: border-box;=
+ word-break: break-word;">&#8202;</span></td></tr></table></td></tr></table=
+></td></tr></tbody></table></td></tr></tbody></table><table class=3D"row ro=
+w-7" align=3D"center" width=3D"100%" border=3D"0" cellpadding=3D"0" cellspa=
+cing=3D"0" role=3D"presentation" style=3D"box-sizing: border-box; mso-table=
+-lspace: 0; mso-table-rspace: 0;"><tbody style=3D"box-sizing: border-box;">=
+<tr style=3D"box-sizing: border-box;"><td style=3D"box-sizing: border-box;"=
+><table class=3D"row-content stack" align=3D"center" border=3D"0" cellpaddi=
+ng=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"box-sizing: borde=
+r-box; mso-table-lspace: 0; mso-table-rspace: 0; color: #000; width: 700px;=
+ margin: 0 auto;" width=3D"700"><tbody style=3D"box-sizing: border-box;"><t=
+r style=3D"box-sizing: border-box;"><td class=3D"column column-1" width=3D"=
+100%" style=3D"box-sizing: border-box; mso-table-lspace: 0; mso-table-rspac=
+e: 0; font-weight: 400; text-align: left; vertical-align: top;" align=3D"le=
+ft" valign=3D"top"><table class=3D"html_block block-1" width=3D"100%" borde=
+r=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"=
+box-sizing: border-box; mso-table-lspace: 0; mso-table-rspace: 0;"><tr styl=
+e=3D"box-sizing: border-box;"><td class=3D"pad" style=3D"box-sizing: border=
+-box;"><div style=3D"box-sizing: border-box; font-family: Arial,'Helvetica =
+Neue',Helvetica,sans-serif; text-align: center;" align=3D"center"></div></t=
+d></tr></table></td></tr></tbody></table></td></tr></tbody> </table><table =
+class=3D"row row-4 mobile_hide" align=3D"center" width=3D"100%" border=3D"0=
+" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"box-si=
+zing: border-box; mso-table-lspace: 0; mso-table-rspace: 0;"><tbody style=
+=3D"box-sizing: border-box;"><tr style=3D"box-sizing: border-box;"><td styl=
+e=3D"box-sizing: border-box;"><table class=3D"row-content stack" align=3D"c=
+enter" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentatio=
+n" style=3D"box-sizing: border-box; mso-table-lspace: 0; mso-table-rspace: =
+0; color: #000; width: 700px; margin: 0 auto;" width=3D"700"><tbody style=
+=3D"box-sizing: border-box;"><tr style=3D"box-sizing: border-box;"><td clas=
+s=3D"column column-1" width=3D"41.666666666666664%" style=3D"box-sizing: bo=
+rder-box; mso-table-lspace: 0; mso-table-rspace: 0; font-weight: 400; text-=
+align: left; padding-bottom: 5px; padding-left: 7px; padding-right: 7px; pa=
+dding-top: 5px; vertical-align: top;" align=3D"left" valign=3D"top"><table =
+class=3D"image_block block-1" width=3D"100%" border=3D"0" cellpadding=3D"0"=
+ cellspacing=3D"0" role=3D"presentation" style=3D"box-sizing: border-box; m=
+so-table-lspace: 0; mso-table-rspace: 0;"><tr style=3D"box-sizing: border-b=
+ox;"><td class=3D"pad" style=3D"box-sizing: border-box; width: 100%;" align=
+=3D"center" width=3D"100%"><div style=3D"box-sizing: border-box; max-width:=
+ 277.667px;"><a href=3D"https://links.comparis.ch/s/c/1pEmsZXEIU8GoH34Mr-4u=
+ib0E4vb-cLcCTvhAAkAKbi5RHsR-DSiKDz2bLcIGnQ80Mz5fbhwb0cYyY7z_b5uDWvXpxvoPQ0W=
+Ohv9g8nIn0m0qNM5FJjadARzsB8zcA8oJhotZpWJgQrS2yt9SDecucKGyKfqbhtds9QdCHb6Fxw=
+jBh5Iu4ZwYK_qB2CevDEIy_q_PNFA9394_rA560BJ06y0XMFOJoD4kuDYzbj_Ac2CLDwDziIw19=
+IxF2lImXdbAAC0e_tdHcH03IxJpaZIKkZ2esLTyKF_IpBvWeTa2T7WC6NVjSHngX0VQM2JWzz0v=
+j-BJwGbb-vcCWf2N3FOYqiVdLEj1tK5OO4t51MgadkygFt3KKB0xICfyoXVDpdHs3myV1sb_Von=
+CDh29ogKyt3n9Lswu3sTukLYq9pOJvkLn7rQESXi9GdT7FyU_Ue-K4_Ld5WcUouOf2i9-kxu-01=
+7qE9QocbAxWi5P_8ssFOUNLxKfAC_wYiH4kLK5IqZ2JJLe4VxRp2wgEKiRn7JIrumVIsTzLBfxU=
+I03TxLjcroLYLVLP87G1iCIIkbthli4pJa5dRYFztQCf_USjgtsCrTT29YRXrpwGuTQkK-I_m6b=
+yYBqNAoa2kdNIoj0mQ6aTpxduJbNlM5aSAT07FJkiwu8hHg9-KIvaw2HdV-hSZPn4WnVMmCAHCz=
+oPIl7PGjPmpFMWs8YNRRrcgqetMnkIqwJOKW5LxLXy_b/_5wZYdUgY0_dqH5IIvi8EobGwnC9rO=
+WP/25" target=3D"_blank" style=3D"box-sizing: border-box;"><img src=3D"http=
+s://mapl-assets.b-cdn.net/immobilien/images/datacollect/b12bfea0-481f-416d-=
+5c61-2ffacd406861.jpg" style=3D"box-sizing: border-box; display: block; hei=
+ght: auto; border: 0; width: 100%;" width=3D"277.667" alt=3D"L&#x27;Or=C3=
+=A9e du Rogin, 6 appartements Minergie de 4.5 pi=C3=A8ces" title=3D"L&#x27;=
+Or=C3=A9e du Rogin, 6 appartements Minergie de 4.5 pi=C3=A8ces" height=3D"a=
+uto"></a></div></td></tr></table></td><td class=3D"column column-2" width=
+=3D"58.333333333333336%" style=3D"box-sizing: border-box; mso-table-lspace:=
+ 0; mso-table-rspace: 0; font-weight: 400; text-align: left; padding-bottom=
+: 5px; padding-left: 7px; padding-right: 7px; padding-top: 5px; vertical-al=
+ign: top;" align=3D"left" valign=3D"top"><table class=3D"text_block block-1=
+" width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"p=
+resentation" style=3D"box-sizing: border-box; mso-table-lspace: 0; mso-tabl=
+e-rspace: 0; word-break: break-word;"><tr style=3D"box-sizing: border-box;"=
+><td class=3D"pad" style=3D"box-sizing: border-box; padding-bottom: 5px; pa=
+dding-left: 20px; padding-right: 10px;"><div style=3D"box-sizing: border-bo=
+x; font-family: sans-serif;"><div class style=3D"box-sizing: border-box; fo=
+nt-size: 12px; font-family: Arial,'Helvetica Neue',Helvetica,sans-serif; ms=
+o-line-height-alt: 21.6px; color: #555; line-height: 1.8;"><p style=3D"box-=
+sizing: border-box; line-height: inherit; margin: 0; mso-line-height-alt: 2=
+8.8px;"><span style=3D"box-sizing: border-box; word-break: break-word; font=
+-size: 16px;"><strong style=3D"box-sizing: border-box;">L&#x27;Or=C3=A9e du=
+ Rogin, 6 appartements Minergie de 4.5 pi=C3=A8ces</strong></span></p><p st=
+yle=3D"box-sizing: border-box; line-height: inherit; margin: 0; mso-line-he=
+ight-alt: 36px;"><span style=3D"box-sizing: border-box; word-break: break-w=
+ord; font-size: 20px;"><strong style=3D"box-sizing: border-box;">CHF 960,00=
+0</strong></span></p><p style=3D"box-sizing: border-box; line-height: inher=
+it; margin: 0; mso-line-height-alt: 36px;"> 1003 Lausanne </p><p style=3D"b=
+ox-sizing: border-box; line-height: inherit; margin: 0; mso-line-height-alt=
+: 36px;">4.5 rooms | 110 m&sup2;</p></div></div></td></tr></table><table cl=
+ass=3D"html_block block-2" width=3D"100%" border=3D"0" cellpadding=3D"0" ce=
+llspacing=3D"0" role=3D"presentation" style=3D"box-sizing: border-box; mso-=
+table-lspace: 0; mso-table-rspace: 0;"><tr style=3D"box-sizing: border-box;=
+"><td class=3D"pad" style=3D"box-sizing: border-box;"><div style=3D"box-siz=
+ing: border-box; font-family: Arial,'Helvetica Neue',Helvetica,sans-serif; =
+text-align: center;" align=3D"center"></div></td></tr></table><table class=
+=3D"button_block block-5" width=3D"100%" border=3D"0" cellpadding=3D"0" cel=
+lspacing=3D"0" role=3D"presentation" style=3D"box-sizing: border-box; mso-t=
+able-lspace: 0; mso-table-rspace: 0;"><tr style=3D"box-sizing: border-box;"=
+><td class=3D"pad" style=3D"box-sizing: border-box; padding-left: 10px; pad=
+ding-right: 10px;" align=3D"center"><a href=3D"https://links.comparis.ch/s/=
+c/2PI1XTVz1LrX5irgYImIvr1gbrfL5Dx2pChW7zE_n9OeCRkJMEMfwuR5gOSWKu2F-uk6EbiZX=
+_EGJWswaT7HbEfQiNVIolhmeLReTnQreAQfMr4VTDJJtchKjmLa7jWeK1h-Dlh1RAT-4IKESOl1=
+wcz4_UHutI4SYKyhINaZhG6sOhGSMA6JjhRjAdvhdMuUY0_Dq9sIYGBVp8Fpyd_qXf012fRwt7_=
+CspIPDYcTfJJ38DFTuIr61iEyLeU2ChoG6MzEixMal2ndakArJz5NuD4nZI3ztWBP3VMjHBLhaU=
+hVo9YVfWYSbO3EwgGYmwku5pJNg_o0rgq_E_C9pR5iriiyHffg9f1-UySZ_sqO-MrCbA1epTLsG=
+JCiMWLVY1aRyN1_sWjMvPULTd6-dU1h776XOaxBfNyrPiepAtS2Bf_nKtamI7giWrmWiYNcSPUq=
+W2xQ_uCF6hSBs1HCF3GPELAtJ43MMjG0AiOPTqV_1nuShticaupwuVvTllpLDGCUryKcpmp1otK=
+CkE1L9Q8LO5-zdV3YcEv4hgUBVHbD61-oAMI5MBmiFUsMQqHtFQqSJOn1m8GXH0n5Zfl1Jf3xrH=
+yu-q021q0Viq9-4APCWLXFhDELQu28eQK-R0wbeG_S6qu9jIq3wXYnLhKUhip276uJlmcVxXUG4=
+TtDQD-XIRv4LG1HE3pMwHJczwxf2gV02F-OESZcINdQncqAX6RfPe3RHxGHkiIvxys3/nZYsNtT=
+6ID8Pv1clP6AUWrkbDfnN1_ep/25" target=3D"_blank" style=3D"box-sizing: border=
+-box; color: #ffffff; text-decoration: none;"> <!--[if mso]><v:roundrect xm=
+lns:v=3D"urn:schemas-microsoft-com:vml" xmlns:w=3D"urn:schemas-microsoft-co=
+m:office:word" href=3D"https://links.comparis.ch/s/c/lD9yGXW5PgLiPYnefVHVU9=
+AMJa2Eu9eMjnrvJ3SECgjsdB1hy0v2wJ_NM-RFXzCVf8jgccOusB9QQya-uGRc9vwMg77S2RrwZ=
+fLxF1Wsd2ReNMl7z-0kcFKKY-LQp13CB78jbWt1PfLPVjyhtw_N_VPJGe6ndQSbPnaF-kjceFMp=
+LmUdKzq82FmnE0xe4jBBfiJ3nuPt6DgQNuCEVdGiQTT5hyjr0LbyP_yQfERz3vbbgPPsrfh61H8=
+9cBV-zq6AsOq-81DHFFenTRFLr_DWlf75LME77gi1PGjLnZa0JBoCGhDsF9QlPHZgSkZw0oZWWR=
+h1fKnwgKS0t_dT8R41Ij24dpln39XgVWHuFxas-GadTQkyp_oEwApwVUdPgE3TJcSdToC1jli8U=
+FQylLhAHBPdzzMycAqeVoTDRNnA3h8ahk3oNWtR9aeQN4AmVMl9EwMf9S5iSTrxrCJKmwRzuJvM=
+Tb44ZCltoavTntYz8lSLWUQCDsLBhc72PN_RTEU2E-mapwiu_jRctvd3sgCcaPIE13RtZshY2Sb=
+YyTXjMOOHUEie0h7_iuHGlzsVGMEHJVjTtNkktIO4PBVrM61TZ1aLQNDZdMvcSOnEYauwyVrh3U=
+9PKGvWCs-AFGj6e9ekQnOMtn0GFQmLs9fTIgjZgBkBrdEETxpvxioyYyQosqu9cTFK5aGXIvsnL=
+6dF7RkcBWdSohU_OJTtXiT4tiG-l26WCkwwCiVkPIC_/ShZqehQ4prcMh96sI2zc5rnDIs2c5KT=
+e/25" style=3D"height:42px;width:374px;v-text-anchor:middle;" arcsize=3D"5%=
+" fillcolor=3D"#017b4f"> <v:stroke dashstyle=3D"Solid" weight=3D"0px" color=
+=3D"#017b4f"/> <w:anchorlock/> <v:textbox inset=3D"0px,0px,0px,0px"> <cente=
+r dir=3D"false" style=3D"color:#ffffff;font-family:sans-serif;font-size:16p=
+x"><![endif]--> <span class=3D"button" style=3D"box-sizing: border-box; bac=
+kground-color: #017b4f; mso-shading: transparent; border-bottom: 0px solid =
+transparent; border-left: 0px solid transparent; border-radius: 2px; border=
+-right: 0px solid transparent; border-top: 0px solid transparent; color: #f=
+fffff; display: inline-block; font-family: Arial, 'Helvetica Neue', Helveti=
+ca, sans-serif; font-size: 16px; font-weight: 400; mso-border-alt: none; pa=
+dding-bottom: 5px; padding-top: 5px; padding-left: 20px; padding-right: 20p=
+x; text-align: center; width: 100%; word-break: keep-all; letter-spacing: n=
+ormal;"><span style=3D"box-sizing: border-box; word-break: break-word; line=
+-height: 32px;"><strong style=3D"box-sizing: border-box;">More information<=
+/strong></span></span> <!--[if mso]></center></v:textbox></v:roundrect><![e=
+ndif]--></a></td></tr></table></td></tr></tbody></table></td></tr></tbody><=
+/table><!--[if !mso]><!--><table class=3D"row row-5 desktop_hide" align=3D"=
+center" width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" rol=
+e=3D"presentation" style=3D"box-sizing: border-box; mso-table-lspace: 0; ms=
+o-table-rspace: 0; mso-hide: all; display: none; max-height: 0; overflow: h=
+idden;"><tbody style=3D"box-sizing: border-box;"><tr style=3D"box-sizing: b=
+order-box;"><td style=3D"box-sizing: border-box;"><table class=3D"row-conte=
+nt stack" align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0"=
+ role=3D"presentation" style=3D"box-sizing: border-box; mso-table-lspace: 0=
+; mso-table-rspace: 0; mso-hide: all; display: none; max-height: 0; overflo=
+w: hidden; color: #000; width: 700px; margin: 0 auto;" width=3D"700"><tbody=
+ style=3D"box-sizing: border-box;"><tr style=3D"box-sizing: border-box;"><t=
+d class=3D"column column-1" width=3D"41.666666666666664%" style=3D"box-sizi=
+ng: border-box; mso-table-lspace: 0; mso-table-rspace: 0; font-weight: 400;=
+ text-align: left; padding-bottom: 5px; padding-left: 7px; padding-right: 7=
+px; padding-top: 5px; vertical-align: top;" align=3D"left" valign=3D"top"><=
+table class=3D"image_block block-1" width=3D"100%" border=3D"0" cellpadding=
+=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"box-sizing: border-=
+box; mso-table-lspace: 0; mso-table-rspace: 0; mso-hide: all; display: none=
+; max-height: 0; overflow: hidden;"><tr style=3D"box-sizing: border-box;"><=
+td class=3D"pad" style=3D"box-sizing: border-box; width: 100%;" align=3D"ce=
+nter" width=3D"100%"><div class=3D"fullWidth" style=3D"box-sizing: border-b=
+ox; max-width: 277px;"><a href=3D"https://links.comparis.ch/s/c/q44zL9gwc01=
+IZODNiPz84StyMPyGjZPqk6_F7Rc06REDzpBZkk_A1gplsnp9EWKHFhFhBSA54K-hJb31-_3bfc=
+Iz4Z9_jo9xv_Me-a3SDxgGyB0X0ACtzTZe-AvRvhImb9ypnLuVvtb7hiZjIfKRb3-pTNpmBG96K=
+T5QRdBhHD7hAu6ZVLVPwVX_h-ttl1YojaNipfTPAHagDMbrx2PJb5R6uwUAKrvgMahloiUy7cgj=
+-t_cfq_d0vihAta9YyATh74qzwhfuTryLtbQY6kt_0qs7kG8Bws9ExOKyK0r8beEDH-qw_K1ouo=
+okeiwk1R1cCOZY5EiTEsfPUxZCe9tREmwW7JhV7iCIGEcx51p8apJ-GJVI2KicV_-RqKzHTYOYT=
+5ei8B7Mn2DxHN8HirkW7GBjT_D5HwH52w71eXIQyH4otBwW0J_GSkXLqlWiToSH9gSs4ZRHAa37=
+XuCde39bYZW4ARpyuidVJTTNN-zcC08Q4t90c1eLwbQlufacj2Bqn1hbZjA1Co_H6PiwgFAcvpO=
+RuTvF1YUtaJY8EltDavRV0I-AT5WDaWf0Tpclh5ygVCAm-JEiyilYwmu5M_p2PhJyiIsGqAdnZX=
+b3MvBIicNlvp143jaA9dT3cT63PQ7_lRk3WWZ04fWuxMgdsaRxgUNPv1Ep3wgjM7PoVhQEt9PER=
+SEng-xlqfPIx0Vq_0iDCicT5tTE2UvrzaWMAJee-UnZrqKxoB_cz37/-S7GuGlKZBSgSraf005n=
+K2oCof61-pGT/25" target=3D"_blank" style=3D"box-sizing: border-box;"><img s=
+rc=3D"https://mapl-assets.b-cdn.net/immobilien/images/datacollect/b12bfea0-=
+481f-416d-5c61-2ffacd406861.jpg" style=3D"box-sizing: border-box; display: =
+block; height: auto; border: 0; width: 100%;" width=3D"277" alt=3D"L&#x27;O=
+r=C3=A9e du Rogin, 6 appartements Minergie de 4.5 pi=C3=A8ces" title=3D"L&#=
+x27;Or=C3=A9e du Rogin, 6 appartements Minergie de 4.5 pi=C3=A8ces" height=
+=3D"auto"></a></div></td></tr></table></td><td class=3D"column column-2" wi=
+dth=3D"58.333333333333336%" style=3D"box-sizing: border-box; mso-table-lspa=
+ce: 0; mso-table-rspace: 0; font-weight: 400; text-align: left; padding-bot=
+tom: 5px; padding-left: 7px; padding-right: 7px; padding-top: 5px; vertical=
+-align: top;" align=3D"left" valign=3D"top"><table class=3D"text_block bloc=
+k-1" width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=
+=3D"presentation" style=3D"box-sizing: border-box; mso-table-lspace: 0; mso=
+-table-rspace: 0; word-break: break-word; mso-hide: all; display: none; max=
+-height: 0; overflow: hidden;"><tr style=3D"box-sizing: border-box;"><td cl=
+ass=3D"pad" style=3D"box-sizing: border-box; padding-bottom: 5px;"><div sty=
+le=3D"box-sizing: border-box; font-family: sans-serif;"><div class style=3D=
+"box-sizing: border-box; font-size: 12px; font-family: Arial,'Helvetica Neu=
+e',Helvetica,sans-serif; mso-line-height-alt: 21.6px; color: #333; line-hei=
+ght: 1.8;"><p style=3D"box-sizing: border-box; line-height: inherit; margin=
+: 0; mso-line-height-alt: 28.8px;"> <span style=3D"box-sizing: border-box; =
+word-break: break-word; font-size: 16px;"><strong style=3D"box-sizing: bord=
+er-box;">L&#x27;Or=C3=A9e du Rogin, 6 appartements Minergie de 4.5 pi=C3=A8=
+ces</strong></span></p><p style=3D"box-sizing: border-box; line-height: inh=
+erit; margin: 0; mso-line-height-alt: 36px;"><span style=3D"box-sizing: bor=
+der-box; word-break: break-word; font-size: 20px;"><strong style=3D"box-siz=
+ing: border-box;">CHF 960,000</strong></span></p><p style=3D"box-sizing: bo=
+rder-box; line-height: inherit; margin: 0; mso-line-height-alt: 36px;"> 100=
+3 Lausanne </p><p style=3D"box-sizing: border-box; line-height: inherit; ma=
+rgin: 0; mso-line-height-alt: 36px;">4.5 rooms | 110 m&sup2;</p></div></div=
+></td></tr></table><table class=3D"html_block block-2" width=3D"100%" borde=
+r=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"=
+box-sizing: border-box; mso-table-lspace: 0; mso-table-rspace: 0; mso-hide:=
+ all; display: none; max-height: 0; overflow: hidden;"><tr style=3D"box-siz=
+ing: border-box;"><td class=3D"pad" style=3D"box-sizing: border-box;"> <div=
+ style=3D"box-sizing: border-box; font-family: Arial,'Helvetica Neue',Helve=
+tica,sans-serif; text-align: center;" align=3D"center"><!--[if false]><!-->=
+<!--<![endif]--></div></td></tr></table><table class=3D"button_block block-=
+5" width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"=
+presentation" style=3D"box-sizing: border-box; mso-table-lspace: 0; mso-tab=
+le-rspace: 0; mso-hide: all; display: none; max-height: 0; overflow: hidden=
+;"><tr style=3D"box-sizing: border-box;"><td class=3D"pad" style=3D"box-siz=
+ing: border-box; padding-top: 5px;" align=3D"left"><a href=3D"https://links=
+.comparis.ch/s/c/DCOQqRrZoZX1D6KpFkqNS3mEflG8TMOuCJtTogMhoJHDLipksWKi48V6Z=
+DRk-1V19gc09au55VIxc-7WgZ-pkC1086F8EVNhOgaIDPcbxwmymZ7XKoNNMBcrfOKdj1jtHSQ7=
+48FoixDeUOCQoBNVayyk6uuV_z_XqJrLAewwzvlEfjl77i338VVzWQHfg1ZC6slUF4UmTHGsrh1=
+UOpxi1zCjJxu8QQ1Ciog5PSc73ak8cw3DGVlh4HLafv34WNvdA24erkQDW4o3R-eepx1B2TpR-Q=
+JoqO1lpNLcRMqJQo41kdyLjBnoWk-9rBUgNVwpOhUTeu_UTpHSecifDei62AkAVduP5e0vov9sc=
+OsP1eqyVUnCcOIUPYMGp5m8pkkLSRNjoTKF-EC1RD0Lr9WDSD_nZsvHQoZHycJS0eDCYBA5mJIF=
+omvf9wRe0VEe3xOFAOGLhx1RJ47RMO1El-gfTikLP8DCfYjOUTZtprNHBJ3pGCl5tHnH_uVelBX=
+ePXsjk7TedrOhxi8fVkzqRk2bcRu9fR5A95UVxy194rPKDeva6QSttyqLmSjqdVx9NDbveUJ-8w=
+drg4G2B4YmdOLpxPM7RCWJJFYyvn7anwmJggIadmbkER5gTbJADIEXYVVHZ6O0RmSCrXpUBEkxC=
+Ehte6WoZ9KjberokNxOHNTFwIHs0oUyqtwMI27xh8ktW8o143S1huVv5r3rl4FfPVWBQUElUR0-=
+iwu9cb71/m7Cxwjx1El76fpK5k0LacBcwiiq2L_wD/25" target=3D"_blank" style=3D"bo=
+x-sizing: border-box; color: #ffffff; text-decoration: none;"><!--[if mso]>=
+<v:roundrect xmlns:v=3D"urn:schemas-microsoft-com:vml" xmlns:w=3D"urn:schem=
+as-microsoft-com:office:word" href=3D"https://links.comparis.ch/s/c/GHNSh5R=
+roFyxzP8NEGv50d1BFxli1DhnmXTGL3U5Wr5SmER0yOTEuptiOTbtFZtENOEnEHM4XUh5np6hjv=
+mWwu8uaeJgECi_P-mwiyxrtZUk6wXyYuj0tyPrC4F8VAUwfCi9EqeJnDUN-bMaYR89NLQm_TPf1=
+BCVkRmeWnUw4_Q5MspqIwCyfd1gGHAEMsKKY1RTPJLouXyam1Nb1pR7aidCQCv7MV9oZCnVpBpT=
+Tx_EteyTkNi0Qovmo40u4bZ2PksLJKye2kV_1uAwgo2020188DodBDkTTaqU9cBTb0DYQFPdvIG=
+Ni3RU5seZPXY6aWkNNzruqaSDeYlzdrBoElQunTkeMxbNB_SuzU40kCFMuVqtyNignk2HpuskvF=
+qIP-NP8QnvkpEXZ6W-hLt6JULsu05HuTcfxDCoBed00TD8QGBqo-TeEzNtFlqohSxNNY6A5dSVD=
+IppLuTI-f7SZ3nZ5bo0XyvgNs8Am-TsVvxtwuIqN5XyF8sZbtKEpWZemFtwnTCyeHXZh2csQG82=
+QK3dTsccNrVkCXmVWPjSxaAyxk8Cp1vvCnYn01CJ1FcgfHQVF8zbBwnoYb3viZkUez2ex4IE4Qs=
+m_D_scot5QI2gUGUO3D5GZINVUDsDaQ1bLdC088aEIRPoI2NdfzhRrKckE4BD_IdL7F4AD0qtUj=
+ItJwjqGrrGVmdDZThE7ANwObrpTFn5onXJoEsK_V-v4288sGjSFQcLkjDx/opMR1v5VvD95xHPK=
+sgSBDThLM-GEe62K/25" style=3D"height:42px;width:394px;v-text-anchor:middle;=
+" arcsize=3D"5%" fillcolor=3D"#017b4f"> <v:stroke dashstyle=3D"Solid" weigh=
+t=3D"0px" color=3D"#017b4f"/> <w:anchorlock/> <v:textbox inset=3D"0px,0px,0=
+px,0px"> <center dir=3D"false" style=3D"color:#ffffff;font-family:sans-seri=
+f;font-size:16px"><![endif]--> <span class=3D"button" style=3D"box-sizing: =
+border-box; background-color: #017b4f; mso-shading: transparent; border-bot=
+tom: 0px solid transparent; border-left: 0px solid transparent; border-radi=
+us: 2px; border-right: 0px solid transparent; border-top: 0px solid transpa=
+rent; color: #ffffff; display: inline-block; font-family: Arial, 'Helvetica=
+ Neue', Helvetica, sans-serif; font-size: 16px; font-weight: 400; mso-borde=
+r-alt: none; padding-bottom: 5px; padding-top: 5px; padding-left: 0px; padd=
+ing-right: 0px; text-align: center; width: 100%; word-break: keep-all; lett=
+er-spacing: normal;"><span style=3D"box-sizing: border-box; word-break: bre=
+ak-word; line-height: 32px;"><strong style=3D"box-sizing: border-box;">More=
+ information</strong></span></span> <!--[if mso]></center></v:textbox></v:r=
+oundrect><![endif]--></a></td></tr></table></td></tr></tbody></table></td><=
+/tr></tbody></table><!--<![endif]--><table class=3D"row row-6" align=3D"cen=
+ter" width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=
+=3D"presentation" style=3D"box-sizing: border-box; mso-table-lspace: 0; mso=
+-table-rspace: 0;"><tbody style=3D"box-sizing: border-box;"><tr style=3D"bo=
+x-sizing: border-box;"><td style=3D"box-sizing: border-box;"><table class=
+=3D"row-content stack" align=3D"center" border=3D"0" cellpadding=3D"0" cell=
+spacing=3D"0" role=3D"presentation" style=3D"box-sizing: border-box; mso-ta=
+ble-lspace: 0; mso-table-rspace: 0; color: #000; width: 700px; margin: 0 au=
+to;" width=3D"700"><tbody style=3D"box-sizing: border-box;"><tr style=3D"bo=
+x-sizing: border-box;"><td class=3D"column column-1" width=3D"100%" style=
+=3D"box-sizing: border-box; mso-table-lspace: 0; mso-table-rspace: 0; font-=
+weight: 400; text-align: left; padding-bottom: 5px; padding-left: 7px; padd=
+ing-right: 7px; padding-top: 5px; vertical-align: top;" align=3D"left" vali=
+gn=3D"top"><table class=3D"divider_block block-1" width=3D"100%" border=3D"=
+0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"box-s=
+izing: border-box; mso-table-lspace: 0; mso-table-rspace: 0;"><tr style=3D"=
+box-sizing: border-box;"><td class=3D"pad" style=3D"box-sizing: border-box;=
+ padding-top: 10px; padding-bottom: 10px;" align=3D"center"><table border=
+=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" width=3D"1=
+00%" style=3D"box-sizing: border-box; mso-table-lspace: 0; mso-table-rspace=
+: 0;"><tr style=3D"box-sizing: border-box;"><td class=3D"divider_inner" sty=
+le=3D"box-sizing: border-box; font-size: 1px; line-height: 1px; border-top:=
+ 1px solid #ccc;"><span style=3D"box-sizing: border-box; word-break: break-=
+word;">&#8202;</span></td></tr></table></td></tr></table></td></tr></tbody>=
+</table></td></tr></tbody></table><table class=3D"row row-7" align=3D"cente=
+r" width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"=
+presentation" style=3D"box-sizing: border-box; mso-table-lspace: 0; mso-tab=
+le-rspace: 0;"><tbody style=3D"box-sizing: border-box;"><tr style=3D"box-si=
+zing: border-box;"><td style=3D"box-sizing: border-box;"><table class=3D"ro=
+w-content stack" align=3D"center" border=3D"0" cellpadding=3D"0" cellspacin=
+g=3D"0" role=3D"presentation" style=3D"box-sizing: border-box; mso-table-ls=
+pace: 0; mso-table-rspace: 0; color: #000; width: 700px; margin: 0 auto;" w=
+idth=3D"700"><tbody style=3D"box-sizing: border-box;"><tr style=3D"box-sizi=
+ng: border-box;"><td class=3D"column column-1" width=3D"100%" style=3D"box-=
+sizing: border-box; mso-table-lspace: 0; mso-table-rspace: 0; font-weight: =
+400; text-align: left; vertical-align: top;" align=3D"left" valign=3D"top">=
+<table class=3D"html_block block-1" width=3D"100%" border=3D"0" cellpadding=
+=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"box-sizing: border-=
+box; mso-table-lspace: 0; mso-table-rspace: 0;"><tr style=3D"box-sizing: bo=
+rder-box;"><td class=3D"pad" style=3D"box-sizing: border-box;"><div style=
+=3D"box-sizing: border-box; font-family: Arial,'Helvetica Neue',Helvetica,s=
+ans-serif; text-align: center;" align=3D"center"></div></td></tr></table><t=
+able class=3D"html_block block-2" width=3D"100%" border=3D"0" cellpadding=
+=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"box-sizing: border-=
+box; mso-table-lspace: 0; mso-table-rspace: 0;"><tr style=3D"box-sizing: bo=
+rder-box;"><td class=3D"pad" style=3D"box-sizing: border-box;"><div style=
+=3D"box-sizing: border-box; font-family: Arial,'Helvetica Neue',Helvetica,s=
+ans-serif; text-align: center;" align=3D"center"></div></td></tr></table><t=
+able class=3D"text_block block-2" width=3D"100%" border=3D"0" cellpadding=
+=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"box-sizing: border-=
+box; mso-table-lspace: 0; mso-table-rspace: 0; word-break: break-word;"><tr=
+ style=3D"box-sizing: border-box;"><td class=3D"pad" style=3D"box-sizing: b=
+order-box;"><div style=3D"box-sizing: border-box; font-family: sans-serif;"=
+><div class style=3D"box-sizing: border-box; font-size: 12px; font-family: =
+Arial,'Helvetica Neue',Helvetica,sans-serif; mso-line-height-alt: 14.399999=
+999999999px; color: #555; line-height: 1.2;"><p style=3D"box-sizing: border=
+-box; line-height: inherit; margin: 0; font-size: 16px; mso-line-height-alt=
+: 14.399999999999999px;">&nbsp;</p><p style=3D"box-sizing: border-box; line=
+-height: inherit; margin: 0; font-size: 16px; mso-line-height-alt: 14.39999=
+9999999999px;">&nbsp;</p><p style=3D"box-sizing: border-box; line-height: i=
+nherit; margin: 0; font-size: 16px; mso-line-height-alt: 19.2px;"><span sty=
+le=3D"box-sizing: border-box; word-break: break-word; font-size: 16px;"><st=
+rong style=3D"box-sizing: border-box;">Your search criteria:</strong></span=
+></p><p style=3D"box-sizing: border-box; line-height: inherit; margin: 0; f=
+ont-size: 16px; mso-line-height-alt: 19.2px;"> <span style=3D"box-sizing: b=
+order-box; word-break: break-word; font-size: 16px;">Category:<strong style=
+=3D"box-sizing: border-box;"> Buy</strong> | Town or postcode:<strong style=
+=3D"box-sizing: border-box;"> lausanne</strong></span> </p><p style=3D"box-=
+sizing: border-box; line-height: inherit; margin: 0; font-size: 16px; mso-l=
+ine-height-alt: 14.399999999999999px;">&nbsp;</p></div></div></td></tr></ta=
+ble></td></tr></tbody></table></td></tr></tbody></table><table class=3D"row=
+ row-13 mobile_hide" align=3D"center" width=3D"100%" border=3D"0" cellpaddi=
+ng=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"box-sizing: borde=
+r-box; mso-table-lspace: 0; mso-table-rspace: 0;"><tbody style=3D"box-sizin=
+g: border-box;"><tr style=3D"box-sizing: border-box;"><td style=3D"box-sizi=
+ng: border-box;"><table class=3D"row-content" align=3D"center" border=3D"0"=
+ cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"box-siz=
+ing: border-box; mso-table-lspace: 0; mso-table-rspace: 0; color: #000; wid=
+th: 700px; margin: 0 auto;" width=3D"700"><tbody style=3D"box-sizing: borde=
+r-box;"><tr style=3D"box-sizing: border-box;"><td class=3D"column column-1"=
+ width=3D"41.666666666666664%" style=3D"box-sizing: border-box; mso-table-l=
+space: 0; mso-table-rspace: 0; font-weight: 400; text-align: left; padding-=
+bottom: 5px; padding-left: 7px; padding-right: 7px; padding-top: 5px; verti=
+cal-align: top;" align=3D"left" valign=3D"top"><table class=3D"icons_block =
+block-1" width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" ro=
+le=3D"presentation" style=3D"box-sizing: border-box; mso-table-lspace: 0; m=
+so-table-rspace: 0; text-align: left; line-height: 0;" align=3D"left"><tr s=
+tyle=3D"box-sizing: border-box;"><td class=3D"pad" style=3D"box-sizing: bor=
+der-box; vertical-align: middle; color: #017b4f; font-family: inherit; font=
+-size: 16px;" align=3D"left" valign=3D"middle"><!--[if vml]><table align=3D=
+"left" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"d=
+isplay:inline-block;padding-left:0px;padding-right:0px;mso-table-lspace: 0p=
+t;mso-table-rspace: 0pt;"><![endif]--><!--[if !vml]><!--><table class=3D"ic=
+ons-inner" style=3D"box-sizing: border-box; mso-table-lspace: 0; mso-table-=
+rspace: 0; display: inline-block; padding-left: 0; padding-right: 0;" cellp=
+adding=3D"0" cellspacing=3D"0" role=3D"presentation"><!--<![endif]--><tr st=
+yle=3D"box-sizing: border-box;"><td style=3D"box-sizing: border-box; vertic=
+al-align: middle; text-align: center; padding-top: 5px; padding-bottom: 5px=
+; padding-left: 5px; padding-right: 5px;" valign=3D"middle" align=3D"center=
+"><a href=3D"https://links.comparis.ch/s/c/XU16my9K2DAwhS0YjEZUs423KHqYAVko=
+l49IslkN8h8JkoeT5iI-UL9QWo_t4ZaukQpMzH9_T_s1UNPJVBCYxsT7EFNPQE_Xj7XZVl6YIQc=
+21tWa0Ai8E3MJ53pgGkrjGFUQVQA11OlqRruYmejhLcBJjAV_mBpbxOOpzF8saRx3dXwGK1dIP8=
+1qi7Xw3dvGTJUIZ-_8uRwYRrcvCwxKZJNGPF1IJaUSDtxfEVvTwvN0_vEdSK1d3eZw7on8EH6yk=
+MgHwH8FF0WLw-gqpaK50Gpbv6kxxdGj5N6MtQz61YXDByH-9NCgdiXC5dT6jcjsWyI33JEwu82q=
+alI8-7MP5-krasqdIkf1bzZGIXRUBUvfA_o58C1gn7YCbU7hhZUCjLcqvssDw24ApxdAkqfn5G5=
+iNAwo5FTOKzPM0Vh8SDmOAgiXtq4iNNo4StEK6vvXsJIvoK-J8rknMr5RLnVIfTirpU4C7VNvTR=
+hJtwbRjEBmyOJiH1ZqNhSNLFOZDQdnisUvUfaw6kWE7Z_ZIYsPmbXRJTULkeWSJPDCIU-DkU0rq=
+woyqIm-TAVbgRFjOxavW0dGYMlRlnR4NvuFZh9PNIwW4zi6w_3_uOs5P7NXK6eYFeFR7W1Kel_K=
+f1YC_utPJyJ5VdJJzsfmc9KjevMoE4DMSUok3VxOfSv9S-BGAel9quEQ8j_3qC6K5_TZtz46JUT=
+hdBMVirBx_1uEkln0-_JhW-dU2bNONEKJHaCdPkU9TUD8BvVXbX_PWTwfVg/HqA6ympUhCbEE-L=
+CNMtQL_dc_86tgV6_/25" target=3D"_self" title style=3D"box-sizing: border-bo=
+x; text-decoration: none;"><img class=3D"icon" alt src=3D"https://library.i=
+terable.com/2305/10565/736702d87e204573b76523726c7161f4-Edit.png" height=3D=
+"auto" width=3D"32" align=3D"center" style=3D"box-sizing: border-box; displ=
+ay: block; height: auto; margin: 0 auto; border: 0;"></a></td><td style=3D"=
+box-sizing: border-box; font-family: Arial,'Helvetica Neue',Helvetica,sans-=
+serif; font-size: 16px; font-weight: undefined; color: #017b4f; vertical-al=
+ign: middle; letter-spacing: normal; text-align: left; line-height: normal;=
+" valign=3D"middle" align=3D"left"> <a href=3D"https://links.comparis.ch/s/=
+c/ElYd5i3XFR5-tAYZkxF0soEEmymcKTDLxiReSYkV7OJPutUCj5hbO6s1jawySUtPYiAG7Q-rV=
+rrmkMyjRJgfFongC-pYvIoMxUJmsKEPeVKQGM1tLDY-v_zGIUSJwm7goPikttxDPK9SndcI7qtI=
+bV9c7-sSLNq_OoryMSfrb5qCuK4ISDrqprG85fSRe8xWHOW9VdU_2FqpNXiVw_30VdEoHFAdZzd=
+rpbZx580Q-LRnLQwby2_cJW1CM3Tf5Ec-sI-hGn823TCDYZOp5eyQe4D45Jw_fiyGWo9vZZXZPE=
+83eVyJRXys_piv8GYD2qTWD9PdgBkYTTfM_8vJWS1CMgwf5wP9p0LvEKA1zVwGdT7AFlnjRjYB_=
+60nK7OEw2wDDX9weGtWk9ImeJQ7u2PD_US8qVpQg-hbb06tJurpVnQBIjvFVnE5XzL_tAHsNXgf=
+BP8jJRtw1cnIWYBgOX2yG22jAxGJ94C884HxAxeyESpxlE8GsigXW1Rf7wI7fgiN4Kngb4f9-0U=
+1JEX8xezcG4ZDq83FjMaRA2k1l5LfzL6g-RzJhSGK30LIXUjgU5WqMA_jyQN1vjokuuDsJh72_V=
+HwSmHPBEOO-jOi9s46IM1pjmvqA6fOj-PouhJz9EVp1BaCjPaGrs0oP-kk-SDaUDXc6kweaxRR_=
+nQtQz88C0vYjsKfZRupJD-VoWx9g8xQyOyA9a4W44U94izy8TYAuihb6fqb_JZuVHVRuB1ycL5Q=
+goKWgd1yH9AnT-Qm3RA/V8QixkUCJFDrENGkootnxig-6Q6E-DES/25" target=3D"_self" t=
+itle style=3D"box-sizing: border-box; color: #017b4f; text-decoration: none=
+;">Manage search alerts</a></td></tr></table></td></tr></table></td><td cla=
+ss=3D"column column-2" width=3D"58.333333333333336%" style=3D"box-sizing: b=
+order-box; mso-table-lspace: 0; mso-table-rspace: 0; font-weight: 400; text=
+-align: left; padding-bottom: 5px; padding-left: 7px; padding-right: 7px; p=
+adding-top: 5px; vertical-align: top;" align=3D"left" valign=3D"top"><table=
+ class=3D"icons_block block-1" width=3D"100%" border=3D"0" cellpadding=3D"0=
+" cellspacing=3D"0" role=3D"presentation" style=3D"box-sizing: border-box; =
+mso-table-lspace: 0; mso-table-rspace: 0; text-align: left; line-height: 0;=
+" align=3D"left"><tr style=3D"box-sizing: border-box;"><td class=3D"pad" st=
+yle=3D"box-sizing: border-box; vertical-align: middle; color: #017b4f; font=
+-family: inherit; font-size: 16px;" align=3D"left" valign=3D"middle"><!--[i=
+f vml]><table align=3D"left" cellpadding=3D"0" cellspacing=3D"0" role=3D"pr=
+esentation" style=3D"display:inline-block;padding-left:0px;padding-right:0p=
+x;mso-table-lspace: 0pt;mso-table-rspace: 0pt;"><![endif]--><!--[if !vml]><=
+!--><table class=3D"icons-inner" style=3D"box-sizing: border-box; mso-table=
+-lspace: 0; mso-table-rspace: 0; display: inline-block; padding-left: 0; pa=
+dding-right: 0;" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation">=
+<!--<![endif]--><tr style=3D"box-sizing: border-box;"><td style=3D"box-sizi=
+ng: border-box; vertical-align: middle; text-align: center; padding-top: 5p=
+x; padding-bottom: 5px; padding-left: 5px; padding-right: 5px;" valign=3D"m=
+iddle" align=3D"center"><a href=3D"https://links.comparis.ch/s/c/VGtiYvS5KV=
+TAXUmBDLpT3hhexoKQcZRDSW7TPFqWHBxRP3n2lGyanZ7crWRIyzvIfwZTkU2TrmXyAVCNFc1In=
+At9O_xyzj5p5veFp7lbwr9Hmr07h0UFUoHMJ6aR7ihOUgOCaHKaVC-DMc-d74v93JySF1YscX9s=
+QFvgSdZODU9dhk8cRWdEC9bDTHAEEFxVrUeEGNmNR400C2UarP6WRHpFaUaPlTyzVutkm7U3NHN=
+a8jllikS2K-3v6D0EmzUEIOtdinFvkCYhBzfxb-ktKOIFtQrkx_qDy9EAu8pm0UvuEszlNEtdzW=
+oULpOfNkhI9CSRNX4lw70_yCxUMx_66DBl95iM3fz2YbNG9oQEr5ooyPLme6SHzcde8nJPxkejS=
+o51UNQrBIsXWUNH8YQbM7qi-XqEPiyVkdOZ7Rb9mBBE1tjD9YdDPAFMPKATdOFjxYyXwulEZ4wM=
+EZ-rmjXrqmIPE1hIFBzIQuoue2qvn3uL5suMdUMqC_ryA-rPO0xuAHAc9y8EFPwtH2zAflcZsKI=
+IqSeTBV3js-wcBukyhXKZzy0hui9heufkuPSpDtF8pmH3jhbI13lBMmQUzZp5jXtHxPK1XIQuIq=
+-qIrOTHCJZmgEaGWrJpTdnl1Ti6MUXyHuMtkRIUqrGD1tkbDCQxh_MAPcLHv29rluWOQzWUJTAi=
+pP7rPv2qDc3U8Zyzu54PnIFCK_YznxKddWkSL4zzrB8KMzFXNlBzeCn4xWSEEktb7bNTOJHQTPw=
+/NfliV7-Eyqv-GyRhU1rtOVjfNdvBirg3/25" target=3D"_self" title style=3D"box-s=
+izing: border-box; text-decoration: none;"><img class=3D"icon" alt src=3D"h=
+ttps://library.iterable.com/2305/10565/371f9adb3ddd4ca88a6047cba520b1ca-del=
+ete-1.png" height=3D"auto" width=3D"32" align=3D"center" style=3D"box-sizin=
+g: border-box; display: block; height: auto; margin: 0 auto; border: 0;"></=
+a></td><td style=3D"box-sizing: border-box; font-family: Arial,'Helvetica N=
+eue',Helvetica,sans-serif; font-size: 16px; font-weight: undefined; color: =
+#017b4f; vertical-align: middle; letter-spacing: normal; text-align: left; =
+line-height: normal;" valign=3D"middle" align=3D"left"> <a href=3D"https://=
+links.comparis.ch/s/c/vomPxHBTxc-EdxGmriBx-W6trOBh405KXWr1R5mjYAPcuSV5GXIcD=
+BXAaXrJFCWY8WHMZdoVpE1PHdlXf0p_dJHtcIkYVcU7ayhEx9FZh7hB-YvwzUWikc-tEHE5ph1O=
+uNIJRZoE8KV-LXdptj0kEDkkd6S4jo17S7yhk9vTlJKsuODxC0_qWi388JCVonCnVUPz3fdkn_Y=
+BgYKJavFpNCrCqzr3uwhhbqG0NTPE_0RM0AJUiSrBcMOCU2iKov0nqwkNb2AO_sbo3ZzZbRYqjm=
+t2N28pmuJU6oHl1O0DkL_QwslsJR_GHm0udq-GSbzCGYzVUaIrA157fs2t8oM8C9NjpDDy8j__y=
+JQaMJeUJAgR7QXAunpXbWrEKznb3fZtmhDUcxdnCHdfITRKC3r2LNV2QJZeksTBM2OHRXDHCQhk=
+yCFQedRwKQ5phdZs9Q33MOmWvpY6DfxCxWyfiKR08TmqxRbhWMELT-AXd3ZRjj_l84xIRgPbuZ3=
+LY8x-f0eyd0aw1zkM2Hy_Z4UhMmirJcwRIfEDG5IuqEHLrQIYqrtdK_LvE0kwwPANSVA9oSLSch=
+Mc9u1845LEZTJeIB76e54V294ffQ7bjP2xfG7soxeU_ygdfpafosx-8Kl0eh2fbrYg52fYsfjaD=
+wjwPtuC81IB-b226owXaRRfdKwRADIiNjZp-W-wkzXEU8D3O9xS3wHyKlpUzMNg_H70R1kAQuiE=
+YKMgi9ju9UUQFTPbxy_3iVXUjGiXO6_l/Q8clBu5MlYHUFP0ecc5L8fiC64HQtbfu/25" targe=
+t=3D"_self" title style=3D"box-sizing: border-box; color: #017b4f; text-dec=
+oration: none;">Delete search alert</a></td></tr></table></td></tr></table>=
+</td></tr></tbody></table></td></tr></tbody></table><!--[if !mso]><!--><tab=
+le class=3D"row row-14 desktop_hide" align=3D"center" width=3D"100%" border=
+=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"b=
+ox-sizing: border-box; mso-table-lspace: 0; mso-table-rspace: 0; mso-hide: =
+all; display: none; max-height: 0; overflow: hidden;"> <tbody style=3D"box-=
+sizing: border-box;"><tr style=3D"box-sizing: border-box;"><td style=3D"box=
+-sizing: border-box;"><table class=3D"row-content stack" align=3D"center" b=
+order=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=
+=3D"box-sizing: border-box; mso-table-lspace: 0; mso-table-rspace: 0; mso-h=
+ide: all; display: none; max-height: 0; overflow: hidden; color: #000; widt=
+h: 700px; margin: 0 auto;" width=3D"700"><tbody style=3D"box-sizing: border=
+-box;"><tr style=3D"box-sizing: border-box;"><td class=3D"column column-1" =
+width=3D"100%" style=3D"box-sizing: border-box; mso-table-lspace: 0; mso-ta=
+ble-rspace: 0; font-weight: 400; text-align: left; padding-bottom: 5px; pad=
+ding-left: 7px; padding-right: 7px; padding-top: 5px; vertical-align: top;"=
+ align=3D"left" valign=3D"top"> <table class=3D"icons_block block-1" width=
+=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presenta=
+tion" style=3D"box-sizing: border-box; mso-table-lspace: 0; mso-table-rspac=
+e: 0; mso-hide: all; display: none; max-height: 0; overflow: hidden; text-a=
+lign: left; line-height: 0;" align=3D"left"><tr style=3D"box-sizing: border=
+-box;"><td class=3D"pad" style=3D"box-sizing: border-box; vertical-align: m=
+iddle; color: #017b4f; font-family: inherit; font-size: 16px;" align=3D"lef=
+t" valign=3D"middle"> <!--[if vml]><table align=3D"left" cellpadding=3D"0" =
+cellspacing=3D"0" role=3D"presentation" style=3D"display:inline-block;paddi=
+ng-left:0px;padding-right:0px;mso-table-lspace: 0pt;mso-table-rspace: 0pt;m=
+so-hide:all;display:none;max-height:0;overflow:hidden"><![endif]--><!--[if =
+!vml]><!--><table class=3D"icons-inner" style=3D"box-sizing: border-box; ms=
+o-table-lspace: 0; mso-table-rspace: 0; mso-hide: all; max-height: 0; overf=
+low: hidden; display: inline-block; padding-left: 0; padding-right: 0;" cel=
+lpadding=3D"0" cellspacing=3D"0" role=3D"presentation"> <!--<![endif]--><tr=
+ style=3D"box-sizing: border-box;"><td style=3D"box-sizing: border-box; ver=
+tical-align: middle; text-align: center; padding-top: 5px; padding-bottom: =
+5px; padding-left: 5px; padding-right: 5px;" valign=3D"middle" align=3D"cen=
+ter"><a href=3D"https://links.comparis.ch/s/c/AK_YdBBjXH_N0hotYNs53BMu2sSVq=
+0rD2FYh-zsVy_4mJ91UA7ukB1-ou3MghQsmTkr40O9Wo9RwcOkrpH6FnMlxxUEJ4tXpXbVW8zhF=
+PrYGxNfxh0f1bseL4Ri9hlFv6V8Ei4ZffDKwNVlFJ4c9CBvRHXpw32aT-kCKRfd3EVAogvjSLGE=
+R2fnA2u4YRkQKDTUAZRdBHgnj3rkTwlqNDLLhFKKc2xWyezUjjYsHg2YdRdHHIanCTdcd7kRT74=
+DTDVNQ-NdWYYRijFPdNbffuvy0XlrZNXxLGzwvDVkjA41UEJahGQSv36J_IoZ_i9M7sleamiSIw=
+XWhpkH1MuzOuAQZVu7rmisqt45wSTX-sazeWjkRksACM8bYQFowLGff2X4oDghVaXvOBfT2SjbM=
+iruNDKEjX5sPWuV6aivNfWElpjRWCbyqMW4zsSQ9ubhzfj9CR8ybc_JfMVBXip0Jo8Eh06xA4x1=
+I_lip7OSwDdpfSJTuMl0k2rsyiGEZDeb7cE_WySKNez36b1O_Z8B1BonLEcR-oJ3yZdlH7ESwVU=
+hL0xDUu9A9R2zExLDAg_X3ZAlNFg7PDfiBHxdmr_RFbPEOboFFIAxVkq7xCZk7dvMX5SMfGvdCY=
+_fOq7zMbfhAjnE_LTqJZxDZuaC1xEbSwf0_ziuSrZoMjOT7IiVtE81BRNr9sOodPbF0VMBh1q_z=
+zyzBZqQ2rx7xM9vZNOX8-YQju2g1VyTWzBpyrM0S2mL331_aAXUDgB8w6RKO6PY/k3t-qlI4mT_=
+bX9_blnBGVH1d7G2Wonlz/25" target=3D"_self" title style=3D"box-sizing: borde=
+r-box; text-decoration: none;"><img class=3D"icon" alt src=3D"https://libra=
+ry.iterable.com/2305/10565/736702d87e204573b76523726c7161f4-Edit.png" heigh=
+t=3D"auto" width=3D"32" align=3D"center" style=3D"box-sizing: border-box; d=
+isplay: block; height: auto; margin: 0 auto; border: 0;"></a></td><td style=
+=3D"box-sizing: border-box; font-family: Arial,'Helvetica Neue',Helvetica,s=
+ans-serif; font-size: 16px; font-weight: undefined; color: #017b4f; vertica=
+l-align: middle; letter-spacing: normal; text-align: left; line-height: nor=
+mal;" valign=3D"middle" align=3D"left"><a href=3D"https://links.comparis.ch=
+/s/c/TcT361zp72hge_iYj-NaRgWtUStiTL6sAxvFoFwzhi37gfUpbbi7EvY6G8_gXS2AJIJpAL=
+0AMQTgopSnn2_LyIVhIksaDiDmlVPHLyuvCPeLWAUFd5wWOmHLVqqeSssIKjm7OgwFhLqnvaPjS=
+B8mLVRez3Y_w1W1NyWSh8f8kaxrw8MTv4WnO2tuP1PHCb-Eq_HOpBAeNypbGvBO41G7vIexVRZc=
+6kop0jqqFClXa4zv7Mu1lqJRl0UU8-uwjzzTowRxJtgJmZDcuMxphwZG0qimsk3E5NwAnbjezfN=
+B5bhvMC9apoxfK2c2IdTMvntA-e-Ynpx1THCRIrVwqP1dAdDyWZ8NnhmW_Me8Hwoba5WwWs1pW8=
+RASbSWdAxlvLoMDOXwUAPepwzAFpTN6ZTPa8yeEpGGhUFN8c5DgmroKtm-bjinn1fE3RHqFhv64=
+s-2PLO0MAZ5VF5TBhXxs4Gzd0RuUnsfnSEddA2AlI4K3OQUKKZ4aVAa6_xZQFJAVSStvb33mGAb=
+Cf7FqE3YVaMS4Xw302Muv4xe7r2H5tmOLiYy1X9yF7EBQVzs5Vkp1FCAQxleOKdDT3MRuXfXBt9=
+JZO8_gTAepgshZQBTHbpDp179m7O7QzKt-t2v986qMnAqgY6jEVeJGQlluUokq_GYAT2BJ1FDZn=
+ntG2A8t2RdqISg-dTWK-D6uBE_oQ-K5ERv5fNkiDVyFlc4iwbugqtNzUpAYMDe356TZCZ2JbueP=
+8lZ2--JeWl-Av7y8964y4c/3fOk3ZTuPu3tW9T0DlzRPH8pkYFxf2aA/25" target=3D"_self=
+" title style=3D"box-sizing: border-box; color: #017b4f; text-decoration: n=
+one;">Manage search alerts</a></td></tr></table></td></tr></table><table cl=
+ass=3D"icons_block block-2" width=3D"100%" border=3D"0" cellpadding=3D"0" c=
+ellspacing=3D"0" role=3D"presentation" style=3D"box-sizing: border-box; mso=
+-table-lspace: 0; mso-table-rspace: 0; mso-hide: all; display: none; max-he=
+ight: 0; overflow: hidden; text-align: left; line-height: 0;" align=3D"left=
+"><tr style=3D"box-sizing: border-box;"><td class=3D"pad" style=3D"box-sizi=
+ng: border-box; vertical-align: middle; color: #017b4f; font-family: inheri=
+t; font-size: 16px;" align=3D"left" valign=3D"middle"> <!--[if vml]><table =
+align=3D"left" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" st=
+yle=3D"display:inline-block;padding-left:0px;padding-right:0px;mso-table-ls=
+pace: 0pt;mso-table-rspace: 0pt;mso-hide:all;display:none;max-height:0;over=
+flow:hidden"><![endif]--><!--[if !vml]><!--><table class=3D"icons-inner" st=
+yle=3D"box-sizing: border-box; mso-table-lspace: 0; mso-table-rspace: 0; ms=
+o-hide: all; max-height: 0; overflow: hidden; display: inline-block; paddin=
+g-left: 0; padding-right: 0;" cellpadding=3D"0" cellspacing=3D"0" role=3D"p=
+resentation"> <!--<![endif]--><tr style=3D"box-sizing: border-box;"><td sty=
+le=3D"box-sizing: border-box; vertical-align: middle; text-align: center; p=
+adding-top: 5px; padding-bottom: 5px; padding-left: 5px; padding-right: 5px=
+;" valign=3D"middle" align=3D"center"><a href=3D"https://links.comparis.ch/=
+s/c/22i-8kwGf8acuEqGEoOo_OBymySApe0SWVTRYLdojmnmP8kKczHAUfKMIuvbu-AsA24OzZ7=
+w9n94DV5DTVW1sbdDl6sF6WMJ9EtBv57Lrcr5mQ6x7Td1_I30PAz5lH8vpgo6M9lfQam7O9K7xS=
+4-187n66Xb2OsFKZjjBd4Qx_3QqpTCHqKmzPVmesCwP9hKrowA3DqGJ14WGmAZhrTWourSgOjc8=
+DurGbjMcoh4UjeK6O7gBm44iyzJswEU_tM3RiZ1LyfogHdsEtrvmrd51fW42GKIieG_aIC6CWuk=
+AK3L5MMuPKh5lY9fR1KyzixgrqIp_fswETsyPvqqJrdedouKDISUnl49sCgxAG5tSYoVqc8wN1i=
+n0ne8r9g92X8ZySi50-7C9XS94YYYPpGPz3Fs60wQEO3UvklEQXrQp2NOoE1n1bM41uhPYmroAb=
+yLGbuMf3xlpOkZsPYfRTt4acarx-yniM3JgQ4-5SYWFbEr2l06-TtJh9-CzNCwYngOoTq4CWXck=
+ze2ufZvOjF86TECOawmAvicLv1fK-LPf163joatdGf2fGYLcnDHNljCgkBQjd30AIJlKKWs-B_7=
+KAaj2vdPnWEEIYH4ikRoDCSZra6gfi3F2ZLBsmSkzZvtrSDtpXkzj5NZlTf_Tk4OHrkAIWjWzRS=
+25AteaPjm2wp1h2nFdCdtptMLQC26Svj639UVV_pjtUPPhvB_kcMf_dJJTsMV1uOUL0wCyau00W=
+5iYlqCEF_G6Itr/aYNgaALnznZxD-GE1IHlQDNdo2-Qodqy/25" target=3D"_self" title =
+style=3D"box-sizing: border-box; text-decoration: none;"><img class=3D"icon=
+" alt src=3D"https://library.iterable.com/2305/10565/371f9adb3ddd4ca88a6047=
+cba520b1ca-delete-1.png" height=3D"auto" width=3D"32" align=3D"center" styl=
+e=3D"box-sizing: border-box; display: block; height: auto; margin: 0 auto; =
+border: 0;"></a></td><td style=3D"box-sizing: border-box; font-family: Aria=
+l,'Helvetica Neue',Helvetica,sans-serif; font-size: 16px; font-weight: unde=
+fined; color: #017b4f; vertical-align: middle; letter-spacing: normal; text=
+-align: left; line-height: normal;" valign=3D"middle" align=3D"left"><a hre=
+f=3D"https://links.comparis.ch/s/c/64j7PvlEpMOIO_VeSVid-oT7J-2VIxTONqf1-o7K=
+ApWfA1ON2jgi0udUL4VE6zPihZ8CV2ClTsnTARWBmnJYqilVaTSaEsRlKSIn-0w1tejgrnPcRjh=
+f8305yLepbjcSoANEKONI-J5JqZxJXPl7uq01YMJh8Dium2zpb1d4YnPlakbaIX5quFV6h0ckaq=
+PLaIROoonTOspNFbd6S2Cx5jl2qha0ZUNWZC3VuDdNwr1xJ-3hJtC2HR4T0ymOlyEg2YWpw4_X-=
+2VHR1p9zHrF2FrWDT1PPOay_qf2Sf18Z8kRLIFPRal48ohQLTwxYB2vkqw6EX6NUYa-bm06o-ld=
+2XdmtEs0lCTRpNFnkU1GRfZrKX0lhP9P358yBV8pTob7Ta1N9ZCPpUvKlF41nb8XkA1jmln4CzQ=
+6rJh-r4bBvJVipsSd06rGICYroy56OadhDTLkWd5l25dHoTchZGaarvP92D4Wo4hpW3Qi8e1sr-=
+Ztx3tKuxAA2TdgEbag2VmVlmTrTW3zyemlNtwNwhxrmFY25iDB7eep5ctbCZ2aSxEHjfRhdTuis=
+yMjVjFR0yUTUndJkqRLxZtN6HmwBy9RoTLc3EVRZXnfYd_hEwyKL_CsWg2gp1xMgtgiWlJrQQmC=
+VJQ04_eq3PYjdCLjnYP_Is39RITUgZn2oMGhJseJdn3KpyufJHw2RsV4lygHVl5byu3ij7ao54S=
+HiREZzHGrrYxShdvxp6eeNidrxMUZweqtc_NwtCO5NGmv/9ZSpVCjSd1dj09vMYmlUxrny0aOSE=
+s5P/25" target=3D"_self" title style=3D"box-sizing: border-box; color: #017=
+b4f; text-decoration: none;">Delete search alert</a></td></tr></table></td>=
+</tr></table></td></tr></tbody></table></td></tr></tbody></table><!--<![end=
+if]--><table class=3D"row row-15" align=3D"center" width=3D"100%" border=3D=
+"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"box-=
+sizing: border-box; mso-table-lspace: 0; mso-table-rspace: 0;"><tbody style=
+=3D"box-sizing: border-box;"><tr style=3D"box-sizing: border-box;"><td styl=
+e=3D"box-sizing: border-box;"><table class=3D"row-content stack" align=3D"c=
+enter" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentatio=
+n" style=3D"box-sizing: border-box; mso-table-lspace: 0; mso-table-rspace: =
+0; color: #000; width: 700px; margin: 0 auto;" width=3D"700"><tbody style=
+=3D"box-sizing: border-box;"><tr style=3D"box-sizing: border-box;"><td clas=
+s=3D"column column-1" width=3D"100%" style=3D"box-sizing: border-box; mso-t=
+able-lspace: 0; mso-table-rspace: 0; font-weight: 400; text-align: left; pa=
+dding-bottom: 5px; padding-left: 7px; padding-right: 7px; padding-top: 10px=
+; vertical-align: top;" align=3D"left" valign=3D"top"><table class=3D"divid=
+er_block block-1" width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=
+=3D"0" role=3D"presentation" style=3D"box-sizing: border-box; mso-table-lsp=
+ace: 0; mso-table-rspace: 0;"><tr style=3D"box-sizing: border-box;"><td cla=
+ss=3D"pad" align=3D"center" style=3D"box-sizing: border-box;"><table border=
+=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" width=3D"1=
+00%" style=3D"box-sizing: border-box; mso-table-lspace: 0; mso-table-rspace=
+: 0;"><tr style=3D"box-sizing: border-box;"><td class=3D"divider_inner" sty=
+le=3D"box-sizing: border-box; font-size: 1px; line-height: 1px; border-top:=
+ 1px solid #f0f0f0;"><span style=3D"box-sizing: border-box; word-break: bre=
+ak-word;">&#8202;</span></td></tr></table></td></tr></table><table class=3D=
+"text_block block-2" width=3D"100%" border=3D"0" cellpadding=3D"0" cellspac=
+ing=3D"0" role=3D"presentation" style=3D"box-sizing: border-box; mso-table-=
+lspace: 0; mso-table-rspace: 0; word-break: break-word;"><tr style=3D"box-s=
+izing: border-box;"><td class=3D"pad" style=3D"box-sizing: border-box; padd=
+ing-top: 10px; padding-bottom: 20px;"><div style=3D"box-sizing: border-box;=
+ font-family: sans-serif;"><div class style=3D"box-sizing: border-box; font=
+-size: 12px; font-family: Arial,'Helvetica Neue',Helvetica,sans-serif; mso-=
+line-height-alt: 18px; color: #333; line-height: 1.5;"><p style=3D"box-sizi=
+ng: border-box; line-height: inherit; margin: 0; font-size: 16px; mso-line-=
+height-alt: 24px;"> <span style=3D"box-sizing: border-box; word-break: brea=
+k-word; font-size: 16px;">We wish you all success with your search. It woul=
+d be great if you recommend <a href=3D"https://links.comparis.ch/s/c/s3lFQ3=
+t7YHDzTt3r-dSkjDt76YIqisnWgEAj780CDwTTcUm2ICUr1kGLKGZ6hs-hSiaH7cz7GWxS8Jis3=
+-SNeMhEfDSs7dl8RVI_qMEF1rSqGkaw3sercPEeYGhpeokyS4ZfILoxlWB9qzQCNoXbBd7m45Jq=
+7SeHqTgVjSAXHh_LNr23FM4mAg-K99u0OYJvfmOQOWb0dDQZ4l-631pgIBSVwVRbnYvTzXfad6P=
+3GWv0dVZaKx6kiMbCyHQApWT2gbii1B2IAoMeQtQ_Hi157Lu4oziALS3JIZSi6K7GbkMS8t-ryL=
+vZLDT5x94E4uSRSflZ9aQFWNyjbgfhX0GuS-DzngMvnb7on49RzfWGcIdgcbH3WNFsQeniTGqPh=
+6UZ6WQ8b6-xyca5zzdBfehM5ZWmYkUmz89PeyS95_ycwHgSR5pEXn1vrKX4qXoUG4DcFIJ5q-IJ=
+wjValFEY02aauxE-nTdZt5PjMUC5MXg99rvs62ev5XebNsXqP4nAzKbeEc2DmIHIlkPD7oox8cR=
+rc95EK2wspWZ7nPQHsw6RMFnP_-LCAWAqM0YzcDM66LcEnbCNYNjBwytDDH9RWyX0mIhpjLyje9=
+iXh4UlFx5OxvnHhxAFyCPQfCx8X3L3MZFuoHA_dWrblJUeJZDqejjUidDogfAk3KThFa8qE0T74=
+Lk/GwD717-S4oXiaZ3obtxErAKalNVTbcRi/25" target=3D"_blank" style=3D"box-sizi=
+ng: border-box; text-decoration: none; color: #017b4f;" rel=3D"noopener">co=
+mparis.ch</a> to your friends and colleagues.&nbsp;</span></p><p style=3D"b=
+ox-sizing: border-box; line-height: inherit; margin: 0; font-size: 16px; ms=
+o-line-height-alt: 18px;">&nbsp;</p><p style=3D"box-sizing: border-box; lin=
+e-height: inherit; margin: 0; font-size: 16px; mso-line-height-alt: 24px;">=
+ <span style=3D"box-sizing: border-box; word-break: break-word; font-size: =
+16px;">Kind regards,</span></p><p style=3D"box-sizing: border-box; line-hei=
+ght: inherit; margin: 0; font-size: 16px; mso-line-height-alt: 24px;"><span=
+ style=3D"box-sizing: border-box; word-break: break-word; font-size: 16px;"=
+>Your Comparis Team</span></p></div></div></td></tr></table></td></tr></tbo=
+dy></table></td></tr></tbody></table><table class=3D"row row-16" align=3D"c=
+enter" width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=
+=3D"presentation" style=3D"box-sizing: border-box; mso-table-lspace: 0; mso=
+-table-rspace: 0;"><tbody style=3D"box-sizing: border-box;"><tr style=3D"bo=
+x-sizing: border-box;"><td style=3D"box-sizing: border-box;"><table class=
+=3D"row-content stack" align=3D"center" border=3D"0" cellpadding=3D"0" cell=
+spacing=3D"0" role=3D"presentation" style=3D"box-sizing: border-box; mso-ta=
+ble-lspace: 0; mso-table-rspace: 0; color: #000; width: 700px; margin: 0 au=
+to;" width=3D"700"><tbody style=3D"box-sizing: border-box;"><tr style=3D"bo=
+x-sizing: border-box;"><td class=3D"column column-1" width=3D"100%" style=
+=3D"box-sizing: border-box; mso-table-lspace: 0; mso-table-rspace: 0; font-=
+weight: 400; text-align: left; padding-bottom: 5px; padding-left: 7px; padd=
+ing-top: 10px; vertical-align: top;" align=3D"left" valign=3D"top"><table c=
+lass=3D"html_block block-1" width=3D"100%" border=3D"0" cellpadding=3D"0" c=
+ellspacing=3D"0" role=3D"presentation" style=3D"box-sizing: border-box; mso=
+-table-lspace: 0; mso-table-rspace: 0;"><tr style=3D"box-sizing: border-box=
+;"><td class=3D"pad" style=3D"box-sizing: border-box;"><div style=3D"box-si=
+zing: border-box; font-family: Arial,'Helvetica Neue',Helvetica,sans-serif;=
+ text-align: center;" align=3D"center"><!-- DOCTYPE html--><meta charset=3D=
+"utf-8"><meta name=3D"viewport" content=3D"width=3Ddevice-width,initial-sca=
+le=3D1"><meta name=3D"x-apple-disable-message-reformatting"><!--[if mso]><s=
+tyle>table{border-collapse:collapse;border-spacing:0;border:0;margin:0}div,=
+td{padding:0}div{margin:0!important}</style> <noscript> <xml> <o:OfficeDocu=
+mentSettings> <o:PixelsPerInch>96</o:PixelsPerInch> </o:OfficeDocumentSetti=
+ngs> </xml> </noscript><![endif]--> <style type=3D"text/css">table,td,div,h=
+1,p{font-family:Arial}*{box-sizing:border-box}body{margin:0;padding:0}a[x-a=
+pple-data-detectors]{color:inherit!important;text-decoration:inherit!import=
+ant}#MessageViewBody a{color:inherit;text-decoration:none}p{line-height:inh=
+erit}.desktop_hide,.desktop_hide table{mso-hide:all;display:none;max-height=
+:0;overflow:hidden}.image_block img+div{display:none}sub,sup{font-size:75%;=
+line-height:0}@media(max-width:720px){.desktop_hide table.icons-outer{displ=
+ay:inline-table!important}.mobile_hide{display:none}.row-content{width:100%=
+!important}.stack .column{width:100%;display:block}.mobile_hide{min-height:=
+0;max-height:0;max-width:0;overflow:hidden;font-size:0}.desktop_hide,.deskt=
+op_hide table{display:table!important;max-height:none!important}}</style> <=
+style>@media only screen and (max-width:720px){.container{width:100%!import=
+ant;max-width:100%!important}.stack-column,.stack-column-cell{display:block=
+!important;width:100%!important;max-width:100%!important}.content-padding{p=
+adding-left:15px!important;padding-right:15px!important}.center-mobile{text=
+-align:center!important}.button img{width:100%!important;height:auto!import=
+ant}.buttons-row{margin-left:auto!important;margin-right:auto!important}.bu=
+ttons-row td{text-align:center!important}.space-20{height:20px!important}}<=
+/style> <!-- Outer wrapper --> <table width=3D"100%" cellpadding=3D"0" cell=
+spacing=3D"0" border=3D"0" align=3D"center" style=3D"border-collapse: colla=
+pse !important;"> <tr> <td align=3D"center"> <!-- =3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D SE CTION 1=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D --> <table width=3D"700" class=3D"container" cellpadding=3D=
+"0" cellspacing=3D"0" border=3D"0" style=3D"border:1px solid #017b4f; margi=
+n:0 auto; color:#333; padding: 20px 0 20px 0;"> <tr> <!-- Left image column=
+ --> <td class=3D"stack-column" width=3D"33%" style=3D"padding:5px 0 5px 7p=
+x; vertical-align:middle;" align=3D"center"> <img src=3D"https://d15k2d11r6=
+t6rl.cloudfront.net/public/users/Integrators/669d5713-9b6a-46bb-bd7e-c542cf=
+f6dd6a/431baf3260f3422287820908bf0e1157/starsFinal16122025.png" width=3D"12=
+0" alt=3D"Star Logo" style=3D"border: 0; display: block; line-height: 100%;=
+ max-width: 100%; height: auto;"> </td> <!-- Right text + buttons --> <td c=
+lass=3D"stack-column content-padding center-mobile" width=3D"67%" style=3D"=
+padding:5px 7px; vertical-align:middle;"> <p style=3D"font-family:Arial,'He=
+lvetica Neue',Helvetica,sans-serif; font-size:16px; font-weight:bold; color=
+:#555; margin: 0;"> Rate us now </p> <p style=3D"font-family:Arial,'Helveti=
+ca Neue',Helvetica,sans-serif; font-size:16px; color:#555; margin-top:10px;=
+"> Your feedback helps us to continuously improve our service. </p> <!-- Bu=
+ttons row --> <table class=3D"buttons-row" align=3D"left" cellpadding=3D"0"=
+ cellspacing=3D"0" border=3D"0" style=3D"margin-top:15px; border-collapse: =
+collapse !important;"> <tr> <td style=3D"padding-right:8px;"> <a href=3D"ht=
+tps://links.comparis.ch/s/c/cSo1Gx_ExITpE2x7Ox-8J_H-e82MBr-lMME4Vq3e7yGIdBb=
+-ga3KzLqw8ysfth1mAtsQK42jsD3hvIsnnjFp9AlEGJUTYKUJGA8bjvGFXmrLElupx8rUz9j759=
+6YBdiSWbftDKIlWYgeW7AmRPw829wvHqkkqNSjgEWDnwZdtezY7ueVCkV_LpqhVGqInF6_Aoo-2=
+gIshlxdoOvDwtQKah-5hH-newoSDqhcaCQGl-fuVp6sYb9OK0TqeVdnvLx0LPQjAf8dsIoVhFAU=
+L0SKi3hthO5YwKivqoVi1KqTOmuQGCJ5hIBcOqeojTNYfcAEJDm7ZTsy838vaTgi_Sf25x1KcOU=
+b3n-JXIZCfuaWgVHzcTGANHF24de_3RZrQANln-Oda8ZrYclEVjuMfPW2Hm0or0O-zyI9qjm4ru=
+II-C7xiem9O-wfRPwP2cNZx0wRddEMgj-xm4A91ZYK3PdO5JOPJlWCuFzd-LUW8ZIIgpQOjCjzL=
+jpTjkD9wGM98A3cier9r-V097xdDiOdy_Buh66zKCrZQfrEU-huOMNrbo6nviuyc8_REQG3D-oH=
+Ew518Iu7-FpKYYpSL3BQLxll09Lo8yMEgJbQ8UfTh6BvAjcz8E6QOlxRoEiVcVBw2YuY11rD7R6=
+UmaC9nSjh8IdJx_C-_-ah3xWjvNNTv7FshO6_BeVPGhTQ3EmdS-ro6arwfzbNKHbJ4_HtsQ15UZ=
+Q2FttZBcL5RZT88PoMbARHArhYShMiJw15Oa0u15_nJEKRUhFEzVnpeiGeZGEBXyxIAqpt6MhNv=
+lLYylbTvQSoc6RGNVJbMuQZu61q-9cLi9e2iuMvMrjrrOkhkepcLJkI8emf4iDhZyu2Q6D2qP7C=
+ohLMNmBj0kD_n5aiFBLhDE1L9kyw408rymvBgkTS25w/C8edQUQYB182bnp7l3LJ0dUqNkF17y7=
+W/25" target=3D"_blank"> <img src=3D"https://d15k2d11r6t6rl.cloudfront.net/=
+public/users/Integrators/669d5713-9b6a-46bb-bd7e-c542cff6dd6a/431baf3260f34=
+22287820908bf0e1157/Reviews/googleReview_Final.png" height=3D"40" alt=3D"Go=
+ogle Review" class=3D"button" style=3D"border: 0; display: block; line-heig=
+ht: 100%; max-width: 100%; height: 40px;"> </a> </td> <td> <a href=3D"https=
+://links.comparis.ch/s/c/h3dgvCvhiQ1MNSsve6ZYzGoriYYMXwv2LF9R_g-htvgfbNc-aA=
+ZKc78fAgiEjnGNMBhbVCm6zRdMa1ulWaAw6QQkcoqhu8GAvhk3CSD1xlf26J0djJ8AdXGIJcasE=
+K3r7M4yo2oo3K3J9BA7jjPk5pUBg-BQEpqbLiexgyigUt6qibrofmg1YHst4oWdczG7ukHaVFRK=
+NX9SadWO9fKrM_5w6dyyfAzbgItGYb2v9_V9fqH8sJVLRm9AXio-A2HuKQLg0vTLldhuUcp7P2x=
+iCy1X6R_M1Mmsq0tRGleiP8erIcRn_AlO8_QEcLPo7ZESbiQ0J67sy514kGaZ2KYCrqEo1VNOfB=
+m9IEidGIaIotTvTMm9PitrD6pqkEATQfw1pdHJnvz0_nCZdgtR2s2st3rOIcicbbESKllOPMzdQ=
+2XwQUOEyMIKwZrIcnV8vDTBcwyWHPxDIKPf98wIBDOQDGfzQxafRN1RS99OUGKpzJU6z5I5dQOF=
+SB5oIrI5VD4IvIcrbKHZ63Ftssi19BSoHlnD4wQA-KT9D4eFEwuS-R7wR44w1AviMBEu5iWQkTj=
+7cVbeQnawQUnu2fNBmAdoykfCjFxLOkiy2m9MVehxwQdkele99rfEybrDgnfx8XQaUj9qwaa09y=
+BaXmK6DvuRdGPDMZFMtUe4kwb3P2EA0N2UQQ7H3q15D9l3O2Bf1SA6wGu66YPUIuSFw9Cs3xdfF=
+q9eN0ZF9JS25CTlmJ3mYYZAiA7Bpc2bwbFVcT2QFBZNEGbP4iNijwI8EzRtZdLFpaVDTgafhBLs=
+o7YwSCRj_6ck8phm2DXwzj81OWSS7P2sNvQ-4hZ9NFkoA7YON8jXtb3kk23mOttOawI41yMUL6T=
+sz4p8fn6JSWYe4GfXjxhO-UDcazkIsZP9qn1nnhPzOBmuUKgu0RYg0A/_I91encIPaL8JtWBMHq=
+n8WBeIjxob15F/25" target=3D"_blank"> <img src=3D"https://d15k2d11r6t6rl.clo=
+udfront.net/public/users/Integrators/669d5713-9b6a-46bb-bd7e-c542cff6dd6a/4=
+31baf3260f3422287820908bf0e1157/Reviews/trustPilotReview_Final.png" height=
+=3D"40" alt=3D"TrustPilot Review" class=3D"button" style=3D"border: 0; disp=
+lay: block; line-height: 100%; max-width: 100%; height: 40px;;"> </a> </td>=
+ </tr> </table> </td> </tr> </table> <!-- Spacer --> <table width=3D"700" c=
+lass=3D"container" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" style=
+=3D"border-collapse: collapse !important;"> <tr><td height=3D"20" class=3D"=
+space-20"></td></tr> </table> <!-- =3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D SECTION 2=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D -=
+-> <table width=3D"700" class=3D"container" cellpadding=3D"0" cellspacing=
+=3D"0" border=3D"0" style=3D"border:1px solid #017b4f; margin:0 auto; color=
+:#333; padding: 20px 0 20px 0;"> <tr> <!-- Left image column --> <td class=
+=3D"stack-column" width=3D"33%" style=3D"padding:5px 0 5px 7px; vertical-al=
+ign:middle;" align=3D"center"> <img src=3D"https://d15k2d11r6t6rl.cloudfron=
+t.net/public/users/Integrators/669d5713-9b6a-46bb-bd7e-c542cff6dd6a/431baf3=
+260f3422287820908bf0e1157/editor_images/GreenHeartFinal16122025.png" width=
+=3D"120" alt=3D"Share Logo" style=3D"border: 0; display: block; line-height=
+: 100%; max-width: 100%; height: auto;"> </td> <!-- Right text + share butt=
+ons --> <td class=3D"stack-column content-padding center-mobile" width=3D"6=
+7%" style=3D"padding:5px 7px; vertical-align:middle;"> <p style=3D"font-fam=
+ily:Arial,'Helvetica Neue',Helvetica,sans-serif; font-size:16px; font-weigh=
+t:bold; color:#555; margin: 0;"> Share with friends </p> <p style=3D"font-f=
+amily:Arial,'Helvetica Neue',Helvetica,sans-serif; font-size:16px; color:#5=
+55; margin-top:10px;"> Do you know someone looking for an apartment=3F Shar=
+e the largest real estate portal in Switzerland. </p> <!-- Buttons row --> =
+<table class=3D"buttons-row" align=3D"left" cellpadding=3D"0" cellspacing=
+=3D"0" border=3D"0" style=3D"margin-top:15px; border-collapse: collapse !im=
+portant;"> <tr> <td style=3D"padding-right:8px;"> <a href=3D"mailto:=3Fsubj=
+ect=3DComparis real estate portal&body=3DHello,%0D%0ADid you know that Comp=
+aris has the largest real estate portal in Switzerland=3F%0D%0Ahttps://en.c=
+omparis.ch/immobilien/default%3Fitr_cid%3D18700506%26itr_tid%3D24323759%26i=
+tr_mid%3D431b1e8819df448bbf38c6393d2c355b%26emhID%3Daafe47083d489f6d7beb7df=
+d22e156bd048057c28401f228b858d09d13d48533%26utm_source%3D%26utm_medium=3Dem=
+ail%26utm_campaign%3D1870050626utm_content%3DEnglish-emailshare" target=3D"=
+_blank"> <img src=3D"https://d15k2d11r6t6rl.cloudfront.net/public/users/Int=
+egrators/669d5713-9b6a-46bb-bd7e-c542cff6dd6a/431baf3260f3422287820908bf0e1=
+157/Share%20Buttons/emailShare_Final.png" height=3D"40" alt=3D"Email Share"=
+ class=3D"button" style=3D"border: 0; display: block; line-height: 100%; ma=
+x-width: 100%; height: 40px;"> </a> </td> <td> <a href=3D"https://links.com=
+paris.ch/s/c/Ib09_RKXG5vNdAgtI1PpykX7ZSHhj-j-UFtA6dDx30WtABoKUwNMcEfBKcEl5f=
+anjCBhf62eY0Hfc60swRquPEoFwhFpWvIAbYGuWE4tglnjDL_kEdqOeuFyOzYQMBXAihFX-9c2V=
+9DSeCGd3V7F9vrelVuJqPTDwy5etMZJfYz4ORacECzJ2i8r6VUFeRhmZTAvGsB25YHpDFcco5Si=
+V5SElfw5CDxOSUQDvTMkK6PsI9w2iOKlUULUdFy2RKY909Dee88jyXFd1yocELT2lL3rvTIEpgg=
+w-OCQnxG5_zSzcgdYMNCO5On_phpuCYsurIP50ZZJhrVYpYPBnXe7kJzdyx-F4-GUkYFgaYDlri=
+KxzqoLHWL9N1J-2PxFDowpyzRFw3iOg-Hj_YwRn3Ph537iCU-6VUAdhXeZyOkc7mQCEAFCPNdqU=
+qbgMDd1vBTv5tJbyjqWAN5IcFTUEb0oPtXGiMQ3G3bAlE0oYzb-t227oJ2CJo1RSY-LkvDEPgwS=
+yzb7berVSTOxKNvSU85F2nL1Fkos5ANTfqKYsN-CyY551ba4RMV2y4Rcn0rpxLIWNOEjLMgal7Q=
+kfCJuW9ANmrr-JU99DJuCpjJHhPnp4bPKQplyRIXAVIpNPuyouxvartRM0QXjfp4kqJ-gKbxFp7=
+UlsyN5ZsjL9WG9aKCxiDdI5c_Ilvkj9PSShznVahrGEDCWteZ6P_q9Sh1kAOUi4AN_CqAhMHv77=
+s7DSxwRaWbejfPpgASDQe-y8sJPuUCc4Z2SwZhfMvD_eyFmvJ2Gj2zAgjxn2uT54LS_QgtzJGTu=
+B8STexfBQSEtESzXRxZKWUhTWoKGqTbde7vjwoyJsQxyT-yAvmPCohNwWH0xdRKfOD3LQkQ8D5B=
+I7-8aX_98PObjUUqPq0cLsy8YUDl1M_EbcxjxsNoSaAl8dtWLg-tKxkaRflhMYNA1NGwzjPuKC7=
+qAv4FrdWGPvv720_jA22L53FtdGo7EGYHezS1zw9OLY7mD8ASXm3DC0jsUP3liBy7SdzMzch34j=
+Aer5q86Kga8syiqAtGv36Gg-jScLr0_bkM2N1LnSHw-Its1_1lfQcd3pEPMSl3IGvod-93miQn9=
+mIomXw/15LXpfVeIQ3FDrfBEMtahinwonXCVeik/25" target=3D"_blank"> <img src=3D"=
+https://d15k2d11r6t6rl.cloudfront.net/public/users/Integrators/669d5713-9b6=
+a-46bb-bd7e-c542cff6dd6a/431baf3260f3422287820908bf0e1157/Share%20Buttons/w=
+hatsAppShare_Final.png" height=3D"40" alt=3D"WhatsApp Share" class=3D"butto=
+n" style=3D"border: 0; display: block; line-height: 100%; max-width: 100%; =
+height: 40px;"> </a> </td> </tr> </table> </td> </tr> </table> <!-- Spacer =
+--> <table width=3D"700" class=3D"container" cellpadding=3D"0" cellspacing=
+=3D"0" border=3D"0" style=3D"border-collapse: collapse !important;"> <tr><t=
+d height=3D"20" class=3D"space-20"></td></tr> </table> </td> </tr> </table>=
+ <div role=3D"footer" aria-roledescription=3D"email" lang=3D"en" style=3D"t=
+ext-size-adjust:100%;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100=
+%;"> <table role=3D"presentation" style=3D"width:100%;border:none;border-sp=
+acing:0;"> <tbody> <tr> <td align=3D"left" style=3D"padding:0;"><!--[if mso=
+]><table role=3D"presentation" align=3D"center" style=3D"width:700px;"> <tr=
+> <td><![endif]--> <table role=3D"presentation" style=3D"width:95%;max-widt=
+h:700px;border:none;border-spacing:0;text-align:left;font-family:Roboto;fon=
+t-size:16px;line-height:15px;color:#333333;"> <tbody> <tr><!-- App Store li=
+nks --> <td style=3D"padding:0px; font-size:0;"><!--[if mso]><table role=3D=
+"presentation" width=3D"100%"> <tr> <td style=3D"width:210px;" align=3D"lef=
+t" valign=3D"top"><![endif]--> <div class=3D"col-sml" style=3D"display:inli=
+ne-block;width:100%;max-width:210px;vertical-align:middle;text-align:left;f=
+ont-family:Roboto;font-size:16px;color:#333333;font-weight:bold;"><span wid=
+th=3D"210" alt=3D"" style=3D"width:210px;max-width:80%;">Comparis Property =
+App</span> <br/> &nbsp; </div> <!--[if mso]></td> <td style=3D"width:300px;=
+padding-bottom:20px;" valign=3D"top"><![endif]--> <div class=3D"col-lge" st=
+yle=3D"display:inline-block;width:100%;max-width:300px;vertical-align:middl=
+e;"> <a target=3D"_blank" href=3D"https://links.comparis.ch/s/c/VQN1hrg-UEh=
+9QKnHtjUE5Go_cWp1fbpyh57FUPN4f7Uf7O3mmys-2YJR7yDQWDY0jy4fOkswLHZ0PaMfCjbvej=
+9fkAVt1pGbeJCl4HXlDUAPuPAueZBgWOiHHT2AsFctslbqs-8spn1SKR94VnSt8iG-i81UI72Cp=
+IT9sm_1zlNEsEp0EeICo1rztfRj78DiDIgJ1oluLI99XTMxlC_jeGnUPIuSO2yFWAW_jIdM_67j=
+AlJuCQuijJqYnhXFe4yl2_TbdKYZWJ5Kkh5TpnsVAZlBSzCNmXkjdXb5LjsW8GGLnCnhh9l3G8Z=
+8ezaCLhGXq2B5mR0tx8SNBm3Qv75lcF6rE1pQ-2MTC6RRRpR9z17Wa9lCP5QFVAnUjI8LSk3XWs=
+-mXN8lt0lJ3MLRnE7GT2VUED2asuAs6cBRG7sVG2NISUnBR-rhes1TTGaNPvWFq0iy5wgO7dFkC=
+9TOfENTqOMzAynFTpjKGXUiGb1PeOo3LgRknJf7C9avv7WgQA4zCsujMcWJUVXQuo1lz5A460Tc=
+UZES2BGiP-ynWn0IlWFSHyn3gvbBPvbw30MTdBMHI-zyWvOoOR-EBJYiENuhmjb4tDjRadG44jV=
+5vx6rZWrGsfHIp6MJebObYD0jbkqHz61fx1v2bIquAwKDp1ybo1cNE-vMydxvbV_n7a2QcBqRty=
+teuhPtPyjMJ_oFUGxNz-kXalIPQT1ig7E218ejLn7vdWh0P5rxwVgmBZMJDUCbpeXfP9m2KP_Z_=
+1uesFGY9T5DV2VCGgkJ38Hq8MfqTwSa/I0jOe9uH-etTgAbNla5a_OXt0rSKHCS1/25"> <img =
+alt=3D"" style=3D"padding-left:0px;padding-right:5px; height:40px;" height=
+=3D"40" src=3D"https://d2axdqolvqmdvx.cloudfront.net/38cddf33-6483-4728-8cc=
+e-0dfd628f676b/google_play_icon.png"/> </a> <a target=3D"_blank" href=3D"ht=
+tps://links.comparis.ch/s/c/6NbO0WmfarqH934jtA1Tf3kd9dDYsuVfBrnLU3PHx7-X59n=
+bobp79FqZQ593x-oyH7pXwLHlwnmF0Rv9EMv4KC4lBIUGIt3KdXVVRPjIRfj5d7MuVNTqndyTl_=
+PxAASdynPljQhWP8XkJDuy6JK1_X8W7qCcJkk3vlv-Hbi864MU4J9Lq-LwBaOkHfGwaJ4E3OODG=
+XGOTFWh0-HHAaryKVbHc7vGwYsUajnRTQyFSEnBHYU3gcwOTeF_npxEybLoC4B6QMW8gVzs6X25=
+mB6fpEeKeiYrr5pWvD259ZansqK4XZVhzTju4HgQgJD-c2gjOqYRQwpBGcWZalQmhbp-iHe996D=
+UKjT2S1w74HiXOydyKIbP-QHg4uXOJ08Gjn2T1VvqRbU-d9mE9Lul3ddA9cvWpJzgP5-3OcQZV_=
+QN-FTIkCTG6RUsPbJarmIpZ8NL9aOn6Zko49230H3EifeWPpAmeuEjL0vQ2XEAIS-0eQ7y0j8Km=
+J-m8jfoIoVUDJs5GagsAbEi0nE0ey-iDXOMwh45oipMLR1ZvZxkCXDO4f5UDX6Hyx5d8ipr4Y-c=
+lDxGGya9fkuyQMDMaeO1RwLp1sd_TThjG7MDh7gu_tOjJT9kt2Qzg3IH-ww3Z7x4zx9qxWuFHXp=
+xuha_Vf4oj6X2I4b6aXPPJd8S0HmZWEX_ui55bU6-7xex5C2pd6QjzUqjO-O3P-mpy0t5WTOR2d=
+5redULbW_SdMbvPchZ6DsVCBwvYePeIJRtQVoKlojdevFqkGwEoUuVQP8Z03M7ygsVKeMch1SI0=
+2oCsgU/2cLoY4A1eXKnGgs_RL4MmrFE3VyOGEeo/25"> <img alt=3D"" style=3D"padding=
+-left:5px;padding-right:5px;height: 38px;" height=3D"38" src=3D"https://d2a=
+xdqolvqmdvx.cloudfront.net/c2bd5d10-40f1-43b0-a38a-0b4fea8dca3b/app_store_i=
+con.png"/> </a> <br/> &nbsp; </div> <!--[if mso]></td> </tr> </table><![end=
+if]--></td> </tr> <tr><!-- Social icons --> <td style=3D"padding:0px; font-=
+size:0;"><!--[if mso]><table role=3D"presentation" width=3D"100%"> <tr> <td=
+ style=3D"width:210px;" align=3D"left" valign=3D"top"><![endif]--> <div cla=
+ss=3D"col-sml" style=3D"display:inline-block;width:100%;max-width:210px;ver=
+tical-align:middle;text-align:left;font-family:Roboto;font-size:16px;color:=
+#333333;font-weight:bold;"><span width=3D"210" alt=3D"" style=3D"width:210p=
+x;max-width:80%;">Follow us</span> <br/> &nbsp; </div> <!--[if mso]></td> <=
+td style=3D"width:300px;padding-bottom:20px;" valign=3D"top"><![endif]--> <=
+div class=3D"col-lge" style=3D"display:inline-block;width:100%;max-width:30=
+0px;vertical-align:middle;"><a target=3D"_blank" href=3D"https://links.comp=
+aris.ch/s/c/HNmQcCi8C3kAdf_c0xliGkHdY6Q8-bno9DQ0Oh0OHZmKVrYuOsL4OUIhNc_x3ab=
+dQekdHzb4HGckx-wb46PljR2N35eKRdU_QCdlOuafdkL_g0gik_p8u8VdTJsNHVgIj42jYPkInb=
+9-DO_zXsvKjKa1W0YqHSGrYQrHzxUsxiqS4SyDvlwgiqqBql1fdQDf0xFf-4_aLstqWTtzRdU0R=
+_YqIOEunikV4-MLbBEYgOz1PGCmNQRN70HH7K7kZtH2-EjQwKPsWpHrGg2Wx9evAHu2NRq4SR_-=
+EMTn8S-UySqghLfMAW9sCXfsUdSV5HQES57qvTM7qDFtHB9PgytVZJO9c1lTdCZ3ASjP2oFfbhI=
+qUwNzOhy4fYHeRHcSXcJsu_pkFeQLJXkRb1KYW1j0coGsv9jbitNCDK3jEnTKOMbkp5C3nJLLFO=
+kpBzMyZWi6veFiSqubsvdJKfr56_oxxADvN_xBLWA-DIvEiAENHKbjhAj3r17aUBLEvJWJCuUkd=
+ozBKqL391Ip3NSDsOD5zR8o6VttN1sB0NPTiAu8azqV-mV0-Q0pZtxeCsKg8rdN-vJMGWSJcCGe=
+ULQ_oqUiYCnBIkSuY5y_lxaw8qEWJzCk57DVwko1Jhh5Px6drWdQbD6qLFhZoGnn9S_7bAIuwQ_=
+Lj6HWy6W52pvISjzIxpN7NJpw88kgAOnp5cRUBIUQnKY/4BIyA2PlpiwxpfGhtx7xw-DhqhAQGM=
+Qx/25"><img alt=3D"" style=3D"padding-left:0px;padding-right:5px;height:40p=
+x;" height=3D"40" src=3D"https://static.iterable.com/bb06900ae070497883fdf7=
+a526d6f9e1/22-04-04-icon_facebook.png"/></a>&nbsp; <a target=3D"_blank" hre=
+f=3D"https://links.comparis.ch/s/c/633VNaomh6IxX2X8iHLdDl8GJvYmFabI_B4UPlV0=
+sJHefjn5L5FCrI0ix20-qblYbk3Nn_nbSpEvKM03s_xDdRRhFQVPNgbJG6PV0MrdeGZo30kiThU=
+fmpBuLIqS8bsLAkcnLjdbgIyKUAi9RJQejxed7cHXf1UUqm2cAnuu4q9bhnWZPdObSSRovoyKiD=
+AIwPXUFR-3n_mjJ3iCFrSVOAABNJAhZsNsSj-0_bzTMdOKDhdK_UTkBt5rK0nDmCVSAvuQ5Ra3V=
+HvEHVhpH1kOhz52xXEltYSVtfwGbn1Mk1kdfSiPH8ycKJjpSslolimIYQCy4LQ0Yu5-RYtZ3DKk=
+FOy-AKgYG1eFRixXqXjiD3f3XmXn8wcdG-utintubRiIeOep-2Gq2scFaYvSp_EIKIoR2iL8yjl=
+r_zcb6lVk73yof6cM6jIpLPrGSf2AmWXzl8LPTamD375AH2MxlPXPBafH2rOz2TGWr7h712GkG-=
+Dcda1MN-GBDt-ABTQfZIEGd4m7x6oOkYo-LbghuK38fvmflUvvSR8jT0D7zaPBbVehkzFuulL_3=
+8PKDtBGK4jc9tKYOPVkyjiuCyG4Mx_swMFqkRAVAQkB53nQ7D7uB0qrxdTP4O1q557S8YVExbSp=
+Aj0q4Qsy0AB79xXZWXK8I8b4CQm6iftyLTHP6nAhON-sGWEfLNmZ5tqtkLxgc9XKKCBWnwp73Xi=
+2QyW1LU6JwksBPvOj5kSoWDTnGmFUNV0/0ManK0PXG7ZoOa43TT1CBmZfZe005RVg/25"><img =
+alt=3D"" style=3D"padding-left:5px;padding-right:5px;height:40px;" height=
+=3D"40" src=3D"https://static.iterable.com/bb06900ae070497883fdf7a526d6f9e1=
+/22-04-04-icon_linkedin.png"/></a>&nbsp; <a target=3D"_blank" href=3D"https=
+://links.comparis.ch/s/c/Mw9MdDaZsGpQVfA5VBpHcnBuQoz3jLDeHOnuhOaiFsU3fjk7ch=
+fSKIfY4EMgdQuRNzoMGXMvtALXU7bHkhz-ehy0JqH9XpY-5FDn8rFilg00ckgzsvKOQjZZDMvKd=
+d6XA5ei11AnhcFPyi2micuiDhuadAWVvel2GMnIXtJ_foYugFhVkppqqHyu0BhKrmp1Cwl3fyYE=
+vVdoL6TJ-XhiDIGRtR-cAN3N1dEE4sDobhio9cR7DCvX6FCWkd-CQWiYwqh9qEmJOlMn6hQlKOW=
+7zHG2u42_udoNYKzVKOA8V1xn84oEsKOOWDUwB0M2wQ-pInFO9ZR3Mo5beLVirkeTc5w_r8GQoK=
+RP5Wm3Chtip7BiJZ4X1r52XX_p6O9xusqVpGG0dpWYGtGVfEwkSMSUFvFLMw1hO7sxhNdG25Url=
+k2TjC-hZvm0SStxsjj19_3pWjm5R4JP5kDscnkr9jtyvLB4wzZ2qRPJQGuChs6KFH7q0T8SAyKS=
+oUu5OuvIPKDL-M-4b4UkLXF_ZEVDf_dfrGSQOEAKKVZI8mAGpF8xommvWyYomEU-gfC7Ch-T1_S=
+b2Mp_REiXCMOjqqu9kb-eerZbihPwldMGZqc0UDyS7Y_ELsJl4d5IGKl0ms9hZddDGXCTdyCrsG=
+CBSCYF6XiexUGIwWWnSYvDLccvVQXAKUzPu7UjegUms18i5lTITt3R/12Hu0h7-UiHL4zcCjUC2=
+w4-wQWMkREdh/25"><img alt=3D"YouTube" style=3D"padding-left:5px;padding-rig=
+ht:5px;height:40px;" height=3D"40" src=3D"https://d15k2d11r6t6rl.cloudfront=
+.net/public/users/Integrators/669d5713-9b6a-46bb-bd7e-c542cff6dd6a/bb06900=
+ae070497883fdf7a526d6f9e1/Logos/YT-icon.png"/></a>&nbsp; <a target=3D"_blan=
+k" href=3D"https://links.comparis.ch/s/c/6bg5K6RfZhbGwcJv1ua4AiU-K6MAiCc9rs=
+f_Cr1l9In4tJ4RyhmUwTf6VV7VGzRv4R8xeiyRgd-WHN-ncV5uMCFP7lT0S9dfAOOGHIgu7MaNR=
+QuXgbK4Q_lJEqGxA5-ler9-VERokW5st-XZ1o3QA9vHVRzrispV8GxIZ0vVtfLUix49l78UL5tp=
+kRtsxdhPX5II3wNafWwB_A9-pBGsjtcb38jeaMxIJpgq-zA0uFD6GExabkkLM3bZKZg1G-TgzXQ=
+jLqR5ZPVt6piuauz8LjgCRmlWQNnvhVXoigUoAmEXAp0ss8b71ldmAIjBpWFki8w_Pr5pFTXWoe=
+h2ILWBeDdpQNHodvSBIaF8b5Jo7YwTKCD2zw7XsxnzVTiDSJjIWmyTJR82hoojiO3JJloKSMhQc=
+0iHhCl5uYtPSDc-X6_e0jIcnUdBZoCIQAx-_AI4O-TlERjZJqW7AbgudTaz1MF7nxL9AIKsRvq2=
+oCS563PLkwtLypv1gWn529ihy3YV4pIPBKvWwB-m9F-V8ZeiYHn6YDnoKmlXCh2-niURKjSCNB1=
+anZKQyPUPDquVW25oXkOaZAvNNYFdU2Yj7pl31Lbrd0Qo135C1CUFnIVPHvvz28bp64AxbBn3TC=
+8xLv-OWfypuD2Nd7IK36PSEfGrb0y38cAqwqtDxz9-IGUT0E-Do43x4Ursm6G13gBb0IZWIraLh=
+lD9GvW4NAP1/-Lw6fE8OgI9ZH0DTZ0UkMVkGBGcAYsoy/25"><img alt=3D"Instagram" sty=
+le=3D"padding-left:5px;padding-right:5px;height:40px;" height=3D"40" src=3D=
+"https://d15k2d11r6t6rl.cloudfront.net/public/users/Integrators/669d5713-9b=
+6a-46bb-bd7e-c542cff6dd6a/bb06900ae070497883fdf7a526d6f9e1/Logos/Insta-Icon=
+.png"/></a> <br/> &nbsp; </div> <!--[if mso]></td> </tr> </table><![endif]=
+--></td> </tr> <tr><!-- Quick links --> <td style=3D"padding:0px; line-heig=
+ht:22px;"> <a style=3D"font-size:14px; color:#017b4f; text-decoration:under=
+line; text-decoration-color:#017b4f;" target=3D"_blank" href=3D"mailto:info=
+@comparis.ch"> Contact </a>&nbsp; |&nbsp;&nbsp;<a style=3D"font-size:14px; =
+color:#017b4f; text-decoration:underline; text-decoration-color:#017b4f;" t=
+arget=3D"_blank" href=3D"https://links.comparis.ch/s/c/yJxWzI6d9G82jHTTr7Bv=
+hITs0LRMoZ8HoM3KaLPxx9Dxtw2AmT_QQdCQ1X3YoNaRdlgJnzi00ILISyNsp_RwL0VYI93X36d=
+qnVg7-aNgwMo-L9DGc3S_MQiZeuHIib6PCp4QEtPnW-wazmgyUBNyVPusqceoOzq70YfdWe7q9E=
+HSp7AswT1ujIGR71OFE7aAF75gS3r8oK3qCrir3W-hbpunsgX_dntaMrlUzaAuh9WCzoX-Ko4G3=
+TaRrXayyXaVVePb4o81X7mI1CMC4wksIbmv3uKkIsDHVC-a1w9QPxFz0YNYe7Cj9zmove95nljq=
+ZND7zhh1slBDCS1voj4AaIVsdbyvTmwF9u5Fi827zxv7rPG87dYRvhOuQeh25cS44-vQ0NflAZL=
+ao_tjHW3vaeY2cHnX_fDYbHJ8gBgyvlWH3sgh4try8BO8RpT9rHhoRQKfcVlD_Dx881YVKLkmKc=
+6XFykKHmaP_XBp1XJP8W4WyE9Eq9EsRgvAPX3czADw6kCsxYk0OjQy50Ekhu3HXOwnEgcrfOPAb=
+oUeKYCPC5ZEMt-BXVHf_IGagrT7SOrm2VAL6GKDJIPKG9scuKx_AV0FwXuF4Jnf49vGwjmpz9LM=
+MKJhR1MJFtCyJGH8p1vgz65DM910FT3ZCkRbAZQdXjzYkZ5PXtXX1oVDHgC2C6OHtmhtSpd2LCM=
+iEvAp7rqm3eem0ZSXz1GoShk43OE3bDiToX2T39feBg/o8lWG1AqdoTA08gBbspd9rf2z6_yRMB=
+j/25"> Data protection </a>&nbsp; |&nbsp;&nbsp;<a style=3D"font-size:14px; =
+color:#017b4f; text-decoration:underline; text-decoration-color:#017b4f;" t=
+arget=3D"_blank" href=3D"https://links.comparis.ch/s/c/IbGaK6LyuD35U6KWNBNR=
+Jdg8IhZvV86rSeoz83aSW5HvWjQ6EbTcjv5qI77xYQtfRq-LChOvYGH9yKQgionQRdQhzWhYhZP=
+37D9_OXPfgw93IsgqGsaCUUo_xlIKLVHOoWhy0WE69zmRexRtxU52BtrGYIw4fqAjzIyapyxubo=
+qQCCJGWx6d3Y_HJQXTX0eDeyECUahl3mUoSXj8Gs6bm9-F-UDD1ry0y_4Q93G-kncTXwFH5_4Xp=
+dpjxJ5LVqxnO261TyUoYaiUggGtsue4m_wCUdT84Wb8MqS2xVUVC4aTpvHJDko_0nvWHeeO_4K0=
+Jtqo6GheC2P0pq4Q3wQ4R2Hi0jVhnXPgQGWX3TPQEsSW9L-NaSPOZbY0pc7i0eZx2dJhmBqd9WQ=
+7G-y8NzOIPmBIRdndrLGM9k9eLzyGk1sNJX5HXtgOusm9xkgNjkN8YCWmTDLlMNwVuSX5HU0cod=
+XRekYG4Lly8nWrThxLADFw51e_GcNrtkyim4ixLGCxoJNPxjZCQaGBcP5q4MxWHb9jGJrCkwdPK=
+1hi-d59wMkGnUQwx3vygpbgzQZajrI4H7THpKhZbBiFoxfMiTGc7OQH_TeIXqgFvUOoMxEqVCXA=
+eaaP65ZpsqTEtc92LpXD2KZgntfA_bv8eXEuQjCXoYSW72-dGSwPFK0F9wcL2YSK9wM4KNm2F-M=
+_mcH7sZCMf5er5i_WLEbqKHwRSQ9nuTlXhgFmPY09OG280cph7g/eT_ktGE6k40o1gfW4v6rxzo=
+Rl2P1VuEZ/25"> Company details</a> <br/> <br/> <span style=3D"font-size:14p=
+x; color:#333333;">comparis.ch AG, Birmensdorferstrasse 108, CH-8003 Zurich=
+</span> <br/> <br/> &nbsp; </td> </tr> </tbody> </table> <!--[endif]----></=
+td> </tr> </tbody> </table> <!--[if mso]></td> </tr> </table><![endif]--></=
+div> </div></td></tr></table></td></tr></tbody></table></td></tr></tbody></=
+table></td></tr></tbody></table><!-- End -->=0D=0A<img border=3D"0" width=
+=3D"1" height=3D"1" alt=3D"" src=3D"https://sp.comparis.ch/q/mCmmqIlRAsJ7wU=
+AyKxXMIg~~/AARGbBA~/7HwrXroiuD3TzLZAj18aYlL0o0b563wfMLOh8xDRUcboPqc8mo9mPAI=
+pHPi6Hs04z62U-w-bFm5fsYbFCLf9MQ~~">=0D=0A</body></html>
+--_----p5M4I19C0gE/dGlGWBBeQQ===_7D/63-25258-1ECCBDA6--
+

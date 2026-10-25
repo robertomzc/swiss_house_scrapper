@@ -1,0 +1,21 @@
+[
+  {
+    "url": "https://r.mailing.newhome.ch/tr/cl/dm0dqZcb5kqA8qyWS2rNpV8G4-VQuRvaEmsYEX57YYK4XtjEfsO_haEFc6T7JWX-IYzoXIQkykCNcsA3pA0A9XIttl5J82JyDvgVwRpzPpse0RaaNteheh4dd7orvjs19_lduBLQuR4JE6wN0va4SraJHBql3UBOklr4oUBCigoVk8-nCxJemHXJnaJKRzoBHt61HdJ06z-ZzzJaEqz7I6n8GcgOZ8t6b7ACkvUVhJ5a5zYuOR2JbTkLLJR5w3MZ0hAtojM5WACnw6yQLZgUWYscfDrSqLOfDei4l1DlgOywlIZ8vrro5S5vZOp-ZCp_OZz6xpPmhq_WZEVjk5mYsJosE_Livsoa5C27ebKYKfiyndmhvgYg_HqangEmd_hcFP-BTwPA7z6QjlNzSx1iO_8fm8K1Lqsa57Rmksqqz5EI1fPlErWyUuvx6kx8O5A33h-Ft1FshvMHRN0-EGttABg",
+    "source_site": "newhome",
+    "title": "4.5 room Attic apartment",
+    "address": "1000 Lausanne 27",
+    "npa": 1000,
+    "commune": "Lausanne",
+    "rooms": 4.5,
+    "surface_m2": null,
+    "first_seen": "2026-10-23",
+    "observations": [
+      {
+        "observed_at": "2026-10-23 - 16:41:00",
+        "price": 1190000,
+        "kind": "new",
+        "source": "newhome"
+      }
+    ]
+  }
+]

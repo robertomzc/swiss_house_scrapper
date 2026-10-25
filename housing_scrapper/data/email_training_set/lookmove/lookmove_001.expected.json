@@ -1,0 +1,97 @@
+[
+  {
+    "url": "https://email.support.lookmove.ch/c/eJxMyk1qxCAUAODT6KY0-J4a48JFKbgshdIDGH8m0iSKOhN6-9LdrL8vmHlJwGk0oDQujM9a0M2ElEDq6JXXignQs1eBR1hByBSBOZoNMpyBoWDAgIspyNklxYNmfpVKciJYv9da2pj2Un6O8oiT3-hutjFqJ_yNoCVor-t6doI2ngTtnvvI542gDW44ghaEWqQCpM20ssY2ytTv3bdcRy5nJ4LdDpf3yZeDDnPG67OVGtv4_Sgjp-zdfyP4_hLP1-8v-jD4FwAA__-vPE4s",
+    "source_site": "lookmove",
+    "title": "Property - Rue",
+    "address": "1673 Rue",
+    "npa": 1673,
+    "commune": "Rue",
+    "rooms": 5.0,
+    "surface_m2": 125,
+    "first_seen": "2026-10-25",
+    "observations": [
+      {
+        "observed_at": "2026-10-25 - 00:00:00",
+        "price": 1200000,
+        "kind": "new",
+        "source": "lookmove"
+      }
+    ]
+  },
+  {
+    "url": "https://email.support.lookmove.ch/c/eJxMyk1qxCAUAODT6KY06NP4s3BRCi5LofQAJpqJNMkL-mZCb1-6m_X35WDcIhUvQVoPTijjNV-Dz8knEH6ZjLOQJsgOQI5J-CmDk4XXAAKMFKCFFFLpIY8mLVZlL-ZptKNiWvT7eWKjYUP82fFRhnnlW1iJzs7UG4PIIF7X9ewMYjkYxK12qseNQcyJEoMotXXGOs1baDiVRjj0e59bPani0ZkWtz3VbZhx5xSOcn02PEuj3w-kutQ5_TcG7y_leP3-4o8AfwEAAP__gxJN_g",
+    "source_site": "lookmove",
+    "title": "Property - Syens",
+    "address": "1510 Syens",
+    "npa": 1510,
+    "commune": "Syens",
+    "rooms": 4.0,
+    "surface_m2": 107,
+    "first_seen": "2026-10-25",
+    "observations": [
+      {
+        "observed_at": "2026-10-25 - 00:00:00",
+        "price": 780000,
+        "kind": "new",
+        "source": "lookmove"
+      }
+    ]
+  },
+  {
+    "url": "https://email.support.lookmove.ch/c/eJxMys1qxCAQAOCn0Utp0HHMz8FDKXgshdIHMGo20iQTdHZD377srefvS64fF21kdnqYYFSmn1CuDlKOSmeLFpbBpDmgTdkY7BdUSVuUxYGCXitApZU22CXbh2edVJztYI1A1e7nSZW7jehnp0fu4io3tzKfTZg3AV6Av67rvwvw-RDgt9K4HDcBPgUOArzGYdR6GGV1leZcmbp2b7GWkwsdTaC67aFsXaRdsjvy9VnpzJV_P4jLUmJ4NgHvL_l4_f6SDwd_AQAA__98kU3u",
+    "source_site": "lookmove",
+    "title": "Property - La Croix (Lutry)",
+    "address": "1090 La Croix (Lutry)",
+    "npa": 1090,
+    "commune": "Lutry",
+    "rooms": 9.0,
+    "surface_m2": 300,
+    "first_seen": "2026-10-25",
+    "observations": [
+      {
+        "observed_at": "2026-10-25 - 00:00:00",
+        "price": null,
+        "kind": "new",
+        "source": "lookmove"
+      }
+    ]
+  },
+  {
+    "url": "https://email.support.lookmove.ch/c/eJxMykFqxCAUANDT6KY06P8mmoWLUnBZCqUHMGom0iSK_pnQ25fuZv1etJNZJfJkpZ7BCJxmxTcb9DIbgyOG6ANqXOMUdYpSySC8gplnCwImKUAJKSSqIY6TXzXGWYRl1CMyJfq91tJo2Ev5OcojDWHju92Iamf4xsAxcNd1PTsDl04Gbs-d8nlj4KInz8BJpQ0aFLzZVpbUqAz93kPLlXI5O1Pidvi8D6EcnOyZrs9Wamr0-1Eorzn4_8bg_SWdr99f_GHhLwAA__-uPE4r",
+    "source_site": "lookmove",
+    "title": "Property - Sullens",
+    "address": "1036 Sullens",
+    "npa": 1036,
+    "commune": "Sullens",
+    "rooms": 5.0,
+    "surface_m2": 150,
+    "first_seen": "2026-10-25",
+    "observations": [
+      {
+        "observed_at": "2026-10-25 - 00:00:00",
+        "price": 750000,
+        "kind": "new",
+        "source": "lookmove"
+      }
+    ]
+  },
+  {
+    "url": "https://email.support.lookmove.ch/c/eJxMykFqxCAUANDT6KY06NdoXLgoBZelUHoAY8xEmuSL_pnQ25fuZv3e4s20SsWzl9bBJJRxmm_eaRlh1Uk5YWGewJhJg8suL9Zmtc68eBBgpAAtpJBKD8to4mrV4kSaRzsqpkW_14qNhh3x58BHHtLGd78R1c7UG4PAIFzX9ewMQj4ZhL10KueNQVgiRQZBajuB0iNvvuGcG-HQ7z21Uqng2ZkWtyOWfUh4cPJnvj4b1tzo9wOprCXF_8bg_SWfr99f_OHhLwAA__88-U2t",
+    "source_site": "lookmove",
+    "title": "Property - Bussigny",
+    "address": "Rue des Alpes 72, 1030 Bussigny",
+    "npa": 1030,
+    "commune": "Bussigny",
+    "rooms": 6.0,
+    "surface_m2": 791,
+    "first_seen": "2026-10-25",
+    "observations": [
+      {
+        "observed_at": "2026-10-25 - 00:00:00",
+        "price": null,
+        "kind": "new",
+        "source": "lookmove"
+      }
+    ]
+  }
+]

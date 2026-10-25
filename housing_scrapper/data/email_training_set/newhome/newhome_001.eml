@@ -1,0 +1,855 @@
+Delivered-To: roberto.suscriptions@gmail.com
+Received: by 2002:a2e:a605:0:b0:3ab:3511:4041 with SMTP id v5csp5824847ljp;
+        Fri, 23 Oct 2026 07:41:39 -0700 (PDT)
+X-Received: by 2002:a05:6000:40d9:b0:48c:6a6b:69b2 with SMTP id
+ ffacd0b85a97d-48e385a7618mr3955115f8f.27.1792766498855;        Fri, 23 Oct
+ 2026 07:41:38 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1792766498; cv=none;
+        d=google.com; s=arc-20260327;
+        b=hViZBBo7zQ/kES8P98G5jBG9/DNf69yoEk3MP7SnZpNZiDUhRfYnOo/HnpDe7Jj3mL
+         SDeBCsKj2dce+cgBF4xBHaWsOgDrCjJQ529yhMaNfC9YnRbYw3c/ocHfU5qnVtOK4P1I
+         rG0Sg+ZndrwvXrwcGp/QTCLwRHwIaAqKIpFpWWOJHv2Ezn1bo9uerKTS189h+N+urA2u
+         uZHl5g8yWZHiBYwu3nkVbjEofFy57qfnOe7qYlNjeriWeGPQg22sLRLeJPVXSDEmZAof
+         RoWB+rNBPBHvwMeVolNaJ3LJG5i8h+FXb9alp5YMjQIMVLh5V2rWCCm/OaMMAsmYVtN6
+         NM7g==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com;
+ s=arc-20260327;       
+ h=mime-version:list-unsubscribe:from:message-id:feedback-id:reply-to        
+ :origin-messageid:list-unsubscribe-post:subject:date:to        
+ :dkim-signature;        bh=Jjk3iVvqsxB8X+wS/QWkdQP+rnHf18lTFaxhNqxoXVE=;
+        fh=2XmS9xvnXPicLaGz/Ea/ruWPFMIoGD/l/uZxcTdxA7o=;       
+ b=JCyKc7JDo3PzCFW2bpCKeQTgn2Otn0sjtA5h8N5YpZhpo99usvKdo4VY1xEYC+UosO        
+ E9G76dnQUZPC2AutwmA4PQcZfP3dkiFeGTnSQx6p8GW8BmSiyF7zOvMS18iGVUVGI8xp        
+ y1Kw1VBB4rmJrY19SE8g9LUFKskcDPKOqP3mlZq9sshe9aKEw4A6BIQYSv5m8h8WA2Df        
+ +nU3hfwTNde7CY3pE4n+UMr7J7YtTa3/zpEKegJjDpC/2/izRg4B8vODrP1rUFQwWWeC        
+ V7PzuW4PERWwUS6dAnBSLp1JubZfFnROG/VSiJIIv3nEz/3OcDZfVt3LJ/P2LqOE3cl1        
+ Xn1A==;        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;       dkim=pass
+ header.i=@newhome.ch header.s=brevo2 header.b=buGtfizO;       spf=pass
+ (google.com: domain of bounces-313664854-2365977789@mailing.newhome.ch
+ designates 172.246.2.239 as permitted sender)
+ smtp.mailfrom=bounces-313664854-2365977789@mailing.newhome.ch;      
+ dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=newhome.ch
+Return-Path: <bounces-313664854-2365977789@mailing.newhome.ch>
+Received: from mailing.newhome.ch (mailing.newhome.ch. [172.246.2.239])
+        by mx.google.com with ESMTPS id
+ ffacd0b85a97d-48e3d44c603si128954f8f.313.2026.10.23.07.41.38        for
+ <roberto.suscriptions@gmail.com>        (version=TLS1_3
+ cipher=TLS_AES_256_GCM_SHA384 bits=256/256);        Fri, 23 Oct 2026 07:41:38
+ -0700 (PDT)
+Received-SPF: pass (google.com: domain of
+ bounces-313664854-2365977789@mailing.newhome.ch designates 172.246.2.239 as
+ permitted sender) client-ip=172.246.2.239;
+Authentication-Results: mx.google.com;       dkim=pass header.i=@newhome.ch
+ header.s=brevo2 header.b=buGtfizO;       spf=pass (google.com: domain of
+ bounces-313664854-2365977789@mailing.newhome.ch designates 172.246.2.239 as
+ permitted sender)
+ smtp.mailfrom=bounces-313664854-2365977789@mailing.newhome.ch;      
+ dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=newhome.ch
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=newhome.ch; q=dns/txt;
+ s=brevo2; bh=Jjk3iVvqsxB8X+wS/QWkdQP+rnHf18lTFaxhNqxoXVE=; =?utf-8?q?h=3Dfr?=
+ =?utf-8?q?om=3Areply-to=3Asubject=3Adate=3Ato=3Amime-version=3Acontent-type?=
+ =?utf-8?q?=3Alist-unsubscribe=3Ax-csa-complaints=3Alist-unsubscribe-post=3A?=
+ =?utf-8?q?message-id=3Ax-sib-id=3Afeedback-id=3B________b=3DbuGtfizOKUwPW+D?=
+ =?utf-8?q?DIvg3AaBHmtEYoiYkio0iFcnsBoBsx5DgWnQSpUGC+s3WkXaf+IeIGqGgMneL?=
+       
+ Ry778r0nBq2Y6GdKsrWzo9C0yjzdO9AGwHxamJXuFve6caDcnqlIsbSnoQ2gF2Wx68G6UIFYNtP7
+       
+ /THRc4yTd1F3gmMXvsdqUPzd02hXjzGLUF/So56/ddVdpIRc4I5yR1J/625LB9Ynm21qPTe4SyW6
+       
+ UlH9J4C2o3UwUot7K9Bh/6RIXaajxaNdOAX+9IBXUNpIwxiAheKNTpQ2f36Gri2sXYNqyqpr2WiL
+        Av074iYkC6NBy2o9vKNUN3J97Br+yHdH9YzZCg==
+X-Mailin-EID: =?utf-8?q?MzEzNjY0ODU0fnJvYmVydG8uc3VzY3JpcHRpb25zQGdtYWlsLmNv?=
+ =?utf-8?q?bX48MjAyNjEwMjMxNDQxLjQyOTc5NjE0MzE3QHNtdHAtcmVsYXkubWFpbGluLmZyP?=
+ =?utf-8?q?n5tYWlsaW5nLm5ld2hvbWUuY2g=253D?=
+To: "roberto.suscriptions@gmail.com" <roberto.suscriptions@gmail.com>
+Date: Fri, 23 Oct 2026 14:41:22 GMT
+Subject:
+ New results in your search subscription "Lausanne7k - 1.2M - 4.5rooms"
+X-sib-id: =?utf-8?q?tf6MZ=5FS0FzKQIm0jNJicM4jPO79tfx7WrMneBCqF9eXGs67Nvudz92?=
+ =?utf-8?q?YX7JF9J3=5FfscwBo2YHVJtYk21OVBDrfTfF122Mems0IVOD7jQWvZWrvzsuMB5Sq?=
+ =?utf-8?q?a0eoSWS2t8zYax9cSdr9r=5FHA01OAN1IFjjhBRbuGbZwYBBhkaN5399nPi-QelDq?=
+ =?utf-8?q?mxprsG8?=
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+X-CSA-Complaints: csa-complaints@eco.de
+Origin-messageId: <202610231441.42979614317@smtp-relay.mailin.fr>
+Reply-To: <no-reply@newhome.ch>
+Feedback-ID: 172.246.2.239:8906701_-1:8906701:Sendinblue
+Message-Id: <202610231441.42979614317@smtp-relay.mailin.fr>
+From: "newhome" <no-reply@newhome.ch>
+List-Unsubscribe: =?utf-8?q?=3Chttps=3A//list-unsubscribe=2Eme/tr/un/li/wyKr?=
+ =?utf-8?q?nGaTT-q9okC4KgL3yrjDONfxGKQHgmpFLh4rvvJMRf45nCIlvFj=5FqcWTKrCvJRW?=
+ =?utf-8?q?9sg8u=5FitkNJPBRe0OdeHw7fl5tuTEvHaVsCFUjvR6DBgBvU9ydla-fvUfKRSH5G?=
+ =?utf-8?q?KR5aFzA8Iba5xqYQr=5FnlYhTWjN7NlE9brTuZA5s9KLQSWwgPGjzS0XRkUmHZApm?=
+ =?utf-8?q?kn5iVa56OjKx4-eZgh1uT9jFgjCwMJpTKxaHTrcXSXS7RPp=3E?=
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="f69141c0ee4af8c5a901ee6ed0e279b6ccff1bda55903fff3e63d1f6c9dc"
+X-Mailin-Tag: suchabo
+
+--f69141c0ee4af8c5a901ee6ed0e279b6ccff1bda55903fff3e63d1f6c9dc
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset=utf-8
+
+###Your search subscription "Lausanne7k - 1.2M - 4.5rooms"=C2=A0contains=C2=
+=A01 new match
+
+
+=C2=A0
+
+
+
+[4.5 room Attic apartment](https://newhome.ch/id/6209440?utm_term=3Dsuchabo=
+treffer)
+---------------------------------------------------------------------------=
+---------------------
+
+
+[ 1000](https://newhome.ch/id/6209440?utm_term=3Dsuchabotreffer)[=C2=A0](ht=
+tps://newhome.ch/id/6209440)[=C2=A0](https://newhome.ch/id/6209440?utm_term=
+=3Dsuchabotreffer)[Lausanne 27](https://newhome.ch/id/6209440?utm_term=3Dsu=
+chabotreffer)
+
+[Selling price](https://newhome.ch/id/6209440?utm_term=3Dsuchabotreffer)
+
+[CHF 1=E2=80=99190=E2=80=99000](https://newhome.ch/id/6209440?utm_term=3Dsu=
+chabotreffer)
+
+
+
+[ All results](https://newhome.ch/en/buying/search/house-apartment/map-area=
+/list?location=3D1%3b25&radius=3D7&radiusCenterCoordinate=3D46.52497%3b6.62=
+822&propertyType=3D100&offerType=3D1&priceMax=3D1200000&roomsMin=3D4.50&roo=
+msMax=3D99&order=3D1&searchSubs=3D5e2f9828-1048-4370-af9e-a2550ebb4329&amp;=
+utm_term=3Dzurtrefferliste "https://newhome.ch/en/buying/search/house-apart=
+ment/map-area/list?location=3D1%3b25&radius=3D7&radiusCenterCoordinate=3D46=
+.52497%3b6.62822&propertyType=3D100&offerType=3D1&priceMax=3D1200000&roomsM=
+in=3D4.50&roomsMax=3D99&order=3D1&searchSubs=3D5e2f9828-1048-4370-af9e-a255=
+0ebb4329")
+
+
+[Extend search subscription](https://newhome.ch/en/search-subscription/5e2f=
+9828-1048-4370-af9e-a2550ebb4329/extend?utm_term=3Dsuchaboverlaengern)
+
+[Delete search subscription](https://newhome.ch/en/search-subscription/5e2f=
+9828-1048-4370-af9e-a2550ebb4329/delete?utm_term=3Dsuchaboloeschen)
+
+
+This is an automatically generated e-mail - please do not respond to this e=
+-mail.
+
+
+newhome - Property app
+
+
+**=C2=A9 2026=C2=A0**[**newhome.ch AG**](https://www.newhome.ch/ "The Regio=
+nal Real Estate Platform of Switzerland")
+
+--f69141c0ee4af8c5a901ee6ed0e279b6ccff1bda55903fff3e63d1f6c9dc
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=utf-8
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org=
+/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns=3D"http://www.w3.org/1999/xht=
+ml" xmlns:v=3D"urn:schemas-microsoft-com:vml" xmlns:o=3D"urn:schemas-micros=
+oft-com:office:office"><head><meta http-equiv=3D"Content-Type" content=3D"t=
+ext/html; charset=3Dutf-8"/><meta http-equiv=3D"X-UA-Compatible" content=3D=
+"IE=3Dedge"/><meta name=3D"format-detection" content=3D"telephone=3Dno"/><m=
+eta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scale=3D1.0"=
+/><title>New results in your search subscription &#34;Lausanne7k - 1.2M - 4=
+.5rooms&#34;</title><style type=3D"text/css" emogrify=3D"no">#outlook a { p=
+adding:0; } .ExternalClass { width:100%; } .ExternalClass, .ExternalClass p=
+, .ExternalClass span, .ExternalClass font, .ExternalClass td, .ExternalCla=
+ss div { line-height: 100%; } table td { border-collapse: collapse; mso-lin=
+e-height-rule: exactly; } .editable.image { font-size: 0 !important; line-h=
+eight: 0 !important; } .nl2go_preheader { display: none !important; mso-hid=
+e:all !important; mso-line-height-rule: exactly; visibility: hidden !import=
+ant; line-height: 0px !important; font-size: 0px !important; } body { width=
+:100% !important; -webkit-text-size-adjust:100%; -ms-text-size-adjust:100%;=
+ margin:0; padding:0; } img { outline:none; text-decoration:none; -ms-inter=
+polation-mode: bicubic; } a img { border:none; } table { border-collapse:co=
+llapse; mso-table-lspace:0pt; mso-table-rspace:0pt; } th { font-weight: nor=
+mal; text-align: left; } *[class=3D"gmail-fix"] { display: none !important;=
+ } </style><style type=3D"text/css" emogrify=3D"no"> @media (max-width: 600=
+px) { .gmx-killpill { content: ' \03D1';} } </style><style type=3D"text/css=
+" emogrify=3D"no">@media (max-width: 600px) { .gmx-killpill { content: ' \0=
+3D1';} .r0-o { border-style: solid !important; margin: 0 auto 0 auto !impor=
+tant; width: 100% !important } .r1-i { background-color: #f1f3f4 !important=
+ } .r2-c { box-sizing: border-box !important; display: block !important; va=
+lign: top !important; width: 100% !important } .r3-o { border-style: solid =
+!important; width: 100% !important } .r4-i { color: #545859 !important; pad=
+ding-left: 0px !important; padding-right: 0px !important } .r5-c { box-sizi=
+ng: border-box !important; text-align: center !important; valign: top !impo=
+rtant; width: 100% !important } .r6-o { background-size: auto !important; b=
+order-style: solid !important; margin: 0 auto 0 auto !important; width: 75%=
+ !important } .r7-i { color: #545859 !important; padding-bottom: 10px !impo=
+rtant; padding-left: 15px !important; padding-right: 0px !important; paddin=
+g-top: 36px !important } .r8-o { border-style: solid !important; margin: 0 =
+auto 0 auto !important; margin-bottom: 0px !important; margin-top: 0px !imp=
+ortant; width: 100% !important } .r9-i { background-color: #ffffff !importa=
+nt; color: #545859 !important; padding-bottom: 15px !important; padding-lef=
+t: 15px !important; padding-right: 15px !important; padding-top: 15px !impo=
+rtant } .r10-c { box-sizing: border-box !important; padding-bottom: 15px !i=
+mportant; padding-top: 15px !important; text-align: left !important; valign=
+: top !important; width: 100% !important } .r11-o { border-style: solid !im=
+portant; margin: 0 auto 0 auto !important; margin-top: 8px !important; widt=
+h: 100% !important } .r12-i { color: #545859 !important; padding-bottom: 0p=
+x !important; padding-top: 0px !important } .r13-c { box-sizing: border-box=
+ !important; color: #545859 !important; padding-bottom: 0px !important; pad=
+ding-top: 0px !important; text-align: left !important; valign: top !importa=
+nt; width: 100% !important } .r14-c { box-sizing: border-box !important; pa=
+dding: 0 !important; text-align: center !important; valign: top !important;=
+ width: 100% !important } .r15-o { border-style: solid !important; margin: =
+0 auto 0 auto !important; margin-bottom: 15px !important; margin-top: 15px =
+!important; width: 100% !important } .r16-i { padding: 0 !important; text-a=
+lign: center !important } .r17-r { background-color: #1b8574 !important; bo=
+rder-color: #1b8574 !important; border-radius: 4px !important; border-width=
+: 0px !important; box-sizing: border-box; height: initial !important; paddi=
+ng: 0 !important; padding-bottom: 15px !important; padding-left: 36px !impo=
+rtant; padding-right: 36px !important; padding-top: 15px !important; text-a=
+lign: center !important; width: 100% !important } .r18-c { box-sizing: bord=
+er-box !important; color: #545859 !important; padding-bottom: 15px !importa=
+nt; padding-top: 15px !important; width: 100% !important } .r19-i { backgro=
+und-color: #ffffff !important; color: #545859 !important; padding-bottom: 0=
+px !important; padding-left: 15px !important; padding-right: 15px !importan=
+t; padding-top: 0px !important } .r20-c { box-sizing: border-box !important=
+; color: #545859 !important; padding-bottom: 0px !important; padding-top: 0=
+px !important; text-align: center !important; width: 100% !important } .r21=
+-c { box-sizing: border-box !important; color: #545859 !important; padding-=
+bottom: 15px !important; padding-top: 30px !important; text-align: center !=
+important; width: 100% !important } .r22-c { box-sizing: border-box !import=
+ant; color: #545859 !important; padding-bottom: 15px !important; padding-to=
+p: 15px !important; text-align: left !important; valign: top !important; wi=
+dth: 100% !important } .r23-i { background-color: #353839 !important; color=
+: #545859 !important; padding-bottom: 15px !important; padding-left: 15px !=
+important; padding-right: 15px !important; padding-top: 30px !important } .=
+r24-c { box-sizing: border-box !important; text-align: center !important; w=
+idth: 100% !important } .r25-i { color: #545859 !important; font-size: 0px =
+!important; padding-bottom: 0px !important; padding-left: 0px !important; p=
+adding-right: 0px !important; padding-top: 15px !important } .r26-c { box-s=
+izing: border-box !important; width: 32px !important } .r27-o { border-styl=
+e: solid !important; margin-right: 8px !important; width: 32px !important }=
+ .r28-i { color: #545859 !important; padding-bottom: 5px !important; paddin=
+g-top: 5px !important } .r29-o { border-style: solid !important; margin-rig=
+ht: 0px !important; width: 32px !important } .r30-c { box-sizing: border-bo=
+x !important; text-align: left !important; valign: top !important; width: 1=
+00% !important } .r31-o { border-style: solid !important; margin: 0 auto 0 =
+0 !important; width: 100% !important } .r32-i { color: #545859 !important; =
+padding-bottom: 0px !important; padding-top: 15px !important; text-align: c=
+enter !important } .r33-i { background-color: #353839 !important; color: #5=
+45859 !important; padding-bottom: 5px !important; padding-left: 90px !impor=
+tant; padding-right: 90px !important; padding-top: 3px !important } .r34-c =
+{ box-sizing: border-box !important; text-align: right !important; valign: =
+top !important; width: 100% !important } .r35-o { background-size: auto !im=
+portant; border-style: solid !important; margin: 0 0 0 auto !important; wid=
+th: 100% !important } .r36-i { color: #545859 !important; padding-bottom: 5=
+px !important; padding-left: 0px !important; padding-right: 0px !important;=
+ padding-top: 5px !important } .r37-i { color: #545859 !important; padding-=
+bottom: 0px !important; padding-left: 0px !important; padding-right: 0px !i=
+mportant; padding-top: 0px !important } .r38-i { background-color: #353839 =
+!important; color: #545859 !important; padding-bottom: 30px !important; pad=
+ding-left: 15px !important; padding-right: 15px !important; padding-top: 0p=
+x !important } .r39-i { color: #545859 !important; padding-bottom: 15px !im=
+portant; padding-top: 10px !important; text-align: center !important } body=
+ { -webkit-text-size-adjust: none } .nl2go-responsive-hide { display: none =
+} .nl2go-body-table { min-width: unset !important } .mobshow { height: auto=
+ !important; overflow: visible !important; max-height: unset !important; vi=
+sibility: visible !important } .resp-table { display: inline-table !importa=
+nt } .magic-resp { display: table-cell !important } } </style><!--[if !mso]=
+><!--><style type=3D"text/css" emogrify=3D"no">@import url("https://fonts.g=
+oogleapis.com/css2?family=3DIBM Plex Sans&family=3DMerriweather"); @import =
+url("https://fonts.googleapis.com/css2?family=3DIBM%20Plex%20Sans&display=
+=3Dswap"); </style><!--<![endif]--><style type=3D"text/css">p, h1, h2, h3, =
+h4, ol, ul, li { margin: 0; } .nl2go-default-textstyle { color: #545859; fo=
+nt-family: IBM Plex Sans, arial; font-size: 18px; line-height: 1.5; word-br=
+eak: break-word } .default-button { color: #ffffff; font-family: IBM Plex S=
+ans, arial; font-size: 15px; font-style: normal; font-weight: normal; line-=
+height: 1.15; text-decoration: none; word-break: break-word } a, a:link { c=
+olor: #1b8574; font-weight: bold; text-decoration: none } .default-heading1=
+ { color: #545859; font-family: Merriweather, arial; font-size: 30px; word-=
+break: break-word } .default-heading2 { color: #545859; font-family: IBM Pl=
+ex Sans, arial; font-size: 24px; word-break: break-word } .default-heading3=
+ { color: #545859; font-family: IBM Plex Sans, arial; font-size: 24px; word=
+-break: break-word } .default-heading4 { color: #545859; font-family: IBM P=
+lex Sans, arial; font-size: 24px; word-break: break-word } a[x-apple-data-d=
+etectors] { color: inherit !important; text-decoration: inherit !important;=
+ font-size: inherit !important; font-family: inherit !important; font-weigh=
+t: inherit !important; line-height: inherit !important; } .no-show-for-you =
+{ border: none; display: none; float: none; font-size: 0; height: 0; line-h=
+eight: 0; max-height: 0; mso-hide: all; overflow: hidden; table-layout: fix=
+ed; visibility: hidden; width: 0; } </style><!--[if mso]><xml> <o:OfficeDoc=
+umentSettings> <o:AllowPNG/> <o:PixelsPerInch>96</o:PixelsPerInch> </o:Offi=
+ceDocumentSettings> </xml><![endif]--><style type=3D"text/css">a:link{color=
+: #1b8574; font-weight: bold; text-decoration: none;}</style></head><body b=
+gcolor=3D"#f1f3f4" text=3D"#545859" link=3D"#1b8574" yahoo=3D"fix" style=3D=
+"background-color: #f1f3f4; padding-bottom: 36px; padding-top: 36px;"> <tab=
+le cellspacing=3D"0" cellpadding=3D"0" border=3D"0" role=3D"presentation" c=
+lass=3D"nl2go-body-table" width=3D"100%" style=3D"background-color: #f1f3f4=
+; width: 100%;"><tbody><tr><td><!--[if mso]> <img width=3D"1" height=3D"1" =
+src=3D"https://r.mailing.newhome.ch/tr/op/gx60PMwCPnWugGkCereWYvdQhp3AEYEpH=
+WnRC-OcTE0qS_1wX8tlvIhqaNOrD_uNv_qSgi0okm4DBwj6XgMPiNKyzNtTaobKDlPDDJq4uuEC=
+MXTEPTYCBptfGXf3faf6eMOyUzX4_guHdWBVrKzfjaJar_Jy69kLcCC2wK34_PTsugcjmSRKdSW=
+b16YIlRmirOdugSHVhvdhHkgd4HJ_z5OvQssrJac" /> <![endif]--><!--[if !mso]><!--=
+> <img style=3D"display:none" src=3D"https://r.mailing.newhome.ch/tr/op/gx6=
+0PMwCPnWugGkCereWYvdQhp3AEYEpHWnRC-OcTE0qS_1wX8tlvIhqaNOrD_uNv_qSgi0okm4DBw=
+j6XgMPiNKyzNtTaobKDlPDDJq4uuECMXTEPTYCBptfGXf3faf6eMOyUzX4_guHdWBVrKzfjaJar=
+_Jy69kLcCC2wK34_PTsugcjmSRKdSWb16YIlRmirOdugSHVhvdhHkgd4HJ_z5OvQssrJac" /> =
+<!--<![endif]--> <table cellspacing=3D"0" cellpadding=3D"0" border=3D"0" ro=
+le=3D"presentation" width=3D"600" align=3D"center" class=3D"r0-o" style=3D"=
+table-layout: fixed; width: 600px;"><tbody><tr><td valign=3D"top" class=3D"=
+r1-i" style=3D"background-color: #f1f3f4;"> <table cellspacing=3D"0" cellpa=
+dding=3D"0" border=3D"0" role=3D"presentation" width=3D"100%" align=3D"cent=
+er" class=3D"r0-o" style=3D"background-color: #ffffff; color: #545859; font=
+-family: IBM Plex Sans; font-size: 18px; table-layout: fixed; width: 100%;"=
+><tbody><tr><th width=3D"100%" valign=3D"top" class=3D"r2-c" style=3D"font-=
+weight: normal;"> <table cellspacing=3D"0" cellpadding=3D"0" border=3D"0" r=
+ole=3D"presentation" width=3D"100%" class=3D"r3-o" style=3D"table-layout: f=
+ixed; width: 100%;"><tbody><tr><td valign=3D"top" class=3D"r4-i" style=3D"c=
+olor: #545859; font-family: IBM Plex Sans; font-size: 18px; padding-left: 7=
+px; padding-right: 7px;"> <table width=3D"100%" cellspacing=3D"0" cellpaddi=
+ng=3D"0" border=3D"0" role=3D"presentation"><tbody><tr><td class=3D"r5-c" a=
+lign=3D"left"> <table cellspacing=3D"0" cellpadding=3D"0" border=3D"0" role=
+=3D"presentation" width=3D"213" class=3D"r6-o" style=3D"table-layout: fixed=
+; width: 213px;"><tbody><tr><td class=3D"r7-i" style=3D"color: #545859; fon=
+t-family: IBM Plex Sans; font-size: 18px; padding-bottom: 10px; padding-lef=
+t: 15px; padding-top: 36px;"> <a href=3D"https://r.mailing.newhome.ch/tr/cl=
+/aqS96iADN1oZ6AUii6aglsU53Rp1Fd-06eh__wD0oJwO-qKZV_7ypOK-rLgbNF2E07GoEzIGvm=
+SOScDT7bpsS8A7jJs0DBRDY6264DTmRZWlwwiBvcYPHEOgfAXkcw5BBF341RhvVwxhSJO9wdpkE=
+NQoEByfT9F6mgzSxVnzvYBjW7q3D7PkC75hpUeh24fO_bued2zjaVJOKUHBoM-9Ekb33GGIXRch=
+pwVZniDFJBjQ2PCTnzbf8_EYEnJF0-GelZ0kcD_p1R-lt5_tqwP0O0gCUyYsd9cbRlJy7ZKlNGE=
+tCavF583bVoeFt9pRLBXE6Tg9XdxCXwRcvEmJPeaYvd7hMPwSD2B1WFw4RJiD_C8ci1xUL4R1LM=
+gRUL8TNtlT7mQ6I21f-e086l7P7CWpRfUbrOUeQPxYfo18uh4SxTa9xxZL6BNwP8e4-6Ad4u0Gk=
+cDcvo665g" target=3D"_blank" style=3D"color: #1b8574; font-weight: bold; te=
+xt-decoration: none;"> <img src=3D"https://r.mailing.newhome.ch/im/8906701/=
+233c67cb26e9decfe5c785edae131aea4cb9a8327ef0e95931bfd19ba74f96fa.png?e=3DMi=
+_yVtjuA61O6GS5hu40NlvKZPFNYFZczI_fjIj8TmsRZMRsQTaZTTJQi_UpisFxllumfFf7ZOofT=
+P6AUirDzbkduMQ7FjddnZPRYFJgpYw7a1PskWAINHa4mxNIwFuWrMiLg5LV07YKKatBx0TJZSeD=
+QPvRT3ERLUiKGqUOrDmOMtTXh8zByZ-difgxny74Na-TZzhrD7I-_43Z4jqGRbuF_igxXWQexiY=
+8DZh0VbrU6_RAVAhLTypMDqwC19ynoWKlNu1FVSMA2orFN_WxYQr9eNnxoNtBrIUXsxANrgheE1=
+twpMrFkHbJL0vN" width=3D"198" alt=3D"newhome Logo" border=3D"0" style=3D"di=
+splay: block; width: 100%;"/></a> </td> </tr></tbody></table></td> </tr></t=
+body></table></td> </tr></tbody></table></th> </tr></tbody></table><table c=
+ellspacing=3D"0" cellpadding=3D"0" border=3D"0" role=3D"presentation" width=
+=3D"100%" align=3D"center" class=3D"r8-o" style=3D"table-layout: fixed; wid=
+th: 100%;"><tbody><tr><td class=3D"r9-i" style=3D"background-color: #ffffff=
+; color: #545859; font-family: IBM Plex Sans; font-size: 18px; padding-bott=
+om: 15px; padding-left: 15px; padding-right: 15px; padding-top: 15px;"> <ta=
+ble width=3D"100%" cellspacing=3D"0" cellpadding=3D"0" border=3D"0" role=3D=
+"presentation"><tbody><tr><th width=3D"100%" valign=3D"top" class=3D"r2-c" =
+style=3D"font-weight: normal;"> <table cellspacing=3D"0" cellpadding=3D"0" =
+border=3D"0" role=3D"presentation" width=3D"100%" class=3D"r3-o" style=3D"t=
+able-layout: fixed; width: 100%;"><tbody><tr><td valign=3D"top" class=3D"r4=
+-i" style=3D"color: #545859; font-family: IBM Plex Sans; font-size: 18px; p=
+adding-left: 7px; padding-right: 7px;"> <table width=3D"100%" cellspacing=
+=3D"0" cellpadding=3D"0" border=3D"0" role=3D"presentation"><tbody><tr><td =
+class=3D"r10-c nl2go-default-textstyle" align=3D"left" style=3D"color: #545=
+859; font-family: IBM Plex Sans,arial; font-size: 18px; line-height: 1.5; w=
+ord-break: break-word; padding-bottom: 15px; padding-top: 15px; text-align:=
+ left; valign: top; word-wrap: break-word;"> <div><h3 class=3D"default-head=
+ing3" style=3D"margin: 0; color: #545859; font-family: IBM Plex Sans,arial;=
+ font-size: 24px; word-break: break-word;"><span style=3D"font-family: &#39=
+;IBM Plex Sans&#39;; font-size: 18px;">Your search subscription &#34;Lausan=
+ne7k - 1.2M - 4.5rooms&#34;=C2=A0contains=C2=A01 new match</span></h3><p st=
+yle=3D"margin: 0;">=C2=A0</p></div> </td> </tr></tbody></table></td> </tr><=
+/tbody></table></th> </tr></tbody></table></td> </tr></tbody></table><table=
+ cellspacing=3D"0" cellpadding=3D"0" border=3D"0" role=3D"presentation" wid=
+th=3D"100%" align=3D"center" class=3D"r8-o" style=3D"table-layout: fixed; w=
+idth: 100%;"><tbody><tr><td class=3D"r9-i" style=3D"background-color: #ffff=
+ff; color: #545859; font-family: IBM Plex Sans; font-size: 18px; padding-bo=
+ttom: 15px; padding-left: 15px; padding-right: 15px; padding-top: 15px;"> <=
+table width=3D"100%" cellspacing=3D"0" cellpadding=3D"0" border=3D"0" role=
+=3D"presentation"><tbody><tr><th width=3D"41.67%" valign=3D"top" class=3D"r=
+2-c" style=3D"font-weight: normal;"> <table cellspacing=3D"0" cellpadding=
+=3D"0" border=3D"0" role=3D"presentation" width=3D"100%" class=3D"r3-o" sty=
+le=3D"table-layout: fixed; width: 100%;"><tbody><tr><td valign=3D"top" clas=
+s=3D"r4-i" style=3D"color: #545859; font-family: IBM Plex Sans; font-size: =
+18px; padding-left: 7px; padding-right: 7px;"> <table width=3D"100%" cellsp=
+acing=3D"0" cellpadding=3D"0" border=3D"0" role=3D"presentation"><tbody><tr=
+><td class=3D"r5-c" align=3D"center"> <table cellspacing=3D"0" cellpadding=
+=3D"0" border=3D"0" role=3D"presentation" width=3D"223" class=3D"r11-o" sty=
+le=3D"table-layout: fixed; width: 223px;"><tbody><tr class=3D"nl2go-respons=
+ive-hide"><td height=3D"8" style=3D"font-size: 8px; line-height: 8px;">=C2=
+=AD</td> </tr><tr><td class=3D"r12-i" style=3D"color: #545859; font-family:=
+ IBM Plex Sans; font-size: 18px;"> <a href=3D"https://r.mailing.newhome.ch/=
+tr/cl/nNxy2wxONDNhCFAT45uyg--1qvMv4YZ96uJ-PjD_y72m27mLYj_PyEDYzQB2G_jdFDz47=
+fN9k8iL7uKuUTo6URLcCzy5e6eMK7Iy70jFNJ4z9BL3p4gq1wmb_H15RiJqEvz6lpOSROsbTls-=
+dSFx3iz5DTJBD9uJHCUs7fB-5fQ4Y5xWccSEz9qi4e1zr-VIrwRTNDuWgJfuxSlWlKB6R0MLzpK=
+RXfLjKyN69IudWjl51REUE9MiJHuHp0nbJMR0hlLydG98ooaK2DXluBRl15htBI90ouBEvNyA9S=
+g62QxOdbT86_2ZvXioKuv2YavaST_JnENVy0K0E2ABPLthJTykLTuaIsjUEnQQHAbRXhtiAKoR5=
+1TTxmhC0v8_FL7boKDLLmwH8XwEiQHhXOsI6I9yVeFwgHP411LwFwrK12-w2Qm-4IASY8ebc6Xv=
+9uxZXH5SJRHz4JSHDymNt4Ha0Js" target=3D"_blank" style=3D"color: #1b8574; fon=
+t-weight: bold; text-decoration: none;"> <img src=3D"https://r.mailing.newh=
+ome.ch/im/8906701/cfde0acdd13fc9fd135ba4a46d4696c5c97dc8fae9bc0da77a6c4075d=
+835431b.jpg?e=3DMy73Rbng1Vqg5gzUZFd5NkzybcaWamq5440dyS52Y5Il6Bi2zyhiukVXD2g=
+D1SLHdxs5Asxau7bMfdiTcT87rgQxDLLOLbUFCq3m5mRygZHRxSWzQUqqNEmjt9viGL-nt5IRfL=
+DDLDOEKE0nAyXD7TZrjMbU9CQu_jNLFnYbbZdSSIrxNbt-UuZhJEqJ165cdX-g1rAvlgsdgUyre=
+D9XU45Z5syactz2f9_rUpw9o-W89raPpSkKLfunSN_5s9TD-DTSA6R_5n6XyeBE1rj3Fj2372x5=
+AHM2I2j6nqAJD2iXs-o" width=3D"223" alt=3D"4.5 room Attic apartment" border=
+=3D"0" style=3D"display: block; width: 100%;"/></a> </td> </tr></tbody></ta=
+ble></td> </tr></tbody></table></td> </tr></tbody></table></th> <th width=
+=3D"58.33%" valign=3D"top" class=3D"r2-c" style=3D"font-weight: normal;"> <=
+table cellspacing=3D"0" cellpadding=3D"0" border=3D"0" role=3D"presentation=
+" width=3D"100%" class=3D"r3-o" style=3D"table-layout: fixed; width: 100%;"=
+><tbody><tr><td valign=3D"top" class=3D"r4-i" style=3D"color: #545859; font=
+-family: IBM Plex Sans; font-size: 18px; padding-left: 7px; padding-right: =
+7px;"> <table width=3D"100%" cellspacing=3D"0" cellpadding=3D"0" border=3D"=
+0" role=3D"presentation"><tbody><tr><td class=3D"r13-c nl2go-default-textst=
+yle" align=3D"left" style=3D"line-height: 1.5; word-break: break-word; colo=
+r: #545859; font-family: IBM Plex Sans, arial; font-size: 18px; text-align:=
+ left; valign: top; word-wrap: break-word;"> <div><h2 class=3D"default-head=
+ing2" style=3D"margin: 0; word-break: break-word; color: rgb(84, 88, 89); f=
+ont-family: &#39;IBM Plex Sans&#39;; font-size: 24px;"><a href=3D"https://r=
+.mailing.newhome.ch/tr/cl/dm0dqZcb5kqA8qyWS2rNpV8G4-VQuRvaEmsYEX57YYK4XtjEf=
+sO_haEFc6T7JWX-IYzoXIQkykCNcsA3pA0A9XIttl5J82JyDvgVwRpzPpse0RaaNteheh4dd7or=
+vjs19_lduBLQuR4JE6wN0va4SraJHBql3UBOklr4oUBCigoVk8-nCxJemHXJnaJKRzoBHt61HdJ=
+06z-ZzzJaEqz7I6n8GcgOZ8t6b7ACkvUVhJ5a5zYuOR2JbTkLLJR5w3MZ0hAtojM5WACnw6yQLZ=
+gUWYscfDrSqLOfDei4l1DlgOywlIZ8vrro5S5vZOp-ZCp_OZz6xpPmhq_WZEVjk5mYsJosE_Liv=
+soa5C27ebKYKfiyndmhvgYg_HqangEmd_hcFP-BTwPA7z6QjlNzSx1iO_8fm8K1Lqsa57Rmksqq=
+z5EI1fPlErWyUuvx6kx8O5A33h-Ft1FshvMHRN0-EGttABg" target=3D"_blank" rel=3D"n=
+oopener noreferrer" style=3D"font-weight: bold; text-decoration: none; colo=
+r: rgb(51, 122, 183);"><span style=3D"color: rgb(84, 88, 89); font-size: 18=
+px;">4.5 room Attic apartment</span></a></h2><p style=3D"margin: 0; color: =
+rgb(31, 45, 61); font-family: Verdana; font-size: 16px;"><a href=3D"https:/=
+/r.mailing.newhome.ch/tr/cl/MYP9H4TcUdZHs4_chDS3H0_t4BMe5RHdF6Z4lFRHnMq7upT=
+f-LSGbfOyPoxAhpeN_AOMVz7AiBzx9YvaCxItDEf1IsoFuuN5XYVK_eEwAFqROrK8WOsz_jaVQE=
+U9jZze6v-TO1Tsbivh-ql9mJXkwxQtXP3KtOOGq1I8gR3GXYZ002IuDYXW6Gs21c_431muprMsS=
+QzR_ia16iFYhbfIRJRzhotDlKj5gXiyLk7358h2hs4M3N9uLlbFL4lKE8xw0iDwvC8fVMroSly1=
+zwTBDLZZdclPuS5wh0SA_t7mQ2IrR9cijridtH_KK4Eouk1YZ5FQwYemT9c8scfk5eRYg1HN4F8=
+Y_1TludUlDUAIZvmCWNwA4OM0nS1PfFC-IZR-pIlnGdRfUkblvqJjoAEWfBxMlJ97hnbnMoYEmf=
+Ih37KslF2xUkM3xUEaXwYG7TvVoGF3PsULBEp3bHe5qIqCtuo" target=3D"_blank" rel=3D=
+"noopener noreferrer" style=3D"font-weight: bold; text-decoration: none; co=
+lor: rgb(53, 56, 57);"><span style=3D"color: rgb(84, 88, 89); font-family: =
+&#39;IBM Plex Sans&#39;; font-size: 14px;"> 1000</span></a><span style=3D"f=
+ont-size: 14px; color: rgb(84, 88, 89); font-family: &#39;IBM Plex Sans&#39=
+;;"><a href=3D"https://r.mailing.newhome.ch/tr/cl/LkwvpH2KzEF4dPbcfANwVO5ae=
+q6TJNxE5CJRLpUq-8GxLlKicPV1bfrY8uM1adDJOItBV83A-6kyr7v8HYjxzhw6vUZx6cbnjAIq=
+ydo0wgfQQYEceZJzicoG2gBIHgIarmstV-TaS9qUy0sTmxM0d-VyTgqGpAkQHVsrJSkc7Gi-YK1=
+ZvV4dAZUuHH3CzThBUQ9BgPfD2blldsjH4-hQBfmAu8BQa09bZ7ZwL-nm1fM_oYP7FKz_CZGLp0=
+5UFO8prnStXEsjG-PyDAtntWPqR5GR4nBjcAx9JgO9IAN3JJh-7QeIoKs4Ufy1Hc79nQ8fcWVoo=
+wBWC6dZsjye0x8uIUjVCnp0xmoRYs081-BRfJ6Iq4DOGgtf649PnIG7x3NoPKwz_E3YMki-hVEh=
+w0EVBhO-X90qM5R7yvyYQr1ZE1eFWwqfkQ" target=3D"_blank" rel=3D"noopener noref=
+errer" style=3D"font-weight: bold; text-decoration: none; color: rgb(84, 88=
+, 89);">=C2=A0</a></span><span style=3D"color: rgb(84, 88, 89);"><a href=3D=
+"https://r.mailing.newhome.ch/tr/cl/_bPeSNin5K8jwYuw19k9QExWD4qW-xBfGMHxqTA=
+qxHSb34HQSB7kcfGydgkiRLNanqq1cMXvf6PetJ4K9gkWgMXZwel87Pl-K8aCgMMSOwBEGAQeG0=
+cbEQKXiebrOIJWABU4f4POpxsmMsEl0Sye3kapBQjJ39-0ct-G_7lSOhq4n1EAZ3stbVjk9ICWv=
+Evm7RGu2-OhAzFAo6yt8DAe-6asiH-mHmJK-bHtFktJ9FJQQ_9LPzdiQr6aPxxB4sDWRzeVkg79=
+B8ghg9ZtPbIFSv7fbOtVQLdIBjBOhkWK7fBZN4XtRqCR68z3jkWL9viYjya-JkA5ZMMFmVvC1kc=
+ZRrcT2quBd30UNPlL77WJdc9g3NMHA0vpB5SjN9sOCuY8EywP7Wbez8DmH6-9MAHeH8jdK2drqS=
+HgB2xDsGTsrzCMfbAP9tH0vYka1QK_Xp0aegjLQAsfidn_ACFXhUH2K9A" target=3D"_blank=
+" rel=3D"noopener noreferrer" style=3D"font-weight: bold; text-decoration: =
+none; color: rgb(84, 88, 89);"><span style=3D"font-family: &#39;IBM Plex Sa=
+ns&#39;; font-size: 14px;">=C2=A0</span></a><a href=3D"https://r.mailing.ne=
+whome.ch/tr/cl/rRf-vHqrYywH_ILSi6XJ_1bfJmAEMkMMtRb7BOYvQZAfuCMDISunvsVdycgi=
+8PbB_xtjJgACMZy1Uu4pKRJ6fnBQUCl8m8DxAhUjUKVJ5nFX31lvDpzQ2eG_DkKUfzO46hUKr2z=
+FDKaXIUaxJp0mRwE70rQRkwIy-vahQlwdSozaXaQUqOSivMHDDDNZntzDY-umk3vV4FEYiP23rI=
+ew2jRqQB7pmXh3NnK7quMEVaUWVSxSFDTe3sZGcmZ0kRqd7UYXKZ76IcWeO2KEZtDI1eCf49uMV=
+T6OFjMMxqSwRgDSFxRHYns7Y9d1uB6J87J2PA2uIZOXm4rpXnYKnHN0zSsqfb367QMDeKbHjOhK=
+SedV33ChTIXIsUTtwd_OXTj8wFh6hl48wv8kOYTXWr0wlq_DUhXtSQQ1q_KJN-UvBwByUAatnc8=
+Ka0dRcCclwMwKOV1XDClI6YKJl6u3slXwmdM" target=3D"_blank" rel=3D"noopener nor=
+eferrer" style=3D"font-weight: bold; text-decoration: none; color: rgb(84, =
+88, 89);"><span style=3D"font-size: 14px; font-family: &#39;IBM Plex Sans&#=
+39;;">Lausanne 27</span></a></span></p><p style=3D"margin: 0; color: rgb(31=
+, 45, 61); font-family: Verdana; font-size: 16px;"><span style=3D"font-size=
+: 12px; color: rgb(84, 88, 89);"><a href=3D"https://r.mailing.newhome.ch/tr=
+/cl/VcMKomSl-pvinBbO646c0jScrAaoJz8XCvr1Zhx_DgDU4ViRuiVeJ0i6fbWqVy_6DJMSnFW=
+9IWCnLZAtvY_t2KMsMahhBaFepBtkGK7xCD-ecAGwt1lzv_6i-Ljj-AlENLT0fcVtFdWon78GbX=
+gyA2iRUI-yPbS7Q3JjRsdfsbo88XIutjc0Yd1wQwKoZlSBYSSCg0atvsDHJ-6hPZYTIpliKBtPr=
+6GCQQftVLHVUGJlTBvSG6jgz9WmKWTm-na4pXwJVmbnwINAKPrMM4GOq4u1XIQT2Zdxfpjs27K3=
+zFhCZyN-sWz9u6os7g9NeePk-TLapbmjCoZyidOg3NSVuXbFcDz_qYaHHx8lL-A5iFg9ZZy2m9n=
+0grHqu2cH8WrkEgqmsthPSycmoizq5aj3FGK8Or2ak2q901xUaldcfgwzyjO13Z8GjCE09EqXPJ=
+rYhxEY5hWRCzGmdIRplmgNj1I" target=3D"_blank" rel=3D"noopener noreferrer" st=
+yle=3D"font-weight: bold; text-decoration: none; color: rgb(84, 88, 89);"><=
+span style=3D"font-family: &#39;IBM Plex Sans&#39;;">Selling price</span></=
+a></span></p><p style=3D"margin: 0; color: rgb(31, 45, 61); font-family: Ve=
+rdana; font-size: 16px;"><a href=3D"https://r.mailing.newhome.ch/tr/cl/yX7-=
+_ArHpsq0d-WB337ANHXNH8DcWoNWL0B33hwqsALd9GUaoDNILhDY_LSg6DpBr-UTCll1M06pNSE=
+1IL_MSSPZxYcY7tNDcGyFq25rWiQd5bZmtL9lur8N0KwQkCh8El2rTvaaonpPBIaTSoAU-QySod=
+CVFRqLsBQYL2hqjq59zziqTfCYi7wzBKPQ2o34COQzj2h79mwpxehPJ_-AaXgQx77NyCukMxsbJ=
+qKxd52xyvreEzk9z12o-PJugoOl6UQYthUXjQ6MLg9n7vLLOGaIfSEJazT-u7SBrM9yWbEWoG1h=
+5xAkOXEeHc65BHg0oFX31esf3cLcf5Ba3U-ujnAGG_uA3J1rndH9olcXZ9YBPj6nGJ1cje8QLbC=
+gnsMoO-jycyL4iBUk2glLJML9YWeIDK6CWSVUDszwATuEscPqb4e7Rn2FNLQW7eOZ38xx5P1P58=
+RyCU_pcEsyP7cObxo" target=3D"_blank" rel=3D"noopener noreferrer" style=3D"f=
+ont-weight: bold; text-decoration: none; color: rgb(53, 56, 57);"><span sty=
+le=3D"color: rgb(84, 88, 89); font-family: &#39;IBM Plex Sans&#39;;"><span =
+style=3D"font-size: 14px;">CHF 1=E2=80=99190=E2=80=99000</span></span></a><=
+/p></div> </td> </tr></tbody></table></td> </tr></tbody></table></th> </tr>=
+</tbody></table></td> </tr></tbody></table><table cellspacing=3D"0" cellpad=
+ding=3D"0" border=3D"0" role=3D"presentation" width=3D"100%" align=3D"cente=
+r" class=3D"r8-o" style=3D"table-layout: fixed; width: 100%;"><tbody><tr><t=
+d class=3D"r9-i" style=3D"background-color: #ffffff; color: #545859; font-f=
+amily: IBM Plex Sans; font-size: 18px; padding-bottom: 15px; padding-left: =
+15px; padding-right: 15px; padding-top: 15px;"> <table width=3D"100%" cells=
+pacing=3D"0" cellpadding=3D"0" border=3D"0" role=3D"presentation"><tbody><t=
+r><th width=3D"100%" valign=3D"top" class=3D"r2-c" style=3D"font-weight: no=
+rmal;"> <table cellspacing=3D"0" cellpadding=3D"0" border=3D"0" role=3D"pre=
+sentation" width=3D"100%" class=3D"r3-o" style=3D"table-layout: fixed; widt=
+h: 100%;"><tbody><tr><td valign=3D"top" class=3D"r4-i" style=3D"color: #545=
+859; font-family: IBM Plex Sans; font-size: 18px; padding-left: 7px; paddin=
+g-right: 7px;"> <table width=3D"100%" cellspacing=3D"0" cellpadding=3D"0" b=
+order=3D"0" role=3D"presentation"><tbody><tr><td class=3D"r14-c" align=3D"c=
+enter" style=3D"align: center; padding-bottom: 15px; padding-top: 15px; val=
+ign: top;"> <table cellspacing=3D"0" cellpadding=3D"0" border=3D"0" role=3D=
+"presentation" width=3D"278" class=3D"r15-o" style=3D"background-color: #1b=
+8574; border-collapse: separate; border-color: #1b8574; border-radius: 4px;=
+ border-style: solid; border-width: 0px; table-layout: fixed; width: 278px;=
+"><tbody><tr><td height=3D"17" align=3D"center" valign=3D"top" class=3D"r16=
+-i nl2go-default-textstyle" style=3D"word-break: break-word; background-col=
+or: #1b8574; border-radius: 4px; color: #ffffff; font-family: IBM Plex Sans=
+, arial; font-size: 15px; font-style: normal; line-height: 1.15; padding-bo=
+ttom: 15px; padding-left: 36px; padding-right: 36px; padding-top: 15px; tex=
+t-align: center;"> <a href=3D"https://r.mailing.newhome.ch/tr/cl/t5tq6IEiKd=
+MoeuPLpj7mvaBEFXzrV0rnM3U3QZvI2ahM4iWTsf6IFBB0RqWx_RyLdsEYq3kaay8ER9trfpaTi=
+RNhyrxb_XRcaYPyV9QyuBwJF5HRTg0ippVVAE_WklHKILc32tHZV1pZF9q72_TKwrWH7HJ7Ig4G=
+KsfQBFCj4deyFElYpMF5RuZZ-FxoGOhe3EpEL-osdua1_lvPo8hieOMg0dRuXxIwSQQQNa5LD0M=
+M7_rupbB3z15E-r_zxxFqx69OFy7Mt5hXsNVMsVv8VxoLh5evP-Y2wqd-5wE6QxDyAWdIJVdMfX=
+z3kdDyXcGxDRruQjFMqKLEkw6IrCoH1emZdTkZzx7N2kDYpcgedH845bkc19K0zQwYRKlxNW6BK=
+fAbt9U9rlB7zQ7aOjqFwz8VVR1z0jwGU2CyUlxsyq-EQpda6f-kh1MaW3zhYtPrYvnEcVs2J-jE=
+Ov0YSCVrGeuAQ-4DEU0FWJfmxQsQ6FG42pVglIdO6_FBqmhCwK31CST0h4i7uYYiGtQl0i0RtxS=
+MtA0RTegNIl4jYJkNWDofwcyvUuegpU28qqUnxxDV7IAd_Pl-AqYEa4LAwpLfmNw07TNhZAXL4R=
+aZ3bO5rT4B--J0Ht_yA_GsFCXsRnP1fQFPzi_GKyCqPDYAtvEI9bbFSnVYip33qOhDTlKYrzZ6o=
+poTjogCw6PJb9mXtS7VH1PCKLEM2jS_azb1qG-8b7BVygcC-7jmo64w4YLiOFpKERPWSM_EBQWR=
+q5RdZrYm6RWPV46G1k4snLp7IqjDnd63YVOEUYOggcH7Uxi5VMF-zEbMM_VrP5yqjMniBze4nM0=
+61LF9zMs1nDabeQ" class=3D"r17-r default-button" target=3D"_blank" title=3D"=
+https://newhome.ch/en/buying/search/house-apartment/map-area/list?location=
+=3D1%3b25&amp;radius=3D7&amp;radiusCenterCoordinate=3D46.52497%3b6.62822&am=
+p;propertyType=3D100&amp;offerType=3D1&amp;priceMax=3D1200000&amp;roomsMin=
+=3D4.50&amp;roomsMax=3D99&amp;order=3D1&amp;searchSubs=3D5e2f9828-1048-4370=
+-af9e-a2550ebb4329" data-btn=3D"1" style=3D"font-style: normal; font-weight=
+: normal; line-height: 1.15; text-decoration: none; word-break: break-word;=
+ word-wrap: break-word; display: block; -webkit-text-size-adjust: none; col=
+or: #ffffff; font-family: IBM Plex Sans, arial; font-size: 15px;"> <span>Al=
+l results</span></a> </td> </tr></tbody></table></td> </tr><tr><td class=3D=
+"r18-c nl2go-default-textstyle" style=3D"line-height: 1.5; word-break: brea=
+k-word; color: #545859; font-family: IBM Plex Sans, arial; font-size: 18px;=
+ padding-bottom: 15px; padding-top: 15px;"> <div style=3D"display: flex; fl=
+ex-wrap: wrap; gap: 18px; justify-content: center;"> <div style=3D"display:=
+ inline-flex; align-items: center;"> <img src=3D"https://r.mailing.newhome.=
+ch/im/8906701/112ba7b57ae02f7008d6a11b0d93e0c6b70a41813a9b91c71887787e2ceb9=
+5b4.png?e=3DPSzBlM-TK1dwbrDCDZq3xTCnO9KG0WfUl9opamJHqo1tpejfimUi8tM2tyDPN5w=
+f6vLrqgIr__AnAhmDHSIAk4rqHj1SHA3eDmB6ceE7e53AGlBc8MBpx_BEbSUFxRLdzFMKDJoD42=
+78ky-RN-2EicBdKHRQWUsyRjO_XFzr-LvWDcXH59YxnObP4ZzrgYs9euCiaBdFfnSUySjceAgem=
+m4yqh9xUfu7INKuLGUou9qMQNzGk73m-Ed9kiQuLOYOR2mRT5uwCVgtAYSFPTMt0p3ptm_SFiIa=
+ly8f8A5eyInQZ0TCnaKz_3iBKxWw" alt=3D"Icon" style=3D"width: 14px; height: 15=
+px;"/><a href=3D"https://r.mailing.newhome.ch/tr/cl/VPsD4cx8boyB-ZAE3ICUONM=
+KI-V_g6sRZBNZ93-1TT_LolRkeqlBPfYFcfKLB0OTd868W-weYdXf61H37P4HDm4FObc6K-YQMd=
+c0-dTz63wQtOevUEaTN4fG_jZJLCHJTKiUKQGhcCulX4qZybg4IeYofyerGA_jc_X9MTANJZ97f=
+3nPVKo6brgSJmsuo10DVvC9C6InPwVdzwUMEKeiYY5R7r4wKfcRBs2hZBa5rWsUjRrCbRf-8ULd=
+9tmRFm8xXk5P4E8Fg_xx9U7hHG82JOu6H0GVjSS1kCf199Ql9mn-NuMaUZps3qIOYXAoHKip7mw=
+iTsAcxqoP5kidmDaRqVL98pk-Nt-6H0e67m0IsUeXuITRJxiBd5Gu15imPTBIlAr5ZtGJT7hHeC=
+VVL7CZMjl7enEHP1KPZQTpY7BzAtBu4ewkh6KA_vl8JL15uW6gRN1WoaoIT6teFFWb6isalC3eD=
+vewKXhynORRstfy2CL4ZHGCd4HoaoJHCW45xibf-Q4Q6hgOP4Yx-4ryX-8CJ4MR5KE29hTDUVam=
+CSj2Uzq7" style=3D"color: #1b8574; font-weight: bold; text-decoration: none=
+; font-size: 15px; line-height: 15px; margin-left: 5px;">Extend search subs=
+cription</a> </div> <div style=3D"display: inline-flex; align-items: center=
+;"> <img src=3D"https://r.mailing.newhome.ch/im/8906701/ea72fb528798874e150=
+3a27ba5d9df7fe5c9c381e9dce63f12941e0ae1a0c4af.png?e=3DsAMsBXKOSmd0aVsoz5id9=
+-eisqNSGQOpqispYTMImhulRaElL5W7ZcAeqOmP95ITgbV3PyZFrbHXTLFrKHCiR1TLKPC3y6J3=
+pv04EhRreYrkf3P0I6bIkd0i0sD8y658eillUeV8NCuzEnOjoH2uxp_TeV-f0dVspibjfBs9m5e=
+XwYt4iDFFMZxrPoPVvTq1QCgGZ0f7mXaDJ1wXyQmjC6URT9NvEIehs10yIlE7Fybh2rG28tvDSh=
+UYloSCBmGo7Pwf0XnepePz4R-zOyETU80aoK8nbFdM-NGcfmFFs6xf-pzZa_YB12R_okU7" alt=
+=3D"Icon" style=3D"width: 12px; height: 15px;"/><a href=3D"https://r.mailin=
+g.newhome.ch/tr/cl/D5e_nLdRP9o0_kJ7IVuUwNDSzNevhRZnYSJa3v4LdVY5nreeK4UKR4nD=
+HuFcUzfpbxqsIyZjHw2quzzrclnBeDwmmsFEF6IiOxWeHIAVLp7K7MtK9Tm5EAr21aJhGde78aT=
+jRBfoF9fMzxEFNSPdzOP7U8d0gIdds-npVNtoTsyA9mOcPf7Hx_F0KXnxXHkdcz9L2je_9gQZ7m=
+gK88vM-Ovzce8uBG8NNDl-_LNaa6BUUi2-91-tQ9HhXuBDUVBYAdxaG1Qoha-TcR-oVHFuULXv1=
+gq3kz5uB6O07iAFcBGeEXLnHmA7cQplsCqkr0TlnDQ6O1GldY0JecCaMA9_AaphPtMUS-ADFE3N=
+VgSrFyYAD5BlAa0ERVAh-5C9i_0gvLh7oMnkuPUo4C8xY-jCFIyWpgCZk3F_cAaJHxYYGAIxaNY=
+kb1_GI0UjVuj4AqYkvfLweiQJ-cxbbw-vr1uVQ7zT2LyvrQxYl_Q67yz1GqBoKqKNewn90Ep-LS=
+8XtyAv8gb2j9y6Vh-WopeqP34sz2FLBG14lzB5DGyF6qZd" style=3D"color: #1b8574; fo=
+nt-weight: bold; text-decoration: none; font-size: 15px; line-height: 15px;=
+ margin-left: 5px;">Delete search subscription</a> </div></div> </td> </tr>=
+</tbody></table></td> </tr></tbody></table></th> </tr></tbody></table></td>=
+ </tr></tbody></table><table cellspacing=3D"0" cellpadding=3D"0" border=3D"=
+0" role=3D"presentation" width=3D"100%" align=3D"center" class=3D"r8-o" sty=
+le=3D"table-layout: fixed; width: 100%;"><tbody><tr><td class=3D"r19-i" sty=
+le=3D"background-color: #ffffff; color: #545859; font-family: IBM Plex Sans=
+; font-size: 18px; padding-left: 15px; padding-right: 15px;"> <table width=
+=3D"100%" cellspacing=3D"0" cellpadding=3D"0" border=3D"0" role=3D"presenta=
+tion"><tbody><tr><th width=3D"100%" valign=3D"top" class=3D"r2-c" style=3D"=
+font-weight: normal;"> <table cellspacing=3D"0" cellpadding=3D"0" border=3D=
+"0" role=3D"presentation" width=3D"100%" class=3D"r3-o" style=3D"table-layo=
+ut: fixed; width: 100%;"><tbody><tr><td valign=3D"top" class=3D"r4-i" style=
+=3D"color: #545859; font-family: IBM Plex Sans; font-size: 18px; padding-le=
+ft: 7px; padding-right: 7px;"> <table width=3D"100%" cellspacing=3D"0" cell=
+padding=3D"0" border=3D"0" role=3D"presentation"><tbody><tr><td class=3D"r2=
+0-c" align=3D"center" style=3D"color: #545859; font-family: IBM Plex Sans; =
+font-size: 18px;"> <table width=3D"100%" cellspacing=3D"0" cellpadding=3D"0=
+" border=3D"0" role=3D"presentation" height=3D"1" style=3D"border-top-style=
+: solid; background-clip: border-box; border-top-color: #e5e8e9; border-top=
+-width: 1px; font-size: 1px; line-height: 1px;"><tbody><tr><td height=3D"0"=
+ style=3D"font-size: 0px; line-height: 0px;">=C2=AD</td> </tr></tbody></tab=
+le></td> </tr></tbody></table></td> </tr></tbody></table></th> </tr></tbody=
+></table></td> </tr></tbody></table><table cellspacing=3D"0" cellpadding=3D=
+"0" border=3D"0" role=3D"presentation" width=3D"100%" align=3D"center" clas=
+s=3D"r8-o" style=3D"table-layout: fixed; width: 100%;"><tbody><tr><td class=
+=3D"r19-i" style=3D"background-color: #ffffff; color: #545859; font-family:=
+ IBM Plex Sans; font-size: 18px; padding-left: 15px; padding-right: 15px;">=
+ <table width=3D"100%" cellspacing=3D"0" cellpadding=3D"0" border=3D"0" rol=
+e=3D"presentation"><tbody><tr><th width=3D"100%" valign=3D"top" class=3D"r2=
+-c" style=3D"font-weight: normal;"> <table cellspacing=3D"0" cellpadding=3D=
+"0" border=3D"0" role=3D"presentation" width=3D"100%" class=3D"r3-o" style=
+=3D"table-layout: fixed; width: 100%;"><tbody><tr><td valign=3D"top" class=
+=3D"r4-i" style=3D"color: #545859; font-family: IBM Plex Sans; font-size: 1=
+8px; padding-left: 7px; padding-right: 7px;"> <table width=3D"100%" cellspa=
+cing=3D"0" cellpadding=3D"0" border=3D"0" role=3D"presentation"><tbody><tr>=
+<td class=3D"r21-c" align=3D"center" style=3D"color: #545859; font-family: =
+IBM Plex Sans; font-size: 18px; padding-bottom: 15px; padding-top: 30px;"> =
+<table width=3D"100%" cellspacing=3D"0" cellpadding=3D"0" border=3D"0" role=
+=3D"presentation" height=3D"1" style=3D"border-top-style: solid; background=
+-clip: border-box; border-top-color: #e5e8e9; border-top-width: 1px; font-s=
+ize: 1px; line-height: 1px;"><tbody><tr><td height=3D"0" style=3D"font-size=
+: 0px; line-height: 0px;">=C2=AD</td> </tr></tbody></table></td> </tr><tr><=
+td class=3D"r22-c nl2go-default-textstyle" align=3D"left" style=3D"line-hei=
+ght: 1.5; word-break: break-word; color: #545859; font-family: IBM Plex San=
+s, arial; font-size: 18px; padding-bottom: 15px; padding-top: 15px; text-al=
+ign: left; valign: top;"> <div><p style=3D"margin: 0; color: rgb(31, 45, 61=
+); font-family: Verdana; font-size: 16px;"><span style=3D"font-size: 12px; =
+font-family: Verdana, Geneva, sans-serif, arial;">This is an automatically =
+generated e-mail - please do not respond to this e-mail.</span></p></div> <=
+/td> </tr></tbody></table></td> </tr></tbody></table></th> </tr></tbody></t=
+able></td> </tr></tbody></table><table cellspacing=3D"0" cellpadding=3D"0" =
+border=3D"0" role=3D"presentation" width=3D"100%" align=3D"center" class=3D=
+"r8-o" style=3D"table-layout: fixed; width: 100%;"><tbody><tr><td class=3D"=
+r23-i" style=3D"background-color: #353839; color: #545859; font-family: IBM=
+ Plex Sans; font-size: 18px; padding-bottom: 15px; padding-left: 15px; padd=
+ing-right: 15px; padding-top: 30px;"> <table width=3D"100%" cellspacing=3D"=
+0" cellpadding=3D"0" border=3D"0" role=3D"presentation"><tbody><tr><th widt=
+h=3D"100%" valign=3D"top" class=3D"r2-c" style=3D"font-weight: normal;"> <t=
+able cellspacing=3D"0" cellpadding=3D"0" border=3D"0" role=3D"presentation"=
+ width=3D"100%" class=3D"r3-o" style=3D"table-layout: fixed; width: 100%;">=
+<tbody><tr><td valign=3D"top" class=3D"r4-i" style=3D"color: #545859; font-=
+family: IBM Plex Sans; font-size: 18px; padding-left: 7px; padding-right: 7=
+px;"> <table width=3D"100%" cellspacing=3D"0" cellpadding=3D"0" border=3D"0=
+" role=3D"presentation"><tbody><tr><td class=3D"r24-c" align=3D"center"> <t=
+able cellspacing=3D"0" cellpadding=3D"0" border=3D"0" role=3D"presentation"=
+ width=3D"556" align=3D"center" class=3D"r0-o" style=3D"table-layout: fixed=
+; width: 556px;"><tbody><tr><td valign=3D"top"> <table width=3D"100%" cells=
+pacing=3D"0" cellpadding=3D"0" border=3D"0" role=3D"presentation"><tbody><t=
+r><td class=3D"r24-c" align=3D"center" style=3D"display: inline-block;"> <t=
+able cellspacing=3D"0" cellpadding=3D"0" border=3D"0" role=3D"presentation"=
+ width=3D"556" align=3D"center" class=3D"r0-o" style=3D"table-layout: fixed=
+; width: 556px;"><tbody><tr><td class=3D"r25-i" style=3D"color: #545859; fo=
+nt-family: IBM Plex Sans; font-size: 18px; padding-left: 138px; padding-rig=
+ht: 138px; padding-top: 15px;"> <table width=3D"100%" cellspacing=3D"0" cel=
+lpadding=3D"0" border=3D"0" role=3D"presentation"><tbody><tr><th width=3D"6=
+2" class=3D"r26-c mobshow resp-table" style=3D"font-weight: normal;"> <tabl=
+e cellspacing=3D"0" cellpadding=3D"0" border=3D"0" role=3D"presentation" wi=
+dth=3D"100%" class=3D"r27-o" style=3D"table-layout: fixed; width: 100%;"><t=
+body><tr><td class=3D"r28-i" style=3D"color: #545859; font-family: IBM Plex=
+ Sans; font-size: 0px; line-height: 0px; padding-bottom: 5px; padding-top: =
+5px;"> <a href=3D"https://r.mailing.newhome.ch/tr/cl/drSwof2vDcVFDi19K8M7oJ=
+u9wKyyDTax3HBXdaL_E9ZxCJDLI91qR-9Hlaorx41d7wRf4tBH9Z_RXfpsRNhG_fdTjU4r-H9-k=
+6KrSNChIcjdhKi0TyrDhdvYt3A362uFANBqBBiEC0XE4cBbUifZW19fRq0YgcwMiZ77K2w23XXv=
+xrLCClpX96O4mjNCYWlhcxFbYi98kuCV9dsRq7KKMIB-BB9BaIymje5XEwhXH7srvDv77aHaMtF=
+q7v9V3cSWJsFnUWMtiVypWM6OWZ-W09sOx_xi19rcf9wBFb0CBx3LuGrZtn_mg6XH14rEyV88Dd=
+AxT_zeokmA6zDXBxgQxA3S1B1pJ7_GEj1d4aO4PAeXjba81gETujil6E__m_kKHL92XPj-24CRn=
+G2eOnwVTG3QXG44lrt95ekQ1GJwhJh6j9oKcVFcom0JpZaxLJWlYOwI0K4" target=3D"_blan=
+k" style=3D"color: #1b8574; font-weight: bold; text-decoration: none;"> <im=
+g src=3D"https://r.mailing.newhome.ch/im/8906701/c04c4f7d8818b8ca5d559e3d10=
+595f41882f9243cc4221e22b2b295fd829029e.png?e=3DLl-a1-eCH4NnKgOzL0ERO3-PKKp0=
+dSPqDU0lD-HiMiLccLnK36dQj8PJUvCwtQfqFogbC7hPS-Oj00__ypaMpluXwxZGjBZcaARZAA6=
+t9DkDtqCn7Ni_tmzrgxWFrmnXGd9tbPuqKJV9ZSn5YGFbKikmqwJ5Sbe97YIWxLK8hMTQ-zbxE5=
+QAIozNDFurbRdVTEJgrb2PEVRkJqKjcp9Gj2a-ZvcV-Xo35Vxo2Gnci5dFEE-7dcg3GQL2LoCm9=
+xE8GmXgAHdx5Hz5xrsI6tzF4r4TGq4ISKxfnPO3eAvXSfBO2gy6FCA0" width=3D"32" borde=
+r=3D"0" style=3D"display: block; width: 100%;"/></a> </td> <td class=3D"nl2=
+go-responsive-hide" width=3D"30" style=3D"font-size: 0px; line-height: 1px;=
+">=C2=AD </td> </tr></tbody></table></th> <th width=3D"62" class=3D"r26-c m=
+obshow resp-table" style=3D"font-weight: normal;"> <table cellspacing=3D"0"=
+ cellpadding=3D"0" border=3D"0" role=3D"presentation" width=3D"100%" class=
+=3D"r27-o" style=3D"table-layout: fixed; width: 100%;"><tbody><tr><td class=
+=3D"r28-i" style=3D"color: #545859; font-family: IBM Plex Sans; font-size: =
+0px; line-height: 0px; padding-bottom: 5px; padding-top: 5px;"> <a href=3D"=
+https://r.mailing.newhome.ch/tr/cl/bJqKbhLxERAprizxUQXbCDwAMRtSjOBX-2pa4hdR=
+l_jXqtHPeTiQwveSrcK_CuKbfP72uI7zsYi-EvENItVsMuVIXqUE2wDyD5wL0MNAwbbLUMoxHjR=
+w4Hl7sq4XC2n7oLPDCmyPlkHc9gVk_n8v9Vt2RM2lR41eVXsSsSDjyjvHShf2crl5Pv9mVkhwdy=
+MqW5GgJm5sr52Ih9UqSKtdMJYgj9GvAKZJ6tP1OPR2GQsygou9GraAfRZpb1IN_e8JlyXLDb_60=
+2rPK_KeiPtUhKvod8_0DdrqdAx_TMBsTSj8_l0i0ccjp66WmEyj5bw1MCoWoNYI8ausaL0b7dDd=
+cYbBuctyqNSuSjEKtYYts0mFYxcaBS7aWJVG_TSy3qPYqKfEiNWVAHGBOgBEzpM9apHw2HXsNbG=
+QuLZzkoYrwE77l1ndheZiX0rH" target=3D"_blank" style=3D"color: #1b8574; font-=
+weight: bold; text-decoration: none;"> <img src=3D"https://r.mailing.newhom=
+e.ch/im/8906701/4d88271b637061e77bd2f267cfcc1b422feb834a8876ede7618c4013bb7=
+1ffb6.png?e=3Df3ru7WB8WhxBUCIY9HumTmmVSpJx7i3Nce7aNBpMleOzEyCcKoJ9jzkHb7cHQ=
+JmU9JE2_3u9rINiSlU7QuAXJkKKomM23of9keB7WtqB2gS7hOKPwpDPMECrQQJNmZLAbb5MBSex=
+AxraDb-UbUsPBiYtzorfPC5uCzoZVEksD4rtAerv6W7TYM7c3JpJZ7nSp_hytEOW0_ODZVLQYTR=
+CmCZBJwciLS4VSp--YhR9JB8yQxfQ3ZWXhLOW0ZKBtPMTPbz7p3w6EvsY7uDB5wK6O_87KrMrgF=
+wexBtAqF9k6UPdC65N4x9Ygg" width=3D"32" border=3D"0" style=3D"display: block=
+; width: 100%;"/></a> </td> <td class=3D"nl2go-responsive-hide" width=3D"30=
+" style=3D"font-size: 0px; line-height: 1px;">=C2=AD </td> </tr></tbody></t=
+able></th> <th width=3D"62" class=3D"r26-c mobshow resp-table" style=3D"fon=
+t-weight: normal;"> <table cellspacing=3D"0" cellpadding=3D"0" border=3D"0"=
+ role=3D"presentation" width=3D"100%" class=3D"r27-o" style=3D"table-layout=
+: fixed; width: 100%;"><tbody><tr><td class=3D"r28-i" style=3D"color: #5458=
+59; font-family: IBM Plex Sans; font-size: 0px; line-height: 0px; padding-b=
+ottom: 5px; padding-top: 5px;"> <a href=3D"https://r.mailing.newhome.ch/tr/=
+cl/AP64fxdJ9zL1UKk54QMwy6O77NJHXJrc4y3e5XcJFJhkT_QlJ2uTTQ3wxZzMkwiWSsmMlpjU=
+tvzteEvq96B8y1eivmpsOCJzieuZG_1C4kPvG_YxRC3rQolNeMMlPjUuz5EO596VZpVeFYS85a7=
+mNQV-OzR0AmMwNGCt43rU0XyVMSIv88O0zSJt3oC88STDdoFVSQ8-f0do3Orb_W-FuW2Ny_OM_K=
+B9v9dyA-7x41Kgs-4kEJpNZvBoO8neNwHkPSbqvlLgz5AmwHg0YGWN_qPmn69ydJT5hWawn8hJT=
+D2BqwAgIOOvX4lM7b-WW352YfrGOhHNtJ2Ppg8JpACFPwGgby-zofFz0TAZ4tGGyI5pEVrdkwNN=
+TZjhLovzoSgCFWOKmF_1Vycf5ajiYZq4tDCC-estF9_wOO-OblWrHwdH1nXJ9150gTE" target=
+=3D"_blank" style=3D"color: #1b8574; font-weight: bold; text-decoration: no=
+ne;"> <img src=3D"https://r.mailing.newhome.ch/im/8906701/2962440b410e7ab9f=
+4ca2d7b22438f226b7fdaf1dc49143cca108496ff569af9.png?e=3DS_iRfoATz3KZgql7Uiy=
+eMs-ZkY-OyyMuWzu3KbH86kROyDAUsbTZYbLIzd-Kw3Z74GkyaDCh4zsICtiWf0xHJE4OM2uvV9=
+pm7iCQ9WuUDQP5A144D9A1xuEe8hFkZw8HVl2o3TtvWwhJ9ObDxvrnlOX49dWe-yBWqjS0jKHUp=
+tyI9c-mqPxF8rIjSH2S-AX_gnKFDkACZxa6za5_xrj8Z8jXyijq--mSxYLWkBQahY9FWo7bN13q=
+B3t30aJEKsjiUdf2r5V7t07D0rq7XOfKn9wz4peT-7UNdQdFOXxGzhER5VtmRtHi" width=3D"=
+32" border=3D"0" style=3D"display: block; width: 100%;"/></a> </td> <td cla=
+ss=3D"nl2go-responsive-hide" width=3D"30" style=3D"font-size: 0px; line-hei=
+ght: 1px;">=C2=AD </td> </tr></tbody></table></th> <th width=3D"62" class=
+=3D"r26-c mobshow resp-table" style=3D"font-weight: normal;"> <table cellsp=
+acing=3D"0" cellpadding=3D"0" border=3D"0" role=3D"presentation" width=3D"1=
+00%" class=3D"r27-o" style=3D"table-layout: fixed; width: 100%;"><tbody><tr=
+><td class=3D"r28-i" style=3D"color: #545859; font-family: IBM Plex Sans; f=
+ont-size: 0px; line-height: 0px; padding-bottom: 5px; padding-top: 5px;"> <=
+a href=3D"https://r.mailing.newhome.ch/tr/cl/tmLi7QQg8CV-DeWaMs4Wg6TxBK_t3R=
+vFVrGeo2C2DaI7DiLyfb-mPorZQNNWcJ8y92uwh8JWYTl5MdJggfX2X0LLKbUheipSfpj95-94w=
+-0gdkgug2l81MniF1R8a9zcj36xJY3PxHxo0LTsd_GPvh8bS4xlPpQXtSqOFEMYVv9W_tUhHF69=
+3LRzkRW5_-I4HqgiFudtDJj119QtiQA5x1fpdMqzI1bGvBLXgPwhLvKi-7m3GV3KXluH1CnDK9j=
+vwD-Gf8Y9A1V9aR9ywsuDpdLAXr5cPcfkWnouKL2c1h0bVlVD99K6HAoYitNRc-8-IfN3pRSFxY=
+dLh6K_jlR6aFj95WQVKg8DfBEsbWlGkUsIWJpcw5nrojaIjkgm0yw5HOIC6g94eH5PQJWHgjXX6=
+rARqapS8cqk-D1ZwI8BWRyj_KmWax3JGpGRfx74lZxHB-RTdDwsgV57" target=3D"_blank" =
+style=3D"color: #1b8574; font-weight: bold; text-decoration: none;"> <img s=
+rc=3D"https://r.mailing.newhome.ch/im/8906701/e994627b32dcb2ae00e77c1554743=
+a0bb47fd44ea6b933dbde2daaaf8c55cce7.png?e=3D0To0xpMj6j0Jkf_yAYyrUlyj6LXX2Mj=
+8x2heTgDX4764MjsHmUQc-mBUL68_mVtVutN0uJWuOPjHzQZV0WQQ8M5COaxIj_IdWNpI1D8aEh=
+ul8lwaIWj0gDWXDtjV5Evis15vudzrUGzGjblJYW-lI_3BGpIZ5KTwpviBIBg5U9j8z6CZzjBgm=
+YdRvvsEe6mXdksnTM1vRi1NCuHE3V5j7F7Zg-QRH-Kjt8VYkig_RsjcrrFdAyddMxbu575ppY6a=
+Dvj4usR3Tmxqg4BVaSXsFpBKaK2tK2dZQsbwmob57-147HBsCA" width=3D"32" border=3D"=
+0" style=3D"display: block; width: 100%;"/></a> </td> <td class=3D"nl2go-re=
+sponsive-hide" width=3D"30" style=3D"font-size: 0px; line-height: 1px;">=C2=
+=AD </td> </tr></tbody></table></th> <th width=3D"32" class=3D"r26-c mobsho=
+w resp-table" style=3D"font-weight: normal;"> <table cellspacing=3D"0" cell=
+padding=3D"0" border=3D"0" role=3D"presentation" width=3D"100%" class=3D"r2=
+9-o" style=3D"table-layout: fixed; width: 100%;"><tbody><tr><td class=3D"r2=
+8-i" style=3D"color: #545859; font-family: IBM Plex Sans; font-size: 0px; l=
+ine-height: 0px; padding-bottom: 5px; padding-top: 5px;"> <a href=3D"https:=
+//r.mailing.newhome.ch/tr/cl/eYQ7MCnC8ek0GCL7Uftes5XotvZ1q5faTSfTRaH3l28BW6=
+aPlWL5sX8Nrp0s0Im43eUY5JDPvf4W3s6Cu35jRuZ1Wd-SQvhWlMBxHF37Q1OkfO2UW259PkP3B=
+os5voe0u7KX_0C9gGIw1G3xNtL01g-2bmaVQ5XkJy2nR5rVZXBnwT0TVqmwC1RbzuGhCKZK_zm_=
+YM7rEQuRRCK3_lVn_rb-id0LdWyPy0RHXCtBuobAxbucgFbucbtTDmkEL-8zYlM8X2UByEyU7j2=
+VoQAcicCwIB3ZicgKi_V-5LDjAFDvf5JAwcm5Q5rLNDA9qfAMfjEmuv1pE3hxHk0QwO3-LmIZwM=
+omTAYkPRPIxNOx6TLkxwAmfPDRMr5kAlo6vuKru8ZhNt8kGWl0lVYOJgUyLJZV7TvpPsQlbtsAf=
+oRSidqbb8M9hOFOFNugc7GACQ" target=3D"_blank" style=3D"color: #1b8574; font-=
+weight: bold; text-decoration: none;"> <img src=3D"https://r.mailing.newhom=
+e.ch/im/8906701/707bea51a6ca8bc319553a3734b7f2c03bceefbe07f3093d2870815c5ff=
+62957.png?e=3DHE8HsNGFJtXB8lwVYS-SV_fOfM6wO21LDd0U8djG1XXFvH5IPWwGVDocthW65=
+Fmqqxqu1KDZc75IGxNMAECfcHB6Zn0w8Xa0ysXvEmWUQdXIsOOocmFZ5oHfJv4alae8VG7jAsDl=
+9cmaPxUApLbKVyGyMlBLW9v7EZGSaGz5yyk8ME4HpF4XGrr5bYkF1vEpKigf2KgehyQRbzip_WQ=
+aggak7ikX0Q_vuin75cgLcrHWCcePYA01-ECpa-qpp46KBfHCgrWN4cY-zRDWuvfumgwn0WIag5=
+Hve3LlU_aPgKR5CsO8H6c" width=3D"32" border=3D"0" style=3D"display: block; w=
+idth: 100%;"/></a> </td> </tr></tbody></table></th> </tr></tbody></table></=
+td> </tr></tbody></table></td> </tr></tbody></table></td> </tr></tbody></ta=
+ble></td> </tr><tr><td class=3D"r30-c" align=3D"left"> <table cellspacing=
+=3D"0" cellpadding=3D"0" border=3D"0" role=3D"presentation" width=3D"100%" =
+class=3D"r31-o" style=3D"table-layout: fixed; width: 100%;"><tbody><tr><td =
+align=3D"center" valign=3D"top" class=3D"r32-i nl2go-default-textstyle" sty=
+le=3D"line-height: 1.5; word-break: break-word; color: #545859; font-family=
+: IBM Plex Sans, arial; font-size: 18px; padding-top: 15px; text-align: cen=
+ter;"> <div><p style=3D"margin: 0; text-align: center; color: rgb(31, 45, 6=
+1); font-family: Verdana; font-size: 16px;"><span style=3D"color: rgb(255, =
+255, 255); font-family: Verdana, Geneva, sans-serif, arial; font-size: 14px=
+;">newhome - Property app</span></p></div> </td> </tr></tbody></table></td>=
+ </tr></tbody></table></td> </tr></tbody></table></th> </tr></tbody></table=
+></td> </tr></tbody></table><table cellspacing=3D"0" cellpadding=3D"0" bord=
+er=3D"0" role=3D"presentation" width=3D"100%" align=3D"center" class=3D"r0-=
+o" style=3D"table-layout: fixed; width: 100%;"><tbody><tr><td class=3D"r33-=
+i" style=3D"background-color: #353839; color: #545859; font-family: IBM Ple=
+x Sans; font-size: 18px; padding-bottom: 5px; padding-left: 15px; padding-r=
+ight: 15px; padding-top: 3px;"> <table width=3D"100%" cellspacing=3D"0" cel=
+lpadding=3D"0" border=3D"0" role=3D"presentation"><tbody><tr><th width=3D"5=
+0%" valign=3D"top" class=3D"r2-c" style=3D"font-weight: normal;"> <table ce=
+llspacing=3D"0" cellpadding=3D"0" border=3D"0" role=3D"presentation" width=
+=3D"100%" class=3D"r3-o" style=3D"table-layout: fixed; width: 100%;"><tbody=
+><tr><td valign=3D"top" class=3D"r4-i" style=3D"color: #545859; font-family=
+: IBM Plex Sans; font-size: 18px; padding-left: 7px; padding-right: 7px;"> =
+<table width=3D"100%" cellspacing=3D"0" cellpadding=3D"0" border=3D"0" role=
+=3D"presentation"><tbody><tr><td class=3D"r34-c" align=3D"right"> <table ce=
+llspacing=3D"0" cellpadding=3D"0" border=3D"0" role=3D"presentation" width=
+=3D"125" class=3D"r35-o" style=3D"table-layout: fixed; width: 125px;"><tbod=
+y><tr><td class=3D"r36-i" style=3D"color: #545859; font-family: IBM Plex Sa=
+ns; font-size: 18px;"> <a href=3D"https://r.mailing.newhome.ch/tr/cl/IwMxDJ=
+-xWruFw2H1ZUjonaaocagrWOADB9z9s-Pv4Ln380aedl2GddodVjvyj92gtQ4VEErqADSaTwL95=
+MfN5w2JhzI4MwhM9j16H0jGP1zRHh650e8LNJ5ViQkYVGfK-lf2xsaReUXnfN8VIdZBCXILBYyP=
+Y7G96CzpcjeZpImk5jGgofwhUFR4qGBV2xYuxndlX72ICBhOYk9lBo2g1xnYLHGq3ODimX9JalI=
+VV6cWlMJII1bmOWQ1cKgxAzCrcCrazSkEXm6uvpoStmd0pOMrGnKl2G6gCUAFq6p1gDAD0g4Wz6=
+rMeEQLhT_jfAGSLFOrXZ_zJhmJqbMXzboTb0fZnqU6jeQoyBDvg6SeozRncOI0JFP5tXVPDTpHK=
+ypobCGnX26IHmYhFgd5ehZOtPTrxgMq_VgppuMYC1Tcye231zZtBslsQfN9deartBQ3zo369AIA=
+q57IE_PxxI-r9jMOmF9r0WvB9ralRg" target=3D"_blank" style=3D"color: #1b8574; =
+font-weight: bold; text-decoration: none;"> <img src=3D"https://r.mailing.n=
+ewhome.ch/im/8906701/572d2a4b700f6dbe4b01917fe1d383a4f2a2da314e57c3e2337129=
+cc0729aa68.png?e=3Dw8N5lK2UW4y_rZF7jYq_fFK3SOkJArWsqIvbn7c_McHYj8dWhDvRJQyS=
+fUW-XtaEPdu9MH-cx1-202u8Bgd_00u9BTpi7hufeOI1C4SOmZGIan5PbNVc2nKVCkyXimYDsdk=
+09jE4OzlLyQAoFLi_N5jldgORS6ybOrn8W5oZmCwM7YtjLrz_uFXeIRwTcDT1IdR5rmg3bHrKRP=
+MMoJBEd1uj3sXC_qt6HQetTQPpYPU7BAPlY__PyHD70HxxLvuorRfKPS9aeOKZ_5MjZr-xVNLBS=
+nYUl-V94EPjzH6x8UEG7GJ7TFV2IElVz8oX" width=3D"125" alt=3D"Download on the A=
+pp Store" border=3D"0" style=3D"display: block; width: 100%;"/></a> </td> <=
+/tr></tbody></table></td> </tr></tbody></table></td> </tr></tbody></table><=
+/th> <th width=3D"50%" valign=3D"top" class=3D"r2-c" style=3D"font-weight: =
+normal;"> <table cellspacing=3D"0" cellpadding=3D"0" border=3D"0" role=3D"p=
+resentation" width=3D"100%" class=3D"r3-o" style=3D"table-layout: fixed; wi=
+dth: 100%;"><tbody><tr><td valign=3D"top" class=3D"r37-i" style=3D"color: #=
+545859; font-family: IBM Plex Sans; font-size: 18px; padding-left: 7px; pad=
+ding-right: 7px;"> <table width=3D"100%" cellspacing=3D"0" cellpadding=3D"0=
+" border=3D"0" role=3D"presentation"><tbody><tr><td class=3D"r30-c" align=
+=3D"left"> <table cellspacing=3D"0" cellpadding=3D"0" border=3D"0" role=3D"=
+presentation" width=3D"139" class=3D"r31-o" style=3D"table-layout: fixed; w=
+idth: 139px;"><tbody><tr><td class=3D"r36-i" style=3D"color: #545859; font-=
+family: IBM Plex Sans; font-size: 18px;"> <a href=3D"https://r.mailing.newh=
+ome.ch/tr/cl/SHQh3EqlVX4iouELwfAih1F7Qdlx0bzOOMZcYep1FrfXwNDc84pcq6xlewZRvw=
+wGU1O6mWLBeVhh_G5UQ0HKtU6FkE02DZtjSdPPlE-6E0ga5S7bhWprMsV3Vx-GpW79w2OUXEt3A=
+2T69RivupCyZBVIyktRdptCwumr1FppBi6RAx1_g7x4XIQItYtjsmm1dY-7aGnq-WJkZuZs3AoI=
+Tyt0CaKDmF_c-hZ_lFzI84GKO8xh6CzW-A_5E8lPX9R2zJXnLazzJsCLMo4VFJbH4clP63AVo0M=
+F20ObUwOOJFQSNXttgUTbP95jGRfvnc2HUT2wS1bZ8i0tZcUMfUqhSbQmUAZ8BZDr8WHan-jBSQ=
+hsoVdj9p_-4RPTk6r73NO0SIhfN6Vtxdrxx44hXIYjHV3AKnXtbuNi90FoJBeIHmASJFqUeuFi0=
+Om0S_tQ-Pxd1io3ZiT9i_gm4SCIUFp-DuJ8C1XnK5A563X6" target=3D"_blank" style=3D=
+"color: #1b8574; font-weight: bold; text-decoration: none;"> <img src=3D"ht=
+tps://r.mailing.newhome.ch/im/8906701/36837a6703ef10c2caab34bf5037f03946e4d=
+0780c0aab28c22fcb519501242d.png?e=3DmpMV2QUkc1J0uhbrHkmCRW5FpdgoPEPQB8AwWzo=
+XxMZLY8SuzaXi8efOyOMYdIOVfr74qGqI1LOTBfW-RDAWtz_ex3fVsSpBAeD40P9wMVxTXfLyEr=
+1bQ5mx18wOggECTMFT2hZxE-kwlmj4wEXD-ro-bl-Wjr_qPBjr3ObJcDGM-RwWBqwZBpWNOviwN=
+sisZVSUYch_8uchEbKVPqRqTa0gArt_3C4aWXA4Fmn588bTcWj0OynJ4MrSO3ZEZlmi1qvWmsHh=
+bBceWvHsnMh0ybnKkSMgV6TsoQZsLZAV9ktuKnyA-eCyNjMm-m_E" width=3D"139" alt=3D"=
+Get it on Google Play" border=3D"0" style=3D"display: block; width: 100%;"/=
+></a> </td> </tr></tbody></table></td> </tr></tbody></table></td> </tr></tb=
+ody></table></th> </tr></tbody></table></td> </tr></tbody></table><table ce=
+llspacing=3D"0" cellpadding=3D"0" border=3D"0" role=3D"presentation" width=
+=3D"100%" align=3D"center" class=3D"r0-o" style=3D"table-layout: fixed; wid=
+th: 100%;"><tbody><tr><td class=3D"r38-i" style=3D"background-color: #35383=
+9; color: #545859; font-family: IBM Plex Sans; font-size: 18px; padding-bot=
+tom: 30px; padding-left: 15px; padding-right: 15px;"> <table width=3D"100%"=
+ cellspacing=3D"0" cellpadding=3D"0" border=3D"0" role=3D"presentation"><tb=
+ody><tr><th width=3D"100%" valign=3D"top" class=3D"r2-c" style=3D"font-weig=
+ht: normal;"> <table cellspacing=3D"0" cellpadding=3D"0" border=3D"0" role=
+=3D"presentation" width=3D"100%" class=3D"r3-o" style=3D"table-layout: fixe=
+d; width: 100%;"><tbody><tr><td valign=3D"top" class=3D"r4-i" style=3D"colo=
+r: #545859; font-family: IBM Plex Sans; font-size: 18px; padding-left: 7px;=
+ padding-right: 7px;"> <table width=3D"100%" cellspacing=3D"0" cellpadding=
+=3D"0" border=3D"0" role=3D"presentation"><tbody><tr><td class=3D"r30-c" al=
+ign=3D"left"> <table cellspacing=3D"0" cellpadding=3D"0" border=3D"0" role=
+=3D"presentation" width=3D"100%" class=3D"r31-o" style=3D"table-layout: fix=
+ed; width: 100%;"><tbody><tr><td align=3D"center" valign=3D"top" class=3D"r=
+39-i nl2go-default-textstyle" style=3D"word-break: break-word; color: #5458=
+59; font-family: IBM Plex Sans, arial; font-size: 18px; line-height: 1; pad=
+ding-bottom: 15px; padding-top: 10px; text-align: center;"> <div><p style=
+=3D"margin: 0; color: rgb(31, 45, 61); font-family: Verdana; font-size: 16p=
+x;"><span style=3D"color: rgb(255, 255, 255); font-family: Verdana, Geneva,=
+ sans-serif, arial; font-size: 12px;"><strong>=C2=A9 2026=C2=A0</strong></s=
+pan><a href=3D"https://r.mailing.newhome.ch/tr/cl/CIVcgWp5Mn8_0n7gz5aUwEtp3=
+DB08lWyJ0JkPqgllnOLGIy6_WsZ3SpflDaNYNjgOr8C0UYHhRKcvblVkkgY9L8JAvJxRFwLznXq=
+f7e8dvXMZ4AoXYL88kEUBSPAqfBb8Z6cjQ3ACD9Ws_0WyJusaBTm_lModZVRJV9JAgn4Nd3_xCS=
+FxCW3E-rwyqT1cg4c7k0ZM4dO975qWX4I8a7EsI8n3-1rbhx-F6BqsvS5off2tA_gpJmYAivFeo=
+aIhDaH9e7_d7xLw9ufX-2G9P78t-p0m9_lPlQIFyC99sMv-q8in-zpNewFNur21E1fMNpEH6d86=
+nDa7HR8tD_eR0KlQ_gRaHAZ738xby6hBmXPc7dZ8zsIdja6zoMkHL-FR14KZ1zF5KGHu-YUwSIl=
+Q3Q6IyR2qEmEvxhex534gow" title=3D"The Regional Real Estate Platform of Swit=
+zerland" target=3D"_blank" style=3D"font-weight: bold; color: rgb(53, 56, 5=
+7); text-decoration: underline;"><span style=3D"color: rgb(255, 255, 255); =
+font-family: Verdana, Geneva, sans-serif, arial; font-size: 12px;"><strong>=
+newhome.ch AG</strong></span></a></p></div> </td> </tr></tbody></table></td=
+> </tr></tbody></table></td> </tr></tbody></table></th> </tr></tbody></tabl=
+e></td> </tr></tbody></table></td> </tr></tbody></table></td> </tr></tbody>=
+</table>
+</body></html>
+
+--f69141c0ee4af8c5a901ee6ed0e279b6ccff1bda55903fff3e63d1f6c9dc--

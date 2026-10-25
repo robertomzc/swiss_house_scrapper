@@ -1,0 +1,1103 @@
+Delivered-To: roberto.suscriptions@gmail.com
+Received: by 2002:a2e:844a:0:b0:3ab:3511:4041 with SMTP id u10csp297636ljh;
+        Fri, 23 Oct 2026 18:01:35 -0700 (PDT)
+X-Received: by 2002:a05:6a00:3cd6:b0:880:a842:bb0a with SMTP id
+ d2e1a72fcca58-8a367a2eacbmr674396b3a.9.1792803694998;        Fri, 23 Oct 2026
+ 18:01:34 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1792803694; cv=none;
+        d=google.com; s=arc-20260327;
+        b=Gz51JdiSYn94+1//kYRwa9W2UUak6xJCOHukJSKc7Q1In8pmUX2ECdyg4jB41X16pD
+         pVmH+M/lqo5rntR6GlFLb366nAPuxEliyKWth2JCx5zTqPyRVDaFL+B3kZAXNfJ54BNi
+         5rlDirIF2cBtakRgdzxzpT9L15qwHn05J3eb8lKxPD0VT+HSOlsZwA8eWFyK+t4udDzf
+         vpYVooBsP/I31LH8k/vv09LIRddPJmAiQThGFgRSMJf9LFbDHgpNNjArBpehfvWHQeHK
+         bpgDaKqV1xPooHLRELr1s0TpcGjvOctrS9naNLpITyJxu00h72iubzpRpdmrg5a5uGz7
+         sFLA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com;
+ s=arc-20260327;       
+ h=message-id:to:from:subject:mime-version:date:sender:dkim-signature        
+ :dkim-signature;        bh=K/mli58VSHzPAMLTxPkmizjXL5hXByPU4H8IEWpIlQY=;
+        fh=GiaqfUe5KkBwjzvwFX01b41WrICtwgYrtiUhuGbKQcI=;       
+ b=b1cT+cgHnHC7g3qT2L9mGcNr7MaB4x5LEPnEID60iPut5FeRgzcTtWHXlncalqP/UH        
+ ABUphjUgm4/+mZ37aVbduG4eFcr5NE/UtH+wF7lJGmkp4RUgp0cnGdn0S3DWFlszrwWj        
+ gtq+ArmALvCZTjdR9IVk66y0MLN6E/5Xpd361TboqgkeZvk0jCHDcCrsRXY5BAXtcdVZ        
+ DcI4UOrJrO/BRbNp4RKYOvsqcsgGoP3uOAXKkDdQybqkicUMKZyOHYtgmlnrmJOB7N8B        
+ fJ4npCEd/XeVPvDQqkHsecPjzwE6kVG6ikAAmFrJb5fHM2CHzYAFMDftkgU/Bf3K1Z5w        
+ DmWQ==;        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;       dkim=pass
+ header.i=@support.lookmove.ch header.s=pic header.b=uvhAikDP;       dkim=pass
+ header.i=@mailgun.org header.s=mg header.b=a6GqAETQ;       spf=pass
+ (google.com: domain of
+ bounce+4262f3.68f13-roberto.suscriptions=gmail.com@support.lookmove.ch
+ designates 69.72.45.242 as permitted sender) =?utf-8?q?smtp=2Emailfrom=3D?=
+ =?utf-8?q?=22bounce+4262f3=2E68f13-roberto=2Esuscriptions=3Dgmail=2Ecom=40s?=
+ =?utf-8?q?upport=2Elookmove=2Ech=22=3B?=       dmarc=pass (p=REJECT sp=REJECT
+ dis=NONE) header.from=support.lookmove.ch
+Return-Path:
+ <bounce+4262f3.68f13-roberto.suscriptions=gmail.com@support.lookmove.ch>
+Received: from support.lookmove.ch (support.lookmove.ch. [69.72.45.242])
+        by mx.google.com with UTF8SMTPS id
+ d2e1a72fcca58-8a369548aaesi1378584b3a.212.2026.10.23.18.01.34        for
+ <roberto.suscriptions@gmail.com>        (version=TLS1_2
+ cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);        Fri, 23 Oct 2026
+ 18:01:34 -0700 (PDT)
+Received-SPF: pass (google.com: domain of
+ bounce+4262f3.68f13-roberto.suscriptions=gmail.com@support.lookmove.ch
+ designates 69.72.45.242 as permitted sender) client-ip=69.72.45.242;
+Authentication-Results: mx.google.com;       dkim=pass
+ header.i=@support.lookmove.ch header.s=pic header.b=uvhAikDP;       dkim=pass
+ header.i=@mailgun.org header.s=mg header.b=a6GqAETQ;       spf=pass
+ (google.com: domain of
+ bounce+4262f3.68f13-roberto.suscriptions=gmail.com@support.lookmove.ch
+ designates 69.72.45.242 as permitted sender) =?utf-8?q?smtp=2Emailfrom=3D?=
+ =?utf-8?q?=22bounce+4262f3=2E68f13-roberto=2Esuscriptions=3Dgmail=2Ecom=40s?=
+ =?utf-8?q?upport=2Elookmove=2Ech=22=3B?=       dmarc=pass (p=REJECT sp=REJECT
+ dis=NONE) header.from=support.lookmove.ch
+DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=support.lookmove.ch;
+ q=dns/txt; s=pic; t=1792803694; x=1792810894; h=Message-Id: To: To: From:
+ From: Subject: Subject: Content-Type: Mime-Version: Date: Sender: Sender:
+ X-Feedback-Id; bh=K/mli58VSHzPAMLTxPkmizjXL5hXByPU4H8IEWpIlQY=; =?utf-8?q?b?=
+ =?utf-8?q?=3DuvhAikDP5w9Kmx+KNJt1TigEsQs4+NT47UHnCezH2gFxj+licggG4AjfbSpOK1?=
+ =?utf-8?q?CzhRfkXf02jqEd1ytC1lLBslDpfNquJcfAc1ciA4oqF/gTEwUBcAe/dqduG5a5n5O?=
+ =?utf-8?q?xi/DRZWKUwNgG4Yku63PNBBI8WaiHeRu4yEDo7tynMQQ=3D?=
+DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=mailgun.org;
+ q=dns/txt; s=mg; t=1792803694; x=1792810894; h=Message-Id: To: To: From:
+ From: Subject: Subject: Content-Type: Mime-Version: Date: Sender: Sender:
+ X-Feedback-Id; bh=K/mli58VSHzPAMLTxPkmizjXL5hXByPU4H8IEWpIlQY=; =?utf-8?q?b?=
+ =?utf-8?q?=3Da6GqAETQI+jzvNn0Wn/yVxAUGfTmuaOkymUFpnOZS2mYtJda1BAS/acj89ZVVF?=
+ =?utf-8?q?57hdfJkpkAD40EN+PL0yyc7azaxjd/FtezX2pchQJ5ZnA8jUYhaOXlUuFcMeKSLyp?=
+ =?utf-8?q?ImP8nDJtyZMo4itvHN8iOapCO1S/YbJrIFo2Q4jNU+fw=3D?=
+X-Mailgun-Sid:
+ WyIwYjJhOCIsInJvYmVydG8uc3VzY3JpcHRpb25zQGdtYWlsLmNvbSIsIjY4ZjEzIl0=
+X-Feedback-Id: no-reply@support.lookmove.ch:newPropertyNotification,
+ en-US:5bc735d7aa3de600018cc20b:mailgun
+Received: by 2222990c203886b0d8f71261b19cd0437a788fbfccde25020b520a4553cd76fc
+ with HTTP id 6adc036ef48f50a23cde9a93; Sat, 24 Oct 2026 01:01:34 GMT
+X-Mailgun-Sending-Ip: 69.72.45.242
+Sender: no-reply@support.lookmove.ch
+Date: Sat, 24 Oct 2026 01:01:34 +0000
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="3d7e9dd1ff028bb16f7e3880160583a9875f79d51f70a283e5a07b1fa117"
+Subject: New listings that may interest you
+From: Lookmove <no-reply@support.lookmove.ch>
+To: roberto.suscriptions@gmail.com
+X-Mailgun-Tag: newPropertyNotification, en-US
+Message-Id: <20261024010134.d56af73d90cb5753@support.lookmove.ch>
+
+--3d7e9dd1ff028bb16f7e3880160583a9875f79d51f70a283e5a07b1fa117
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+
+Lookmove notification
+
+2 newly added properties match your search:
+Lausanne10k - 1.2M - 4rooms
+
+See more:=20
+https://email.support.lookmove.ch/c/eJxMz82O3CAMwPGncS7VRmA-kjlwqHbEsV1t1Qd=
+gwGlQE0iBbGbevkpHlfb4k_235GD0OHHRkeHDBUcm9EV2s3GOLgOXQeLAhRMUlMZJKaFGxaWXYx=
+cNMtScoWSccSH7oLSbBhEuzN_UoARIVvdty6X1S86_1_xBvZ-7xcytbRXEV0ALaI_j-DwHtJQA7=
+VbyRqVFqoD2tj8ArdtcaSul9jLnvRLgqwC0i9urS-kkMj5qDcKu7v5WoicQV46KMcYA9RrTe85r=
+BXGVJ939P_WT11ibS8_qDFwIFE4Aarr7ZQ_07-r39E5_dqoNxHVyS6WumJJvVFru6159iVuLOVW=
+Q7Nfq4tL7vHbNJDrenk89vuUWp-jduQb4-oXSy88f3YfBvwEAAP__Glx9rw
+
+
+manage notifications
+https://email.support.lookmove.ch/c/eJxMys1uhCAUQOGngU0zBrj86IJF08Rl06TpAyB=
+eKxn1EmA0fftmdrM955u97RcJHL10g-oF2EHz1SO4MBhj4qz7aQAVRG_AOicXqycQyJNXQlkplB=
+ZSSNDdbGxYHMyDiJNxBpgW9ZEzldZtRPedTuziyje_tpYrg3emRqbG67pe_7NQudccIjI11nDif=
+KsYSlyx8uILTVgadfVRY0m5JToq0-J3D2nrIu28-QOvr0IZS_v7pJaWFMOTMfXxhsft55ufXv0H=
+AAD__6-WTos
+
+--
+The Lookmove Team
+2020 Lookmove
+Rue de Bourg 15, 1003 Lausanne
+Support: info@lookmove.ch
+LinkedIn: https://email.support.lookmove.ch/c/eJw0y8tq9CAUAOCn0c3PL8ej5rJwU=
+QpZlkLpAyReGpnEI-pMmLcvs-j--7wdpigVD1aOM06ghlnz3RqQCM4A6g3R4DzGqCYPm4tygNUH=
+niwCDhJQgwSptPBmWOOo_AxuM6NRTEO7l0K1i4PodtIjCLfzw-69l8bUG8OF4XJdlzhSvgWfsnB=
+0MlwcnWXNT4bLX2S48GorbaF2Eu3eXE2lJ8qNafg513S8Ku82h-uzUgm1Pz-op5jc-mIM3_-F_P=
+_7iz8s_gYAAP__bu1Mww
+Facebook: https://email.support.lookmove.ch/c/eJwszE1qAyEUAODT6KZEns__hYtSm=
+FUphdIDOOo0kmTe4JgMvX0JdP_xlWj9IhWvUbqAHpQNmp9jXoq0pczSm-CTDgHQYzAmSeksJs9b=
+REArATVIkEqLYmxanCoB8mycUUzDft826kNciS43elSRz_waz2NsO1OvDCeG03EcYkm5zkQXken=
+GcHr_5yfltXHOg0ctIQDDiffYaa59kNjve-5tG43WnWn4uaV2fQZ8xLUen5222sfvB422tJyejO=
+HbS11P31_8EfEvAAD__0D3S_4
+--3d7e9dd1ff028bb16f7e3880160583a9875f79d51f70a283e5a07b1fa117
+Content-Type: text/html; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html>
+<html lang=3D"en">
+
+<head>
+	<meta charset=3D"UTF-8">
+	<meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scale=3D1=
+=2E0">
+	<meta http-equiv=3D"X-UA-Compatible" content=3D"ie=3Dedge">
+	<meta name=3D"x-apple-disable-message-reformatting">
+	<title>
+		You have new alerts
+	</title>
+	<link href=3D"https://fonts.googleapis.com/css?family=3DLato:400,700" rel=
+=3D"stylesheet" type=3D"text/css" />
+	<style>
+		td {
+			font-family: Lato, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+		}
+
+		* {
+			line-height: 1.5;
+		}
+
+		.title {
+			padding: 20px 0 30px 0;
+		}
+
+		@media only screen and (max-width: 500px) {
+			table {
+				padding-left: 12px;
+				padding-right: 12px;
+			}
+
+			.title {
+				padding: 50px 0 30px 0;
+			}
+		}
+
+		div,
+		p,
+		a,
+		li,
+		td {
+			-webkit-text-size-adjust: 100%;
+		}
+	</style>
+	<style type=3D"text/css">
+		/* ensure that clients don't add any padding or spaces around the email d=
+esign and allow us to style emails for the entire width of the preview pane=
+ */
+		body,
+		#bodyTable {
+			height: 100% !important;
+			width: 100% !important;
+			margin: 0;
+			padding: 0;
+			font-family: Lato, sans-serif;
+		}
+
+		/* Ensures Webkit- and Windows-based clients don't automatically resize t=
+he email text. */
+		body,
+		table,
+		td,
+		p,
+		a,
+		li,
+		blockquote {
+			-ms-text-size-adjust: 100%;
+			-webkit-text-size-adjust: 100%;
+		}
+
+		/* Forces Yahoo! to display emails at full width */
+		.thread-item.expanded .thread-body .body,
+		.msg-body {
+			width: 100% !important;
+			display: block !important;
+		}
+
+		/* Forces Hotmail to display emails at full width */
+		.ReadMsgBody,
+		.ExternalClass {
+			width: 100%;
+			background-color: #f4f4f4;
+		}
+
+		/* Forces Hotmail to display normal line spacing. */
+		.ExternalClass,
+		.ExternalClass p,
+		.ExternalClass span,
+		.ExternalClass font,
+		.ExternalClass td,
+		.ExternalClass div {
+			line-height: 100%;
+		}
+
+		/* Resolves webkit padding issue. */
+		table {
+			border-spacing: 0;
+		}
+
+		/* Resolves the Outlook 2007, 2010, and Gmail td padding issue, and remov=
+es spacing around tables that Outlook adds. */
+		table,
+		td {
+			border-collapse: collapse;
+			mso-table-lspace: 0pt;
+			mso-table-rspace: 0pt;
+		}
+
+		/* Corrects the way Internet Explorer renders resized images in emails. *=
+/
+		img {
+			-ms-interpolation-mode: bicubic;
+		}
+
+		/* Ensures images don't have borders or text-decorations applied to them =
+by default. */
+		img,
+		a img {
+			border: 0;
+			outline: none;
+			text-decoration: none;
+		}
+
+		/* Styles Yahoo's auto-sensing link color and border */
+		.yshortcuts a {
+			border-bottom: none !important;
+		}
+
+		/* Styles the tel URL scheme */
+		a[href^=3Dtel],
+		.mobile_link,
+		.mobile_link a {
+			color: #C73C31 !important;
+			text-decoration: none !Important;
+		}
+
+		/* Media queries for when the viewport is smaller than the default email =
+width but not too narrow. */
+		@media screen and (max-device-width: 600px),
+		screen and (max-width: 600px) {
+
+			/* Constrains email width for small screens */
+			table[class=3D"email-container"] {
+				width: 100% !important;
+			}
+
+			/* Constrains tables for small screens */
+			table[class=3D"fluid"] {
+				width: 100% !important;
+			}
+
+			/* Forces images to resize to full width of their container */
+			img[class=3D"fluid"],
+			img[class=3D"force-col-center"] {
+				width: 100% !important;
+				max-width: 100% !important;
+				height: auto !important;
+			}
+
+			/* And centers these ones */
+			img[class=3D"force-col-center"] {
+				margin: auto !important;
+			}
+
+			/* Forces table cells into rows */
+			td[class=3D"force-col"],
+			td[class=3D"force-col-center"] {
+				display: block !important;
+				width: 100% !important;
+				clear: both;
+			}
+
+			/* And centers these ones */
+			td[class=3D"force-col-center"] {
+				text-align: center !important;
+			}
+
+			/* Forces table cells into rows */
+			/* Floats a previously stacked image to the left */
+			img[class=3D"col-3-img-l"] {
+				float: left;
+				margin: 0 15px 15px 0;
+			}
+
+			/* Floats a previously stacked image to the right */
+			img[class=3D"col-3-img-r"] {
+				float: right;
+				margin: 0 0 15px 15px;
+			}
+
+			/* Makes buttons full width=20
+			table[class=3D"button"] {
+				width: 100% !important;
+			}*/
+
+		}
+
+		/* Media queries for when the viewport is narrow. */
+		/* Rules prefixed with 'hh-' (for 'handheld') repeat much of what's above=
+, but these don't trigger until the smaller screen width. */
+		@media screen and (max-device-width: 425px),
+		screen and (max-width: 425px) {
+
+			/* Helper only visible on handhelds. All styles are inline along with a =
+`display:none`, which this class overrides */
+			div[class=3D"hh-visible"] {
+				display: block !important;
+			}
+
+			/* Center stuff */
+			div[class=3D"hh-center"] {
+				text-align: center;
+				width: 100% !important;
+			}
+
+			/* Constrain tables for small screens */
+			table[class=3D"hh-fluid"] {
+				width: 100% !important;
+			}
+
+			/* Force images to resize to full width of their container */
+			img[class=3D"hh-fluid"],
+			img[class=3D"hh-force-col-center"] {
+				width: 100% !important;
+				max-width: 100% !important;
+				height: auto !important;
+			}
+
+			/* And center these ones */
+			img[class=3D"hh-force-col-center"] {
+				margin: auto !important;
+			}
+
+			/* Force table cells into rows */
+			td[class=3D"hh-force-col"],
+			td[class=3D"hh-force-col-center"] {
+				display: block !important;
+				width: 100% !important;
+				clear: both;
+			}
+
+			/* And center these ones */
+			td[class=3D"hh-force-col-center"] {
+				text-align: center !important;
+			}
+
+			/* Stack the previously floated images */
+			img[class=3D"col-3-img-l"],
+			img[class=3D"col-3-img-r"] {
+				float: none !important;
+				margin: 15px auto !important;
+				text-align: center !important;
+			}
+
+			p {
+				font-size: 13px;
+			}
+		}
+	</style>
+</head>
+
+<body
+    style=3D"font-family: Lato,Helvetica Neue,Helvetica,Arial,sans-serif;ba=
+ckground-color: #f1f1f1;padding-top: 30px;text-align: center;">
+    <table style=3D"width: 100%; max-width: 600px;background-color: #ffffff=
+;margin: 0 auto;line-height:1.2;">
+        <tr style=3D"border-bottom: 1px solid #f4f4f4;">
+  <td align=3D"left" colspan=3D"2" style=3D"padding-top: 48px; padding-bott=
+om: 30px; padding-left: 30px;">
+      <a href=3D"https://email.support.lookmove.ch/c/eJxUyrFOxSAUANCvgcVI4F=
+6grwODMXmjMTF-AFBqiW0vAV6Jf28cnc9ZnL2tCnlyaprhJtHOmm_OLMEmO3s9BQAAg7Ca5L3xy=
+qAPiDw7kGCVBC2VVKjFYqxfJ1xmGYOZDDIt26MUql3sRN8HXUnEje9u6700hi8M7gzuY4x_Xl2l=
+kGon0R4t1lx6prMxLb8On3cR6eDdnWm8Vyqp9p836nnN0f81Bq9P6Xz-_OCXg98AAAD__7ZLRGg=
+">
+         =20
+          <img style=3D"border: 0; line-height: 100%; outline: none; text-d=
+ecoration: none; width: 140px; height: px; padding-bottom: 8px;"
+              src=3D"https://www.lookmove.ch/images/logo.png" alt=3D"lookmo=
+ve.ch" width=3D"140" height=3D"" /><br>
+          <small style=3D"display: inline-block; color: #7A7A7A;font-size: =
+12px; text-decoration: none;">
+             =20
+              Property done properly
+             =20
+          </small>
+      </a>
+  </td>
+</tr>
+
+
+<tr>
+  <td colspan=3D"2" align=3D"left" class=3D"title"
+      style=3D"font-size: 28px;line-height: 1;color: #000000;text-align: le=
+ft; padding-left: 30px; padding-right: 10px">
+      You have new alerts
+  </td>
+</tr>
+
+
+
+        <tr>
+            <td
+                style=3D"padding: 0 30px; font-family: Lato,sans-serif; fon=
+t-size: 16px; line-height: 22px; color: #7A7A7A;">
+                <p style=3D"font-size: 14px;text-align: left;margin:0;">
+                   =20
+                        2 following properties correspond to your search:
+                   =20
+                </p>
+            </td>
+        </tr>
+
+        <tr>
+            <td
+                style=3D"padding: 15px 30px; font-family: Lato,sans-serif; =
+font-size: 16px; line-height: 22px; color: #7A7A7A;">
+                <p style=3D"font-size: 14px;text-align: left;margin:0;">Lau=
+sanne10k - 1.2M - 4rooms
+                </p>
+            </td>
+        </tr>
+
+        <tr>
+            <td style=3D"padding: 0 30px; font-family: Lato,sans-serif; fon=
+t-size: 16px; line-height: 22px; color: #7A7A7A; padding-top: 16px;">
+                <table style=3D"border-collapse: collapse!important; height=
+: 100%!important; margin: 0; padding: 0; width: 100%!important; background-=
+color: transparent;"
+                    border=3D"0" width=3D"100% !important" cellspacing=3D"0=
+" cellpadding=3D"0" align=3D"center">
+                    <tbody>
+                       =20
+                       =20
+                        <tr>
+                           =20
+                            <td style=3D"vertical-align: top;padding-bottom=
+: 30px;width: 270px!important;">
+                                <table style=3D"border-collapse: collapse!i=
+mportant; height: 100%!important; margin: 0; padding: 0; width: 100%!import=
+ant; background-color: transparent;text-align: center"
+    border=3D"0" width=3D"100% !important" cellspacing=3D"0" cellpadding=3D=
+"0" align=3D"center">
+    <tbody>
+        <tr>
+            <td align=3D"center" style=3D"vertical-align: top;padding-left:=
+ 10px; padding-right: 10px;">
+                <a style=3D"text-decoration: none; color: #7A7A7A" href=3D"=
+https://email.support.lookmove.ch/c/eJxMyk1qxCAUAODT6KY0-J4a48JFKbgshdIDGH8=
+m0iSKOhN6-9LdrL8vmHlJwGk0oDQujM9a0M2ElEDq6JXXignQs1eBR1hByBSBOZoNMpyBoWDAgI=
+spyNklxYNmfpVKciJYv9da2pj2Un6O8oiT3-hutjFqJ_yNoCVor-t6doI2ngTtnvvI542gDW44g=
+haEWqQCpM20ssY2ytTv3bdcRy5nJ4LdDpf3yZeDDnPG67OVGtv4_Sgjp-zdfyP4_hLP1-8v-jD4=
+FwAA__-vPE4s">
+                    <img src=3D'https://images.lookmove.ch/thumbnails/24116=
+2224_1.jpg' alt=3D"view" width=3D"250" height=3D"134" style=3D"display: blo=
+ck;object-fit: cover;box-shadow: rgb(225, 228, 232) 0px 6px 7px -2px;border=
+-radius: 4px;">
+                </a>
+            </td>
+        </tr>
+        <tr>
+            <td align=3D"left" style=3D"padding-left: 20px; padding-top: 15=
+px; padding-right: 10px;">
+                <a style=3D"text-decoration: none; color: #000000" href=3D"=
+https://email.support.lookmove.ch/c/eJxMyk1qxCAUAODT6KY0-J4a48JFKbgshdIDGH8=
+m0iSKOhN6-9LdrL8vmHlJwGk0oDQujM9a0M2ElEDq6JXXignQs1eBR1hByBSBOZoNMpyBoWDAgI=
+spyNklxYNmfpVKciJYv9da2pj2Un6O8oiT3-hutjFqJ_yNoCVor-t6doI2ngTtnvvI542gDW44g=
+haEWqQCpM20ssY2ytTv3bdcRy5nJ4LdDpf3yZeDDnPG67OVGtv4_Sgjp-zdfyP4_hLP1-8v-jD4=
+FwAA__-vPE4s">
+                    Rue 1673</a>
+            </td>
+        </tr>
+        <tr>
+            <td align=3D"left" style=3D"padding-left: 20px;">
+                <a style=3D"text-decoration: none; color: #000000" href=3D"=
+https://email.support.lookmove.ch/c/eJxMyk1qxCAUAODT6KY0-J4a48JFKbgshdIDGH8=
+m0iSKOhN6-9LdrL8vmHlJwGk0oDQujM9a0M2ElEDq6JXXignQs1eBR1hByBSBOZoNMpyBoWDAgI=
+spyNklxYNmfpVKciJYv9da2pj2Un6O8oiT3-hutjFqJ_yNoCVor-t6doI2ngTtnvvI542gDW44g=
+haEWqQCpM20ssY2ytTv3bdcRy5nJ4LdDpf3yZeDDnPG67OVGtv4_Sgjp-zdfyP4_hLP1-8v-jD4=
+FwAA__-vPE4s">
+                    Rooms: 5 - 125m=C2=B2</a>
+            </td>
+        </tr>
+        <tr>
+            <td align=3D"left" style=3D"padding-left: 20px">
+                <a style=3D"text-decoration: none; font-weight: bold; color=
+:#000000" href=3D"https://email.support.lookmove.ch/c/eJxMyk1qxCAUAODT6KY0-=
+J4a48JFKbgshdIDGH8m0iSKOhN6-9LdrL8vmHlJwGk0oDQujM9a0M2ElEDq6JXXignQs1eBR1hB=
+yBSBOZoNMpyBoWDAgIspyNklxYNmfpVKciJYv9da2pj2Un6O8oiT3-hutjFqJ_yNoCVor-t6doI=
+2ngTtnvvI542gDW44ghaEWqQCpM20ssY2ytTv3bdcRy5nJ4LdDpf3yZeDDnPG67OVGtv4_Sgjp-=
+zdfyP4_hLP1-8v-jD4FwAA__-vPE4s">
+                    CHF 1=E2=80=99200=E2=80=99000.-</a>
+            </td>
+        </tr>
+        <tr>
+            <td align=3D"left" style=3D"padding-left: 20px; padding-top: 15=
+px">
+                <a style=3D"text-decoration: none; color:#C73C31" href=3D"h=
+ttps://email.support.lookmove.ch/c/eJxMyk1qxCAUAODT6KY0-J4a48JFKbgshdIDGH8m=
+0iSKOhN6-9LdrL8vmHlJwGk0oDQujM9a0M2ElEDq6JXXignQs1eBR1hByBSBOZoNMpyBoWDAgIs=
+pyNklxYNmfpVKciJYv9da2pj2Un6O8oiT3-hutjFqJ_yNoCVor-t6doI2ngTtnvvI542gDW44gh=
+aEWqQCpM20ssY2ytTv3bdcRy5nJ4LdDpf3yZeDDnPG67OVGtv4_Sgjp-zdfyP4_hLP1-8v-jD4F=
+wAA__-vPE4s">
+                   =20
+                        See details >
+                       =20
+                </a>
+            </td>
+        </tr>
+    </tbody>
+</table>
+                            </td>
+
+                           =20
+
+                           =20
+                       =20
+                       =20
+                            <td style=3D"vertical-align: top;padding-bottom=
+: 30px;width: 270px!important;">
+                                <table style=3D"border-collapse: collapse!i=
+mportant; height: 100%!important; margin: 0; padding: 0; width: 100%!import=
+ant; background-color: transparent;text-align: center"
+    border=3D"0" width=3D"100% !important" cellspacing=3D"0" cellpadding=3D=
+"0" align=3D"center">
+    <tbody>
+        <tr>
+            <td align=3D"center" style=3D"vertical-align: top;padding-left:=
+ 10px; padding-right: 10px;">
+                <a style=3D"text-decoration: none; color: #7A7A7A" href=3D"=
+https://email.support.lookmove.ch/c/eJxMyk1qxCAUAODT6KY06NP4s3BRCi5LofQAJpq=
+JNMkL-mZCb1-6m_X35WDcIhUvQVoPTijjNV-Dz8knEH6ZjLOQJsgOQI5J-CmDk4XXAAKMFKCFFF=
+LpIY8mLVZlL-ZptKNiWvT7eWKjYUP82fFRhnnlW1iJzs7UG4PIIF7X9ewMYjkYxK12qseNQcyJE=
+oMotXXGOs1baDiVRjj0e59bPani0ZkWtz3VbZhx5xSOcn02PEuj3w-kutQ5_TcG7y_leP3-4o8A=
+fwEAAP__gxJN_g">
+                    <img src=3D'https://images.lookmove.ch/thumbnails/24117=
+1750_1.jpg' alt=3D"view" width=3D"250" height=3D"134" style=3D"display: blo=
+ck;object-fit: cover;box-shadow: rgb(225, 228, 232) 0px 6px 7px -2px;border=
+-radius: 4px;">
+                </a>
+            </td>
+        </tr>
+        <tr>
+            <td align=3D"left" style=3D"padding-left: 20px; padding-top: 15=
+px; padding-right: 10px;">
+                <a style=3D"text-decoration: none; color: #000000" href=3D"=
+https://email.support.lookmove.ch/c/eJxMyk1qxCAUAODT6KY06NP4s3BRCi5LofQAJpq=
+JNMkL-mZCb1-6m_X35WDcIhUvQVoPTijjNV-Dz8knEH6ZjLOQJsgOQI5J-CmDk4XXAAKMFKCFFF=
+LpIY8mLVZlL-ZptKNiWvT7eWKjYUP82fFRhnnlW1iJzs7UG4PIIF7X9ewMYjkYxK12qseNQcyJE=
+oMotXXGOs1baDiVRjj0e59bPani0ZkWtz3VbZhx5xSOcn02PEuj3w-kutQ5_TcG7y_leP3-4o8A=
+fwEAAP__gxJN_g">
+                    Syens 1510</a>
+            </td>
+        </tr>
+        <tr>
+            <td align=3D"left" style=3D"padding-left: 20px;">
+                <a style=3D"text-decoration: none; color: #000000" href=3D"=
+https://email.support.lookmove.ch/c/eJxMyk1qxCAUAODT6KY06NP4s3BRCi5LofQAJpq=
+JNMkL-mZCb1-6m_X35WDcIhUvQVoPTijjNV-Dz8knEH6ZjLOQJsgOQI5J-CmDk4XXAAKMFKCFFF=
+LpIY8mLVZlL-ZptKNiWvT7eWKjYUP82fFRhnnlW1iJzs7UG4PIIF7X9ewMYjkYxK12qseNQcyJE=
+oMotXXGOs1baDiVRjj0e59bPani0ZkWtz3VbZhx5xSOcn02PEuj3w-kutQ5_TcG7y_leP3-4o8A=
+fwEAAP__gxJN_g">
+                    Rooms: 4 - 107m=C2=B2</a>
+            </td>
+        </tr>
+        <tr>
+            <td align=3D"left" style=3D"padding-left: 20px">
+                <a style=3D"text-decoration: none; font-weight: bold; color=
+:#000000" href=3D"https://email.support.lookmove.ch/c/eJxMyk1qxCAUAODT6KY06=
+NP4s3BRCi5LofQAJpqJNMkL-mZCb1-6m_X35WDcIhUvQVoPTijjNV-Dz8knEH6ZjLOQJsgOQI5J=
+-CmDk4XXAAKMFKCFFFLpIY8mLVZlL-ZptKNiWvT7eWKjYUP82fFRhnnlW1iJzs7UG4PIIF7X9ew=
+MYjkYxK12qseNQcyJEoMotXXGOs1baDiVRjj0e59bPani0ZkWtz3VbZhx5xSOcn02PEuj3w-kut=
+Q5_TcG7y_leP3-4o8AfwEAAP__gxJN_g">
+                    CHF 780=E2=80=99000.-</a>
+            </td>
+        </tr>
+        <tr>
+            <td align=3D"left" style=3D"padding-left: 20px; padding-top: 15=
+px">
+                <a style=3D"text-decoration: none; color:#C73C31" href=3D"h=
+ttps://email.support.lookmove.ch/c/eJxMyk1qxCAUAODT6KY06NP4s3BRCi5LofQAJpqJ=
+NMkL-mZCb1-6m_X35WDcIhUvQVoPTijjNV-Dz8knEH6ZjLOQJsgOQI5J-CmDk4XXAAKMFKCFFFL=
+pIY8mLVZlL-ZptKNiWvT7eWKjYUP82fFRhnnlW1iJzs7UG4PIIF7X9ewMYjkYxK12qseNQcyJEo=
+MotXXGOs1baDiVRjj0e59bPani0ZkWtz3VbZhx5xSOcn02PEuj3w-kutQ5_TcG7y_leP3-4o8Af=
+wEAAP__gxJN_g">
+                   =20
+                        See details >
+                       =20
+                </a>
+            </td>
+        </tr>
+    </tbody>
+</table>
+                            </td>
+
+                           =20
+
+                           =20
+                        </tr>
+                       =20
+                       =20
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+
+        <tr>
+            <td
+                style=3D"padding: 0 30px 30px 30px; font-family: Lato,sans-=
+serif; font-size: 16px; line-height: 22px; color: #7A7A7A;">
+                <table border=3D"0" class=3D"button" align=3D"left">
+                    <tr>
+                        <td colspan=3D"2" style=3D"text-align: center">
+                            <table border=3D"0" cellspacing=3D"0" cellpaddi=
+ng=3D"0" style=3D"margin: 0 auto;">
+    <tbody>
+        <tr>
+            <td align=3D"center" style=3D"text-align: center;margin: 0 auto=
+;">
+                <table cellspacing=3D"0" cellpadding=3D"0">
+                    <tbody>
+                        <tr>
+                            <td bgcolor=3D"#C73C31"
+                                style=3D"padding:3px;border-radius:3px; min=
+-width:200px;" align=3D"center">
+                                <a href=3D"https://email.support.lookmove.c=
+h/c/eJxMz82O3CAMwPGncS7VRmA-kjlwqHbEsV1t1QdgwGlQE0iBbGbevkpHlfb4k_235GD0OHH=
+RkeHDBUcm9EV2s3GOLgOXQeLAhRMUlMZJKaFGxaWXYxcNMtScoWSccSH7oLSbBhEuzN_UoARIVv=
+dty6X1S86_1_xBvZ-7xcytbRXEV0ALaI_j-DwHtJQA7VbyRqVFqoD2tj8ArdtcaSul9jLnvRLgq=
+wC0i9urS-kkMj5qDcKu7v5WoicQV46KMcYA9RrTe85rBXGVJ939P_WT11ibS8_qDFwIFE4Aarr7=
+ZQ_07-r39E5_dqoNxHVyS6WumJJvVFru6159iVuLOVWQ7Nfq4tL7vHbNJDrenk89vuUWp-jduQb=
+4-oXSy88f3YfBvwEAAP__Glx9rw" target=3D"_blank"
+                                    style=3D"border-top: 15px #C73C31 solid=
+;border-bottom: 15px #C73C31 solid;border-left: 40px #C73C31 solid;border-r=
+ight: 40px #C73C31 solid; font-size: 15px; font-family: Helvetica, Arial, s=
+ans-serif; font-weight: bold; color: #ffffff; text-decoration: none; displa=
+y: inline-block;">
+                                    See all listings
+                                </a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+
+       =20
+        <tr>
+            <td style=3D"padding: 0 30px; font-family: Lato,sans-serif; fon=
+t-size: 16px; line-height: 22px; padding-top: 16px;background-color: #f9f9f=
+9">
+                <table style=3D"border-collapse: collapse!important; height=
+: 100%!important; margin: 0; padding: 0; width: 100%!important; background-=
+color: transparent;"
+                    border=3D"0" width=3D"100% !important" cellspacing=3D"0=
+" cellpadding=3D"0" align=3D"center">
+                    <tbody>
+                        <tr>
+                            <td colspan=3D"2" align=3D"left" class=3D"title=
+"
+                                style=3D"font-size: 28px;line-height: 1;col=
+or: #000000;text-align: left;">
+                                Property suggestions
+                                <p style=3D"padding-top:30px;font-size: 14p=
+x;text-align: left;color: #7A7A7A;">Tailored properties based on your prope=
+rty preferences!
+                            </p>
+                            </td>
+                            <td>
+                                <img style=3D"border: 0; line-height: 100%;=
+ outline: none; text-decoration: none; width: 122px; height: 134px; padding=
+-bottom: 8px;"
+                                src=3D"https://images.lookmove.ch/assets/bu=
+lb.png" alt=3D"lookmove suggestions" width=3D"122" height=3D"134" /><br>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+
+        <tr>
+            <td style=3D"padding: 0 30px; font-family: Lato,sans-serif; fon=
+t-size: 16px; line-height: 22px; color: #7A7A7A; padding-top: 16px;">
+                <table style=3D"border-collapse: collapse!important; height=
+: 100%!important; margin: 0; padding: 0; width: 100%!important; background-=
+color: transparent;"
+                    border=3D"0" width=3D"100% !important" cellspacing=3D"0=
+" cellpadding=3D"0" align=3D"center">
+                    <tbody>
+                       =20
+                       =20
+                        <tr>
+                           =20
+                            <td style=3D"vertical-align: top;padding-bottom=
+: 30px;width: 270px!important;">
+                                <table style=3D"border-collapse: collapse!i=
+mportant; height: 100%!important; margin: 0; padding: 0; width: 100%!import=
+ant; background-color: transparent;text-align: center"
+    border=3D"0" width=3D"100% !important" cellspacing=3D"0" cellpadding=3D=
+"0" align=3D"center">
+    <tbody>
+        <tr>
+            <td align=3D"center" style=3D"vertical-align: top;padding-left:=
+ 10px; padding-right: 10px;">
+                <a style=3D"text-decoration: none; color: #7A7A7A" href=3D"=
+https://email.support.lookmove.ch/c/eJxMys1qxCAQAOCn0Utp0HHMz8FDKXgshdIHMGo=
+20iQTdHZD377srefvS64fF21kdnqYYFSmn1CuDlKOSmeLFpbBpDmgTdkY7BdUSVuUxYGCXitApZ=
+U22CXbh2edVJztYI1A1e7nSZW7jehnp0fu4io3tzKfTZg3AV6Av67rvwvw-RDgt9K4HDcBPgUOA=
+rzGYdR6GGV1leZcmbp2b7GWkwsdTaC67aFsXaRdsjvy9VnpzJV_P4jLUmJ4NgHvL_l4_f6SDwd_=
+AQAA__98kU3u">
+                    <img src=3D'https://images.lookmove.ch/thumbnails/24064=
+2880_1.jpg' alt=3D"view" width=3D"250" height=3D"134" style=3D"display: blo=
+ck;object-fit: cover;box-shadow: rgb(225, 228, 232) 0px 6px 7px -2px;border=
+-radius: 4px;">
+                </a>
+            </td>
+        </tr>
+        <tr>
+            <td align=3D"left" style=3D"padding-left: 20px; padding-top: 15=
+px; padding-right: 10px;">
+                <a style=3D"text-decoration: none; color: #000000" href=3D"=
+https://email.support.lookmove.ch/c/eJxMys1qxCAQAOCn0Utp0HHMz8FDKXgshdIHMGo=
+20iQTdHZD377srefvS64fF21kdnqYYFSmn1CuDlKOSmeLFpbBpDmgTdkY7BdUSVuUxYGCXitApZ=
+U22CXbh2edVJztYI1A1e7nSZW7jehnp0fu4io3tzKfTZg3AV6Av67rvwvw-RDgt9K4HDcBPgUOA=
+rzGYdR6GGV1leZcmbp2b7GWkwsdTaC67aFsXaRdsjvy9VnpzJV_P4jLUmJ4NgHvL_l4_f6SDwd_=
+AQAA__98kU3u">
+                    La Croix (Lutry) 1090</a>
+            </td>
+        </tr>
+        <tr>
+            <td align=3D"left" style=3D"padding-left: 20px;">
+                <a style=3D"text-decoration: none; color: #000000" href=3D"=
+https://email.support.lookmove.ch/c/eJxMys1qxCAQAOCn0Utp0HHMz8FDKXgshdIHMGo=
+20iQTdHZD377srefvS64fF21kdnqYYFSmn1CuDlKOSmeLFpbBpDmgTdkY7BdUSVuUxYGCXitApZ=
+U22CXbh2edVJztYI1A1e7nSZW7jehnp0fu4io3tzKfTZg3AV6Av67rvwvw-RDgt9K4HDcBPgUOA=
+rzGYdR6GGV1leZcmbp2b7GWkwsdTaC67aFsXaRdsjvy9VnpzJV_P4jLUmJ4NgHvL_l4_f6SDwd_=
+AQAA__98kU3u">
+                    Rooms: 9 - 300m=C2=B2</a>
+            </td>
+        </tr>
+        <tr>
+            <td align=3D"left" style=3D"padding-left: 20px">
+                <a style=3D"text-decoration: none; font-weight: bold; color=
+:#000000" href=3D"https://email.support.lookmove.ch/c/eJxMys1qxCAQAOCn0Utp0=
+HHMz8FDKXgshdIHMGo20iQTdHZD377srefvS64fF21kdnqYYFSmn1CuDlKOSmeLFpbBpDmgTdkY=
+7BdUSVuUxYGCXitApZU22CXbh2edVJztYI1A1e7nSZW7jehnp0fu4io3tzKfTZg3AV6Av67rvwv=
+w-RDgt9K4HDcBPgUOArzGYdR6GGV1leZcmbp2b7GWkwsdTaC67aFsXaRdsjvy9VnpzJV_P4jLUm=
+J4NgHvL_l4_f6SDwd_AQAA__98kU3u">
+                    Price on request</a>
+            </td>
+        </tr>
+        <tr>
+            <td align=3D"left" style=3D"padding-left: 20px; padding-top: 15=
+px">
+                <a style=3D"text-decoration: none; color:#C73C31" href=3D"h=
+ttps://email.support.lookmove.ch/c/eJxMys1qxCAQAOCn0Utp0HHMz8FDKXgshdIHMGo2=
+0iQTdHZD377srefvS64fF21kdnqYYFSmn1CuDlKOSmeLFpbBpDmgTdkY7BdUSVuUxYGCXitApZU=
+22CXbh2edVJztYI1A1e7nSZW7jehnp0fu4io3tzKfTZg3AV6Av67rvwvw-RDgt9K4HDcBPgUOAr=
+zGYdR6GGV1leZcmbp2b7GWkwsdTaC67aFsXaRdsjvy9VnpzJV_P4jLUmJ4NgHvL_l4_f6SDwd_A=
+QAA__98kU3u">
+                   =20
+                        See details >
+                       =20
+                </a>
+            </td>
+        </tr>
+    </tbody>
+</table>
+                            </td>
+
+                           =20
+
+                           =20
+                       =20
+                       =20
+                            <td style=3D"vertical-align: top;padding-bottom=
+: 30px;width: 270px!important;">
+                                <table style=3D"border-collapse: collapse!i=
+mportant; height: 100%!important; margin: 0; padding: 0; width: 100%!import=
+ant; background-color: transparent;text-align: center"
+    border=3D"0" width=3D"100% !important" cellspacing=3D"0" cellpadding=3D=
+"0" align=3D"center">
+    <tbody>
+        <tr>
+            <td align=3D"center" style=3D"vertical-align: top;padding-left:=
+ 10px; padding-right: 10px;">
+                <a style=3D"text-decoration: none; color: #7A7A7A" href=3D"=
+https://email.support.lookmove.ch/c/eJxMykFqxCAUANDT6KY06P8mmoWLUnBZCqUHMGo=
+m0iSK_pnQ25fuZv1etJNZJfJkpZ7BCJxmxTcb9DIbgyOG6ANqXOMUdYpSySC8gplnCwImKUAJKS=
+SqIY6TXzXGWYRl1CMyJfq91tJo2Ev5OcojDWHju92Iamf4xsAxcNd1PTsDl04Gbs-d8nlj4KInz=
+8BJpQ0aFLzZVpbUqAz93kPLlXI5O1Pidvi8D6EcnOyZrs9Wamr0-1Eorzn4_8bg_SWdr99f_GHh=
+LwAA__-uPE4r">
+                    <img src=3D'https://images.lookmove.ch/thumbnails/24114=
+3773_1.jpg' alt=3D"view" width=3D"250" height=3D"134" style=3D"display: blo=
+ck;object-fit: cover;box-shadow: rgb(225, 228, 232) 0px 6px 7px -2px;border=
+-radius: 4px;">
+                </a>
+            </td>
+        </tr>
+        <tr>
+            <td align=3D"left" style=3D"padding-left: 20px; padding-top: 15=
+px; padding-right: 10px;">
+                <a style=3D"text-decoration: none; color: #000000" href=3D"=
+https://email.support.lookmove.ch/c/eJxMykFqxCAUANDT6KY06P8mmoWLUnBZCqUHMGo=
+m0iSK_pnQ25fuZv1etJNZJfJkpZ7BCJxmxTcb9DIbgyOG6ANqXOMUdYpSySC8gplnCwImKUAJKS=
+SqIY6TXzXGWYRl1CMyJfq91tJo2Ev5OcojDWHju92Iamf4xsAxcNd1PTsDl04Gbs-d8nlj4KInz=
+8BJpQ0aFLzZVpbUqAz93kPLlXI5O1Pidvi8D6EcnOyZrs9Wamr0-1Eorzn4_8bg_SWdr99f_GHh=
+LwAA__-uPE4r">
+                    Sullens 1036</a>
+            </td>
+        </tr>
+        <tr>
+            <td align=3D"left" style=3D"padding-left: 20px;">
+                <a style=3D"text-decoration: none; color: #000000" href=3D"=
+https://email.support.lookmove.ch/c/eJxMykFqxCAUANDT6KY06P8mmoWLUnBZCqUHMGo=
+m0iSK_pnQ25fuZv1etJNZJfJkpZ7BCJxmxTcb9DIbgyOG6ANqXOMUdYpSySC8gplnCwImKUAJKS=
+SqIY6TXzXGWYRl1CMyJfq91tJo2Ev5OcojDWHju92Iamf4xsAxcNd1PTsDl04Gbs-d8nlj4KInz=
+8BJpQ0aFLzZVpbUqAz93kPLlXI5O1Pidvi8D6EcnOyZrs9Wamr0-1Eorzn4_8bg_SWdr99f_GHh=
+LwAA__-uPE4r">
+                    Rooms: 5 - 150m=C2=B2</a>
+            </td>
+        </tr>
+        <tr>
+            <td align=3D"left" style=3D"padding-left: 20px">
+                <a style=3D"text-decoration: none; font-weight: bold; color=
+:#000000" href=3D"https://email.support.lookmove.ch/c/eJxMykFqxCAUANDT6KY06=
+P8mmoWLUnBZCqUHMGom0iSK_pnQ25fuZv1etJNZJfJkpZ7BCJxmxTcb9DIbgyOG6ANqXOMUdYpS=
+ySC8gplnCwImKUAJKSSqIY6TXzXGWYRl1CMyJfq91tJo2Ev5OcojDWHju92Iamf4xsAxcNd1PTs=
+Dl04Gbs-d8nlj4KInz8BJpQ0aFLzZVpbUqAz93kPLlXI5O1Pidvi8D6EcnOyZrs9Wamr0-1Eorz=
+n4_8bg_SWdr99f_GHhLwAA__-uPE4r">
+                    CHF 750=E2=80=99000.-</a>
+            </td>
+        </tr>
+        <tr>
+            <td align=3D"left" style=3D"padding-left: 20px; padding-top: 15=
+px">
+                <a style=3D"text-decoration: none; color:#C73C31" href=3D"h=
+ttps://email.support.lookmove.ch/c/eJxMykFqxCAUANDT6KY06P8mmoWLUnBZCqUHMGom=
+0iSK_pnQ25fuZv1etJNZJfJkpZ7BCJxmxTcb9DIbgyOG6ANqXOMUdYpSySC8gplnCwImKUAJKSS=
+qIY6TXzXGWYRl1CMyJfq91tJo2Ev5OcojDWHju92Iamf4xsAxcNd1PTsDl04Gbs-d8nlj4KInz8=
+BJpQ0aFLzZVpbUqAz93kPLlXI5O1Pidvi8D6EcnOyZrs9Wamr0-1Eorzn4_8bg_SWdr99f_GHhL=
+wAA__-uPE4r">
+                   =20
+                        See details >
+                       =20
+                </a>
+            </td>
+        </tr>
+    </tbody>
+</table>
+                            </td>
+
+                           =20
+
+                           =20
+                        </tr>
+                       =20
+                       =20
+                       =20
+                        <tr>
+                           =20
+                            <td style=3D"vertical-align: top;padding-bottom=
+: 30px;width: 270px!important;">
+                                <table style=3D"border-collapse: collapse!i=
+mportant; height: 100%!important; margin: 0; padding: 0; width: 100%!import=
+ant; background-color: transparent;text-align: center"
+    border=3D"0" width=3D"100% !important" cellspacing=3D"0" cellpadding=3D=
+"0" align=3D"center">
+    <tbody>
+        <tr>
+            <td align=3D"center" style=3D"vertical-align: top;padding-left:=
+ 10px; padding-right: 10px;">
+                <a style=3D"text-decoration: none; color: #7A7A7A" href=3D"=
+https://email.support.lookmove.ch/c/eJxMykFqxCAUANDT6KY06NdoXLgoBZelUHoAY8x=
+EmuSL_pnQ25fuZv3e4s20SsWzl9bBJJRxmm_eaRlh1Uk5YWGewJhJg8suL9Zmtc68eBBgpAAtpJ=
+BKD8to4mrV4kSaRzsqpkW_14qNhh3x58BHHtLGd78R1c7UG4PAIFzX9ewMQj4ZhL10KueNQVgiR=
+QZBajuB0iNvvuGcG-HQ7z21Uqng2ZkWtyOWfUh4cPJnvj4b1tzo9wOprCXF_8bg_SWfr99f_OHh=
+LwAA__88-U2t">
+                    <img src=3D'https://images.lookmove.ch/thumbnails/24112=
+7863_1.jpg' alt=3D"view" width=3D"250" height=3D"134" style=3D"display: blo=
+ck;object-fit: cover;box-shadow: rgb(225, 228, 232) 0px 6px 7px -2px;border=
+-radius: 4px;">
+                </a>
+            </td>
+        </tr>
+        <tr>
+            <td align=3D"left" style=3D"padding-left: 20px; padding-top: 15=
+px; padding-right: 10px;">
+                <a style=3D"text-decoration: none; color: #000000" href=3D"=
+https://email.support.lookmove.ch/c/eJxMykFqxCAUANDT6KY06NdoXLgoBZelUHoAY8x=
+EmuSL_pnQ25fuZv3e4s20SsWzl9bBJJRxmm_eaRlh1Uk5YWGewJhJg8suL9Zmtc68eBBgpAAtpJ=
+BKD8to4mrV4kSaRzsqpkW_14qNhh3x58BHHtLGd78R1c7UG4PAIFzX9ewMQj4ZhL10KueNQVgiR=
+QZBajuB0iNvvuGcG-HQ7z21Uqng2ZkWtyOWfUh4cPJnvj4b1tzo9wOprCXF_8bg_SWfr99f_OHh=
+LwAA__88-U2t">
+                    Rue des Alpes 72, Bussigny 1030</a>
+            </td>
+        </tr>
+        <tr>
+            <td align=3D"left" style=3D"padding-left: 20px;">
+                <a style=3D"text-decoration: none; color: #000000" href=3D"=
+https://email.support.lookmove.ch/c/eJxMykFqxCAUANDT6KY06NdoXLgoBZelUHoAY8x=
+EmuSL_pnQ25fuZv3e4s20SsWzl9bBJJRxmm_eaRlh1Uk5YWGewJhJg8suL9Zmtc68eBBgpAAtpJ=
+BKD8to4mrV4kSaRzsqpkW_14qNhh3x58BHHtLGd78R1c7UG4PAIFzX9ewMQj4ZhL10KueNQVgiR=
+QZBajuB0iNvvuGcG-HQ7z21Uqng2ZkWtyOWfUh4cPJnvj4b1tzo9wOprCXF_8bg_SWfr99f_OHh=
+LwAA__88-U2t">
+                    Rooms: 6 - 791m=C2=B2</a>
+            </td>
+        </tr>
+        <tr>
+            <td align=3D"left" style=3D"padding-left: 20px">
+                <a style=3D"text-decoration: none; font-weight: bold; color=
+:#000000" href=3D"https://email.support.lookmove.ch/c/eJxMykFqxCAUANDT6KY06=
+NdoXLgoBZelUHoAY8xEmuSL_pnQ25fuZv3e4s20SsWzl9bBJJRxmm_eaRlh1Uk5YWGewJhJg8su=
+L9Zmtc68eBBgpAAtpJBKD8to4mrV4kSaRzsqpkW_14qNhh3x58BHHtLGd78R1c7UG4PAIFzX9ew=
+MQj4ZhL10KueNQVgiRQZBajuB0iNvvuGcG-HQ7z21Uqng2ZkWtyOWfUh4cPJnvj4b1tzo9wOprC=
+XF_8bg_SWfr99f_OHhLwAA__88-U2t">
+                    Price on request</a>
+            </td>
+        </tr>
+        <tr>
+            <td align=3D"left" style=3D"padding-left: 20px; padding-top: 15=
+px">
+                <a style=3D"text-decoration: none; color:#C73C31" href=3D"h=
+ttps://email.support.lookmove.ch/c/eJxMykFqxCAUANDT6KY06NdoXLgoBZelUHoAY8xE=
+muSL_pnQ25fuZv3e4s20SsWzl9bBJJRxmm_eaRlh1Uk5YWGewJhJg8suL9Zmtc68eBBgpAAtpJB=
+KD8to4mrV4kSaRzsqpkW_14qNhh3x58BHHtLGd78R1c7UG4PAIFzX9ewMQj4ZhL10KueNQVgiRQ=
+ZBajuB0iNvvuGcG-HQ7z21Uqng2ZkWtyOWfUh4cPJnvj4b1tzo9wOprCXF_8bg_SWfr99f_OHhL=
+wAA__88-U2t">
+                   =20
+                        See details >
+                       =20
+                </a>
+            </td>
+        </tr>
+    </tbody>
+</table>
+                            </td>
+
+                           =20
+                                <td style=3D"vertical-align: top;padding-bo=
+ttom: 30px;width: 270px!important;">
+                                </td>
+                           =20
+
+                           =20
+                        </tr>
+                       =20
+                       =20
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+
+        <tr>
+            <td
+                style=3D"padding: 0 30px 30px 30px; font-family: Lato,sans-=
+serif; font-size: 16px; line-height: 22px; color: #7A7A7A;">
+                <table border=3D"0" class=3D"button" align=3D"left">
+                    <tr>
+                        <td colspan=3D"2" style=3D"text-align: center">
+                            <table border=3D"0" cellspacing=3D"0" cellpaddi=
+ng=3D"0" style=3D"margin: 0 auto;">
+    <tbody>
+        <tr>
+            <td align=3D"center" style=3D"text-align: center;margin: 0 auto=
+;">
+                <table cellspacing=3D"0" cellpadding=3D"0">
+                    <tbody>
+                        <tr>
+                            <td bgcolor=3D"#C73C31"
+                                style=3D"padding:3px;border-radius:3px; min=
+-width:200px;" align=3D"center">
+                                <a href=3D"https://email.support.lookmove.c=
+h/c/eJxMyrFOxiAUQOGngcXYXC4UysBgTDoaE-MDtEBbYttLgP6Nb290cj3nC04Pi5A8OmEsDiC=
+1VXxzwgYb9ACyn8ArYWCQEc2sEKwSi7c8OQTUAlCBACFVF3o9LUYGC37uTS-ZgnrlTKV1O9HXQY=
+_Y-Y3vbmstVyZfGI4Mx_u-_3-GYzwZjvVa11hborPy4grNsTTq6lV9SfkvMwXrMaW983Tw5s54v=
+xfKsbTvN2ppSX76ZQxfn-L5_PnBHw5_AgAA__9x9EqD" target=3D"_blank"
+                                    style=3D"border-top: 15px #C73C31 solid=
+;border-bottom: 15px #C73C31 solid;border-left: 40px #C73C31 solid;border-r=
+ight: 40px #C73C31 solid; font-size: 15px; font-family: Helvetica, Arial, s=
+ans-serif; font-weight: bold; color: #ffffff; text-decoration: none; displa=
+y: inline-block;">
+                                    See more
+                                </a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+
+       =20
+
+       =20
+    </table>
+    <table border=3D"0" width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" =
+align=3D"center" class=3D"email-container">
+    <tr>
+        <td
+            style=3D"text-align: center;padding: 20px;font-family: Lato,san=
+s-serif; font-size: 12px; line-height: 18px;color: #888888;">
+           =20
+
+               =20
+                    If you no longer wish to receive these emails, you can=
+=20
+                   =20
+             <a
+                href=3D"https://email.support.lookmove.ch/c/eJxMzsuq1jAQAOC=
+nSTdimUwmt0UWonQpgvgAuUz8i21T0vSU8_ZywIXrb_OVYFyVauIgrUcHyniaXgHZeYneG_I2kU=
+IsmRGMVLFUUommNSCgkYAEEqSiuWgTq1XFQ07aaiUIrvs8Wx_z1tqfvb3xnF_TFl5jnJdQXwQuA=
+pfnef53gct9XHe6cl8TC1xyO-ra9zjWdghcyHJFmzXlnCI7V9BFri6yz6YQRA22kLeAOjkGttZp=
+6XNGJrQklSFAKbOVVtroi5KlgNIGGIsqzkaoQFqoZbyfLNS3uHEfUw-9Je6jzdf98To_Lpcg-L3=
+HdZtz26cRDn5-9HZyH-_f21jrmv-Vv37i4_Ovn9NbwL8BAAD__2fHbzk"
+                style=3D"color: #444444; padding: 0;text-decoration: underl=
+ine">
+               =20
+                    unsubscribe.=20
+                    </a><br/><br/>
+           =20
+            Copyright =C2=A9 2026 Lookmove<br/><br/>
+            <a href=3D"mailto:info@lookmove.ch" style=3D"text-decoration: n=
+one;color: #444444;">Support</a> &bull; <a
+                href=3D"https://email.support.lookmove.ch/c/eJxMy81qxCAQAOC=
+n0UupzIyan4OHUsixFEofwBjTyCYZUXdD377srffvW1w3rKhldNiPNIDuRiM3B53GAdGOBv3qey=
+K_ICwBINjRGm9kcgTUIZABBNRGLbbza6-XEcJse6uFgXrPmUtTO_Pt4EdUYZO721rLVeg3QZOg6=
+boutfoQZ-abCnwImv5xQZMsrvAcS2NV7zWUlFviswoDP4dP-_PI5s54fRbOsbTfD25pTcE_maD3=
+l3i-fn_Jh6O_AAAA__8Lekmw" style=3D"text-decoration: none;color:  #444444;">=
+Facebook</a>
+            &bull; <a href=3D"https://email.support.lookmove.ch/c/eJxMy0Fqx=
+CAUANDT6KZU9GtMXLgohSxLofQAP0Yn0iRf1JnQ25fZdf_e6u2UlObRq9HBJLV1hm9-SDituFqN=
+Y0jKLRGVQZ2ktoNE50aePUiwSoKRSiptxDpYTKNenQzLMA6aGdnupVDtYif6OegRRdj47rfeS2P=
+6jcHMYL6uS-SzdbxVPESgg8H8zzOYefWVllg7iXZvoebSM52NGXk7MO_Pw7s_4_VZqcTafz-o55=
+QDPhmD95d4vn5_8YeHvwAAAP__RFNLRg"
+                style=3D"text-decoration: none;color:  #444444;">Instagram<=
+/a> &bull; <a
+                href=3D"https://email.support.lookmove.ch/c/eJw0y8tq9CAUAOC=
+n0c3PL8ej5rJwUQpZlkLpAyReGpnEI-pMmLcvs-j--7wdpigVD1aOM06ghlnz3RqQCM4A6g3R4D=
+zGqCYPm4tygNUHniwCDhJQgwSptPBmWOOo_AxuM6NRTEO7l0K1i4PodtIjCLfzw-69l8bUG8OF4=
+XJdlzhSvgWfsnB0MlwcnWXNT4bLX2S48GorbaF2Eu3eXE2lJ8qNafg513S8Ku82h-uzUgm1Pz-o=
+p5jc-mIM3_-F_P_7iz8s_gYAAP__bu1Mww"
+                style=3D"text-decoration: none;color:  #444444;">LinkedIn</=
+a>
+        </td>
+    </tr>
+</table>
+<img width=3D"1" height=3D"1" alt=3D"" src=3D"https://email.support.lookmov=
+e.ch/o/eJwUysFOxCAQANCvKRcjGWBKOwdO3o2J8QPodOoSt50G2Br_3uz9rSnOmwtGkpvIzxAi=
+obklYO94hCVHFF5oQhZy0WcCpDkSmJI8-OjAIzhwAe06xrxNYSXgZZzGMCC0x3lq7fau-rPrJZZ=
+vpqaqi9Sutj0a13L2okcbEL73XO6WdTc9HfL7UfWU2v_etZetcH6ywb-9yPH69Wmu5P8DAAD___=
+YEOU0"></body>
+
+</html>
+
+--3d7e9dd1ff028bb16f7e3880160583a9875f79d51f70a283e5a07b1fa117--

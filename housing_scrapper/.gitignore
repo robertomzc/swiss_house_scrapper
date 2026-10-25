@@ -2,4 +2,7 @@
 .pytest_cache/
 __pycache__/
 *.env
-data/
+data/email_archive/
+data/dashboard.html
+data/listings.json
+data/processed_messages.json
