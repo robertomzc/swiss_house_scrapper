@@ -15,7 +15,7 @@ import yaml
 
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
 
-from housing_monitor.email_ingestion.archives import mark_message_processed
+from housing_monitor.email_ingestion.archives import mark_message_processed, load_processed_messages
 from housing_monitor.email_ingestion.imap_client import fetch_unread_messages
 from housing_monitor.email_ingestion.parsers import parse_email
 from housing_monitor.email_ingestion.model import Listing, PriceObservation
