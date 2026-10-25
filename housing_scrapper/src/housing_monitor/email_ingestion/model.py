@@ -5,8 +5,6 @@ from dataclasses import asdict, dataclass, field, fields
 from datetime import datetime, timezone
 from typing import Literal, Optional
 
-from housing_monitor.models import Property
-
 
 def _normalize_text(value: Optional[str]) -> str:
     if value is None:
@@ -32,7 +30,7 @@ def build_property_key(listing: "Listing") -> str:
         str(listing.surface_m2).replace(".", ",") if listing.surface_m2 is not None else "",
         _normalize_text(listing.listing_type),
     ]
-    return "|".join(identity_parts)  # Changed to return a readable key instead of a hash
+    return "|".join(identity_parts)
 
 
 @dataclass
@@ -91,20 +89,6 @@ class Listing:
         ]
 
         return cls(**payload)
-
-    def to_property(self) -> Property:
-        return Property(
-            title=self.title or self.address or "Listing",
-            source=self.source_site,
-            city=self.commune or self.canton or "Unknown",
-            url=self.url,
-            price_chf=self.current_price,
-            rooms=self.rooms,
-            area_m2=self.surface_m2,
-            property_type=self.listing_type or "apartment",
-            address=self.address,
-            raw_data={"external_id": self.external_id, "observations": [obs.__dict__ for obs in self.observations]},
-        )
 
     @property
     def current_price(self) -> Optional[int]:
