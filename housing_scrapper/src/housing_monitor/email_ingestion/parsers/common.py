@@ -6,22 +6,37 @@ from html import unescape
 from typing import Optional
 
 URL_RE = re.compile(r'https?://[^\s<>"\']+', re.IGNORECASE)
-PRICE_RE = re.compile(r'(?:CHF|Fr\.?|€)\s*(\d[\d,\.\'’\u202f]*\d)(?:[.\-–])?', re.IGNORECASE)
-ROOMS_RE = re.compile(r'(\d+(?:[.,]\d+)?)\s*(?:Zimmer|rooms?|room|chambres?)', re.IGNORECASE)
-SURFACE_RE = re.compile(r'(\d+(?:[.,]\d+)?)\s*(?:m²|m2|sqm|square\s*meters|surface|superficie)', re.IGNORECASE)
+PRICE_RE = re.compile(r'(?:CHF|Fr\.?|€)\s*(\d[\d\s,\.\'’\u202f]*?\d)(?!(?:\s*\d{3,5}\b))', re.IGNORECASE)
+ROOMS_RE = re.compile(r'(\d+(?:[.,]\d+)?)\s*(?:Zimmer|rooms?|room|chambres?|pi(?:[èée]|c)?ces?)', re.IGNORECASE)
+SURFACE_RE = re.compile(r'(\d+(?:[.,]\d+)?)\s*(?:m(?:\s*[²2])|m2|m²|sqm|square\s*meters|surface|superficie)', re.IGNORECASE)
 ADDRESS_RE = re.compile(r'\b\d{4}\s+[A-Za-zÀ-ÖØ-öø-ÿ][^\n]*\b')
 
 HOST_ALIASES = {
     'immoscout24.ch': 'immoscout24',
+    'tracking.notification.immoscout24.ch': 'immoscout24',
     'immobilier.ch': 'immobilier',
+    'brevo.immobilier.ch': 'immobilier',
     'lookmove.ch': 'lookmove',
+    'email.support.lookmove.ch': 'lookmove',
     'comparis.ch': 'comparis',
+    'en.comparis.ch': 'comparis',
+    'links.comparis.ch': 'comparis',
     'newhome.ch': 'newhome',
-    'poperstar.ch': 'poperstar',
-    'poperstar': 'poperstar',
-    'properstar.com': 'poperstar',
-    'properstar': 'poperstar',
+    'r.mailing.newhome.ch': 'newhome',
+    'poperstar.ch': 'properstar',
+    'poperstar.com': 'properstar',
+    'properstar.com': 'properstar',
+    'properstar.ch': 'properstar',
+    'properstar': 'properstar',
+    'poperstar': 'properstar',
 }
+
+
+def _decode_quoted_printable(value: str) -> str:
+    value = value.replace('\r\n', '\n').replace('\r', '\n')
+    value = re.sub(r'=\r?\n', '', value)
+    value = re.sub(r'=([A-Fa-f0-9]{2})', lambda m: chr(int(m.group(1), 16)), value)
+    return value
 
 
 def normalize_number(value: str) -> float:
@@ -69,6 +84,7 @@ def email_to_text(msg: EmailMessage) -> str:
             body = payload.decode(msg.get_content_charset() or 'utf-8', errors='ignore')
         else:
             body = str(payload or '')
+    body = _decode_quoted_printable(body)
     body = body.replace('\r\n', '\n').replace('\r', '\n')
     body = re.sub(r'<br\s*/?>', '\n', body, flags=re.I)
     body = re.sub(r'</p>|</div>|</li>|</tr>', '\n', body, flags=re.I)
@@ -87,19 +103,71 @@ def email_to_text(msg: EmailMessage) -> str:
 
 def find_urls(text: str, allowed_hosts: tuple[str, ...] = ()) -> list[str]:
     urls: list[str] = []
+    seen: set[str] = set()
     for raw in URL_RE.findall(text):
         cleaned = raw.rstrip(').,;')
         lower = cleaned.lower()
         if not cleaned:
             continue
+
+        if 'sendgrid.net' in lower or 'mailto:' in lower:
+            continue
+
+        # Keep listing links, but discard subscription/unsubscribe/footer pages.
+        if any(token in lower for token in (
+            'unsubscribe', 'cancel?', 'privacy', 'newsletter', 'list-unsubscribe',
+            'manage search', 'delete search', 'municipality-guide', 'facebook.com',
+            'linkedin.com', 'youtube.com', 'instagram.com', 'trustpilot.com',
+            'whatsapp.com', 'search-alerts', 'cancel?search', '/default', 'track=',
+        )):
+            continue
+
         if allowed_hosts and not any(host in lower for host in allowed_hosts):
             continue
-        if any(token in lower for token in ['unsubscribe', 'cancel', 'search-alerts', 'privacy', 'newsletter']):
+
+        if not any(marker in lower for marker in ('/listing/', '/buy/', '/dispatcher/go', '/tr/cl/', '/c/en/', '/c/', '/s/c/', '/s/vb/', '/s/eo/', '/s/01/')):
+            if 'properstar' in lower or 'immoscout24' in lower or 'comparis' in lower or 'lookmove' in lower or 'newhome' in lower:
+                continue
+
+        norm = cleaned.split('?', 1)[0].rstrip('/');
+        if norm in seen:
             continue
-        if 'sendgrid.net' in lower:
-            continue
+        seen.add(norm)
         urls.append(cleaned)
     return urls
+
+
+def split_listing_blocks(text: str, allowed_hosts: tuple[str, ...] = ()) -> list[str]:
+    if not text:
+        return []
+    urls = find_urls(text, allowed_hosts)
+    if not urls:
+        return [text]
+
+    segments: list[str] = []
+    cursor = 0
+    for url in urls:
+        idx = text.lower().find(url.lower(), cursor)
+        if idx == -1:
+            continue
+        prefix = text[cursor:idx].strip()
+        if prefix:
+            segments.append(prefix)
+        cursor = idx + len(url)
+
+    tail = text[cursor:].strip()
+    if tail:
+        segments.append(tail)
+
+    blocks: list[str] = []
+    seen: set[str] = set()
+    for segment in segments:
+        cleaned = re.sub(r'\s+', ' ', segment).strip()
+        if not cleaned or cleaned.lower() in seen:
+            continue
+        seen.add(cleaned.lower())
+        blocks.append(cleaned)
+    return blocks or [text]
 
 
 def extract_price(text: str) -> Optional[int]:
@@ -132,9 +200,51 @@ def _is_noise_address(line: str) -> bool:
         return True
     if lowered.startswith(('http://', 'https://', 'mailto:', 'www.', 'new results in your search subscription')):
         return True
-    if re.search(r'\b(?:body|img|table|td|tr|div|span|p|a)\b', lowered):
+    if re.search(r'\b(?:body|img|table|td|tr|div|span|p)\b', lowered):
+        return True
+    if 'contactez l\'agence' in lowered or 'contactez l’agence' in lowered:
         return True
     return False
+
+
+def _normalize_address_line(line: str) -> str:
+    cleaned = line.strip(',:;').strip()
+    cleaned = re.sub(r'\s+', ' ', cleaned)
+    cleaned = cleaned.replace('’', "'")
+
+    if re.search(r'\b(?:CHF|Fr\.?|€)\b', cleaned, re.I):
+        return ''
+
+    lowered = cleaned.lower()
+    if 'contactez l\'agence' in lowered or 'contactez l’agence' in lowered:
+        cleaned = re.split(r',\s*(?:contactez\s+l(?:\'|’)?agence|contactez\s+l(?:\'|’)?agence\s+pour\s+l(?:\'|’)?adresse)', cleaned, maxsplit=1, flags=re.I)[0]
+        cleaned = re.split(r',\s*(?:pour\s+l(?:\'|’)?adresse)', cleaned, maxsplit=1, flags=re.I)[0]
+        cleaned = cleaned.strip(' ,;')
+        return cleaned
+
+    cleaned = re.sub(r'\s*,\s*(?:contactez.*|pour\s+l(?:\'|’)?adresse.*|adresse.*)$', '', cleaned, flags=re.I)
+    cleaned = cleaned.strip(' ,;')
+    return cleaned
+
+
+def _strip_property_suffix(line: str) -> str:
+    candidate = line.strip(' ,;')
+    for pattern in [
+        r'\s+(?:Appartement|Appart|Maison|Villa|Studio|Duplex|Terrain|Loft|Chambre|Pi(?:è|e)ces?|rooms?|zimmer|salles\s+de\s+bains|bathrooms?|m2|m²|\u00b7|•).*$',
+        r'\s*[:\-–]\s*(?:Appartement|Appart|Maison|Villa|Studio|Duplex|Terrain|Loft|Chambre|Pi(?:è|e)ces?|rooms?|zimmer|salles\s+de\s+bains|bathrooms?|m2|m²).*$',
+    ]:
+        cleaned = re.split(pattern, candidate, flags=re.I)[0].strip(' ,;')
+        if cleaned and cleaned != candidate:
+            return cleaned
+    return candidate
+
+
+def _strip_url_and_trailing_meta(value: str) -> str:
+    cleaned = re.sub(r'https?://\S+', ' ', value, flags=re.I)
+    cleaned = re.sub(r'\b(?:see\s+details|see\s+more|rooms?|room|price\s+on\s+request|chf|m2|m\s*²)\b.*$', '', cleaned, flags=re.I)
+    cleaned = cleaned.replace('–', '-')
+    cleaned = re.sub(r'\s+', ' ', cleaned).strip(' ,;:')
+    return cleaned
 
 
 def extract_address(text: str) -> Optional[str]:
@@ -142,13 +252,26 @@ def extract_address(text: str) -> Optional[str]:
         return None
     lines = [line.strip() for line in text.splitlines() if line.strip()]
     for line in lines:
-        cleaned = line.strip(',:;')
-        if _is_noise_address(cleaned):
+        candidate = _strip_url_and_trailing_meta(line)
+        if not candidate:
             continue
-        if re.search(r'\b\d{4}\b', cleaned) and re.search(r'[A-Za-zÀ-ÖØ-öø-ÿ]', cleaned):
-            return cleaned
-        if re.search(r'\b[A-Za-zÀ-ÖØ-öø-ÿ]+\s+\d{1,5}\b', cleaned) and not re.search(r'\b(?:new results|search subscription|selling price|all results)\b', cleaned, re.I):
-            return cleaned
+        candidate = re.split(r'(?i)\b(?:rooms?|room|price\s+on\s+request|chf)\b.*$', candidate, maxsplit=1)[0].strip(' ,;:')
+        if not candidate:
+            continue
+        candidate = _normalize_address_line(candidate)
+        if not candidate:
+            continue
+        candidate = _strip_property_suffix(candidate)
+        if not candidate:
+            continue
+        if _is_noise_address(candidate):
+            continue
+        if re.search(r'\b\d{4}\b', candidate) and re.search(r'[A-Za-zÀ-ÖØ-öø-ÿ]', candidate):
+            return candidate
+        if re.search(r'\b[A-Za-zÀ-ÖØ-öø-ÿ]+\s+\d{1,5}\b', candidate) and not re.search(r'\b(?:new results|search subscription|selling price|all results)\b', candidate, re.I):
+            return candidate
+        if re.search(r'\b(?:avenue|rue|route|chemin|boulevard|place|square|allée|allee|impasse|quai|voie|street|road)\b', candidate, re.I) and re.search(r'\d', candidate):
+            return candidate
     return None
 
 
@@ -158,26 +281,41 @@ def detect_source_site(msg: EmailMessage) -> str:
         if host in source_text:
             return site_name
     if 'properstar' in source_text:
-        return 'poperstar'
+        return 'properstar'
     return 'immoscout24'
 
 
-def parse_generic_listing(text: str, default_url: str, source_site: str) -> list[dict]:
-    price = extract_price(text)
-    rooms = extract_rooms(text)
-    surface = extract_surface(text)
-    address = extract_address(text)
+def _looks_like_property_description(line: str) -> bool:
+    lowered = line.lower()
+    if re.search(r'\b(?:appartement|maison|villa|studio|duplex|terrain|chambre|loft|flat)\b', lowered):
+        return True
+    if re.search(r'\b\d+(?:[.,]\d+)?\s*(?:pi(?:[èée]|c)?ces?|rooms?|zimmer|m\s*²|m2|surface)\b', lowered):
+        return True
+    return False
 
-    if price is None and rooms is None and surface is None and address is None:
-        return []
 
-    return [{
-        'price': price,
-        'rooms': rooms,
-        'surface_m2': surface,
-        'address': address,
-        'url': default_url,
-        'source_site': source_site,
-        'source': 'email_alert',
-        'title': address or f'{source_site.title()} listing',
-    }]
+def parse_generic_listing(text: str, default_url: str, source_site: str, allowed_hosts: tuple[str, ...] = ()) -> list[dict]:
+    blocks = split_listing_blocks(text, allowed_hosts or (f'{source_site}.ch',)) if source_site else [text]
+    entries: list[dict] = []
+    for block in blocks:
+        price = extract_price(block)
+        rooms = extract_rooms(block)
+        surface = extract_surface(block)
+        address = extract_address(block)
+        if address is None:
+            text_has_real_address = bool(re.search(r'\b(?:avenue|rue|route|chemin|boulevard|place|square|allée|allee|impasse|quai|voie|street|road)\b', block, re.I) or re.search(r'\b\d{4}\b', block))
+            if not text_has_real_address:
+                continue
+        if price is None and rooms is None and surface is None and address is None:
+            continue
+        entries.append({
+            'price': price,
+            'rooms': rooms,
+            'surface_m2': surface,
+            'address': address,
+            'url': default_url,
+            'source_site': source_site,
+            'source': 'email_alert',
+            'title': address or f'{source_site.title()} listing',
+        })
+    return entries

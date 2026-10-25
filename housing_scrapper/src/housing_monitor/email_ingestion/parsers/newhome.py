@@ -29,10 +29,13 @@ def _iter_listing_blocks(text: str) -> list[str]:
             continue
         if current and ('http' in lowered or 'newhome' in lowered or 'property app' in lowered):
             continue
+        if any(token in lowered for token in ['your search subscription', 'contains', 'automatically generated', 'all results', 'extend search subscription', 'delete search subscription']):
+            continue
         current.append(stripped)
     if current:
         blocks.append('\n'.join(current))
-    return [block for block in blocks if any(token in block.lower() for token in ['CHF', 'room', 'lausanne', 'saint', 'morges', 'prilly'])]
+    cleaned = [block for block in blocks if any(token in block.lower() for token in ['CHF', 'room', 'lausanne', 'saint', 'morges', 'prilly'])]
+    return [block for block in cleaned if not any(token in block.lower() for token in ['your search subscription', 'all results', 'extend search subscription', 'delete search subscription'])]
 
 
 def parse_email(msg: EmailMessage) -> list[dict]:

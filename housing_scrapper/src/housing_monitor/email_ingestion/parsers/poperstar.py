@@ -2,19 +2,49 @@ from __future__ import annotations
 
 from email.message import EmailMessage
 
-from .common import email_to_text, find_urls, parse_generic_listing
+from .common import email_to_text, find_urls, parse_generic_listing, split_listing_blocks
 
 
 def parse_email(msg: EmailMessage) -> list[dict]:
     text = email_to_text(msg)
     if not text:
         return []
-    urls = find_urls(text, ('poperstar',))
-    default_url = urls[0] if urls else 'https://www.poperstar.ch'
-    entries = parse_generic_listing(text, default_url, 'poperstar')
-    for entry in entries:
-        entry['source_site'] = 'poperstar'
-        entry['title'] = entry.get('address') or 'Poperstar listing'
+
+    urls = find_urls(text, ('properstar', 'poperstar', 'properstar.ch', 'poperstar.ch'))
+    default_url = urls[0] if urls else 'https://www.properstar.ch'
+    blocks = split_listing_blocks(text, ('properstar', 'poperstar'))
+    entries: list[dict] = []
+
+    for block in blocks:
+        block_urls = find_urls(block, ('properstar', 'poperstar'))
+        if not block_urls and not any(token in block.lower() for token in ['chf', 'pièces', 'rooms', 'zimmer', 'm²', 'm2', 'appartement']):
+            continue
+        # Parse the block text using the shared generic logic, but preserve listing-level URLs.
+        from .common import extract_address, extract_price, extract_rooms, extract_surface
+        price = extract_price(block)
+        rooms = extract_rooms(block)
+        surface = extract_surface(block)
+        address = extract_address(block)
+        if price is None and rooms is None and surface is None and address is None:
+            continue
+        entries.append({
+            'price': price,
+            'rooms': rooms,
+            'surface_m2': surface,
+            'address': address,
+            'url': block_urls[0] if block_urls else default_url,
+            'source_site': 'properstar',
+            'source': 'email_alert',
+            'title': address or 'Properstar listing',
+        })
+
+    if not entries and text:
+        fallback = parse_generic_listing(text, default_url, 'properstar', ('properstar', 'poperstar'))
+        for entry in fallback:
+            entry['source_site'] = 'properstar'
+            entry['title'] = entry.get('address') or 'Properstar listing'
+        return fallback
+
     return entries
 
 

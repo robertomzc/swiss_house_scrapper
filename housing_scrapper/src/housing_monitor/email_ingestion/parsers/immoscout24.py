@@ -7,6 +7,7 @@ from typing import Optional
 from urllib.parse import urlsplit, urlunsplit
 from urllib.request import Request, urlopen
 
+from .common import email_to_text, extract_address, extract_price, extract_rooms, extract_surface, find_urls, split_listing_blocks
 
 URL_RE = re.compile(r'https?://[^\s<>"\']+', re.IGNORECASE)
 PRICE_RE = re.compile(r'CHF\s*([\d\s\.",\']+)', re.IGNORECASE)
@@ -28,10 +29,8 @@ def _normalize_number(value: str) -> float:
     s = value.strip()
     s = s.replace("'", "").replace(" ", "")
     s = s.replace('CHF', '').replace('Fr', '').replace('–', '').replace('€', '')
-
     if not s:
         return 0.0
-
     if ',' in s and '.' in s:
         if s.rfind(',') > s.rfind('.'):
             s = s.replace('.', '').replace(',', '.')
@@ -44,7 +43,6 @@ def _normalize_number(value: str) -> float:
             s = s.replace(',', '.')
     elif '.' in s and s.count('.') > 1:
         s = s.replace('.', '')
-
     try:
         return float(s)
     except ValueError:
@@ -63,29 +61,6 @@ def _strip_html(raw: str) -> str:
     raw = re.sub(r'[ \t]+', ' ', raw)
     raw = re.sub(r'\n{3,}', '\n\n', raw)
     return raw.strip()
-
-
-def _email_to_text(msg: EmailMessage) -> str:
-    if msg.is_multipart():
-        parts = []
-        for part in msg.walk():
-            if part.get_content_type() in {'text/plain', 'text/html'}:
-                payload = part.get_payload(decode=True)
-                if payload is None:
-                    payload = part.get_payload()
-                if isinstance(payload, bytes):
-                    text = payload.decode(part.get_content_charset() or 'utf-8', errors='ignore')
-                    parts.append(text)
-                elif isinstance(payload, str):
-                    parts.append(payload)
-        body = '\n'.join(parts)
-    else:
-        payload = msg.get_payload(decode=True)
-        if isinstance(payload, bytes):
-            body = payload.decode(msg.get_content_charset() or 'utf-8', errors='ignore')
-        else:
-            body = str(payload or '')
-    return _strip_html(body)
 
 
 def _canonicalize_immoscout_url(raw_url: str) -> str:
@@ -210,51 +185,28 @@ def _extract_values_for_block(block: str) -> dict:
                         found.append(cleaned)
         address = _prefer_better_address(found)
 
-    return {"price": price, "rooms": rooms, "surface_m2": surface, "address": address}
+    return {'price': price, 'rooms': rooms, 'surface_m2': surface, 'address': address}
 
 
 def _parse_property_blocks(text: str) -> list[dict]:
-    blocks: list[str] = []
-    current: list[str] = []
-
-    for line in text.splitlines():
-        stripped = line.strip()
-        if not stripped:
-            continue
-        if _is_footer_line(stripped):
-            if current:
-                blocks.append('\n'.join(current))
-                current = []
-            continue
-        if 'search criteria' in stripped.lower() and not current:
-            continue
-        if 'Here are' in stripped or 'Here is' in stripped or 'Sale -' in stripped:
-            if current:
-                blocks.append('\n'.join(current))
-                current = []
-            current.append(stripped)
-            continue
-        if 'CHF' in stripped and current:
-            current.append(stripped)
-            blocks.append('\n'.join(current))
-            current = []
-            continue
-        if current:
-            current.append(stripped)
-
-    if current:
-        blocks.append('\n'.join(current))
-
-    if not blocks:
-        blocks = [text]
-
+    blocks = split_listing_blocks(text, ('immoscout24.ch', 'tracking.notification.immoscout24.ch'))
     parsed = []
     for block in blocks:
+        lowered = block.lower()
+        has_property_data = any(token in lowered for token in ['chf', 'm2', 'rooms', 'room', 'appartement', 'maison', 'villa', 'studio'])
+        if 'search criteria' in lowered and not has_property_data:
+            continue
+        if 'here are' in lowered and not has_property_data:
+            continue
+        if 'delete search alert' in lowered and not has_property_data:
+            continue
+        if 'unsubscribe' in lowered and not has_property_data:
+            continue
         item = _extract_values_for_block(block)
         if item['price'] is None and item['rooms'] is None and item['surface_m2'] is None and item['address'] is None:
-            continue
+            if 'room' not in lowered and 'm2' not in lowered and 'chf' not in lowered and 'price' not in lowered:
+                continue
         parsed.append(item)
-
     return parsed
 
 
@@ -268,8 +220,7 @@ def _extract_listing_urls(text: str) -> list[str]:
 
 
 def parse_email(msg: EmailMessage) -> list[dict]:
-    """Parse an ImmoScout24 email alert into one or more normalized listing dicts."""
-    text = _email_to_text(msg)
+    text = _strip_html(email_to_text(msg))
     if not text:
         return []
 
@@ -279,11 +230,7 @@ def parse_email(msg: EmailMessage) -> list[dict]:
         return []
 
     entries: list[dict] = []
-    for index, block in enumerate(parsed_blocks):
-        if isinstance(block, dict):
-            result = block
-        else:
-            result = _extract_values_for_block(block)
+    for index, result in enumerate(parsed_blocks):
         if not result['price'] and not result['rooms'] and not result['surface_m2'] and not result['address']:
             continue
         result['url'] = urls[index] if index < len(urls) else (urls[0] if urls else 'https://www.immoscout24.ch')
