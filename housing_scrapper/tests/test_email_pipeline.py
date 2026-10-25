@@ -1,5 +1,8 @@
 from email.message import EmailMessage
+from datetime import datetime, timezone
 
+from housing_monitor.email_ingestion.model import Listing, Observation
+from housing_monitor.email_ingestion.storage import upsert
 from housing_monitor.email_ingestion.parsers.immoscout24 import parse_email
 
 
@@ -58,3 +61,61 @@ Delete search alert
     assert entries[0]['price'] == 740000
     assert entries[0]['rooms'] == 3.5
     assert entries[0]['surface_m2'] == 77.0
+
+
+def test_upsert_records_duplicate_observation():
+    listings = {}
+    now = datetime.now(timezone.utc)
+
+    listing = Listing(
+        url='https://example.com/place',
+        source_site='immoscout24',
+        address='A Lausanne, 1005 Lausanne',
+        rooms=3.5,
+        surface_m2=98.0,
+    )
+    obs = Observation(observed_at=now, price=1190000, kind='new', source='immoscout24')
+    upsert(listings, listing, obs)
+
+    duplicate = Listing(
+        url='https://example.com/place-copy',
+        source_site='immoscout24',
+        address='A Lausanne, 1005 Lausanne',
+        rooms=3.5,
+        surface_m2=98.0,
+    )
+    duplicate_obs = Observation(observed_at=now, price=1190000, kind='new', source='immoscout24')
+    upsert(listings, duplicate, duplicate_obs)
+
+    stored = next(iter(listings.values()))
+    assert any(o.kind == 'duplicate' for o in stored.observations)
+    assert stored.observations[-1].kind == 'duplicate'
+
+
+def test_upsert_records_price_change_observation():
+    listings = {}
+    now = datetime.now(timezone.utc)
+
+    listing = Listing(
+        url='https://example.com/place',
+        source_site='comparis',
+        address='Route de la Gare 12',
+        rooms=2.5,
+        surface_m2=60.0,
+    )
+    first = Observation(observed_at=now, price=900000, kind='new', source='comparis')
+    upsert(listings, listing, first)
+
+    newer = Listing(
+        url='https://example.com/place',
+        source_site='comparis',
+        address='Route de la Gare 12',
+        rooms=2.5,
+        surface_m2=60.0,
+    )
+    second = Observation(observed_at=now, price=920000, kind='new', source='comparis')
+    upsert(listings, newer, second)
+
+    stored = next(iter(listings.values()))
+    assert any(o.kind == 'price_change' for o in stored.observations)
+    assert stored.observations[-1].kind == 'price_change'

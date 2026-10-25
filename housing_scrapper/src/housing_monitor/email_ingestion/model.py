@@ -33,12 +33,15 @@ def build_property_key(listing: "Listing") -> str:
     return "|".join(identity_parts)
 
 
+ObservationKind = Literal["new", "active", "price_change", "delisted", "duplicate"]
+
+
 @dataclass
-class PriceObservation:
+class Observation:
     observed_at: datetime
-    price: Optional[int]
-    status: Literal["new", "active", "price_change", "delisted"]
-    source: Literal["email_alert", "detail_fetch", "scraper"]
+    price: Optional[int] = None
+    kind: ObservationKind = "new"
+    source: str = ""
 
 
 @dataclass
@@ -62,7 +65,7 @@ class Listing:
     last_seen: datetime = field(default_factory=lambda: datetime.now(timezone.utc))
     is_active: bool = True
     property_key: str = ""
-    observations: list[PriceObservation] = field(default_factory=list)
+    observations: list[Observation] = field(default_factory=list)
 
     def __post_init__(self):
         if not self.property_key:
@@ -79,11 +82,11 @@ class Listing:
         payload["first_seen"] = _dt_from_iso(item["first_seen"]) if item.get("first_seen") else datetime.now(timezone.utc)
         payload["last_seen"] = _dt_from_iso(item["last_seen"]) if item.get("last_seen") else datetime.now(timezone.utc)
         payload["observations"] = [
-            PriceObservation(
+            Observation(
                 observed_at=_dt_from_iso(obs["observed_at"]),
                 price=obs.get("price"),
-                status=obs.get("status", "active"),
-                source=obs.get("source", "email_alert"),
+                kind=obs.get("kind", "new"),
+                source=obs.get("source", ""),
             )
             for obs in item.get("observations", [])
         ]
@@ -113,7 +116,12 @@ class Listing:
         d["first_seen"] = self.first_seen.isoformat()
         d["last_seen"] = self.last_seen.isoformat()
         d["observations"] = [
-            {"observed_at": o.observed_at.isoformat(), "price": o.price, "status": o.status, "source": o.source}
+            {
+                "observed_at": o.observed_at.isoformat(),
+                "price": o.price,
+                "kind": o.kind,
+                "source": o.source,
+            }
             for o in self.observations
         ]
         return d

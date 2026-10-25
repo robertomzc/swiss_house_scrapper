@@ -6,7 +6,7 @@ from datetime import datetime, timezone
 from tempfile import NamedTemporaryFile
 from typing import Dict
 
-from .model import Listing, PriceObservation, build_property_key
+from .model import Listing, Observation, build_property_key
 
 
 def load_listings(path: str) -> Dict[str, Listing]:
@@ -30,18 +30,56 @@ def save_listings(listings: Dict[str, Listing], path: str) -> None:
     _atomic_write(path, json.dumps(serializable, ensure_ascii=False, indent=2))
 
 
-def _dedupe_observation(existing: Listing, observation: PriceObservation) -> bool:
+def _matches_observation(obs: Observation, observation: Observation) -> bool:
+    return (
+        obs.price == observation.price
+        and obs.source == observation.source
+        and obs.observed_at.date() == observation.observed_at.date()
+    )
+
+
+def _dedupe_observation(existing: Listing, observation: Observation) -> bool:
     for obs in existing.observations:
-        if (
-            obs.price == observation.price
-            and obs.source == observation.source
-            and obs.observed_at.date() == observation.observed_at.date()
-        ):
+        if _matches_observation(obs, observation):
             return True
     return False
 
 
-def upsert(listings: Dict[str, Listing], new_listing: Listing, observation: PriceObservation) -> None:
+def _classify_observation(existing: Listing | None, observation: Observation) -> Observation:
+    if existing is None:
+        return Observation(
+            observed_at=observation.observed_at,
+            price=observation.price,
+            kind="new",
+            source=observation.source,
+        )
+
+    if _dedupe_observation(existing, observation):
+        return Observation(
+            observed_at=observation.observed_at,
+            price=observation.price,
+            kind="duplicate",
+            source=observation.source,
+        )
+
+    current_price = existing.current_price
+    if observation.price is not None and current_price is not None and observation.price != current_price:
+        return Observation(
+            observed_at=observation.observed_at,
+            price=observation.price,
+            kind="price_change",
+            source=observation.source,
+        )
+
+    return Observation(
+        observed_at=observation.observed_at,
+        price=observation.price,
+        kind="active",
+        source=observation.source,
+    )
+
+
+def upsert(listings: Dict[str, Listing], new_listing: Listing, observation: Observation) -> None:
     key = new_listing.property_key or build_property_key(new_listing)
     new_listing.property_key = key
     existing = listings.get(key)
@@ -50,7 +88,7 @@ def upsert(listings: Dict[str, Listing], new_listing: Listing, observation: Pric
     if existing is None:
         new_listing.first_seen = now
         new_listing.last_seen = now
-        new_listing.observations.append(observation)
+        new_listing.observations.append(_classify_observation(None, observation))
         listings[key] = new_listing
         return
 
@@ -67,9 +105,18 @@ def upsert(listings: Dict[str, Listing], new_listing: Listing, observation: Pric
     if new_listing.canton and not existing.canton:
         existing.canton = new_listing.canton
 
-    if _dedupe_observation(existing, observation):
+    classified = _classify_observation(existing, observation)
+    if classified.kind == "duplicate":
+        if not any(
+            obs.kind == "duplicate"
+            and _matches_observation(obs, classified)
+            for obs in existing.observations
+        ):
+            existing.observations.append(classified)
+        existing.last_seen = now
+        existing.is_active = True
         return
 
-    existing.observations.append(observation)
+    existing.observations.append(classified)
     existing.last_seen = now
     existing.is_active = True

@@ -21,7 +21,7 @@ load_dotenv()
 from housing_monitor.email_ingestion.archives import mark_message_processed, load_processed_messages
 from housing_monitor.email_ingestion.imap_client import fetch_messages
 from housing_monitor.email_ingestion.parsers import parse_email
-from housing_monitor.email_ingestion.model import Listing, PriceObservation
+from housing_monitor.email_ingestion.model import Listing, Observation
 from housing_monitor.email_ingestion.storage import load_listings, save_listings, upsert
 from housing_monitor.dashboard import generate_dashboard
 
@@ -81,11 +81,11 @@ def _process_message(msg, listings, seen_index, archive_dir='data/email_archive'
             rooms=rooms,
             surface_m2=surface,
         )
-        obs = PriceObservation(
+        obs = Observation(
             observed_at=observed_at,
             price=price,
-            status='new',
-            source='email_alert',
+            kind='new',
+            source=source_site,
         )
         upsert(listings, listing, obs)
         print(f'Upserted: {listing.title} | source={source_site} | price={price} | rooms={rooms} | surface={surface} | email_date={observed_at.date()}')
