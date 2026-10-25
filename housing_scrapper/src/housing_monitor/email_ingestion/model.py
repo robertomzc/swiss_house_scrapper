@@ -1,10 +1,39 @@
 from __future__ import annotations
 
-from dataclasses import asdict, dataclass, field
+import re
+from dataclasses import asdict, dataclass, field, fields
 from datetime import datetime, timezone
+from hashlib import sha1
 from typing import Literal, Optional
 
 from housing_monitor.models import Property
+
+
+def _normalize_text(value: Optional[str]) -> str:
+    if value is None:
+        return ""
+    cleaned = value.lower().strip()
+    cleaned = re.sub(r"[^a-z0-9]+", " ", cleaned)
+    return re.sub(r"\s+", " ", cleaned).strip()
+
+
+def _dt_from_iso(s: str) -> datetime:
+    value = datetime.fromisoformat(s)
+    if value.tzinfo is None:
+        return value.replace(tzinfo=timezone.utc)
+    return value.astimezone(timezone.utc)
+
+
+def build_property_key(listing: "Listing") -> str:
+    identity_parts = [
+        _normalize_text(listing.address),
+        _normalize_text(listing.commune),
+        _normalize_text(listing.canton),
+        str(listing.rooms).replace(".", ",") if listing.rooms is not None else "",
+        str(listing.surface_m2).replace(".", ",") if listing.surface_m2 is not None else "",
+        _normalize_text(listing.listing_type),
+    ]
+    return sha1("|".join(identity_parts).encode("utf-8")).hexdigest()
 
 
 @dataclass
@@ -35,7 +64,34 @@ class Listing:
     first_seen: datetime = field(default_factory=lambda: datetime.now(timezone.utc))
     last_seen: datetime = field(default_factory=lambda: datetime.now(timezone.utc))
     is_active: bool = True
+    property_key: str = ""
     observations: list[PriceObservation] = field(default_factory=list)
+
+    def __post_init__(self):
+        if not self.property_key:
+            self.property_key = build_property_key(self)
+
+    @classmethod
+    def from_dict(cls, item: dict) -> "Listing":
+        payload = {
+            field.name: item.get(field.name)
+            for field in fields(cls)
+            if field.name in item and field.name != "observations"
+        }
+
+        payload["first_seen"] = _dt_from_iso(item["first_seen"]) if item.get("first_seen") else datetime.now(timezone.utc)
+        payload["last_seen"] = _dt_from_iso(item["last_seen"]) if item.get("last_seen") else datetime.now(timezone.utc)
+        payload["observations"] = [
+            PriceObservation(
+                observed_at=_dt_from_iso(obs["observed_at"]),
+                price=obs.get("price"),
+                status=obs.get("status", "active"),
+                source=obs.get("source", "email_alert"),
+            )
+            for obs in item.get("observations", [])
+        ]
+
+        return cls(**payload)
 
     def to_property(self) -> Property:
         return Property(

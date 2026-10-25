@@ -6,14 +6,7 @@ from datetime import datetime, timezone
 from tempfile import NamedTemporaryFile
 from typing import Dict
 
-from .model import Listing, PriceObservation
-
-
-def _dt_from_iso(s: str) -> datetime:
-    value = datetime.fromisoformat(s)
-    if value.tzinfo is None:
-        return value.replace(tzinfo=timezone.utc)
-    return value.astimezone(timezone.utc)
+from .model import Listing, PriceObservation, build_property_key
 
 
 def load_listings(path: str) -> Dict[str, Listing]:
@@ -21,41 +14,7 @@ def load_listings(path: str) -> Dict[str, Listing]:
         return {}
     with open(path, "r", encoding="utf-8") as f:
         data = json.load(f)
-    out: Dict[str, Listing] = {}
-    for url, item in data.items():
-        observations = []
-        for obs_data in item.get("observations", []):
-            observations.append(
-                PriceObservation(
-                    observed_at=_dt_from_iso(obs_data["observed_at"]),
-                    price=obs_data.get("price"),
-                    status=obs_data.get("status"),
-                    source=obs_data.get("source"),
-                )
-            )
-        listing = Listing(
-            url=url,
-            source_site=item.get("source_site", "unknown"),
-            external_id=item.get("external_id"),
-            title=item.get("title"),
-            listing_type=item.get("listing_type"),
-            address=item.get("address"),
-            npa=item.get("npa"),
-            commune=item.get("commune"),
-            canton=item.get("canton"),
-            lat=item.get("lat"),
-            lng=item.get("lng"),
-            rooms=item.get("rooms"),
-            surface_m2=item.get("surface_m2"),
-            land_m2=item.get("land_m2"),
-            year_built=item.get("year_built"),
-            first_seen=_dt_from_iso(item["first_seen"]) if item.get("first_seen") else datetime.utcnow(),
-            last_seen=_dt_from_iso(item["last_seen"]) if item.get("last_seen") else datetime.utcnow(),
-            is_active=item.get("is_active", True),
-            observations=observations,
-        )
-        out[url] = listing
-    return out
+    return {key: Listing.from_dict(item) for key, item in data.items()}
 
 
 def _atomic_write(path: str, data: str) -> None:
@@ -67,18 +26,32 @@ def _atomic_write(path: str, data: str) -> None:
 
 
 def save_listings(listings: Dict[str, Listing], path: str) -> None:
-    serializable = {url: listing.to_dict() for url, listing in listings.items()}
+    serializable = {key: listing.to_dict() for key, listing in listings.items()}
     _atomic_write(path, json.dumps(serializable, ensure_ascii=False, indent=2))
 
 
+def _dedupe_observation(existing: Listing, observation: PriceObservation) -> bool:
+    for obs in existing.observations:
+        if (
+            obs.price == observation.price
+            and obs.source == observation.source
+            and obs.observed_at.date() == observation.observed_at.date()
+        ):
+            return True
+    return False
+
+
 def upsert(listings: Dict[str, Listing], new_listing: Listing, observation: PriceObservation) -> None:
-    existing = listings.get(new_listing.url)
+    key = new_listing.property_key or build_property_key(new_listing)
+    new_listing.property_key = key
+    existing = listings.get(key)
     now = datetime.now(timezone.utc)
-    if not existing:
-        new_listing.observations.append(observation)
+
+    if existing is None:
         new_listing.first_seen = now
         new_listing.last_seen = now
-        listings[new_listing.url] = new_listing
+        new_listing.observations.append(observation)
+        listings[key] = new_listing
         return
 
     if new_listing.address and not existing.address:
@@ -89,15 +62,12 @@ def upsert(listings: Dict[str, Listing], new_listing: Listing, observation: Pric
         existing.rooms = new_listing.rooms
     if new_listing.surface_m2 is not None and existing.surface_m2 is None:
         existing.surface_m2 = new_listing.surface_m2
-    if new_listing.source_site:
-        existing.source_site = new_listing.source_site
+    if new_listing.commune and not existing.commune:
+        existing.commune = new_listing.commune
+    if new_listing.canton and not existing.canton:
+        existing.canton = new_listing.canton
 
-    last_obs = existing.observations[-1] if existing.observations else None
-    same_price_on_same_day = any(
-        obs.price == observation.price and obs.source == observation.source and obs.observed_at.date() == observation.observed_at.date()
-        for obs in existing.observations
-    )
-    if same_price_on_same_day:
+    if _dedupe_observation(existing, observation):
         return
 
     existing.observations.append(observation)
