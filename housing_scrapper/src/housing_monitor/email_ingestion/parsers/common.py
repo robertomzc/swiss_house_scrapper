@@ -6,7 +6,7 @@ from html import unescape
 from typing import Optional
 
 URL_RE = re.compile(r'https?://[^\s<>"\']+', re.IGNORECASE)
-PRICE_RE = re.compile(r'(?:CHF|Fr\.?|€)\s*([\d\s\.",\']+)', re.IGNORECASE)
+PRICE_RE = re.compile(r'(?:CHF|Fr\.?|€)\s*(\d[\d,\.\'’\u202f]*\d)(?:[.\-–])?', re.IGNORECASE)
 ROOMS_RE = re.compile(r'(\d+(?:[.,]\d+)?)\s*(?:Zimmer|rooms?|room|chambres?)', re.IGNORECASE)
 SURFACE_RE = re.compile(r'(\d+(?:[.,]\d+)?)\s*(?:m²|m2|sqm|square\s*meters|surface|superficie)', re.IGNORECASE)
 ADDRESS_RE = re.compile(r'\b\d{4}\s+[A-Za-zÀ-ÖØ-öø-ÿ][^\n]*\b')
@@ -72,6 +72,12 @@ def email_to_text(msg: EmailMessage) -> str:
     body = body.replace('\r\n', '\n').replace('\r', '\n')
     body = re.sub(r'<br\s*/?>', '\n', body, flags=re.I)
     body = re.sub(r'</p>|</div>|</li>|</tr>', '\n', body, flags=re.I)
+    body = re.sub(
+        r'<a\s+[^>]*href=["\']?([^"\'\s>]+)["\']?[^>]*>(.*?)</a>',
+        lambda m: f"{m.group(2).strip()} {m.group(1)}" if m.group(2).strip() else m.group(1),
+        body,
+        flags=re.I | re.S,
+    )
     body = re.sub(r'<[^>]+>', ' ', body)
     body = unescape(body)
     body = re.sub(r'[ \t]+', ' ', body)

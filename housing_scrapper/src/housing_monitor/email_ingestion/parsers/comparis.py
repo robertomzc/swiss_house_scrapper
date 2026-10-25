@@ -19,21 +19,21 @@ def _iter_listing_blocks(text: str) -> list[str]:
                 blocks.append('\n'.join(current))
                 current = []
             continue
-        if any(token in lowered for token in ['more information', 'rate us now', 'share with friends', 'kind regards', 'comparis property app', 'we wish you all success']):
+        if any(token in lowered for token in ['more information', 'rate us now', 'share with friends', 'kind regards', 'comparis property app', 'we wish you all success', 'contact | data protection', 'company details']):
             if current:
                 blocks.append('\n'.join(current))
                 current = []
             continue
         if 'CHF ' in stripped or re.search(r'CHF\s*\d', stripped):
-            if current:
-                current.append(stripped)
-                blocks.append('\n'.join(current))
-                current = []
-                continue
+            current.append(stripped)
+            continue
         current.append(stripped)
     if current:
         blocks.append('\n'.join(current))
-    return [block for block in blocks if re.search(r'CHF|rooms|m²|m2|\d{4}\s+[A-Za-zÀ-ÖØ-öø-ÿ]', block, re.I)]
+    return [
+        block for block in blocks
+        if re.search(r'CHF|rooms|m²|m2|\d{4}\s+[A-Za-zÀ-ÖØ-öø-ÿ]|4\.5\s*rooms|4,5\s*rooms', block, re.I)
+    ]
 
 
 def parse_email(msg: EmailMessage) -> list[dict]:
@@ -45,11 +45,25 @@ def parse_email(msg: EmailMessage) -> list[dict]:
     default_url = urls[0] if urls else 'https://www.comparis.ch'
     entries: list[dict] = []
 
-    for block in _iter_listing_blocks(text):
+    blocks = _iter_listing_blocks(text)
+    unique_blocks: list[str] = []
+    seen: set[str] = set()
+    for block in blocks:
+        key = block.strip().lower()
+        if key in seen:
+            continue
+        seen.add(key)
+        if re.search(r'\b(?:1 new property|new property|property with updated price)\b', key, re.I):
+            continue
+        unique_blocks.append(block)
+
+    for block in unique_blocks:
         price = extract_price(block)
         rooms = extract_rooms(block)
         surface = extract_surface(block)
         address = extract_address(block)
+        listing_urls = find_urls(block, ('comparis.ch',))
+        listing_url = listing_urls[0] if listing_urls else default_url
         if price is None and rooms is None and surface is None and address is None:
             continue
         entries.append({
@@ -57,7 +71,7 @@ def parse_email(msg: EmailMessage) -> list[dict]:
             'rooms': rooms,
             'surface_m2': surface,
             'address': address,
-            'url': default_url,
+            'url': listing_url,
             'source_site': 'comparis',
             'source': 'email_alert',
             'title': address or 'Comparis listing',
