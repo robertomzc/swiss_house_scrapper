@@ -2,3 +2,8 @@ gmail_label: "Lausanne Housing"
 data_path: "data/listings.json"
 imap_host: "imap.gmail.com"
 unread_only: false
+listing_filter:
+  min_price_chf: 400000
+  max_price_chf: 1500000
+  min_rooms: 1
+  max_rooms: 10

@@ -46,7 +46,38 @@ def _message_observed_at(msg) -> datetime:
         return datetime.now(timezone.utc)
 
 
-def _process_message(msg, listings, seen_index, archive_dir='data/email_archive', processed_path='data/processed_messages.json'):
+def _should_keep_listing_entry(entry, listing_filter):
+    property_details = ('price', 'rooms', 'surface_m2', 'address')
+    if all(entry.get(field) is None for field in property_details):
+        return False
+
+    price = entry.get('price')
+    if price is not None and not (
+        listing_filter.get('min_price_chf', 400000)
+        <= price
+        <= listing_filter.get('max_price_chf', 1500000)
+    ):
+        return False
+
+    rooms = entry.get('rooms')
+    if rooms is not None and not (
+        listing_filter.get('min_rooms', 1)
+        <= rooms
+        <= listing_filter.get('max_rooms', 10)
+    ):
+        return False
+
+    return True
+
+
+def _process_message(
+    msg,
+    listings,
+    seen_index,
+    archive_dir='data/email_archive',
+    processed_path='data/processed_messages.json',
+    listing_filter=None,
+):
     key = msg.get('Message-ID') or msg.get('Subject') or str(msg.as_bytes()[:128])
     if key in seen_index:
         return 0
@@ -65,7 +96,12 @@ def _process_message(msg, listings, seen_index, archive_dir='data/email_archive'
     observed_at = _message_observed_at(msg)
     source_site = parsed_entries[0].get('source_site', 'unknown')
 
+    processed_entries = 0
     for entry in parsed_entries:
+        if not _should_keep_listing_entry(entry, listing_filter or {}):
+            print(f"Filtered listing: {entry.get('url', 'unknown URL')}")
+            continue
+
         url = entry['url']
         price = entry.get('price')
         address = entry.get('address')
@@ -89,8 +125,9 @@ def _process_message(msg, listings, seen_index, archive_dir='data/email_archive'
         )
         upsert(listings, listing, obs)
         print(f'Upserted: {listing.title} | source={source_site} | price={price} | rooms={rooms} | surface={surface} | email_date={observed_at.date()}')
+        processed_entries += 1
 
-    return len(parsed_entries)
+    return processed_entries
 
 
 def main():
@@ -116,7 +153,14 @@ def main():
 
     total_items = 0
     for msg in msgs:
-        total_items += _process_message(msg, listings, seen_index, archive_dir=archive_dir, processed_path=processed_path)
+        total_items += _process_message(
+            msg,
+            listings,
+            seen_index,
+            archive_dir=archive_dir,
+            processed_path=processed_path,
+            listing_filter=cfg.get('listing_filter'),
+        )
 
     os.makedirs(os.path.dirname(data_path) or '.', exist_ok=True)
     save_listings(listings, data_path)
