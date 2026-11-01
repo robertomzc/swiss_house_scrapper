@@ -23,13 +23,11 @@ This project reads apartment alerts from email, extracts the listing details, an
 
 ## Setup
 ```bash
-cd housing_scrapper
 poetry install
 ```
 
 ## Run
 ```bash
-cd housing_scrapper
 poetry run housing-monitor
 ```
 
