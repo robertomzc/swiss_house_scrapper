@@ -35,7 +35,8 @@ def _iter_listing_blocks(text: str) -> list[str]:
     if current:
         blocks.append('\n'.join(current))
     cleaned = [block for block in blocks if any(token in block.lower() for token in ['CHF', 'room', 'lausanne', 'saint', 'morges', 'prilly'])]
-    return [block for block in cleaned if not any(token in block.lower() for token in ['your search subscription', 'all results', 'extend search subscription', 'delete search subscription'])]
+    cleaned = [block for block in cleaned if not any(token in block.lower() for token in ['your search subscription', 'all results', 'extend search subscription', 'delete search subscription'])]
+    return [block for block in cleaned if not re.search(r'\b(?:new results in your search subscription|this is an automatically generated e-mail)\b', block, re.I)]
 
 
 def parse_email(msg: EmailMessage) -> list[dict]:

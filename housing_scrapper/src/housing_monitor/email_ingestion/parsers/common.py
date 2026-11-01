@@ -6,10 +6,11 @@ from html import unescape
 from typing import Optional
 
 URL_RE = re.compile(r'https?://[^\s<>"\']+', re.IGNORECASE)
-PRICE_RE = re.compile(r'(?:CHF|Fr\.?|€)\s*(\d[\d\s,\.\'’\u202f]*?\d)(?!(?:\s*\d{3,5}\b))', re.IGNORECASE)
+PRICE_RE = re.compile(r'(?:CHF|Fr\.?|€)\s*((?:\d{1,3}(?:[\s.,\'’\u202f]\d{3})+|\d{4,})(?:[.,]\d{1,2})?)', re.IGNORECASE)
 ROOMS_RE = re.compile(r'(\d+(?:[.,]\d+)?)\s*(?:Zimmer|rooms?|room|chambres?|pi(?:[èée]|c)?ces?)', re.IGNORECASE)
 SURFACE_RE = re.compile(r'(\d+(?:[.,]\d+)?)\s*(?:m(?:\s*[²2])|m2|m²|sqm|square\s*meters|surface|superficie)', re.IGNORECASE)
 ADDRESS_RE = re.compile(r'\b\d{4}\s+[A-Za-zÀ-ÖØ-öø-ÿ][^\n]*\b')
+ADDRESS_PATH_RE = re.compile(r'(?i)(?:\b\d{4}\s+[A-Za-zÀ-ÖØ-öø-ÿ][^\n]*|(?:[A-Za-zÀ-ÖØ-öø-ÿ][^\n]*?(?:avenue|rue|route|chemin|boulevard|place|square|allée|allee|impasse|quai|voie|street|road)[^\n]*?(?:\d{1,5}(?:\s*,\s*\d{4})?)))')
 
 HOST_ALIASES = {
     'immoscout24.ch': 'immoscout24',
@@ -171,10 +172,20 @@ def split_listing_blocks(text: str, allowed_hosts: tuple[str, ...] = ()) -> list
 
 
 def extract_price(text: str) -> Optional[int]:
+    if not text:
+        return None
     match = PRICE_RE.search(text)
     if not match:
         return None
-    value = normalize_number(match.group(1))
+    value = match.group(1)
+    value = re.sub(r'(?i)(?<=\d)[=A-Za-z].*$', '', value)
+    value = re.sub(r'[^0-9,\.\'’\u202f\s]', '', value)
+    value = re.sub(r'\s+(?:\d{3,5})(?=\s*(?:$|[A-Za-zÀ-ÖØ-öø-ÿ]))', '', value)
+    value = re.sub(r'\s*[-–]\s*\d+(?:[.,\s]\d+)?$', '', value)
+    value = value.strip()
+    if not value:
+        return None
+    value = normalize_number(value)
     return int(value) if value else None
 
 
@@ -229,9 +240,20 @@ def _normalize_address_line(line: str) -> str:
 
 def _strip_property_suffix(line: str) -> str:
     candidate = line.strip(' ,;')
+    if not candidate:
+        return candidate
+
+    if re.search(r'\b\d{4}\b', candidate):
+        return candidate
+
+    if re.search(r'(?:avenue|rue|route|chemin|boulevard|place|square|allée|allee|impasse|quai|voie|street|road)\b', candidate, re.I):
+        if re.search(r'\d{1,5}\s*$', candidate):
+            return candidate
+
     for pattern in [
         r'\s+(?:Appartement|Appart|Maison|Villa|Studio|Duplex|Terrain|Loft|Chambre|Pi(?:è|e)ces?|rooms?|zimmer|salles\s+de\s+bains|bathrooms?|m2|m²|\u00b7|•).*$',
         r'\s*[:\-–]\s*(?:Appartement|Appart|Maison|Villa|Studio|Duplex|Terrain|Loft|Chambre|Pi(?:è|e)ces?|rooms?|zimmer|salles\s+de\s+bains|bathrooms?|m2|m²).*$',
+        r'\s+\d+(?:[.,]\d+)?\s*(?:rooms?|room|zimmer|pi(?:[èée]|c)?ces?|m2|m²|m\s*²|surface)\s*$',
     ]:
         cleaned = re.split(pattern, candidate, flags=re.I)[0].strip(' ,;')
         if cleaned and cleaned != candidate:
@@ -247,9 +269,40 @@ def _strip_url_and_trailing_meta(value: str) -> str:
     return cleaned
 
 
+def _address_variants(value: str) -> list[str]:
+    variants = [value]
+    pattern = r'^(?P<street>[A-Za-zÀ-ÖØ-öø-ÿ][A-Za-zÀ-ÖØ-öø-ÿ\' .\-]*?)(?:\s+)(?P<number>\d{1,5})(?:\s*,\s*(?P<zip>\d{4}))?\s*$'
+    match = re.match(pattern, value, flags=re.I)
+    if match:
+        street = match.group('street').strip(' ,;:')
+        number = match.group('number')
+        zip_code = match.group('zip')
+        if street and number:
+            ordered = f"{number} {street}"
+            if zip_code:
+                ordered = f"{ordered}, {zip_code}"
+            variants.insert(0, ordered)
+    return variants
+
+
 def extract_address(text: str) -> Optional[str]:
     if not text:
         return None
+
+    for match in ADDRESS_PATH_RE.finditer(text):
+        candidate = _strip_url_and_trailing_meta(match.group(0))
+        candidate = _normalize_address_line(candidate)
+        candidate = _strip_property_suffix(candidate)
+        if not candidate:
+            continue
+        for variant in _address_variants(candidate):
+            variant = _normalize_address_line(variant)
+            variant = _strip_property_suffix(variant)
+            if not variant:
+                continue
+            if _valid_address_candidate(variant):
+                return variant
+
     lines = [line.strip() for line in text.splitlines() if line.strip()]
     for line in lines:
         candidate = _strip_url_and_trailing_meta(line)
@@ -264,14 +317,13 @@ def extract_address(text: str) -> Optional[str]:
         candidate = _strip_property_suffix(candidate)
         if not candidate:
             continue
-        if _is_noise_address(candidate):
-            continue
-        if re.search(r'\b\d{4}\b', candidate) and re.search(r'[A-Za-zÀ-ÖØ-öø-ÿ]', candidate):
-            return candidate
-        if re.search(r'\b[A-Za-zÀ-ÖØ-öø-ÿ]+\s+\d{1,5}\b', candidate) and not re.search(r'\b(?:new results|search subscription|selling price|all results)\b', candidate, re.I):
-            return candidate
-        if re.search(r'\b(?:avenue|rue|route|chemin|boulevard|place|square|allée|allee|impasse|quai|voie|street|road)\b', candidate, re.I) and re.search(r'\d', candidate):
-            return candidate
+        for variant in _address_variants(candidate):
+            variant = _normalize_address_line(variant)
+            variant = _strip_property_suffix(variant)
+            if not variant:
+                continue
+            if _valid_address_candidate(variant):
+                return variant
     return None
 
 
@@ -319,3 +371,44 @@ def parse_generic_listing(text: str, default_url: str, source_site: str, allowed
             'title': address or f'{source_site.title()} listing',
         })
     return entries
+
+
+def _valid_address_candidate(value: str) -> bool:
+    candidate = (value or '').strip(' ,;:')
+    if not candidate or len(candidate) > 180:
+        return False
+
+    lowered = candidate.lower()
+    if any(token in lowered for token in ['alertes pour ta recherche', 'découvre toutes les mises à jour', 'voir toutes les mises à jour', 'property suggestions', 'newly added properties match your search', 'following properties correspond to your search', 'you have new alerts', 'search alert', 'manage notifications', 'all results', 'search criteria', 'se désinscrire', 'properstar.com', 'lookmove team', 'this is an automatically generated e-mail']):
+        return False
+    if _is_noise_address(candidate):
+        return False
+    if re.search(r'\b(?:search alert|manage notifications|new results in your search subscription|delete search subscription|unsubscribe|contact|all results|this is an automatically generated e-mail|se désinscrire|properstar\.com|lookmove team)\b', lowered):
+        return False
+    if candidate.startswith(('http://', 'https://', 'www.', 'mailto:')):
+        return False
+    if re.fullmatch(r'[\d\s,.;:/\-]+', candidate):
+        return False
+    if re.search(r'\b(?:CHF|Fr\.?|€)\b', candidate, re.I):
+        return False
+
+    has_digit = bool(re.search(r'\d', candidate))
+    if not has_digit:
+        if re.search(r'\b(?:avenue|rue|route|chemin|boulevard|place|square|allée|allee|impasse|quai|voie|street|road|court|passage)\b', candidate, re.I):
+            return False
+
+    has_postal = bool(re.search(r'\b\d{4}\b', candidate))
+    has_street = bool(re.search(r'\b(?:avenue|rue|route|chemin|boulevard|place|square|allée|allee|impasse|quai|voie|street|road|court|passage)\b', candidate, re.I))
+    has_locality = bool(re.search(r'\b(?:lausanne|geneva|zurich|zürich|yverdon|montreux|nyon|lausanne|prilly|sullens|lutry|bussigny|denges|epalinges|vufflens|poliez|pittet|villy|romanel|vevey|carouge)\b', lowered))
+
+    if has_postal:
+        return True
+    if has_street and has_digit:
+        return True
+    if has_locality and len(candidate.split()) <= 6:
+        return True
+    if re.search(r'^\d{4}\s+[A-Za-zÀ-ÖØ-öø-ÿ]', candidate):
+        return True
+    if re.search(r'^(?:[A-Za-zÀ-ÖØ-öø-ÿ][A-Za-zÀ-ÖØ-öø-ÿ\-\'\s]+)\s*\([^)]*\)$', candidate):
+        return True
+    return False

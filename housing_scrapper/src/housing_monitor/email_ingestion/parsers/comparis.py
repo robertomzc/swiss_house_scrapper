@@ -48,11 +48,15 @@ def parse_email(msg: EmailMessage) -> list[dict]:
             'search criteria',
             'rate us now',
             'your feedback helps us',
+            'all results',
         ]):
-            if not any(token in lowered for token in ['chf', 'rooms', 'pièces', 'zimmer', 'm²', 'm2', 'appartement', 'maison', 'villa', 'attique', 'studio']):
+            if not re.search(r'\b\d{4}\s+[A-Za-zÀ-ÖØ-öø-ÿ]|\b(?:appartement|maison|villa|studio|attique|duplex)\b|\b\d+(?:[.,]\d+)?\s*(?:rooms?|pièces?|zimmer)\b', block, re.I):
+                continue
+        if any(token in lowered for token in ['your search alert', 'new properties', 'search criteria', 'manage search alerts', 'delete search alert', 'we wish you all success with your search', 'rate us now', 'online version', 'all results']):
+            if not re.search(r'\b\d{4}\s+[A-Za-zÀ-ÖØ-öø-ÿ]|\b(?:appartement|maison|villa|studio|attique|duplex)\b|\b\d+(?:[.,]\d+)?\s*(?:rooms?|pièces?|zimmer)\b', block, re.I):
                 continue
         block_urls = find_urls(block, hosts)
-        if not block_urls and 'CHF' not in block.upper() and 'Fr.' not in block:
+        if not block_urls and 'CHF' not in block.upper() and 'Fr.' not in block and '€' not in block:
             continue
         if not any(token in block.lower() for token in ['chf', 'rooms', 'pièces', 'zimmer', 'm²', 'm2', 'appartement', 'maison', 'villa', 'attique', 'duplex', 'studio']):
             continue
@@ -62,6 +66,10 @@ def parse_email(msg: EmailMessage) -> list[dict]:
         address = extract_address(block)
         if not address and price is None and rooms is None and surface is None:
             continue
+        # Ignore summary lines that happened to contain a price but no actual listing address.
+        if address is None and (price is not None or rooms is not None or surface is not None):
+            if not re.search(r'\b\d{4}\b', block):
+                continue
         entry = {
             'price': price,
             'rooms': rooms,

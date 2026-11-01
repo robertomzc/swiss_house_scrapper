@@ -32,7 +32,10 @@ def parse_immobilier_email(msg):
         lower = block.lower()
         if 'body{' in lower or 'html' in lower or 'nouvelles images' in lower:
             continue
-        if not any(token in lower for token in ['chf', 'rooms', 'pièces', 'zimmer', 'm²', 'm2', 'surface', 'appartement', 'maison', 'villa', 'terrain']):
+        if any(token in lower for token in ['new listings', 'new properties', 'property suggestions', 'manage notifications', 'see more']):
+            if not any(token in lower for token in ['chf', 'rooms', 'pièces', 'zimmer', 'm²', 'm2', 'surface', 'appartement', 'maison', 'villa', 'terrain', 'nouveau quartier', 'route du lac', 'avenue', 'lausanne', 'prilly', 'denges']):
+                continue
+        if not any(token in lower for token in ['chf', 'rooms', 'pièces', 'zimmer', 'm²', 'm2', 'surface', 'appartement', 'maison', 'villa', 'terrain', 'lausanne', 'prilly', 'denges']):
             continue
         address = extract_address(block)
         if not address:
@@ -51,6 +54,8 @@ def parse_immobilier_email(msg):
             entry['source_site'] = 'immobilier'
             entry['title'] = entry.get('address') or 'immobilier.ch listing'
         return fallback
+    # Ignore generic summary addresses that look like outbound contact info instead of a property.
+    entries = [entry for entry in entries if entry.get('address') and not any(token in (entry.get('address') or '').lower() for token in ['se désinscrire', 'contactez l\'agence', 'properstar.com', 'contact', 'unsubscribe'])]
     return entries
 
 

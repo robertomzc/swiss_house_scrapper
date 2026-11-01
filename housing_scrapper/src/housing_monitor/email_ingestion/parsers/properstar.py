@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 from email.message import EmailMessage
+import re
 
 from .common import email_to_text, find_urls, parse_generic_listing, split_listing_blocks
 
@@ -26,11 +27,16 @@ def parse_email(msg: EmailMessage) -> list[dict]:
             'unsubscribe',
             'contact',
             'all results',
+            'se désinscrire',
+            'properstar.com',
+            'properties match your search',
         ]):
-            if not any(token in lowered for token in ['chf', 'pièces', 'rooms', 'zimmer', 'm²', 'm2', 'appartement', 'maison', 'villa']):
+            if not any(token in lowered for token in ['chf', 'pièces', 'rooms', 'zimmer', 'm²', 'm2', 'appartement', 'maison', 'villa', 'address', 'lausanne']):
                 continue
+        if 'search alert' in lowered and not re.search(r'\b\d{4}\s+[A-Za-zÀ-ÖØ-öø-ÿ]|\b\d+(?:[.,]\d+)?\s*(?:pièces?|rooms?|zimmer)\b|\b(?:appartement|maison|villa|studio|duplex)\b', block, re.I):
+            continue
         block_urls = find_urls(block, ('properstar', 'poperstar'))
-        if not block_urls and not any(token in block.lower() for token in ['chf', 'pièces', 'rooms', 'zimmer', 'm²', 'm2', 'appartement', 'maison', 'villa']):
+        if not block_urls and not any(token in block.lower() for token in ['chf', 'pièces', 'rooms', 'zimmer', 'm²', 'm2', 'appartement', 'maison', 'villa', 'lausanne']):
             continue
         from .common import extract_address, extract_price, extract_rooms, extract_surface
         price = extract_price(block)
@@ -38,6 +44,8 @@ def parse_email(msg: EmailMessage) -> list[dict]:
         surface = extract_surface(block)
         address = extract_address(block)
         if price is None and rooms is None and surface is None and address is None:
+            continue
+        if address is None and not re.search(r'\b\d{4}\b', block):
             continue
         entries.append({
             'price': price,

@@ -34,13 +34,16 @@ def _extract_lookmove_blocks(text: str) -> list[str]:
         lowered = block.lower()
         if _is_summary_block(block):
             continue
-        if any(token in lowered for token in ['manage notifications', 'the lookmove team', 'support:', 'linkedin:', 'facebook:', 'new listings that may interest you']):
+        if any(token in lowered for token in ['manage notifications', 'the lookmove team', 'support:', 'linkedin:', 'facebook:', 'new listings that may interest you', 'copyright ©', 'se désinscrire']):
             continue
         if any(token in lowered for token in ['newly added properties match your search', 'following properties correspond to your search', 'you have new alerts']):
             continue
+        if 'property suggestions' in lowered and 'tailored properties based on your property preferences' in lowered:
+            continue
         if not (
-            any(token in lowered for token in ['rooms', 'chf', 'price on request', 'm²', 'm2', 'pièces', 'zimmer'])
+            any(token in lowered for token in ['rooms', 'chf', 'price on request', 'm²', 'm2', 'pièces', 'zimmer', 'appartement', 'maison', 'villa'])
             or re.search(r'\b\d{4}\s+[A-Za-zÀ-ÖØ-öø-ÿ]', block)
+            or re.search(r'\b\d{4}\s+\S+', block)
             or re.search(r'\b\d+(?:[.,]\d+)?\s*(?:rooms?|pièces?|zimmer)\b', block, re.I)
         ):
             continue
@@ -82,7 +85,14 @@ def parse_email(msg: EmailMessage) -> list[dict]:
         surface = extract_surface(block)
         address = extract_address(block)
         if not address:
-            continue
+            # Keep only real postcode/locality-based property addresses; reject summary cards.
+            if not re.search(r'\b\d{4}\b', block):
+                continue
+            address = re.search(r'\b\d{4}\s+[A-Za-zÀ-ÖØ-öø-ÿ][^\n]*', block)
+            if address:
+                address = address.group(0).strip()
+            else:
+                continue
         if price is None and rooms is None and surface is None:
             continue
         listing_urls = find_urls(block, ('lookmove.ch', 'email.support.lookmove.ch'))
