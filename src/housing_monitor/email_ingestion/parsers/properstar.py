@@ -3,10 +3,76 @@ from __future__ import annotations
 from email.message import EmailMessage
 import re
 
-from .common import email_to_text, find_urls, parse_generic_listing, split_listing_blocks
+from .common import (
+    email_html_soups,
+    email_to_text,
+    extract_price,
+    extract_rooms,
+    find_urls,
+    parse_generic_listing,
+    split_listing_blocks,
+)
+
+
+def _parse_html_listings(msg: EmailMessage) -> list[dict]:
+    entries = []
+    seen: set[str] = set()
+
+    for soup in email_html_soups(msg):
+        for heading in soup.find_all(class_='listing-title'):
+            row = heading.find_parent('tr')
+            if row is None:
+                continue
+            title = re.sub(r'\s+', ' ', heading.get_text(' ', strip=True))
+            row_text = re.sub(r'\s+', ' ', ' '.join(row.stripped_strings))
+            location = row_text.split(title, 1)[-1].split('Appartement', 1)[0].strip()
+            street_first = re.match(
+                r'^(?P<commune>[^,]+),\s*(?P<street>(?:Avenue|Rue|Route|Chemin|Place|Boulevard)\b.+)$',
+                location,
+                re.I,
+            )
+            if street_first:
+                address = f"{street_first.group('street')}, {street_first.group('commune')}"
+            else:
+                address = location.split(',', 1)[0].strip()
+            if not address:
+                continue
+
+            current_price = row.find(class_='price-value')
+            price = (
+                extract_price(current_price.get_text(' ', strip=True))
+                if current_price
+                else extract_price(row_text)
+            )
+            rooms = extract_rooms(row_text)
+            if price is None or rooms is None:
+                continue
+
+            listing_link = row.find('a', href=re.compile(r'/listing/'))
+            url = listing_link['href'] if listing_link else 'https://www.properstar.ch'
+            key = f'{url}|{price}|{rooms}'
+            if key in seen:
+                continue
+            seen.add(key)
+            entries.append({
+                'price': price,
+                'rooms': rooms,
+                'surface_m2': None,
+                'address': address,
+                'url': url,
+                'source_site': 'properstar',
+                'source': 'email_alert',
+                'title': title,
+            })
+
+    return entries
 
 
 def parse_email(msg: EmailMessage) -> list[dict]:
+    html_entries = _parse_html_listings(msg)
+    if html_entries:
+        return html_entries
+
     text = email_to_text(msg)
     if not text:
         return []

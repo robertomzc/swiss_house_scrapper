@@ -3,7 +3,15 @@ from __future__ import annotations
 import re
 from email.message import EmailMessage
 
-from .common import email_to_text, extract_address, extract_price, extract_rooms, extract_surface, find_urls
+from .common import (
+    email_html_soups,
+    email_to_text,
+    extract_address,
+    extract_price,
+    extract_rooms,
+    extract_surface,
+    find_urls,
+)
 
 
 def _iter_listing_blocks(text: str) -> list[str]:
@@ -40,6 +48,50 @@ def _iter_listing_blocks(text: str) -> list[str]:
 
 
 def parse_email(msg: EmailMessage) -> list[dict]:
+    html_entries = []
+    seen_html_cards: set[str] = set()
+    for soup in email_html_soups(msg):
+        for heading in soup.find_all(['h2', 'h3']):
+            row = heading.find_parent('tr')
+            if row is None:
+                continue
+            text = ' '.join(row.stripped_strings)
+            price = extract_price(text)
+            rooms = extract_rooms(text)
+            address = extract_address(text)
+            if not address:
+                postcode_address = re.search(
+                    r'\b(\d{4}\s+[A-Za-zÀ-ÖØ-öø-ÿ][A-Za-zÀ-ÖØ-öø-ÿ -]*'
+                    r'(?:\s+\d{1,2})?)\s+Selling price\b',
+                    text,
+                    re.I,
+                )
+                if postcode_address:
+                    address = postcode_address.group(1).strip()
+            if price is None or rooms is None or not address:
+                continue
+
+            key = f'{address}|{price}|{rooms}'
+            if key in seen_html_cards:
+                continue
+            seen_html_cards.add(key)
+            urls = find_urls(
+                '\n'.join(anchor.get('href', '') for anchor in row.find_all('a', href=True)),
+                ('newhome.ch',),
+            )
+            html_entries.append({
+                'price': price,
+                'rooms': rooms,
+                'surface_m2': extract_surface(text),
+                'address': address,
+                'url': urls[0] if urls else 'https://www.newhome.ch',
+                'source_site': 'newhome',
+                'source': 'email_alert',
+                'title': heading.get_text(' ', strip=True),
+            })
+    if html_entries:
+        return html_entries
+
     text = email_to_text(msg)
     if not text:
         return []

@@ -5,9 +5,14 @@ from email.message import EmailMessage
 from html import unescape
 from typing import Optional
 
+from bs4 import BeautifulSoup
+
 URL_RE = re.compile(r'https?://[^\s<>"\']+', re.IGNORECASE)
 PRICE_RE = re.compile(r'(?:CHF|Fr\.?|€)\s*((?:\d{1,3}(?:[\s.,\'’\u202f]\d{3})+|\d{4,})(?:[.,]\d{1,2})?)', re.IGNORECASE)
-ROOMS_RE = re.compile(r'(\d+(?:[.,]\d+)?)\s*(?:Zimmer|rooms?|room|chambres?|pi(?:[èée]|c)?ces?)', re.IGNORECASE)
+ROOMS_RE = re.compile(
+    r'(\d+(?:[.,]\d+)?)\s*(?:Zimmer|rooms?|room|chambres?|pi(?:[èée]|c)?ces?)',
+    re.IGNORECASE,
+)
 SURFACE_RE = re.compile(r'(\d+(?:[.,]\d+)?)\s*(?:m(?:\s*[²2])|m2|m²|sqm|square\s*meters|surface|superficie)', re.IGNORECASE)
 ADDRESS_RE = re.compile(r'\b\d{4}\s+[A-Za-zÀ-ÖØ-öø-ÿ][^\n]*\b')
 ADDRESS_PATH_RE = re.compile(r'(?i)(?:\b\d{4}\s+[A-Za-zÀ-ÖØ-öø-ÿ][^\n]*|(?:[A-Za-zÀ-ÖØ-öø-ÿ][^\n]*?(?:avenue|rue|route|chemin|boulevard|place|square|allée|allee|impasse|quai|voie|street|road)[^\n]*?(?:\d{1,5}(?:\s*,\s*\d{4})?)))')
@@ -65,26 +70,16 @@ def normalize_number(value: str) -> float:
         return float(cleaned) if cleaned else 0.0
 
 
-def email_to_text(msg: EmailMessage) -> str:
-    if msg.is_multipart():
-        parts = []
-        for part in msg.walk():
-            if part.get_content_type() in {'text/plain', 'text/html'}:
-                payload = part.get_payload(decode=True)
-                if payload is None:
-                    payload = part.get_payload()
-                if isinstance(payload, bytes):
-                    charset = part.get_content_charset() or 'utf-8'
-                    parts.append(payload.decode(charset, errors='ignore'))
-                elif isinstance(payload, str):
-                    parts.append(payload)
-        body = '\n'.join(parts)
-    else:
-        payload = msg.get_payload(decode=True)
-        if isinstance(payload, bytes):
-            body = payload.decode(msg.get_content_charset() or 'utf-8', errors='ignore')
-        else:
-            body = str(payload or '')
+def _part_text(part) -> str:
+    payload = part.get_payload(decode=True)
+    if isinstance(payload, bytes):
+        return payload.decode(part.get_content_charset() or 'utf-8', errors='ignore')
+    if isinstance(payload, str):
+        return payload
+    return ''
+
+
+def _normalize_email_text(body: str) -> str:
     body = _decode_quoted_printable(body)
     body = body.replace('\r\n', '\n').replace('\r', '\n')
     body = re.sub(r'<br\s*/?>', '\n', body, flags=re.I)
@@ -100,6 +95,45 @@ def email_to_text(msg: EmailMessage) -> str:
     body = re.sub(r'[ \t]+', ' ', body)
     body = re.sub(r'\n{3,}', '\n\n', body)
     return body.strip()
+
+
+def email_html_soups(msg: EmailMessage):
+    for part in msg.walk():
+        if part.get_content_type() != 'text/html':
+            continue
+        soup = BeautifulSoup(_part_text(part), 'html.parser')
+        for element in soup(['head', 'style', 'script']):
+            element.decompose()
+        yield soup
+
+
+def _html_to_text(soup: BeautifulSoup) -> str:
+    for anchor in soup.find_all('a'):
+        label = anchor.get_text(' ', strip=True)
+        href = anchor.get('href', '')
+        anchor.replace_with(f'{label} {href}'.strip())
+    return soup.get_text('\n', strip=True)
+
+
+def email_to_text(msg: EmailMessage) -> str:
+    plain_parts = [
+        _part_text(part)
+        for part in msg.walk()
+        if part.get_content_type() == 'text/plain'
+    ]
+    plain_body = '\n'.join(part for part in plain_parts if part)
+    if plain_body and re.search(
+        r'(?:\bCHF\s*[\d\u202f\s.,\']+|\b\d+(?:[.,]\d+)?\s*m(?:2|²|[ \u00a0]\u00b2)\b)',
+        plain_body,
+        re.I,
+    ):
+        return _normalize_email_text(plain_body)
+
+    html_bodies = [_html_to_text(soup) for soup in email_html_soups(msg)]
+    html_body = '\n'.join(body for body in html_bodies if body)
+    if html_body:
+        return _normalize_email_text(html_body)
+    return _normalize_email_text(plain_body)
 
 
 def find_urls(text: str, allowed_hosts: tuple[str, ...] = ()) -> list[str]:
@@ -163,7 +197,8 @@ def split_listing_blocks(text: str, allowed_hosts: tuple[str, ...] = ()) -> list
     blocks: list[str] = []
     seen: set[str] = set()
     for segment in segments:
-        cleaned = re.sub(r'\s+', ' ', segment).strip()
+        cleaned = re.sub(r'[ \t]+', ' ', segment)
+        cleaned = re.sub(r'\n\s*\n', '\n', cleaned).strip()
         if not cleaned or cleaned.lower() in seen:
             continue
         seen.add(cleaned.lower())
@@ -180,16 +215,26 @@ def extract_price(text: str) -> Optional[int]:
     value = match.group(1)
     value = re.sub(r'(?i)(?<=\d)[=A-Za-z].*$', '', value)
     value = re.sub(r'[^0-9,\.\'’\u202f\s]', '', value)
-    value = re.sub(r'\s+(?:\d{3,5})(?=\s*(?:$|[A-Za-zÀ-ÖØ-öø-ÿ]))', '', value)
     value = re.sub(r'\s*[-–]\s*\d+(?:[.,\s]\d+)?$', '', value)
     value = value.strip()
     if not value:
         return None
+    groups = re.split(r"[\s.,'’\u202f]+", value)
+    if len(groups) > 1 and all(len(group) == 3 for group in groups[1:]):
+        return int(''.join(groups))
     value = normalize_number(value)
     return int(value) if value else None
 
 
 def extract_rooms(text: str) -> Optional[float]:
+    match = re.search(
+        r'\bRooms?\s*:\s*(\d+(?:[.,]\d+)?)',
+        text,
+        re.IGNORECASE,
+    )
+    if match:
+        return float(match.group(1).replace(',', '.'))
+
     match = ROOMS_RE.search(text)
     if not match:
         return None
@@ -243,6 +288,8 @@ def _strip_property_suffix(line: str) -> str:
     if not candidate:
         return candidate
 
+    candidate = re.sub(r'\s+\d+[.,]\d+$', '', candidate)
+
     if re.search(r'\b\d{4}\b', candidate):
         return candidate
 
@@ -293,6 +340,7 @@ def extract_address(text: str) -> Optional[str]:
         candidate = _strip_url_and_trailing_meta(match.group(0))
         candidate = _normalize_address_line(candidate)
         candidate = _strip_property_suffix(candidate)
+        candidate = _normalize_postcode_order(candidate)
         if not candidate:
             continue
         for variant in _address_variants(candidate):
@@ -315,6 +363,7 @@ def extract_address(text: str) -> Optional[str]:
         if not candidate:
             continue
         candidate = _strip_property_suffix(candidate)
+        candidate = _normalize_postcode_order(candidate)
         if not candidate:
             continue
         for variant in _address_variants(candidate):
@@ -325,6 +374,27 @@ def extract_address(text: str) -> Optional[str]:
             if _valid_address_candidate(variant):
                 return variant
     return None
+
+
+def _normalize_postcode_order(address: str) -> str:
+    street_first = re.match(
+        r'^(?P<street>.+,\s*)(?P<commune>[A-Za-zÀ-ÖØ-öø-ÿ][^,]+?)\s+(?P<npa>\d{4})$',
+        address,
+    )
+    if street_first:
+        return (
+            f"{street_first.group('street')}{street_first.group('npa')} "
+            f"{street_first.group('commune').strip()}"
+        )
+
+    commune_first = re.match(
+        r'^(?P<commune>[A-Za-zÀ-ÖØ-öø-ÿ][A-Za-zÀ-ÖØ-öø-ÿ ()\'-]*)\s+(?P<npa>\d{4})$',
+        address,
+    )
+    if commune_first:
+        return f"{commune_first.group('npa')} {commune_first.group('commune')}"
+
+    return address
 
 
 def detect_source_site(msg: EmailMessage) -> str:

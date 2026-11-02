@@ -3,7 +3,16 @@ from __future__ import annotations
 import re
 from email.message import EmailMessage
 
-from .common import email_to_text, extract_address, extract_price, extract_rooms, extract_surface, find_urls, split_listing_blocks
+from .common import (
+    email_html_soups,
+    email_to_text,
+    extract_address,
+    extract_price,
+    extract_rooms,
+    extract_surface,
+    find_urls,
+    split_listing_blocks,
+)
 
 
 def _is_summary_block(block: str) -> bool:
@@ -52,6 +61,58 @@ def _extract_lookmove_blocks(text: str) -> list[str]:
 
 
 def parse_email(msg: EmailMessage) -> list[dict]:
+    html_entries = []
+    seen_html_cards: set[str] = set()
+    for soup in email_html_soups(msg):
+        card_tables = []
+        for table in soup.find_all('table'):
+            text = ' '.join(table.stripped_strings)
+            lowered = text.lower()
+            if 'rooms:' in lowered and 'm²' in lowered and (
+                'chf' in lowered or 'price on request' in lowered
+            ):
+                card_tables.append((table, text))
+
+        qualified_tables = {id(table) for table, _ in card_tables}
+        for table, text in card_tables:
+            if any(id(child) in qualified_tables for child in table.find_all('table')):
+                continue
+
+            location = text.split('Rooms:', 1)[0].strip()
+            address = extract_address(location)
+            if not address:
+                continue
+
+            rooms = extract_rooms(text)
+            surface = extract_surface(text)
+            price = extract_price(text)
+            key = f'{address}|{rooms}|{surface}|{price}'
+            if key in seen_html_cards:
+                continue
+            seen_html_cards.add(key)
+
+            urls = find_urls(
+                '\n'.join(anchor.get('href', '') for anchor in table.find_all('a', href=True)),
+                ('lookmove.ch', 'email.support.lookmove.ch'),
+            )
+            locality = address.rsplit(',', 1)[-1].strip()
+            if re.match(r'\d{4}\s+', locality):
+                locality = re.sub(r'^\d{4}\s+', '', locality)
+            elif re.match(r'\d{4}\s+', address):
+                locality = re.sub(r'^\d{4}\s+', '', address)
+            html_entries.append({
+                'price': price,
+                'rooms': rooms,
+                'surface_m2': surface,
+                'address': address,
+                'url': urls[0] if urls else 'https://www.lookmove.ch',
+                'source_site': 'lookmove',
+                'source': 'email_alert',
+                'title': f'Property - {locality}',
+            })
+    if html_entries:
+        return html_entries
+
     text = email_to_text(msg)
     if not text:
         return []

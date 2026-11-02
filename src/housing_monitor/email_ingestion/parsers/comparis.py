@@ -9,6 +9,7 @@ from .common import (
     extract_price,
     extract_rooms,
     extract_surface,
+    email_html_soups,
     find_urls,
     split_listing_blocks,
 )
@@ -22,10 +23,74 @@ def _normalize_entry_key(entry: dict) -> str:
     return f"{address}|{price}|{rooms}|{surface}"
 
 
+def _parse_plain_listing_cards(text: str, msg: EmailMessage) -> list[dict]:
+    lines = [line.strip() for line in text.splitlines() if line.strip()]
+    entries: list[dict] = []
+    seen: set[str] = set()
+
+    for index, line in enumerate(lines):
+        price = extract_price(line)
+        if price is None or not re.search(r'\b(?:CHF|Fr\.?|€)\b', line, re.I):
+            continue
+
+        before = lines[max(0, index - 5):index]
+        after = lines[index + 1:index + 5]
+        address = extract_address('\n'.join(after))
+        if not address:
+            continue
+
+        title = next(
+            (
+                candidate
+                for candidate in reversed(before)
+                if not candidate.lower().startswith(('http://', 'https://'))
+                and not any(
+                    marker in candidate.lower()
+                    for marker in ('your search alert', 'new properties', 'property with updated price')
+                )
+            ),
+            None,
+        )
+        if not title:
+            continue
+
+        listing_details = '\n'.join(after)
+        entry = {
+            'price': price,
+            'rooms': extract_rooms(listing_details),
+            'surface_m2': extract_surface(listing_details),
+            'address': address,
+            'url': 'https://www.comparis.ch',
+            'source_site': 'comparis',
+            'source': 'email_alert',
+            'title': title,
+        }
+        key = _normalize_entry_key(entry)
+        if key not in seen:
+            seen.add(key)
+            entries.append(entry)
+
+    if entries:
+        title_urls = {}
+        for soup in email_html_soups(msg):
+            for anchor in soup.find_all('a', href=True):
+                label = anchor.get_text(' ', strip=True)
+                if label:
+                    title_urls.setdefault(label, anchor['href'])
+        for entry in entries:
+            entry['url'] = title_urls.get(entry['title'], entry['url'])
+
+    return entries
+
+
 def parse_email(msg: EmailMessage) -> list[dict]:
     text = email_to_text(msg)
     if not text:
         return []
+
+    plain_entries = _parse_plain_listing_cards(text, msg)
+    if plain_entries:
+        return plain_entries
 
     hosts = ('comparis.ch', 'en.comparis.ch', 'links.comparis.ch')
     urls = find_urls(text, hosts)

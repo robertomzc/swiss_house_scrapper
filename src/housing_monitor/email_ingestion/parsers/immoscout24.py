@@ -155,7 +155,7 @@ def _extract_values_for_block(block: str) -> dict:
     price = None
     rooms = None
     surface = None
-    address = _extract_address_from_text(block)
+    address = _extract_address_from_text(block) or extract_address(block)
     match = PRICE_RE.search(block)
     if match:
         raw = match.group(1)
@@ -186,6 +186,14 @@ def _extract_values_for_block(block: str) -> dict:
         address = _prefer_better_address(found)
 
     return {'price': price, 'rooms': rooms, 'surface_m2': surface, 'address': address}
+
+
+def _listing_title(result: dict) -> str:
+    address = result.get('address') or ''
+    locality_match = re.search(r'\b\d{4}\s+(.+)$', address)
+    if result.get('rooms') is not None and locality_match:
+        return f"{result['rooms']:g} rooms - {locality_match.group(1).strip()}"
+    return address or 'ImmoScout24 listing'
 
 
 def _parse_property_blocks(text: str) -> list[dict]:
@@ -231,12 +239,12 @@ def parse_email(msg: EmailMessage) -> list[dict]:
 
     entries: list[dict] = []
     for index, result in enumerate(parsed_blocks):
-        if not result['price'] and not result['rooms'] and not result['surface_m2'] and not result['address']:
+        if result['price'] is None and result['surface_m2'] is None and result['address'] is None:
             continue
         result['url'] = urls[index] if index < len(urls) else (urls[0] if urls else 'https://www.immoscout24.ch')
         result['source_site'] = 'immoscout24'
         result['source'] = 'email_alert'
-        result['title'] = result.get('address') or 'ImmoScout24 listing'
+        result['title'] = _listing_title(result)
         entries.append(result)
 
     return entries
