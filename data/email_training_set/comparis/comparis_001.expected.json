@@ -12,7 +12,26 @@
         "observations": [
         {
             "observed_at": "2026-10-23 - 13:44:00",
-            "price": 970000,
+            "price": 960000,
+            "kind": "new",
+            "source": "comparis"
+        }
+        ]
+    },
+    {
+        "url": "https://links.comparis.ch/s/c/f-YbIikjNdeSCswXRfvPEsTieQ_lltcKxjtXnFNqF9c6ejsuPKKWirHHP91IrKeK4LbH3e3N9HajElV20b1nwyBrGJQtZG_3eQeaFJ5qbpw9fQ0OtUHP7bHD6PgP1kcfcByo8YkFPlULtfEA7A0owndY8RBv5JTiUechGAkS2NjImfXSiPq24Xtq_SuUf3K6I5kISA96B-iHAdAJjJFOMjXqbFFZ6lXhwQ1lVsolwyi9AOV5kS3om__b3KwEpYXSAzw93e-0v-W3oB53cOIlg-DRh3bsDQ4K-f08KCbXDllp0GL5cYyZeJ5H88AdAudZpFLJR-WMRVZo2mZPCbZVEdGSofVNJUBkUcPkieeqWnh-LjKvKC9Cu-Q9FHu4G4wu843a6nDRoK3vE0_SMlpVIc9s8cLUgI1WzWGUHNDycHoT_G4ZDQwS3k2UsBLBsrKLvr7uyfB9raxVC-RGG10hvma3ojG3b4F02cjoFCEt4QNSg5O-m1x9DZitkIzyN2kFUyTvkH335Z3bj7mQo9zhyoKdhO8cV1BRjd42DTyRgFevluHnHMiYnvCyDo45D0HcJ0Cg_bmFzGxWy46QLa-kpMWsv8-TtLMwwhcAfM4zyQBF7UvgfQztdzK8G7ffH2PDqvAvW9CmtXuXzVNcFTM6cIs_iaXCpn6YYLhDdFeMHAUJ_2HVT29nPNpVjgz7tJcr1YvR3FxQE3RynIIcO7MLXli9fpyf4SObKzf9/8MZCcGv_QXQQF5fPE8V85S8_mGjY71sK/25",
+        "source_site": "comparis",
+        "title": "Attique contemporain traversant avec grand balcon et vue dégagée",
+        "address": "1000 Lausanne 27",
+        "npa": 1000,
+        "commune": "Lausanne",
+        "rooms": 4.5,
+        "surface_m2": 115,
+        "first_seen": "2026-10-23",
+        "observations": [
+        {
+            "observed_at": "2026-10-23 - 13:44:00",
+            "price": 1190000,
             "kind": "new",
             "source": "comparis"
         }
