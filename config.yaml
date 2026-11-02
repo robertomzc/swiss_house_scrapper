@@ -1,5 +1,8 @@
 gmail_label: "Lausanne Housing"
-data_path: "data/listings.json"
+data_path: "data/artifacts/listings.json"
+email_archive_dir: "data/artifacts/email_archive"
+processed_messages_path: "data/artifacts/processed_messages.json"
+dashboard_path: "data/artifacts/dashboard.html"
 imap_host: "imap.gmail.com"
 unread_only: false
 listing_filter:

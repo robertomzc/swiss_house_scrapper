@@ -9,8 +9,8 @@ from typing import Any
 
 from housing_monitor.email_ingestion.parsers.common import detect_source_site
 
-DEFAULT_ARCHIVE_DIR = 'data/email_archive'
-DEFAULT_PROCESSED_PATH = 'data/processed_messages.json'
+DEFAULT_ARCHIVE_DIR = 'data/artifacts/email_archive'
+DEFAULT_PROCESSED_PATH = 'data/artifacts/processed_messages.json'
 
 
 def message_key(msg: EmailMessage) -> str:

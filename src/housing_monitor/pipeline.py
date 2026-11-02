@@ -74,8 +74,8 @@ def _process_message(
     msg,
     listings,
     seen_index,
-    archive_dir='data/email_archive',
-    processed_path='data/processed_messages.json',
+    archive_dir='data/artifacts/email_archive',
+    processed_path='data/artifacts/processed_messages.json',
     listing_filter=None,
 ):
     key = msg.get('Message-ID') or msg.get('Subject') or str(msg.as_bytes()[:128])
@@ -133,10 +133,10 @@ def _process_message(
 def main():
     cfg = load_config()
     label = cfg.get('gmail_label', 'Lausanne Housing')
-    data_path = cfg.get('data_path', 'data/listings.json')
+    data_path = cfg.get('data_path', 'data/artifacts/listings.json')
     imap_host = cfg.get('imap_host', 'imap.gmail.com')
-    archive_dir = cfg.get('email_archive_dir', 'data/email_archive')
-    processed_path = cfg.get('processed_messages_path', 'data/processed_messages.json')
+    archive_dir = cfg.get('email_archive_dir', 'data/artifacts/email_archive')
+    processed_path = cfg.get('processed_messages_path', 'data/artifacts/processed_messages.json')
     unread_only = cfg.get('unread_only', True)
 
     user = os.getenv('EMAIL_USER')
@@ -165,7 +165,7 @@ def main():
     os.makedirs(os.path.dirname(data_path) or '.', exist_ok=True)
     save_listings(listings, data_path)
 
-    dashboard_path = cfg.get('dashboard_path', 'data/dashboard.html')
+    dashboard_path = cfg.get('dashboard_path', 'data/artifacts/dashboard.html')
     generated_dashboard, _ = generate_dashboard(listings, output_path=dashboard_path, alert_count=total_items)
     print(f'Generated dashboard: {generated_dashboard}')
 
