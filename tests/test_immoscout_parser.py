@@ -1,5 +1,6 @@
 from email.message import EmailMessage
 
+import housing_monitor.email_ingestion.parsers.immoscout24 as immoscout_parser
 from housing_monitor.email_ingestion.parsers.immoscout24 import parse_email
 
 
@@ -58,3 +59,27 @@ Delete search alert
     assert entries[0]['price'] == 740000
     assert entries[0]['rooms'] == 3.5
     assert entries[0]['surface_m2'] == 77.0
+
+
+def test_tracking_redirect_to_municipality_guide_is_not_a_listing_url(monkeypatch):
+    class RedirectResponse:
+        def __enter__(self):
+            return self
+
+        def __exit__(self, *_args):
+            return None
+
+        def geturl(self):
+            return 'https://www.immoscout24.ch/c/en/lp/municipality-guide?lang=en'
+
+    monkeypatch.setattr(
+        immoscout_parser,
+        'urlopen',
+        lambda *_args, **_kwargs: RedirectResponse(),
+    )
+
+    urls = immoscout_parser._extract_listing_urls(
+        'https://u123.ct.sendgrid.net/ls/click?upn=tracking-token'
+    )
+
+    assert urls == []

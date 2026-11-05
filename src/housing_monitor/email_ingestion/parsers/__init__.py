@@ -3,7 +3,14 @@
 import re
 
 from .comparis import parse_email as parse_comparis_email
-from .common import email_html_soups, extract_address, extract_price, extract_rooms, extract_surface
+from .common import (
+    email_html_soups,
+    extract_address,
+    extract_price,
+    extract_rooms,
+    extract_surface,
+    find_urls,
+)
 from .immoscout24 import parse_email as parse_immoscout_email
 from .lookmove import parse_email as parse_lookmove_email
 from .newhome import parse_email as parse_newhome_email

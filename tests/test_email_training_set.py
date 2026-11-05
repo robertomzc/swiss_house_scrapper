@@ -6,6 +6,7 @@ from pathlib import Path
 
 import pytest
 
+import housing_monitor.email_ingestion.parsers as email_parsers
 from housing_monitor.email_ingestion.parsers import parse_email
 from housing_monitor.email_ingestion.parsers.common import extract_address, extract_price
 
@@ -65,6 +66,29 @@ def test_training_listing_count_and_numeric_fields_match_expected(email_path):
 
     assert len(parsed) == len(expected)
     assert actual_signatures == expected_signatures
+
+
+def test_immobilier_text_fallback_can_find_listing_urls(monkeypatch):
+    email_path = TRAINING_SET / 'immobilier' / 'immobilier_001.eml'
+    message = BytesParser(policy=policy.default).parsebytes(email_path.read_bytes())
+    monkeypatch.setattr(email_parsers, '_parse_immobilier_html', lambda _msg: [])
+
+    parsed = parse_email(message)
+
+    assert parsed
+    assert all(listing['source_site'] == 'immobilier' for listing in parsed)
+
+
+def test_immoscout_training_urls_match_listings_not_municipality_guide():
+    email_path = TRAINING_SET / 'immoscout24' / 'immoscout24_001.eml'
+    message = BytesParser(policy=policy.default).parsebytes(email_path.read_bytes())
+    parsed = parse_email(message)
+
+    urls_by_address = {listing['address']: listing['url'] for listing in parsed}
+    assert '/buy/4003567023?' in urls_by_address['Grand-Rue, 1302 Vufflens-la-Ville']
+    assert '/buy/4003567001?' in urls_by_address['1041 Poliez-Pittet']
+    assert all('municipality-guide' not in url for url in urls_by_address.values())
+    assert all('utm_content=557cdc01-' in url for url in urls_by_address.values())
 
 
 @pytest.mark.parametrize(

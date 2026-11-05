@@ -4,7 +4,7 @@ import re
 from email.message import EmailMessage
 from html import unescape
 from typing import Optional
-from urllib.parse import urlsplit, urlunsplit
+from urllib.parse import unquote, urlsplit
 from urllib.request import Request, urlopen
 
 from .common import email_to_text, extract_address, extract_price, extract_rooms, extract_surface, find_urls, split_listing_blocks
@@ -66,21 +66,26 @@ def _strip_html(raw: str) -> str:
 def _canonicalize_immoscout_url(raw_url: str) -> str:
     if not raw_url:
         return ""
-    lower = raw_url.lower()
-    if 'immoscout24.ch' in lower and '/buy/' in lower:
+    if _is_direct_listing_url(raw_url):
         return raw_url
-    if 'immoscout24.ch' in lower and '/rent/' in lower:
-        return raw_url
-    if 'sendgrid.net' in lower or 'ct.sendgrid.net' in lower:
+    if 'sendgrid.net' in raw_url.lower():
         try:
             req = Request(raw_url, headers={'User-Agent': 'Mozilla/5.0'})
             with urlopen(req, timeout=15) as resp:
                 final_url = resp.geturl()
-                if 'immoscout24.ch' in final_url.lower():
+                if _is_direct_listing_url(final_url):
                     return final_url
         except Exception:
             pass
     return raw_url
+
+
+def _is_direct_listing_url(url: str) -> bool:
+    parts = urlsplit(url)
+    hostname = (parts.hostname or '').lower()
+    if hostname != 'immoscout24.ch' and not hostname.endswith('.immoscout24.ch'):
+        return False
+    return re.match(r'^/(?:buy|rent)/\d+(?:/|$)', parts.path, re.IGNORECASE) is not None
 
 
 def _is_footer_line(line: str) -> bool:
@@ -222,8 +227,17 @@ def _extract_listing_urls(text: str) -> list[str]:
     urls: list[str] = []
     for raw_url in _extract_tracking_urls(text):
         resolved = _canonicalize_immoscout_url(raw_url)
-        if 'immoscout24.ch' in resolved.lower():
+        if _is_direct_listing_url(resolved):
             urls.append(resolved)
+            continue
+
+        nested_listing = re.search(
+            r'https?://(?:www\.)?immoscout24\.ch/(?:buy|rent)/\d+',
+            unquote(resolved),
+            re.IGNORECASE,
+        )
+        if nested_listing:
+            urls.append(nested_listing.group(0))
     return urls
 
 
@@ -238,9 +252,10 @@ def parse_email(msg: EmailMessage) -> list[dict]:
         return []
 
     entries: list[dict] = []
-    for index, result in enumerate(parsed_blocks):
+    for result in parsed_blocks:
         if result['price'] is None and result['surface_m2'] is None and result['address'] is None:
             continue
+        index = len(entries)
         result['url'] = urls[index] if index < len(urls) else (urls[0] if urls else 'https://www.immoscout24.ch')
         result['source_site'] = 'immoscout24'
         result['source'] = 'email_alert'

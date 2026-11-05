@@ -38,13 +38,6 @@ HOST_ALIASES = {
 }
 
 
-def _decode_quoted_printable(value: str) -> str:
-    value = value.replace('\r\n', '\n').replace('\r', '\n')
-    value = re.sub(r'=\r?\n', '', value)
-    value = re.sub(r'=([A-Fa-f0-9]{2})', lambda m: chr(int(m.group(1), 16)), value)
-    return value
-
-
 def normalize_number(value: str) -> float:
     s = value.strip().replace("'", "").replace("’", "").replace("\u202f", "").replace("\u00a0", "")
     s = s.replace(" ", "")
@@ -80,7 +73,6 @@ def _part_text(part) -> str:
 
 
 def _normalize_email_text(body: str) -> str:
-    body = _decode_quoted_printable(body)
     body = body.replace('\r\n', '\n').replace('\r', '\n')
     body = re.sub(r'<br\s*/?>', '\n', body, flags=re.I)
     body = re.sub(r'</p>|</div>|</li>|</tr>', '\n', body, flags=re.I)

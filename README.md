@@ -19,16 +19,35 @@ This project reads apartment alerts from email, extracts the listing details, an
 - `src/housing_monitor/pipeline.py`: main processing flow
 - `run_pipeline.py`: script to run the pipeline manually
 - `config.yaml`: mailbox and storage settings
-- `data/listings.json`: saved listing data
+- `data/artifacts/listings.json`: saved listing data
+- `data/artifacts/email_archive/`: archived source emails
+- `data/artifacts/processed_messages.json`: processed email index
+- `data/artifacts/dashboard.html`: generated dashboard
+- `data/sources.csv`: configured listing sources
+- `data/email_training_set/`: parser training samples and expected outputs
 
 ## Setup
 ```bash
+poetry env use 3.13
 poetry install
+poetry run python --version
 ```
+The project requires Python 3.13. Run Python and test commands through Poetry
+(`poetry run python ...`, `poetry run pytest ...`) so they use the project's
+virtual environment instead of a potentially different system interpreter.
 
 ## Run
 ```bash
 poetry run housing-monitor
+```
+
+The pipeline generates `data/artifacts/dashboard.html` with price/surface and price/room charts, a schematic Lausanne map, summary histograms, and an all-listings table. The dashboard is self-contained and can be opened directly as a `file://` URL without network access. The map is a fixed illustration rather than a street map; locations inferred from Lausanne postcodes are approximate, while exact coordinates are used when available. Listing links remain clickable and need internet only when opened.
+
+## Parser validation
+Downloaded email samples and their expected outputs live under `data/email_training_set/<source>/` and remain separate from generated artifacts.
+The corpus-backed parser checks are in `tests/test_email_training_set.py` and can be run with:
+```bash
+poetry run pytest tests/test_email_training_set.py
 ```
 
 ## Notes
